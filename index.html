@@ -476,6 +476,7 @@ function applyFilters() {
         });
         c.priceMin = c.prices[0] || null;
         c.priceMax = c.prices[c.prices.length - 1] || null;
+        c.toksPerKPLN = (c.llm_q4 && c.priceMin) ? Math.round((c.llm_q4 / c.priceMin) * 1000 * 100) / 100 : 0;
       }
     }
     return c;
