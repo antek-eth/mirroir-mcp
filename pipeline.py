@@ -210,18 +210,15 @@ def parse_specs(title, description=""):
         else:
             screen = "14"  # default for M3+
 
-    # Build model name
+    # Build model name - simplified to just category
     if screen == 'Studio':
-        model = f'Mac Studio {cpu}' if cpu else 'Mac Studio'
+        model = 'Studio'
     elif screen == 'Mini':
-        model = f'Mac Mini {cpu}' if cpu else 'Mac Mini'
+        model = 'Mini'
     else:
         # Detect Air vs Pro from title
         is_air = 'air' in tl
-        macbook_type = 'MacBook Air' if is_air else 'MacBook Pro'
-        model = f'{macbook_type} {screen}"' if screen else macbook_type
-        if cpu:
-            model += f" {cpu}"
+        model = 'Air' if is_air else 'Pro'
 
     return {
         "model": model,
