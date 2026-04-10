@@ -223,6 +223,19 @@ let activeTiers = new Set();
 let activeRams = new Set();
 let activeSources = new Set();
 let activeScreens = new Set();
+let hiddenListings = new Set(JSON.parse(localStorage.getItem('hiddenListings') || '[]'));
+
+function hideListing(url) {
+  hiddenListings.add(url);
+  localStorage.setItem('hiddenListings', JSON.stringify([...hiddenListings]));
+  applyFilters();
+  closeDetail();
+}
+function unhideAll() {
+  hiddenListings.clear();
+  localStorage.setItem('hiddenListings', '[]');
+  applyFilters();
+}
 let currentSort = { key: 'priceMin', dir: 'asc' };
 let currentView = 'table';
 let configs = [];
@@ -451,7 +464,23 @@ function applyFilters() {
   const maxPrice = parseInt(document.getElementById('priceMax').value.replace(/\s/g, '')) || Infinity;
   const search = document.getElementById('searchInput').value.toLowerCase();
 
-  filtered = configs.filter(c => {
+  filtered = configs.map(c => {
+    if (hiddenListings.size) {
+      const visible = c.listings.filter(l => !hiddenListings.has(l.url));
+      if (visible.length === 0) return null;
+      if (visible.length < c.listings.length) {
+        c = Object.assign({}, c, {
+          listings: visible,
+          listingCount: visible.length,
+          prices: visible.map(l => l.price).filter(Boolean).sort((a,b) => a-b),
+        });
+        c.priceMin = c.prices[0] || null;
+        c.priceMax = c.prices[c.prices.length - 1] || null;
+      }
+    }
+    return c;
+  }).filter(c => {
+    if (!c) return false;
     if (activeChips.size && !activeChips.has('M' + chipGen(c.cpu))) return false;
     if (activeTiers.size && !activeTiers.has(chipTier(c.cpu))) return false;
     if (activeRams.size && !activeRams.has(c.ram)) return false;
@@ -480,7 +509,8 @@ function applyFilters() {
   });
 
   const totalListings = filtered.reduce((s, c) => s + c.listingCount, 0);
-  document.getElementById('resultsCount').innerHTML = '<strong>' + filtered.length + '</strong> configs &middot; ' + totalListings + ' listings';
+  const hiddenCount = hiddenListings.size;
+  document.getElementById('resultsCount').innerHTML = '<strong>' + filtered.length + '</strong> configs &middot; ' + totalListings + ' listings' + (hiddenCount ? ' &middot; <span style="color:var(--fg3)">' + hiddenCount + ' hidden</span> <button onclick="unhideAll()" style="background:none;border:1px solid rgba(255,255,255,.15);color:var(--accent);cursor:pointer;font-size:10px;padding:1px 6px;border-radius:3px;margin-left:4px">unhide all</button>' : '');
   pushURL();
   render();
 }
@@ -637,6 +667,7 @@ function showDetail(ci) {
         </div>
         <div style="font-family:var(--font-mono);font-weight:600;font-size:12px;white-space:nowrap">${l.price ? fmtNum(l.price) + ' zl' : '-'}</div>
         ${l.url ? '<a href="' + l.url + '" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-family:var(--font-mono);font-size:11px;flex-shrink:0" onclick="event.stopPropagation()">link &rarr;</a>' : ''}
+        ${l.url ? '<button onclick="event.stopPropagation();hideListing(\'' + l.url.replace(/'/g, "\\'") + '\')" style="background:none;border:1px solid rgba(255,255,255,.1);color:var(--fg3);cursor:pointer;font-size:10px;padding:2px 6px;border-radius:3px;flex-shrink:0" title="Hide this listing">hide</button>' : ''}
       </div>`).join('')}
     </div>
   `;
