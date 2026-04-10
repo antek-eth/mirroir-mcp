@@ -828,19 +828,6 @@ function initFilters() {
   diskSel.onchange = applyFilters;
   document.getElementById('priceMax').oninput = applyFilters;
   document.getElementById('searchInput').oninput = applyFilters;
-
-  const sortBar = document.getElementById('sortBar');
-  SORT_OPTIONS.forEach(opt => {
-    const btn = document.createElement('button');
-    btn.className = 'sort-btn' + (currentSort.key === opt.key ? ' active' : '');
-    btn.innerHTML = opt.label + '<span class="arrow">' + (currentSort.key === opt.key ? (currentSort.dir === 'desc' ? ' &#9660;' : ' &#9650;') : '') + '</span>';
-    btn.onclick = () => {
-      if (currentSort.key === opt.key) currentSort.dir = currentSort.dir === 'desc' ? 'asc' : 'desc';
-      else { currentSort.key = opt.key; currentSort.dir = opt.key === 'priceMin' ? 'asc' : 'desc'; }
-      applyFilters();
-    };
-    sortBar.appendChild(btn);
-  });
 }
 
 function pushURL() {
@@ -954,12 +941,28 @@ function setView(v) {
 function renderTable() {
   const wrap = document.getElementById('tableView');
   if (!filtered.length) { wrap.innerHTML = '<div class="empty-state"><div class="icon">&#128187;</div><p>No configs match your filters</p></div>'; return; }
-  wrap.innerHTML = `<table class="config-table"><thead><tr>
-    <th>Chip</th><th>Screen</th><th>RAM</th><th>Disk</th>
-    <th>Min Price</th><th>Max Price</th><th>Listings</th>
-    <th>GB6 SC</th><th>GB6 MC</th><th>Metal</th>
-    <th>Mem BW</th><th>Q4 t/s</th><th>toks/1kPLN</th>
-  </tr></thead><tbody>${filtered.map((c, ci) => {
+  const headers = [
+    { label: 'Chip', key: null },
+    { label: 'Screen', key: null },
+    { label: 'RAM', key: null },
+    { label: 'Disk', key: null },
+    { label: 'Min Price', key: 'priceMin' },
+    { label: 'Max Price', key: 'priceMax' },
+    { label: 'Listings', key: 'listingCount' },
+    { label: 'GB6 SC', key: 'gb6_single' },
+    { label: 'GB6 MC', key: 'gb6_multi' },
+    { label: 'Metal', key: 'gb6_metal' },
+    { label: 'Mem BW', key: 'mem_bw_gbs' },
+    { label: 'Q4 t/s', key: 'llm_q4' },
+    { label: 'toks/1kPLN', key: 'toksPerKPLN' },
+  ];
+  const headerHTML = headers.map(h => {
+    if (!h.key) return `<th>${h.label}</th>`;
+    const isActive = currentSort.key === h.key;
+    const arrow = isActive ? (currentSort.dir === 'desc' ? ' ▼' : ' ▲') : '';
+    return `<th onclick="sortBy('${h.key}')" class="${isActive ? 'active' : ''}" style="cursor:pointer">${h.label}${arrow}</th>`;
+  }).join('');
+  wrap.innerHTML = `<table class="config-table"><thead><tr>${headerHTML}</tr></thead><tbody>${filtered.map((c, ci) => {
     const cc = chipClass(c.cpu);
     return `<tr onclick="showDetail(${ci})" style="cursor:pointer">
       <td><span class="chip-cell config-chip ${cc}">${c.cpu}</span></td>
@@ -974,6 +977,12 @@ function renderTable() {
       <td class="bar-cell"><div class="bar-bg" style="width:${c.toksPerKPLN ? pct(c.toksPerKPLN, Math.max(...filtered.map(x=>x.toksPerKPLN||0))) : 0}%;background:linear-gradient(90deg,#059669,#4ade80)"></div><span class="bar-val" style="color:var(--accent)">${c.toksPerKPLN || '-'}</span></td>
     </tr>`;
   }).join('')}</tbody></table>`;
+}
+
+function sortBy(key) {
+  if (currentSort.key === key) currentSort.dir = currentSort.dir === 'desc' ? 'asc' : 'desc';
+  else { currentSort.key = key; currentSort.dir = key === 'priceMin' ? 'asc' : 'desc'; }
+  applyFilters();
 }
 
 function render() {
