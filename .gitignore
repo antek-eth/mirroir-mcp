@@ -1,0 +1,24 @@
+# Temporary scraper output files
+allegro_*.json
+lantre_*.json
+olx_*.json
+scraped_*.json
+manual_add.json
+macbook_deals.csv
+
+# System files
+.DS_Store
+__pycache__/
+*.pyc
+
+# Development tools
+.omc/
+.playwright-mcp/
+.venv/
+node_modules/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
