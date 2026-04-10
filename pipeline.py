@@ -375,6 +375,7 @@ def process_raw_listings(raw_listings, source=""):
             "source": raw.get("source", source),
             "expired": raw.get("expired", False),
             "used": raw.get("used", False),
+            "broken": raw.get("broken", False),
         }
         deal.update(benchmarks)
         processed.append(deal)
@@ -732,6 +733,7 @@ function buildConfigs() {
       datePosted: d.datePosted || '',
       expired: d.expired || /wygasł/i.test(d.datePosted || ''),
       used: d.used || false,
+      broken: d.broken || false,
     });
     if (price) map[key].prices.push(price);
     if (!price && oldPrice) map[key].prices.push(oldPrice);
@@ -872,8 +874,8 @@ function applyFilters() {
   const search = document.getElementById('searchInput').value.toLowerCase();
 
   filtered = configs.map(c => {
-    if (hiddenListings.size) {
-      const visible = c.listings.filter(l => !hiddenListings.has(l.url));
+    {
+      const visible = c.listings.filter(l => !hiddenListings.has(l.url) && !l.broken);
       if (visible.length === 0) return null;
       if (visible.length < c.listings.length) {
         c = Object.assign({}, c, {
@@ -1071,7 +1073,7 @@ function showDetail(ci) {
       ${c.listings.map(l => `<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:var(--bg3);border-radius:4px;gap:8px${l.expired ? ';opacity:.5' : ''}">
         <div style="flex:1;min-width:0">
           <div style="font-family:var(--font-sans);font-size:12px;color:var(--fg2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${l.title}</div>
-          <div style="font-family:var(--font-mono);font-size:10px;color:var(--fg3);margin-top:2px">${l.date || ''}${l.source ? ' &middot; <span style="color:var(--accent);opacity:.7">' + l.source + '</span>' : ''}${l.used ? ' <span style="font-size:9px;padding:1px 5px;border-radius:3px;background:rgba(251,191,36,.15);color:#fbbf24">used</span>' : ''}</div>
+          <div style="font-family:var(--font-mono);font-size:10px;color:var(--fg3);margin-top:2px">${l.date || ''}${l.source ? ' &middot; <span style="color:var(--accent);opacity:.7">' + l.source + '</span>' : ''}${l.used ? ' <span style="font-size:9px;padding:1px 5px;border-radius:3px;background:rgba(251,191,36,.15);color:#fbbf24">used</span>' : ''}${l.broken ? ' <span style="font-size:9px;padding:1px 5px;border-radius:3px;background:rgba(239,68,68,.15);color:#ef4444">broken</span>' : ''}</div>
         </div>
         <div style="font-family:var(--font-mono);font-weight:600;font-size:12px;white-space:nowrap">${l.price ? fmtNum(l.price) + ' zl' : '-'}</div>
         ${l.url ? '<a href="' + l.url + '" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-family:var(--font-mono);font-size:11px;flex-shrink:0" onclick="event.stopPropagation()">link &rarr;</a>' : ''}
