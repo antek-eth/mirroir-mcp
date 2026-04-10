@@ -618,9 +618,6 @@ input.filter-input::placeholder{color:var(--fg3)}
     <span class="results-count" id="resultsCount"></span>
   </div>
 
-  <div class="sort-bar" id="sortBar">
-    <span class="sort-label">Sort</span>
-  </div>
 
   <div class="configs-grid" id="configsGrid" style="display:none"></div>
   <div id="tableView" style="overflow-x:auto"></div>
@@ -714,6 +711,7 @@ function buildConfigs() {
     if (!map[key]) {
       map[key] = {
         key, cpu, ram, disk, screen,
+        model: d.model || '',
         gb6_single: d.gb6_single || 0,
         gb6_multi: d.gb6_multi || 0,
         gb6_metal: d.gb6_metal || 0,
