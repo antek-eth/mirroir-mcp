@@ -18,7 +18,8 @@
     "mem_bw_gbs": 68,
     "llm_gpu_cores": 8,
     "llama2_7b_q4_tg": 14.15,
-    "priceNum": 2799.0
+    "priceNum": 2799.0,
+    "model": "MacBook Pro 13\" M1"
   },
   {
     "cpu": "M5",
@@ -39,7 +40,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 8299.0
+    "priceNum": 8299.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5 PRO",
@@ -60,7 +62,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 9999.0
+    "priceNum": 9999.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5",
@@ -81,7 +84,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 6699.0
+    "priceNum": 6699.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -102,7 +106,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 6799.0
+    "priceNum": 6799.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5 PRO",
@@ -123,7 +128,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 9999.0
+    "priceNum": 9999.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5",
@@ -144,7 +150,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 7289.0
+    "priceNum": 7289.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -165,7 +172,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 8973.66
+    "priceNum": 8973.66,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M3",
@@ -186,7 +194,8 @@
     "mem_bw_gbs": 100,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 21.34,
-    "priceNum": 4999.0
+    "priceNum": 4999.0,
+    "model": "MacBook Pro 14\" M3"
   },
   {
     "cpu": "M2 PRO",
@@ -207,7 +216,8 @@
     "mem_bw_gbs": 200,
     "llm_gpu_cores": 19,
     "llama2_7b_q4_tg": 38.86,
-    "priceNum": 8499.0
+    "priceNum": 8499.0,
+    "model": "MacBook Pro 14\" M2 PRO"
   },
   {
     "cpu": "M5",
@@ -228,7 +238,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 7363.04
+    "priceNum": 7363.04,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5 PRO",
@@ -249,7 +260,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 10999.0
+    "priceNum": 10999.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5",
@@ -270,7 +282,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 7499.0
+    "priceNum": 7499.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -291,7 +304,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 7499.0
+    "priceNum": 7499.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -312,7 +326,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 7149.0
+    "priceNum": 7149.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M4",
@@ -333,7 +348,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 6999.0
+    "priceNum": 6999.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M2 PRO",
@@ -354,7 +370,8 @@
     "mem_bw_gbs": 200,
     "llm_gpu_cores": 19,
     "llama2_7b_q4_tg": 38.86,
-    "priceNum": 8499.0
+    "priceNum": 8499.0,
+    "model": "MacBook Pro 14\" M2 PRO"
   },
   {
     "cpu": "M3",
@@ -375,7 +392,8 @@
     "mem_bw_gbs": 100,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 21.34,
-    "priceNum": 6299.0
+    "priceNum": 6299.0,
+    "model": "MacBook Pro 14\" M3"
   },
   {
     "cpu": "M4 PRO",
@@ -396,7 +414,8 @@
     "mem_bw_gbs": 273,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 50.74,
-    "priceNum": 9100.0
+    "priceNum": 9100.0,
+    "model": "MacBook Pro 14\" M4 PRO"
   },
   {
     "cpu": "M5",
@@ -417,7 +436,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 6950.0
+    "priceNum": 6950.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M2 MAX",
@@ -438,7 +458,8 @@
     "mem_bw_gbs": 400,
     "llm_gpu_cores": 38,
     "llama2_7b_q4_tg": 65.95,
-    "priceNum": 15509.0
+    "priceNum": 15509.0,
+    "model": "MacBook Pro 14\" M2 MAX"
   },
   {
     "cpu": "M2 PRO",
@@ -459,7 +480,8 @@
     "mem_bw_gbs": 200,
     "llm_gpu_cores": 19,
     "llama2_7b_q4_tg": 38.86,
-    "priceNum": 30599.0
+    "priceNum": 30599.0,
+    "model": "MacBook Pro 14\" M2 PRO"
   },
   {
     "cpu": "M5",
@@ -480,7 +502,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 8499.0
+    "priceNum": 8499.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M2 PRO",
@@ -501,7 +524,8 @@
     "mem_bw_gbs": 200,
     "llm_gpu_cores": 19,
     "llama2_7b_q4_tg": 38.86,
-    "priceNum": 5900.0
+    "priceNum": 5900.0,
+    "model": "MacBook Pro 14\" M2 PRO"
   },
   {
     "cpu": "M4 PRO",
@@ -522,7 +546,8 @@
     "mem_bw_gbs": 273,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 50.74,
-    "priceNum": 9249.0
+    "priceNum": 9249.0,
+    "model": "MacBook Pro 14\" M4 PRO"
   },
   {
     "cpu": "M4",
@@ -543,7 +568,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 7403.0
+    "priceNum": 7403.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M4",
@@ -564,7 +590,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 8249.0
+    "priceNum": 8249.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M4",
@@ -585,7 +612,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 7049.0
+    "priceNum": 7049.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M5",
@@ -606,7 +634,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 7818.99
+    "priceNum": 7818.99,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -627,7 +656,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 7249.0
+    "priceNum": 7249.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -648,7 +678,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 9999.0
+    "priceNum": 9999.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -669,7 +700,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 8144.0
+    "priceNum": 8144.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -690,7 +722,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 7399.0
+    "priceNum": 7399.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -711,7 +744,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 8499.0
+    "priceNum": 8499.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -732,7 +766,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 7499.0
+    "priceNum": 7499.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M4 MAX",
@@ -753,7 +788,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 83.06,
-    "priceNum": 14999.0
+    "priceNum": 14999.0,
+    "model": "MacBook Pro 14\" M4 MAX"
   },
   {
     "cpu": "M4 PRO",
@@ -774,7 +810,8 @@
     "mem_bw_gbs": 273,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 50.74,
-    "priceNum": 9249.0
+    "priceNum": 9249.0,
+    "model": "MacBook Pro 14\" M4 PRO"
   },
   {
     "cpu": "M5",
@@ -795,7 +832,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 9499.0
+    "priceNum": 9499.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -816,7 +854,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 8999.0
+    "priceNum": 8999.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M4",
@@ -837,7 +876,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 6999.0
+    "priceNum": 6999.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M4 MAX",
@@ -858,7 +898,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 83.06,
-    "priceNum": 16499.0
+    "priceNum": 16499.0,
+    "model": "MacBook Pro 14\" M4 MAX"
   },
   {
     "cpu": "M4 MAX",
@@ -879,7 +920,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 83.06,
-    "priceNum": 17909.95
+    "priceNum": 17909.95,
+    "model": "MacBook Pro 14\" M4 MAX"
   },
   {
     "cpu": "M4 PRO",
@@ -900,7 +942,8 @@
     "mem_bw_gbs": 273,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 50.74,
-    "priceNum": 10000.0
+    "priceNum": 10000.0,
+    "model": "MacBook Pro 14\" M4 PRO"
   },
   {
     "cpu": "M4 PRO",
@@ -921,7 +964,8 @@
     "mem_bw_gbs": 273,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 50.74,
-    "priceNum": 8877.0
+    "priceNum": 8877.0,
+    "model": "MacBook Pro 14\" M4 PRO"
   },
   {
     "cpu": "M4",
@@ -942,7 +986,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 7000.0
+    "priceNum": 7000.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M5",
@@ -963,7 +1008,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 7500.0
+    "priceNum": 7500.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M4",
@@ -984,7 +1030,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 6800.0
+    "priceNum": 6800.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M3",
@@ -1005,7 +1052,8 @@
     "mem_bw_gbs": 100,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 21.34,
-    "priceNum": 7500.0
+    "priceNum": 7500.0,
+    "model": "MacBook Pro 14\" M3"
   },
   {
     "cpu": "M5",
@@ -1026,7 +1074,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 7499.0
+    "priceNum": 7499.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M4",
@@ -1047,7 +1096,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 6999.0
+    "priceNum": 6999.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M4",
@@ -1068,7 +1118,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 7099.0
+    "priceNum": 7099.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M4 PRO",
@@ -1089,7 +1140,8 @@
     "mem_bw_gbs": 273,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 50.74,
-    "priceNum": 9195.0
+    "priceNum": 9195.0,
+    "model": "MacBook Pro 14\" M4 PRO"
   },
   {
     "cpu": "M4",
@@ -1110,7 +1162,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 7000.0
+    "priceNum": 7000.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M4",
@@ -1131,7 +1184,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 7100.0
+    "priceNum": 7100.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M3 PRO",
@@ -1152,7 +1206,8 @@
     "mem_bw_gbs": 150,
     "llm_gpu_cores": 18,
     "llama2_7b_q4_tg": 30.74,
-    "priceNum": 9000.0
+    "priceNum": 9000.0,
+    "model": "MacBook Pro 14\" M3 PRO"
   },
   {
     "cpu": "M4",
@@ -1173,7 +1228,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 7099.0
+    "priceNum": 7099.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M1",
@@ -1194,7 +1250,8 @@
     "mem_bw_gbs": 68,
     "llm_gpu_cores": 8,
     "llama2_7b_q4_tg": 14.15,
-    "priceNum": 6499.0
+    "priceNum": 6499.0,
+    "model": "MacBook Pro 13\" M1"
   },
   {
     "cpu": "M4 PRO",
@@ -1215,7 +1272,8 @@
     "mem_bw_gbs": 273,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 50.74,
-    "priceNum": 8999.0
+    "priceNum": 8999.0,
+    "model": "MacBook Pro 14\" M4 PRO"
   },
   {
     "cpu": "M4 PRO",
@@ -1236,7 +1294,8 @@
     "mem_bw_gbs": 273,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 50.74,
-    "priceNum": 10880.14
+    "priceNum": 10880.14,
+    "model": "MacBook Pro 14\" M4 PRO"
   },
   {
     "cpu": "M3 MAX",
@@ -1257,7 +1316,8 @@
     "mem_bw_gbs": 400,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 66.31,
-    "priceNum": 13999.0
+    "priceNum": 13999.0,
+    "model": "MacBook Pro 14\" M3 MAX"
   },
   {
     "cpu": "M4 PRO",
@@ -1278,7 +1338,8 @@
     "mem_bw_gbs": 273,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 50.74,
-    "priceNum": 9300.0
+    "priceNum": 9300.0,
+    "model": "MacBook Pro 14\" M4 PRO"
   },
   {
     "cpu": "M4 MAX",
@@ -1299,7 +1360,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 83.06,
-    "priceNum": 16999.0
+    "priceNum": 16999.0,
+    "model": "MacBook Pro 14\" M4 MAX"
   },
   {
     "cpu": "M2",
@@ -1320,7 +1382,8 @@
     "mem_bw_gbs": 100,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 21.91,
-    "priceNum": 10884.95
+    "priceNum": 10884.95,
+    "model": "MacBook Pro 13\" M2"
   },
   {
     "cpu": "M4 PRO",
@@ -1341,7 +1404,8 @@
     "mem_bw_gbs": 273,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 50.74,
-    "priceNum": 9299.0
+    "priceNum": 9299.0,
+    "model": "MacBook Pro 14\" M4 PRO"
   },
   {
     "cpu": "M1 PRO",
@@ -1362,7 +1426,8 @@
     "mem_bw_gbs": 200,
     "llm_gpu_cores": 16,
     "llama2_7b_q4_tg": 36.41,
-    "priceNum": 6500.0
+    "priceNum": 6500.0,
+    "model": "MacBook Pro 14\" M1 PRO"
   },
   {
     "cpu": "M1 PRO",
@@ -1383,7 +1448,8 @@
     "mem_bw_gbs": 200,
     "llm_gpu_cores": 16,
     "llama2_7b_q4_tg": 36.41,
-    "priceNum": 5500.0
+    "priceNum": 5500.0,
+    "model": "MacBook Pro 14\" M1 PRO"
   },
   {
     "cpu": "M1 PRO",
@@ -1404,7 +1470,8 @@
     "mem_bw_gbs": 200,
     "llm_gpu_cores": 16,
     "llama2_7b_q4_tg": 36.41,
-    "priceNum": 6499.0
+    "priceNum": 6499.0,
+    "model": "MacBook Pro 14\" M1 PRO"
   },
   {
     "cpu": "M1 PRO",
@@ -1425,7 +1492,8 @@
     "mem_bw_gbs": 200,
     "llm_gpu_cores": 16,
     "llama2_7b_q4_tg": 36.41,
-    "priceNum": 7999.0
+    "priceNum": 7999.0,
+    "model": "MacBook Pro 14\" M1 PRO"
   },
   {
     "cpu": "M4 PRO",
@@ -1446,7 +1514,8 @@
     "mem_bw_gbs": 273,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 50.74,
-    "priceNum": 14749.0
+    "priceNum": 14749.0,
+    "model": "MacBook Pro 14\" M4 PRO"
   },
   {
     "cpu": "M3 PRO",
@@ -1467,7 +1536,8 @@
     "mem_bw_gbs": 150,
     "llm_gpu_cores": 18,
     "llama2_7b_q4_tg": 30.74,
-    "priceNum": 10890.0
+    "priceNum": 10890.0,
+    "model": "MacBook Pro 14\" M3 PRO"
   },
   {
     "cpu": "M4",
@@ -1488,7 +1558,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 7999.0
+    "priceNum": 7999.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M4 PRO",
@@ -1509,7 +1580,8 @@
     "mem_bw_gbs": 273,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 50.74,
-    "priceNum": 9300.0
+    "priceNum": 9300.0,
+    "model": "MacBook Pro 14\" M4 PRO"
   },
   {
     "cpu": "M3 PRO",
@@ -1530,7 +1602,8 @@
     "mem_bw_gbs": 150,
     "llm_gpu_cores": 18,
     "llama2_7b_q4_tg": 30.74,
-    "priceNum": 8499.0
+    "priceNum": 8499.0,
+    "model": "MacBook Pro 14\" M3 PRO"
   },
   {
     "cpu": "M4",
@@ -1551,7 +1624,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 8999.0
+    "priceNum": 8999.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M1 PRO",
@@ -1572,7 +1646,8 @@
     "mem_bw_gbs": 200,
     "llm_gpu_cores": 16,
     "llama2_7b_q4_tg": 36.41,
-    "priceNum": 6999.0
+    "priceNum": 6999.0,
+    "model": "MacBook Pro 14\" M1 PRO"
   },
   {
     "cpu": "M1 PRO",
@@ -1593,7 +1668,8 @@
     "mem_bw_gbs": 200,
     "llm_gpu_cores": 16,
     "llama2_7b_q4_tg": 36.41,
-    "priceNum": 6999.0
+    "priceNum": 6999.0,
+    "model": "MacBook Pro 14\" M1 PRO"
   },
   {
     "cpu": "M3 PRO",
@@ -1614,7 +1690,8 @@
     "mem_bw_gbs": 150,
     "llm_gpu_cores": 18,
     "llama2_7b_q4_tg": 30.74,
-    "priceNum": 8440.0
+    "priceNum": 8440.0,
+    "model": "MacBook Pro 14\" M3 PRO"
   },
   {
     "cpu": "M4 PRO",
@@ -1635,7 +1712,8 @@
     "mem_bw_gbs": 273,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 50.74,
-    "priceNum": 8999.0
+    "priceNum": 8999.0,
+    "model": "MacBook Pro 14\" M4 PRO"
   },
   {
     "cpu": "M4",
@@ -1656,7 +1734,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 7499.0
+    "priceNum": 7499.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M3 PRO",
@@ -1677,7 +1756,8 @@
     "mem_bw_gbs": 150,
     "llm_gpu_cores": 18,
     "llama2_7b_q4_tg": 30.74,
-    "priceNum": 10000.0
+    "priceNum": 10000.0,
+    "model": "MacBook Pro 14\" M3 PRO"
   },
   {
     "cpu": "M4",
@@ -1698,7 +1778,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 7800.0
+    "priceNum": 7800.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M1 PRO",
@@ -1719,7 +1800,8 @@
     "mem_bw_gbs": 200,
     "llm_gpu_cores": 16,
     "llama2_7b_q4_tg": 36.41,
-    "priceNum": 6170.0
+    "priceNum": 6170.0,
+    "model": "MacBook Pro 14\" M1 PRO"
   },
   {
     "cpu": "M4",
@@ -1740,7 +1822,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 10499.0
+    "priceNum": 10499.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M3 PRO",
@@ -1761,7 +1844,8 @@
     "mem_bw_gbs": 150,
     "llm_gpu_cores": 18,
     "llama2_7b_q4_tg": 30.74,
-    "priceNum": 9500.0
+    "priceNum": 9500.0,
+    "model": "MacBook Pro 14\" M3 PRO"
   },
   {
     "cpu": "M4",
@@ -1782,7 +1866,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 7724.0
+    "priceNum": 7724.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M4 PRO",
@@ -1803,7 +1888,8 @@
     "mem_bw_gbs": 273,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 50.74,
-    "priceNum": 10499.0
+    "priceNum": 10499.0,
+    "model": "MacBook Pro 14\" M4 PRO"
   },
   {
     "cpu": "M3 PRO",
@@ -1824,7 +1910,8 @@
     "mem_bw_gbs": 150,
     "llm_gpu_cores": 18,
     "llama2_7b_q4_tg": 30.74,
-    "priceNum": 10000.0
+    "priceNum": 10000.0,
+    "model": "MacBook Pro 14\" M3 PRO"
   },
   {
     "cpu": "M3 PRO",
@@ -1845,7 +1932,8 @@
     "mem_bw_gbs": 150,
     "llm_gpu_cores": 18,
     "llama2_7b_q4_tg": 30.74,
-    "priceNum": 8999.0
+    "priceNum": 8999.0,
+    "model": "MacBook Pro 14\" M3 PRO"
   },
   {
     "cpu": "M4",
@@ -1866,7 +1954,8 @@
     "mem_bw_gbs": 120,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 24.11,
-    "priceNum": 7500.0
+    "priceNum": 7500.0,
+    "model": "MacBook Pro 14\" M4"
   },
   {
     "cpu": "M5 MAX",
@@ -1887,7 +1976,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 16799.0
+    "priceNum": 16799.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -1908,7 +1998,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 16899.0
+    "priceNum": 16899.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -1929,7 +2020,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 17999.0
+    "priceNum": 17999.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -1950,7 +2042,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 17999.0
+    "priceNum": 17999.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -1971,7 +2064,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 18398.0
+    "priceNum": 18398.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -1992,7 +2086,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 18398.0
+    "priceNum": 18398.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -2013,7 +2108,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 18749.0
+    "priceNum": 18749.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -2034,7 +2130,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 18749.0
+    "priceNum": 18749.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -2055,7 +2152,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 18749.0
+    "priceNum": 18749.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -2076,7 +2174,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 18749.0
+    "priceNum": 18749.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -2097,7 +2196,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 19148.0
+    "priceNum": 19148.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -2118,7 +2218,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 19148.0
+    "priceNum": 19148.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -2139,7 +2240,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 19148.0
+    "priceNum": 19148.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -2160,7 +2262,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 19148.0
+    "priceNum": 19148.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -2181,7 +2284,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 20999.0
+    "priceNum": 20999.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -2202,7 +2306,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 20999.0
+    "priceNum": 20999.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -2223,7 +2328,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 20999.0
+    "priceNum": 20999.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -2244,7 +2350,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 20999.0
+    "priceNum": 20999.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -2265,7 +2372,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 21398.0
+    "priceNum": 21398.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -2286,7 +2394,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 21398.0
+    "priceNum": 21398.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -2307,7 +2416,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 21398.0
+    "priceNum": 21398.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -2328,7 +2438,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 21398.0
+    "priceNum": 21398.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -2349,7 +2460,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 21749.0
+    "priceNum": 21749.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 MAX",
@@ -2370,7 +2482,8 @@
     "mem_bw_gbs": 546,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 85.0,
-    "priceNum": 21749.0
+    "priceNum": 21749.0,
+    "model": "MacBook Pro 14\" M5 MAX"
   },
   {
     "cpu": "M5 PRO",
@@ -2391,7 +2504,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 11999.0
+    "priceNum": 11999.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5 PRO",
@@ -2412,7 +2526,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 11999.0
+    "priceNum": 11999.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5 PRO",
@@ -2433,7 +2548,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 11999.0
+    "priceNum": 11999.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5 PRO",
@@ -2454,7 +2570,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 11398.0
+    "priceNum": 11398.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5 PRO",
@@ -2475,7 +2592,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 11318.0
+    "priceNum": 11318.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5 PRO",
@@ -2496,7 +2614,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 10999.0
+    "priceNum": 10999.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5 PRO",
@@ -2517,7 +2636,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 11749.0
+    "priceNum": 11749.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5 PRO",
@@ -2538,7 +2658,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 11749.0
+    "priceNum": 11749.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5 PRO",
@@ -2559,7 +2680,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 10699.0
+    "priceNum": 10699.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5 PRO",
@@ -2580,7 +2702,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 10599.0
+    "priceNum": 10599.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5 PRO",
@@ -2601,7 +2724,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 9999.0
+    "priceNum": 9999.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5 PRO",
@@ -2622,7 +2746,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 11749.0
+    "priceNum": 11749.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5 PRO",
@@ -2643,7 +2768,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 11749.0
+    "priceNum": 11749.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5 PRO",
@@ -2664,7 +2790,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 11999.0
+    "priceNum": 11999.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5 PRO",
@@ -2685,7 +2812,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 9999.0
+    "priceNum": 9999.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5 PRO",
@@ -2706,7 +2834,8 @@
     "mem_bw_gbs": 307,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 57.0,
-    "priceNum": 10199.0
+    "priceNum": 10199.0,
+    "model": "MacBook Pro 14\" M5 PRO"
   },
   {
     "cpu": "M5",
@@ -2727,7 +2856,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 10499.0
+    "priceNum": 10499.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -2748,7 +2878,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 10499.0
+    "priceNum": 10499.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -2769,7 +2900,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 10898.0
+    "priceNum": 10898.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -2790,7 +2922,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 10818.0
+    "priceNum": 10818.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -2811,7 +2944,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 10499.0
+    "priceNum": 10499.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -2832,7 +2966,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 10249.0
+    "priceNum": 10249.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -2853,7 +2988,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 11648.0
+    "priceNum": 11648.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -2874,7 +3010,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 11568.0
+    "priceNum": 11568.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -2895,7 +3032,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 11249.0
+    "priceNum": 11249.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -2916,7 +3054,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 10898.0
+    "priceNum": 10898.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -2937,7 +3076,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 10818.0
+    "priceNum": 10818.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -2958,7 +3098,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 10499.0
+    "priceNum": 10499.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -2979,7 +3120,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 8499.0
+    "priceNum": 8499.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3000,7 +3142,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 8499.0
+    "priceNum": 8499.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3021,7 +3164,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 9499.0
+    "priceNum": 9499.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3042,7 +3186,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 9499.0
+    "priceNum": 9499.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3063,7 +3208,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 10249.0
+    "priceNum": 10249.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3084,7 +3230,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 8499.0
+    "priceNum": 8499.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3105,7 +3252,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 8499.0
+    "priceNum": 8499.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3126,7 +3274,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 9648.0
+    "priceNum": 9648.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3147,7 +3296,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 9568.0
+    "priceNum": 9568.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3168,7 +3318,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 9249.0
+    "priceNum": 9249.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3189,7 +3340,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 11648.0
+    "priceNum": 11648.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3210,7 +3362,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 11568.0
+    "priceNum": 11568.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3231,7 +3384,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 11249.0
+    "priceNum": 11249.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3252,7 +3406,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 10898.0
+    "priceNum": 10898.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3273,7 +3428,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 10818.0
+    "priceNum": 10818.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3294,7 +3450,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 10499.0
+    "priceNum": 10499.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3315,7 +3472,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 10648.0
+    "priceNum": 10648.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3336,7 +3494,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 10568.0
+    "priceNum": 10568.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3357,7 +3516,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 10249.0
+    "priceNum": 10249.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M5",
@@ -3378,7 +3538,8 @@
     "mem_bw_gbs": 154,
     "llm_gpu_cores": 10,
     "llama2_7b_q4_tg": 29.6,
-    "priceNum": 9898.0
+    "priceNum": 9898.0,
+    "model": "MacBook Pro 14\" M5"
   },
   {
     "cpu": "M2 PRO",
@@ -3399,7 +3560,8 @@
     "mem_bw_gbs": 200,
     "llm_gpu_cores": 19,
     "llama2_7b_q4_tg": 38.86,
-    "priceNum": 8499.0
+    "priceNum": 8499.0,
+    "model": "MacBook Pro 14\" M2 PRO"
   },
   {
     "cpu": "M2 MAX",
@@ -3421,7 +3583,8 @@
     "llm_gpu_cores": 38,
     "llama2_7b_q4_tg": 65.95,
     "priceNum": 9499.0,
-    "source": "lantre.pl"
+    "source": "lantre.pl",
+    "model": "MacBook Pro 14\" M2 MAX"
   },
   {
     "cpu": "M4 PRO",
@@ -3442,7 +3605,8 @@
     "mem_bw_gbs": 273,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 50.74,
-    "priceNum": 10329.0
+    "priceNum": 10329.0,
+    "model": "MacBook Pro 14\" M4 PRO"
   },
   {
     "cpu": "M4 PRO",
@@ -3463,7 +3627,8 @@
     "mem_bw_gbs": 273,
     "llm_gpu_cores": 20,
     "llama2_7b_q4_tg": 50.74,
-    "priceNum": 15999.0
+    "priceNum": 15999.0,
+    "model": "MacBook Pro 14\" M4 PRO"
   },
   {
     "cpu": "M2 MAX",
@@ -3484,7 +3649,8 @@
     "mem_bw_gbs": 400,
     "llm_gpu_cores": 38,
     "llama2_7b_q4_tg": 65.95,
-    "priceNum": 6550.0
+    "priceNum": 6550.0,
+    "model": "MacBook Pro 14\" M2 MAX"
   },
   {
     "cpu": "M2 MAX",
@@ -3505,7 +3671,8 @@
     "mem_bw_gbs": 400,
     "llm_gpu_cores": 38,
     "llama2_7b_q4_tg": 65.95,
-    "priceNum": 6666.0
+    "priceNum": 6666.0,
+    "model": "MacBook Pro 14\" M2 MAX"
   },
   {
     "cpu": "M2 MAX",
@@ -3526,7 +3693,8 @@
     "mem_bw_gbs": 400,
     "llm_gpu_cores": 38,
     "llama2_7b_q4_tg": 65.95,
-    "priceNum": 7999.0
+    "priceNum": 7999.0,
+    "model": "MacBook Pro 16\" M2 MAX"
   },
   {
     "cpu": "M2 MAX",
@@ -3547,7 +3715,8 @@
     "mem_bw_gbs": 400,
     "llm_gpu_cores": 38,
     "llama2_7b_q4_tg": 65.95,
-    "priceNum": 9500.0
+    "priceNum": 9500.0,
+    "model": "MacBook Pro 16\" M2 MAX"
   },
   {
     "cpu": "M1 MAX",
@@ -3568,7 +3737,8 @@
     "mem_bw_gbs": 400,
     "llm_gpu_cores": 32,
     "llama2_7b_q4_tg": 60.0,
-    "priceNum": 7500.0
+    "priceNum": 7500.0,
+    "model": "MacBook Pro 16\" M1 MAX"
   },
   {
     "cpu": "M1 MAX",
@@ -3589,7 +3759,8 @@
     "mem_bw_gbs": 400,
     "llm_gpu_cores": 32,
     "llama2_7b_q4_tg": 60.0,
-    "priceNum": 7000.0
+    "priceNum": 7000.0,
+    "model": "MacBook Pro 16\" M1 MAX"
   },
   {
     "cpu": "M2 MAX",
@@ -3610,7 +3781,8 @@
     "mem_bw_gbs": 400,
     "llm_gpu_cores": 38,
     "llama2_7b_q4_tg": 65.95,
-    "priceNum": 7600.0
+    "priceNum": 7600.0,
+    "model": "MacBook Pro 14\" M2 MAX"
   },
   {
     "cpu": "M2 MAX",
@@ -3631,7 +3803,8 @@
     "mem_bw_gbs": 400,
     "llm_gpu_cores": 38,
     "llama2_7b_q4_tg": 65.95,
-    "priceNum": 5100.0
+    "priceNum": 5100.0,
+    "model": "MacBook Pro 16\" M2 MAX"
   },
   {
     "cpu": "M2 MAX",
@@ -3652,7 +3825,8 @@
     "mem_bw_gbs": 400,
     "llm_gpu_cores": 38,
     "llama2_7b_q4_tg": 65.95,
-    "priceNum": 9900.0
+    "priceNum": 9900.0,
+    "model": "MacBook Pro 16\" M2 MAX"
   },
   {
     "cpu": "M2 MAX",
@@ -3673,7 +3847,8 @@
     "mem_bw_gbs": 400,
     "llm_gpu_cores": 38,
     "llama2_7b_q4_tg": 65.95,
-    "priceNum": 8990.0
+    "priceNum": 8990.0,
+    "model": "MacBook Pro 14\" M2 MAX"
   },
   {
     "cpu": "M3 MAX",
@@ -3694,7 +3869,8 @@
     "mem_bw_gbs": 400,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 66.31,
-    "priceNum": 11500.0
+    "priceNum": 11500.0,
+    "model": "MacBook Pro 14\" M3 MAX"
   },
   {
     "cpu": "M3 MAX",
@@ -3715,7 +3891,8 @@
     "mem_bw_gbs": 400,
     "llm_gpu_cores": 40,
     "llama2_7b_q4_tg": 66.31,
-    "priceNum": 8500.0
+    "priceNum": 8500.0,
+    "model": "MacBook Pro 14\" M3 MAX"
   },
   {
     "cpu": "M2 MAX",
@@ -3736,7 +3913,8 @@
     "mem_bw_gbs": 400,
     "llm_gpu_cores": 38,
     "llama2_7b_q4_tg": 65.95,
-    "priceNum": 9999.0
+    "priceNum": 9999.0,
+    "model": "MacBook Pro 16\" M2 MAX"
   },
   {
     "title": "Macbook Pro M4 Max (16-cali, 64GB Ram, 1TB SSD, AppleCare, US ANSII)",
@@ -3769,7 +3947,7 @@
   },
   {
     "title": "Macbook Pro 16' M1 Max 64 GB 512GB 99% Baterii",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "MacBook Pro 16\" M1 MAX",
     "cpu": "M1 MAX",
     "ram": "64GB",
     "disk": "512GB",
@@ -3943,7 +4121,7 @@
   },
   {
     "title": "Apple MacBook PRO 16 M1 Max 8TB 64GB Space Grey",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "MacBook Pro 16\" M1 MAX",
     "cpu": "M1 MAX",
     "ram": "64GB",
     "disk": "8TB",
@@ -3972,7 +4150,7 @@
   },
   {
     "title": "Laptop Apple MacBook Pro 16 A2485 M1 Max 64gb 1tb ssd A+ fv23",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "MacBook Pro 16\" M1 MAX",
     "cpu": "M1 MAX",
     "ram": "64GB",
     "disk": "1TB",
@@ -4001,7 +4179,7 @@
   },
   {
     "title": "Apple MacBook Pro 16 M1 Max 32-core 64GB RAM 1TB SSD A2485 Space Gray GRATISY",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "MacBook Pro 16\" M1 MAX",
     "cpu": "M1 MAX",
     "ram": "64GB",
     "disk": "1TB",
@@ -4059,7 +4237,7 @@
   },
   {
     "title": "Macbook pro 16 m3 Max 64 GB 1 TB z MDM 40 GPU",
-    "model": "MacBook Pro 14\" M3 MAX",
+    "model": "MacBook Pro 16\" M3 MAX",
     "cpu": "M3 MAX",
     "ram": "64GB",
     "disk": "1TB",
@@ -4088,7 +4266,7 @@
   },
   {
     "title": "MacBook Pro 16” M1 Max 32GB RAM 1TB SSD Bateria 88%",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "MacBook Pro 16\" M1 MAX",
     "cpu": "M1 MAX",
     "ram": "32GB",
     "disk": "1TB",
@@ -4146,7 +4324,7 @@
   },
   {
     "title": "MacBook Pro 16” M1 Max 64 GB RAM 2TB SSD Silver FV23%",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "MacBook Pro 16\" M1 MAX",
     "cpu": "M1 MAX",
     "ram": "64GB",
     "disk": "2TB",
@@ -4233,7 +4411,7 @@
   },
   {
     "title": "MacBook Pro 16' M1 Max 64/512 GB 99% Baterii",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "MacBook Pro 16\" M1 MAX",
     "cpu": "M1 MAX",
     "ram": "",
     "disk": "512GB",
@@ -4262,7 +4440,7 @@
   },
   {
     "title": "MacBook Pro 16” M3 Max 16 CPU-40 GPU 1TB 64GB - Super stan!",
-    "model": "MacBook Pro 14\" M3 MAX",
+    "model": "MacBook Pro 16\" M3 MAX",
     "cpu": "M3 MAX",
     "ram": "64GB",
     "disk": "1TB",
@@ -4291,7 +4469,7 @@
   },
   {
     "title": "Macbook Pro 16 M1 Max 64/512Gb 94% bat",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "MacBook Pro 16\" M1 MAX",
     "cpu": "M1 MAX",
     "ram": "",
     "disk": "512GB",
@@ -4349,7 +4527,7 @@
   },
   {
     "title": "MacBook pro 16 M2 MAX 32gb/1TB magic mouse",
-    "model": "MacBook Pro 14\" M2 MAX",
+    "model": "MacBook Pro 16\" M2 MAX",
     "cpu": "M2 MAX",
     "ram": "32GB",
     "disk": "1TB",
@@ -4668,7 +4846,7 @@
   },
   {
     "title": "MacBook Pro 16 M1 Max 64 GB 1TB 2021 32 GPU",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "MacBook Pro 16\" M1 MAX",
     "cpu": "M1 MAX",
     "ram": "64GB",
     "disk": "1TB",
@@ -4755,7 +4933,7 @@
   },
   {
     "title": "MacBook PRO 16 M1 Max 1000GB",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "MacBook Pro 16\" M1 MAX",
     "cpu": "M1 MAX",
     "ram": "",
     "disk": "",
@@ -4842,7 +5020,7 @@
   },
   {
     "title": "Macbook Pro 16 M1 Max, 10 CPU, 32 GPU, 64GB RAM, 1TB SSD, Space Grey",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "MacBook Pro 16\" M1 MAX",
     "cpu": "M1 MAX",
     "ram": "64GB",
     "disk": "1TB",
@@ -4929,7 +5107,7 @@
   },
   {
     "title": "APPLE MACBOOK PRO 16 M1 MAX, 64 RAM / 4TB 10 CPU",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "MacBook Pro 16\" M1 MAX",
     "cpu": "M1 MAX",
     "ram": "",
     "disk": "4TB",
@@ -4958,7 +5136,7 @@
   },
   {
     "title": "Apple Mac Studio M1 Max 32 GB RAM 512 GB SSD- Stan idealny",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "Mac Studio M1 MAX",
     "cpu": "M1 MAX",
     "ram": "32GB",
     "disk": "512GB",
@@ -4987,7 +5165,7 @@
   },
   {
     "title": "Apple Mac Studio M1 Max - 32Gb 512 GB SSD",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "Mac Studio M1 MAX",
     "cpu": "M1 MAX",
     "ram": "32GB",
     "disk": "512GB",
@@ -5016,7 +5194,7 @@
   },
   {
     "title": "NOWY | GWARANCJA | Apple Mac Studio M1 MAX | 32GB | 512GB",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "Mac Studio M1 MAX",
     "cpu": "M1 MAX",
     "ram": "32GB",
     "disk": "512GB",
@@ -5045,7 +5223,7 @@
   },
   {
     "title": "Mac Studio M2 Max | 32GB | 512GB | Perfect Condition - Warranty 2027",
-    "model": "MacBook Pro 14\" M2 MAX",
+    "model": "Mac Studio M2 MAX",
     "cpu": "M2 MAX",
     "ram": "32GB",
     "disk": "512GB",
@@ -5074,7 +5252,7 @@
   },
   {
     "title": "Apple Mac Studio M1 Max / 32GB RAM / 512GB SSD – stan idealny",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "Mac Studio M1 MAX",
     "cpu": "M1 MAX",
     "ram": "32GB",
     "disk": "512GB",
@@ -5103,7 +5281,7 @@
   },
   {
     "title": "Mac Studio M2 Max 32GB RAM",
-    "model": "MacBook Pro 14\" M2 MAX",
+    "model": "Mac Studio M2 MAX",
     "cpu": "M2 MAX",
     "ram": "32GB",
     "disk": "",
@@ -5132,7 +5310,7 @@
   },
   {
     "title": "mac studio M2 MAX 32gb/512gb",
-    "model": "MacBook Pro 14\" M2 MAX",
+    "model": "Mac Studio M2 MAX",
     "cpu": "M2 MAX",
     "ram": "32GB",
     "disk": "512GB",
@@ -5161,7 +5339,7 @@
   },
   {
     "title": "Mac Studio M1 Max 32gb 512 gb komplet, FVAT",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "Mac Studio M1 MAX",
     "cpu": "M1 MAX",
     "ram": "32GB",
     "disk": "512GB",
@@ -5190,7 +5368,7 @@
   },
   {
     "title": "Mac Studio M1 Max 32 GB / 512 GB (FVAT)",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "Mac Studio M1 MAX",
     "cpu": "M1 MAX",
     "ram": "32GB",
     "disk": "512GB",
@@ -5219,7 +5397,7 @@
   },
   {
     "title": "Apple Mac Studio M2 Max SSD 1Tb / RAM 64Gb, GPU 38 cores, Sequoia 15.5",
-    "model": "MacBook Pro 14\" M2 MAX",
+    "model": "Mac Studio M2 MAX",
     "cpu": "M2 MAX",
     "ram": "64GB",
     "disk": "1TB",
@@ -5248,7 +5426,7 @@
   },
   {
     "title": "Apple Mac Studio M1 Max 64GB RAM 2TB SSD - stan idealny, bez wad",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "Mac Studio M1 MAX",
     "cpu": "M1 MAX",
     "ram": "64GB",
     "disk": "2TB",
@@ -5277,7 +5455,7 @@
   },
   {
     "title": "Mac Studio M2 Max 32GB Ram/ 512 GB dysk",
-    "model": "MacBook Pro 14\" M2 MAX",
+    "model": "Mac Studio M2 MAX",
     "cpu": "M2 MAX",
     "ram": "32GB",
     "disk": "512GB",
@@ -5306,7 +5484,7 @@
   },
   {
     "title": "Apple Mac Studio M1 Max/32GB RAM/ 512GB SSD+4TB HD/Satechi KB",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "Mac Studio M1 MAX",
     "cpu": "M1 MAX",
     "ram": "32GB",
     "disk": "4TB",
@@ -5335,7 +5513,7 @@
   },
   {
     "title": "Apple Mac Studio (2022) M1 Max / 32 GB RAM / 1 TB SSD",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "Mac Studio M1 MAX",
     "cpu": "M1 MAX",
     "ram": "32GB",
     "disk": "1TB",
@@ -5364,7 +5542,7 @@
   },
   {
     "title": "Apple Mac Studio M1 Max 32GB RAM 512GB SSD",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "Mac Studio M1 MAX",
     "cpu": "M1 MAX",
     "ram": "32GB",
     "disk": "512GB",
@@ -5393,7 +5571,7 @@
   },
   {
     "title": "Apple Mac Studio M1 Ultra 64 GB RAM 1 TB",
-    "model": "MacBook Pro 13\" M1",
+    "model": "Mac Studio M1 ULTRA",
     "cpu": "M1 ULTRA",
     "ram": "64GB",
     "disk": "1TB",
@@ -5422,7 +5600,7 @@
   },
   {
     "title": "Mac Studio M2 Max 64GB / 30CPU / 512 GB + Magic Mouse + Magic Keyboard",
-    "model": "MacBook Pro 14\" M2 MAX",
+    "model": "Mac Studio M2 MAX",
     "cpu": "M2 MAX",
     "ram": "64GB",
     "disk": "512GB",
@@ -5451,7 +5629,7 @@
   },
   {
     "title": "Apple Mac Studio M1 Max/32GB RAM/ 512GB SSD+4TB HD/Satechi KB",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "Mac Studio M1 MAX",
     "cpu": "M1 MAX",
     "ram": "32GB",
     "disk": "4TB",
@@ -5480,7 +5658,7 @@
   },
   {
     "title": "Apple Mac Studio M2 Max 12-core CPU 30-core GPU 32GB RAM 512GB SSD GW",
-    "model": "MacBook Pro 14\" M2 MAX",
+    "model": "Mac Studio M2 MAX",
     "cpu": "M2 MAX",
     "ram": "32GB",
     "disk": "512GB",
@@ -5509,7 +5687,7 @@
   },
   {
     "title": "Apple Mac Studio M2 Max 1TB",
-    "model": "MacBook Pro 14\" M2 MAX",
+    "model": "Mac Studio M2 MAX",
     "cpu": "M2 MAX",
     "ram": "",
     "disk": "1TB",
@@ -5538,7 +5716,7 @@
   },
   {
     "title": "Mac Studio M1 Max - 32GB RAM - 512GB",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "Mac Studio M1 MAX",
     "cpu": "M1 MAX",
     "ram": "32GB",
     "disk": "512GB",
@@ -5567,7 +5745,7 @@
   },
   {
     "title": "Apple Mac Studio M1 Max",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "Mac Studio M1 MAX",
     "cpu": "M1 MAX",
     "ram": "",
     "disk": "",
@@ -5596,7 +5774,7 @@
   },
   {
     "title": "Mac Studio M1 Max RAM 32GB dysk SSD 512 GB",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "Mac Studio M1 MAX",
     "cpu": "M1 MAX",
     "ram": "32GB",
     "disk": "32GB",
@@ -5625,7 +5803,7 @@
   },
   {
     "title": "Apple Mac Studio M2 Max | 32 GB RAM | 512 GB SSD",
-    "model": "MacBook Pro 14\" M2 MAX",
+    "model": "Mac Studio M2 MAX",
     "cpu": "M2 MAX",
     "ram": "32GB",
     "disk": "512GB",
@@ -5654,7 +5832,7 @@
   },
   {
     "title": "Mac Studio M1 Max 2022",
-    "model": "MacBook Pro 14\" M1 MAX",
+    "model": "Mac Studio M1 MAX",
     "cpu": "M1 MAX",
     "ram": "",
     "disk": "",
@@ -7713,7 +7891,7 @@
   },
   {
     "title": "Apple MacBook Air 13” M4 — nowy, fabrycznie zapakowany",
-    "model": "MacBook Pro 13\" M4",
+    "model": "MacBook Air 13\" M4",
     "cpu": "M4",
     "ram": "",
     "disk": "",
@@ -7742,7 +7920,7 @@
   },
   {
     "title": "Macbook Air 15\"/M3/24GB RAM/1TB SSD",
-    "model": "MacBook Pro 14\" M3",
+    "model": "MacBook Air 14\" M3",
     "cpu": "M3",
     "ram": "24GB",
     "disk": "1TB",
@@ -7771,7 +7949,7 @@
   },
   {
     "title": "MacBook Air 13.6” M2/24GB RAM / 1TB",
-    "model": "MacBook Pro 13\" M2",
+    "model": "MacBook Air 13\" M2",
     "cpu": "M2",
     "ram": "24GB",
     "disk": "1TB",
@@ -7800,7 +7978,7 @@
   },
   {
     "title": "Macbook Air 13 2022/ M2/ 24GB DDR5/ 1TB SSD/ 153 cykli/ Grade C do D/ Midnight + zasilacz/ sprawny",
-    "model": "MacBook Pro 13\" M2",
+    "model": "MacBook Air 13\" M2",
     "cpu": "M2",
     "ram": "24GB",
     "disk": "1TB",
@@ -7829,7 +8007,7 @@
   },
   {
     "title": "MacBook Air 15\" M4 | 24GB RAM | 512GB SSD | Stan Igła | Gwarancja | 53 cykle 100% błękitny",
-    "model": "MacBook Pro 14\" M4",
+    "model": "MacBook Air 14\" M4",
     "cpu": "M4",
     "ram": "24GB",
     "disk": "512GB",
@@ -7858,7 +8036,7 @@
   },
   {
     "title": "Apple MacBook Air 13 m4 24 GB 512 GB gw apple min do 07.2026",
-    "model": "MacBook Pro 14\" M4",
+    "model": "MacBook Air 14\" M4",
     "cpu": "M4",
     "ram": "24GB",
     "disk": "512GB",
@@ -7887,7 +8065,7 @@
   },
   {
     "title": "Apple MacBook Air M2 - 24GB Ram / 256GB SSD - Stan IDEALNY!",
-    "model": "MacBook Pro 13\" M2",
+    "model": "MacBook Air 13\" M2",
     "cpu": "M2",
     "ram": "24GB",
     "disk": "256GB",
@@ -7916,7 +8094,7 @@
   },
   {
     "title": "Macbook Air 13 M4 24GB RAM 512GB SSD - bateria 100% GWARANCJA!",
-    "model": "MacBook Pro 14\" M4",
+    "model": "MacBook Air 14\" M4",
     "cpu": "M4",
     "ram": "24GB",
     "disk": "512GB",
@@ -7945,7 +8123,7 @@
   },
   {
     "title": "MacBook Air 13” M2 / 24GB RAM / 1TB SSD / Midnight – TOP stan + pudełko",
-    "model": "MacBook Pro 13\" M2",
+    "model": "MacBook Air 13\" M2",
     "cpu": "M2",
     "ram": "24GB",
     "disk": "1TB",
@@ -7974,7 +8152,7 @@
   },
   {
     "title": "Komputer mini PC Apple M3 Ultra 96 GB 1 TB SSD srebrny",
-    "model": "MacBook Pro 14\" M3",
+    "model": "MacBook Pro 14\" M3 ULTRA",
     "cpu": "M3 ULTRA",
     "ram": "96GB",
     "disk": "1TB",
@@ -8003,7 +8181,7 @@
   },
   {
     "title": "Komputer Apple Mac Studio srebrny M2 Ultra 64 GB 1 TB",
-    "model": "Mac Studio M2",
+    "model": "Mac Studio M2 ULTRA",
     "cpu": "M2 ULTRA",
     "ram": "64GB",
     "disk": "1TB",
@@ -8032,7 +8210,7 @@
   },
   {
     "title": "Mac Studio 2023 M2 Ultra/64GB/1TB 60C GPU/Silver",
-    "model": "Mac Studio M2",
+    "model": "Mac Studio M2 ULTRA",
     "cpu": "M2 ULTRA",
     "ram": "64GB",
     "disk": "1TB",
@@ -8061,7 +8239,7 @@
   },
   {
     "title": "Mac Studio M3 Ultra(28cpu+60gpu) 96GB 2TB Silver",
-    "model": "Mac Studio M3",
+    "model": "Mac Studio M3 ULTRA",
     "cpu": "M3 ULTRA",
     "ram": "96GB",
     "disk": "2TB",
@@ -8090,7 +8268,7 @@
   },
   {
     "title": "Komputer Apple Mac Pro Tower M2 Ultra 64 GB RAM/1 TB SSD srebrny",
-    "model": "MacBook Pro 13\" M2",
+    "model": "MacBook Pro 14\" M2 ULTRA",
     "cpu": "M2 ULTRA",
     "ram": "64GB",
     "disk": "1TB",
@@ -8554,7 +8732,7 @@
   },
   {
     "title": "NOWY Apple MacBook Air 13 M1 16GB RAM 256GB DODATKI CARE+ GW-3LATA! FV",
-    "model": "MacBook Pro 13\" M1",
+    "model": "MacBook Air 13\" M1",
     "cpu": "M1",
     "ram": "16GB",
     "disk": "256GB",
@@ -8583,7 +8761,7 @@
   },
   {
     "title": "NOWY Apple MacBook Air 13 M1 16GB RAM 256GB GRAY CARE+ GW-3LATA! FV23%",
-    "model": "MacBook Pro 13\" M1",
+    "model": "MacBook Air 13\" M1",
     "cpu": "M1",
     "ram": "16GB",
     "disk": "256GB",
@@ -8931,7 +9109,7 @@
   },
   {
     "title": "MacBook Air M2 24Gb 2Tb nowy ekran",
-    "model": "MacBook Pro 13\" M2",
+    "model": "MacBook Air 13\" M2",
     "cpu": "M2",
     "ram": "24GB",
     "disk": "2TB",
@@ -9221,7 +9399,7 @@
   },
   {
     "title": "MacBook Air 13\" (M4) 24gb(ram) 512gb sigilat",
-    "model": "MacBook Pro 13\" M4",
+    "model": "MacBook Air 13\" M4",
     "cpu": "M4",
     "ram": "24GB",
     "disk": "512GB",
@@ -9482,7 +9660,7 @@
   },
   {
     "title": "Apple MacBook Air M2  – 24GB ram/ 256GB SSD – Gwiezdna Szarość – stan idealny",
-    "model": "MacBook Pro 13\" M2",
+    "model": "MacBook Air 13\" M2",
     "cpu": "M2",
     "ram": "24GB",
     "disk": "256GB",
@@ -9569,7 +9747,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air 13,6'' M2 16GB 256GB SSD macOS północ Retina 8CPU",
-    "model": "MacBook Pro 13\" M2",
+    "model": "MacBook Air 13\" M2",
     "cpu": "M2",
     "ram": "16GB",
     "disk": "256GB",
@@ -9629,7 +9807,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air M1 (2020) 13,3\" Apple M 8 GB / 256 GB szary",
-    "model": "MacBook Pro 13\" M1",
+    "model": "MacBook Air 13\" M1",
     "cpu": "M1",
     "ram": "8GB",
     "disk": "256GB",
@@ -9689,7 +9867,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air 13,3 \" Apple M 8 GB / 256 GB złoty",
-    "model": "MacBook Pro 13\"",
+    "model": "MacBook Air 13\"",
     "cpu": "M1",
     "ram": "8GB",
     "disk": "256GB",
@@ -9719,7 +9897,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air 2020 M1 8 GB SSD 512 GB 13.3\" (2560x1600) Retina",
-    "model": "MacBook Pro 13\" M1",
+    "model": "MacBook Air 13\" M1",
     "cpu": "M1",
     "ram": "8GB",
     "disk": "512GB",
@@ -9749,7 +9927,7 @@
   },
   {
     "title": "Apple MacBook Air 13 A2337 M1 16GB 256GB SSD Retina 2020 Uszkodzony Ekran",
-    "model": "MacBook Pro 13\" M1",
+    "model": "MacBook Air 13\" M1",
     "cpu": "M1",
     "ram": "16GB",
     "disk": "256GB",
@@ -10019,7 +10197,7 @@
   },
   {
     "title": "Laptop Apple MacBookAir 13,6 \" Apple M 8 GB / 256 GB niebieski",
-    "model": "MacBook Pro 13\"",
+    "model": "MacBook Air 13\"",
     "cpu": "M2",
     "ram": "8GB",
     "disk": "256GB",
@@ -10079,7 +10257,7 @@
   },
   {
     "title": "Laptop Macbook Air 13 A2337 Retina 13\" M1 / 8GB / 256 GB",
-    "model": "MacBook Pro 13\" M1",
+    "model": "MacBook Air 13\" M1",
     "cpu": "M1",
     "ram": "8GB",
     "disk": "256GB",
@@ -10199,7 +10377,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air 13.6 2024 13,6 \" Apple M 16 GB / 256 GB",
-    "model": "MacBook Pro 13\"",
+    "model": "MacBook Air 13\"",
     "cpu": "M3",
     "ram": "16GB",
     "disk": "256GB",
@@ -10349,7 +10527,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air 13 A2681 (2022) 13,6 \" Apple M 8 GB / 256 GB",
-    "model": "MacBook Pro 13\"",
+    "model": "MacBook Air 13\"",
     "cpu": "M2",
     "ram": "8GB",
     "disk": "256GB",
@@ -10379,7 +10557,7 @@
   },
   {
     "title": "Apple MacBook Air M1 13 2020 SSD 256GB 8GB RAM uszkodzony",
-    "model": "MacBook Pro 13\" M1",
+    "model": "MacBook Air 13\" M1",
     "cpu": "M1",
     "ram": "8GB",
     "disk": "256GB",
@@ -10409,7 +10587,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air M2 A2681 13,6\" Apple M2 8 GB / 256 GB szary",
-    "model": "MacBook Pro 13\" M2",
+    "model": "MacBook Air 13\" M2",
     "cpu": "M2",
     "ram": "8GB",
     "disk": "256GB",
@@ -10439,7 +10617,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air A2681 13,6 \" Apple M2 8 GB / 256 GB szary",
-    "model": "MacBook Pro 13\" M2",
+    "model": "MacBook Air 13\" M2",
     "cpu": "M2",
     "ram": "8GB",
     "disk": "256GB",
@@ -10469,7 +10647,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air A2681 13,6 \" 8 GB / 256 GB Midnight",
-    "model": "MacBook Pro 13\"",
+    "model": "MacBook Air 13\"",
     "cpu": "M2",
     "ram": "8GB",
     "disk": "256GB",
@@ -10649,7 +10827,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air \"M2\" 8 CPU/8 GPU 13\" 13,6 \" Apple M2 8 GB / 256 GB",
-    "model": "MacBook Pro 13\" M2",
+    "model": "MacBook Air 13\" M2",
     "cpu": "M2",
     "ram": "8GB",
     "disk": "256GB",
@@ -10739,7 +10917,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air 2025 13,6 \" Apple M4 24 GB / 512 GB srebrny",
-    "model": "MacBook Pro 13\" M4",
+    "model": "MacBook Air 13\" M4",
     "cpu": "M4",
     "ram": "24GB",
     "disk": "512GB",
@@ -10769,7 +10947,7 @@
   },
   {
     "title": "Laptop Apple Macbook Air 15.3 (2025) 15,3 \" Apple M4 24 GB /512 GB Midnight",
-    "model": "MacBook Pro 14\" M4",
+    "model": "MacBook Air 14\" M4",
     "cpu": "M4",
     "ram": "24GB",
     "disk": "512GB",
@@ -10829,7 +11007,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air 2025 13,6'' M4 24GB 512GB SSD macOS srebrny 10CPU",
-    "model": "MacBook Pro 13\" M4",
+    "model": "MacBook Air 13\" M4",
     "cpu": "M4",
     "ram": "24GB",
     "disk": "512GB",
@@ -10859,7 +11037,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air 15 M5 (2026) 15,3 \" Apple M 24 GB / 1024 GB czarny",
-    "model": "MacBook Pro 14\" M5",
+    "model": "MacBook Air 14\" M5",
     "cpu": "M5",
     "ram": "24GB",
     "disk": "1024GB",
@@ -10889,7 +11067,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air 2025 15,3\" Apple M4 24 GB / 512 GB złoty",
-    "model": "MacBook Pro 14\" M4",
+    "model": "MacBook Air 14\" M4",
     "cpu": "M4",
     "ram": "24GB",
     "disk": "512GB",
@@ -11009,7 +11187,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air 2025 15,3'' M4 24GB 512GB SSD macOS Błękitny 10CPU",
-    "model": "MacBook Pro 14\" M4",
+    "model": "MacBook Air 14\" M4",
     "cpu": "M4",
     "ram": "24GB",
     "disk": "512GB",
@@ -11309,7 +11487,7 @@
   },
   {
     "title": "Laptop MacBook Air 15\" M3 24 GB 1 TB SSD Midnight CPO",
-    "model": "MacBook Pro 14\" M3",
+    "model": "MacBook Air 14\" M3",
     "cpu": "M3",
     "ram": "24GB",
     "disk": "1TB",
@@ -11369,7 +11547,7 @@
   },
   {
     "title": "Macbook Air 13 2022/ M2/ 24GB DDR5/ 1TB SSD/ 153 cykli/ GR C do D/ Midnight",
-    "model": "MacBook Pro 13\" M2",
+    "model": "MacBook Air 13\" M2",
     "cpu": "M2",
     "ram": "24GB",
     "disk": "1TB",
@@ -11579,7 +11757,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air 13 M4 13,6 \" Apple M4 24 GB / 512 GB złoty",
-    "model": "MacBook Pro 13\" M4",
+    "model": "MacBook Air 13\" M4",
     "cpu": "M4",
     "ram": "24GB",
     "disk": "512GB",
@@ -11759,7 +11937,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air 13,6 \" Apple M 32 GB / 1000 GB niebieski",
-    "model": "MacBook Pro 13\"",
+    "model": "MacBook Air 13\"",
     "cpu": "M4",
     "ram": "32GB",
     "disk": "1000GB",
@@ -12149,7 +12327,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air 14,2 13 \" Apple M2 24 GB / 1000 GB srebrny",
-    "model": "MacBook Pro 13\" M2",
+    "model": "MacBook Air 13\" M2",
     "cpu": "M2",
     "ram": "24GB",
     "disk": "1000GB",
@@ -12539,7 +12717,7 @@
   },
   {
     "title": "Ultrabook Apple MacBook Air M2 24 GB RAM 512 GB SSD srebrny",
-    "model": "MacBook Pro 13\" M2",
+    "model": "MacBook Air 13\" M2",
     "cpu": "M2",
     "ram": "24GB",
     "disk": "512GB",
@@ -12629,7 +12807,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air 13.6 (2025) 13,6\" Apple M4 24 GB / 1000 GB złoty",
-    "model": "MacBook Pro 13\" M4",
+    "model": "MacBook Air 13\" M4",
     "cpu": "M4",
     "ram": "24GB",
     "disk": "1000GB",
@@ -12719,7 +12897,7 @@
   },
   {
     "title": "Apple Macbook Air - M4 (10/10) 13,6\" 24GB 512GB Mac OS Błękitny",
-    "model": "MacBook Pro 13\" M4",
+    "model": "MacBook Air 13\" M4",
     "cpu": "M4",
     "ram": "24GB",
     "disk": "512GB",
@@ -13019,7 +13197,7 @@
   },
   {
     "title": "Laptop Apple MacBook Air M2 13,6 \" Apple M 24 GB / 512 GB szary",
-    "model": "MacBook Pro 13\" M2",
+    "model": "MacBook Air 13\" M2",
     "cpu": "M2",
     "ram": "24GB",
     "disk": "512GB",
@@ -13259,7 +13437,7 @@
   },
   {
     "title": "Okazja Macbook Air a2337 M1/8gb ram/256gb ssd/13.3”/uszkodzona matryc",
-    "model": "MacBook Pro 13\" M1",
+    "model": "MacBook Air 13\" M1",
     "cpu": "M1",
     "ram": "8GB",
     "disk": "256GB",
@@ -13349,7 +13527,7 @@
   },
   {
     "title": "MacBook Air 13,6″ (2022) z chipem Apple M2",
-    "model": "MacBook Pro 13\" M2",
+    "model": "MacBook Air 13\" M2",
     "cpu": "M2",
     "ram": "",
     "disk": "",
@@ -13379,7 +13557,7 @@
   },
   {
     "title": "Apple MacBook Air M1 8GB 256GB A2337 13,3'' 2020 Space Gray",
-    "model": "MacBook Pro 13\" M1",
+    "model": "MacBook Air 13\" M1",
     "cpu": "M1",
     "ram": "8GB",
     "disk": "256GB",
@@ -13409,7 +13587,7 @@
   },
   {
     "title": "Apple MacBook Air 13\" M1 16GB RAM 256GB SSD Srebrny | USZKODZONY",
-    "model": "MacBook Pro 13\" M1",
+    "model": "MacBook Air 13\" M1",
     "cpu": "M1",
     "ram": "16GB",
     "disk": "256GB",
@@ -13439,7 +13617,7 @@
   },
   {
     "title": "Macbook Air M2 - uszkodozny",
-    "model": "MacBook Pro 13\" M2",
+    "model": "MacBook Air 13\" M2",
     "cpu": "M2",
     "ram": "",
     "disk": "",
@@ -13469,7 +13647,7 @@
   },
   {
     "title": "Macbook Air M1 8GB 256GB uszkodzony",
-    "model": "MacBook Pro 13\" M1",
+    "model": "MacBook Air 13\" M1",
     "cpu": "M1",
     "ram": "8GB",
     "disk": "256GB",
@@ -13529,7 +13707,7 @@
   },
   {
     "title": "Macbook 13 Air 256GB M1",
-    "model": "MacBook Pro 13\" M1",
+    "model": "MacBook Air 13\" M1",
     "cpu": "M1",
     "ram": "",
     "disk": "256GB",
@@ -13589,7 +13767,7 @@
   },
   {
     "title": "Macbook air 13 2020 m1",
-    "model": "MacBook Pro 13\" M1",
+    "model": "MacBook Air 13\" M1",
     "cpu": "M1",
     "ram": "",
     "disk": "",
@@ -15179,7 +15357,7 @@
   },
   {
     "title": "Apple MacBook Air 15 M4 24GB 512GB AC+",
-    "model": "MacBook Pro 14\" M4",
+    "model": "MacBook Air 14\" M4",
     "cpu": "M4",
     "ram": "24GB",
     "disk": "512GB",

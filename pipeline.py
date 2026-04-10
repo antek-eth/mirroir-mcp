@@ -216,7 +216,10 @@ def parse_specs(title, description=""):
     elif screen == 'Mini':
         model = f'Mac Mini {cpu}' if cpu else 'Mac Mini'
     else:
-        model = f'MacBook Pro {screen}"' if screen else "MacBook Pro"
+        # Detect Air vs Pro from title
+        is_air = 'air' in tl
+        macbook_type = 'MacBook Air' if is_air else 'MacBook Pro'
+        model = f'{macbook_type} {screen}"' if screen else macbook_type
         if cpu:
             model += f" {cpu}"
 
@@ -590,6 +593,10 @@ input.filter-input::placeholder{color:var(--fg3)}
       <div class="chip-filters" id="sourceFilters"></div>
     </div>
     <div class="filter-group">
+      <span class="filter-label">Model</span>
+      <div class="chip-filters" id="modelFilters"></div>
+    </div>
+    <div class="filter-group">
       <span class="filter-label">Screen</span>
       <div class="chip-filters" id="screenFilters"></div>
     </div>
@@ -630,6 +637,7 @@ let activeChips = new Set();
 let activeTiers = new Set();
 let activeRams = new Set();
 let activeSources = new Set();
+let activeModels = new Set();
 let activeScreens = new Set();
 let hiddenListings = new Set(JSON.parse(localStorage.getItem('hiddenListings') || '[]'));
 
@@ -798,6 +806,15 @@ function initFilters() {
     btn.onclick = () => { btn.classList.toggle('active'); activeSources.has(s) ? activeSources.delete(s) : activeSources.add(s); applyFilters(); };
     sourceEl.appendChild(btn);
   });
+  const models = [...new Set(configs.map(c => c.model).filter(Boolean))].sort();
+  const modelEl = document.getElementById('modelFilters');
+  models.forEach(m => {
+    const btn = document.createElement('button');
+    btn.className = 'chip-btn';
+    btn.textContent = m;
+    btn.onclick = () => { btn.classList.toggle('active'); activeModels.has(m) ? activeModels.delete(m) : activeModels.add(m); applyFilters(); };
+    modelEl.appendChild(btn);
+  });
   const screenEl = document.getElementById('screenFilters');
   screens.forEach(s => {
     const btn = document.createElement('button');
@@ -835,6 +852,7 @@ function pushURL() {
   if (activeRams.size) p.set('ram', [...activeRams].join(','));
   if (activeScreens.size) p.set('screen', [...activeScreens].join(','));
   if (activeSources.size) p.set('source', [...activeSources].join(','));
+  if (activeModels.size) p.set('model', [...activeModels].join(','));
   const disk = document.getElementById('diskFilter').value;
   if (disk) p.set('disk', disk);
   const maxP = document.getElementById('priceMax').value.replace(/\s/g, '');
@@ -854,6 +872,7 @@ function loadURL() {
   if (p.has('ram')) p.get('ram').split(',').forEach(r => activeRams.add(r));
   if (p.has('screen')) p.get('screen').split(',').forEach(s => activeScreens.add(s));
   if (p.has('source')) p.get('source').split(',').forEach(s => activeSources.add(s));
+  if (p.has('model')) p.get('model').split(',').forEach(m => activeModels.add(m));
   if (p.has('disk')) document.getElementById('diskFilter').value = p.get('disk');
   if (p.has('maxprice')) document.getElementById('priceMax').value = p.get('maxprice');
   if (p.has('q')) document.getElementById('searchInput').value = p.get('q');
@@ -865,6 +884,7 @@ function loadURL() {
   document.querySelectorAll('#ramFilters .chip-btn').forEach(b => { if (activeRams.has(b.textContent)) b.classList.add('active'); });
   document.querySelectorAll('#screenFilters .chip-btn').forEach(b => { if (activeScreens.has(b.dataset.val)) b.classList.add('active'); });
   document.querySelectorAll('#sourceFilters .chip-btn').forEach(b => { if (activeSources.has(b.textContent)) b.classList.add('active'); });
+  document.querySelectorAll('#modelFilters .chip-btn').forEach(b => { if (activeModels.has(b.textContent)) b.classList.add('active'); });
   document.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b.dataset.view === currentView));
 }
 
@@ -896,6 +916,7 @@ function applyFilters() {
     if (activeRams.size && !activeRams.has(c.ram)) return false;
     if (activeScreens.size && !activeScreens.has(c.screen)) return false;
     if (activeSources.size && !c.listings.some(l => activeSources.has(l.source))) return false;
+    if (activeModels.size && !activeModels.has(c.model)) return false;
     if (disk && c.disk !== disk) return false;
     if (c.priceMin && c.priceMin > maxPrice) return false;
     if (search) {
