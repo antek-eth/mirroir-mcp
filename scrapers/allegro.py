@@ -51,7 +51,7 @@ def clean_price(p):
     return p
 
 def extract_cpu(url):
-    m = re.search(r'm(\d)[-_]?(pro|max)', url.lower())
+    m = re.search(r'm(\d)[-_]?(pro|max|ultra)', url.lower())
     if m:
         return f"M{m.group(1)} {m.group(2).upper()}"
     m = re.search(r'm(\d)(?![\w])', url.lower())

@@ -35,6 +35,7 @@ GB6 = {
     "M5":       {"gb6_single": 4225, "gb6_multi": 17453, "gb6_metal": 75898},
     "M5 PRO":   {"gb6_single": 4270, "gb6_multi": 26400, "gb6_metal": 122000},
     "M5 MAX":   {"gb6_single": 4300, "gb6_multi": 28000, "gb6_metal": 210000},
+    "M1 ULTRA": {"gb6_single": 2400, "gb6_multi": 17000, "gb6_metal": 155000},
     "M2 ULTRA": {"gb6_single": 2805, "gb6_multi": 20500, "gb6_metal": 195000},
     "M3 ULTRA": {"gb6_single": 3100, "gb6_multi": 28000, "gb6_metal": 240000},
 }
@@ -56,6 +57,7 @@ LLM = {
     "M5":       {"mem_bw_gbs": 154, "llm_gpu_cores": 10, "llama2_7b_q4_tg": 29.6,  "llama2_7b_q4_pp": None,   "llama2_7b_q8_tg": None,  "llama2_7b_f16_tg": None},
     "M5 PRO":   {"mem_bw_gbs": 307, "llm_gpu_cores": 20, "llama2_7b_q4_tg": 57.0,  "llama2_7b_q4_pp": None,   "llama2_7b_q8_tg": None,  "llama2_7b_f16_tg": None},
     "M5 MAX":   {"mem_bw_gbs": 546, "llm_gpu_cores": 40, "llama2_7b_q4_tg": 85.0,  "llama2_7b_q4_pp": None,   "llama2_7b_q8_tg": None,  "llama2_7b_f16_tg": None},
+    "M1 ULTRA": {"mem_bw_gbs": 800, "llm_gpu_cores": 48, "llama2_7b_q4_tg": 110.0, "llama2_7b_q4_pp": None,   "llama2_7b_q8_tg": None,  "llama2_7b_f16_tg": None},
     "M2 ULTRA": {"mem_bw_gbs": 800, "llm_gpu_cores": 60, "llama2_7b_q4_tg": 130.0, "llama2_7b_q4_pp": None,   "llama2_7b_q8_tg": None,  "llama2_7b_f16_tg": None},
     "M3 ULTRA": {"mem_bw_gbs": 800, "llm_gpu_cores": 60, "llama2_7b_q4_tg": 145.0, "llama2_7b_q4_pp": None,   "llama2_7b_q8_tg": None,  "llama2_7b_f16_tg": None},
 }
@@ -657,6 +659,7 @@ function parseLLM(v) {
 }
 function chipGen(cpu) { return cpu.match(/M(\d)/)?.[1] || '0'; }
 function chipTier(cpu) {
+  if (/ULTRA/.test(cpu)) return 'ULTRA';
   if (/MAX/.test(cpu)) return 'MAX';
   if (/PRO/.test(cpu)) return 'PRO';
   return 'Base';
@@ -730,7 +733,7 @@ function buildConfigs() {
 function initFilters() {
   const chips = [...new Set(configs.map(c => 'M' + chipGen(c.cpu)))].sort();
   const tiers = [...new Set(configs.map(c => chipTier(c.cpu)))].sort((a,b) => {
-    const order = { Base: 0, PRO: 1, MAX: 2 };
+    const order = { Base: 0, PRO: 1, MAX: 2, ULTRA: 3 };
     return (order[a]||0) - (order[b]||0);
   });
   const rams = [...new Set(configs.map(c => c.ram).filter(Boolean))].sort((a,b) => parseInt(a)-parseInt(b));
