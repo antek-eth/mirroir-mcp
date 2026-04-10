@@ -585,6 +585,10 @@ input.filter-input::placeholder{color:var(--fg3)}
       <div class="chip-filters" id="ramFilters"></div>
     </div>
     <div class="filter-group">
+      <span class="filter-label">Source</span>
+      <div class="chip-filters" id="sourceFilters"></div>
+    </div>
+    <div class="filter-group">
       <span class="filter-label">Screen</span>
       <div class="chip-filters" id="screenFilters"></div>
     </div>
@@ -624,6 +628,7 @@ const DATA = __DATA_PLACEHOLDER__;
 let activeChips = new Set();
 let activeTiers = new Set();
 let activeRams = new Set();
+let activeSources = new Set();
 let activeScreens = new Set();
 let currentSort = { key: 'priceMin', dir: 'asc' };
 let currentView = 'table';
@@ -769,6 +774,15 @@ function initFilters() {
     btn.onclick = () => { btn.classList.toggle('active'); activeRams.has(r) ? activeRams.delete(r) : activeRams.add(r); applyFilters(); };
     ramEl.appendChild(btn);
   });
+  const sources = [...new Set(configs.flatMap(c => c.listings.map(l => l.source)).filter(Boolean))].sort();
+  const sourceEl = document.getElementById('sourceFilters');
+  sources.forEach(s => {
+    const btn = document.createElement('button');
+    btn.className = 'chip-btn';
+    btn.textContent = s;
+    btn.onclick = () => { btn.classList.toggle('active'); activeSources.has(s) ? activeSources.delete(s) : activeSources.add(s); applyFilters(); };
+    sourceEl.appendChild(btn);
+  });
   const screenEl = document.getElementById('screenFilters');
   screens.forEach(s => {
     const btn = document.createElement('button');
@@ -805,6 +819,7 @@ function pushURL() {
   if (activeTiers.size) p.set('tier', [...activeTiers].join(','));
   if (activeRams.size) p.set('ram', [...activeRams].join(','));
   if (activeScreens.size) p.set('screen', [...activeScreens].join(','));
+  if (activeSources.size) p.set('source', [...activeSources].join(','));
   const disk = document.getElementById('diskFilter').value;
   if (disk) p.set('disk', disk);
   const maxP = document.getElementById('priceMax').value.replace(/\s/g, '');
@@ -823,6 +838,7 @@ function loadURL() {
   if (p.has('tier')) p.get('tier').split(',').forEach(t => activeTiers.add(t));
   if (p.has('ram')) p.get('ram').split(',').forEach(r => activeRams.add(r));
   if (p.has('screen')) p.get('screen').split(',').forEach(s => activeScreens.add(s));
+  if (p.has('source')) p.get('source').split(',').forEach(s => activeSources.add(s));
   if (p.has('disk')) document.getElementById('diskFilter').value = p.get('disk');
   if (p.has('maxprice')) document.getElementById('priceMax').value = p.get('maxprice');
   if (p.has('q')) document.getElementById('searchInput').value = p.get('q');
@@ -833,6 +849,7 @@ function loadURL() {
   document.querySelectorAll('#tierFilters .chip-btn').forEach(b => { if (activeTiers.has(b.textContent)) b.classList.add('active'); });
   document.querySelectorAll('#ramFilters .chip-btn').forEach(b => { if (activeRams.has(b.textContent)) b.classList.add('active'); });
   document.querySelectorAll('#screenFilters .chip-btn').forEach(b => { if (activeScreens.has(b.dataset.val)) b.classList.add('active'); });
+  document.querySelectorAll('#sourceFilters .chip-btn').forEach(b => { if (activeSources.has(b.textContent)) b.classList.add('active'); });
   document.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b.dataset.view === currentView));
 }
 
@@ -846,6 +863,7 @@ function applyFilters() {
     if (activeTiers.size && !activeTiers.has(chipTier(c.cpu))) return false;
     if (activeRams.size && !activeRams.has(c.ram)) return false;
     if (activeScreens.size && !activeScreens.has(c.screen)) return false;
+    if (activeSources.size && !c.listings.some(l => activeSources.has(l.source))) return false;
     if (disk && c.disk !== disk) return false;
     if (c.priceMin && c.priceMin > maxPrice) return false;
     if (search) {
