@@ -54,6 +54,12 @@ input.filter-input::placeholder{color:var(--fg3)}
 .configs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:14px}
 .config-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .2s}
 .config-card:hover{border-color:var(--border2);box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.config-card.starred{border-color:#d97706;box-shadow:0 0 0 1px rgba(217,119,6,.3),0 8px 24px rgba(0,0,0,.3)}
+.star-btn{background:none;border:none;cursor:pointer;font-size:16px;color:var(--fg3);padding:2px 4px;line-height:1;border-radius:4px;transition:all .15s;flex-shrink:0}
+.star-btn:hover{color:#d97706}
+.star-btn.active{color:#f59e0b}
+.starred-label{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#d97706;padding:4px 0 8px;grid-column:1/-1;display:flex;align-items:center;gap:8px}
+.starred-label::after{content:'';flex:1;height:1px;background:rgba(217,119,6,.3)}
 
 .config-header{padding:16px 16px 12px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
 .config-title{flex:1}
@@ -198,6 +204,9 @@ input.filter-input::placeholder{color:var(--fg3)}
       <input class="filter-input" id="priceMax" type="text" placeholder="max price">
     </div>
     <div class="filter-group">
+      <button class="chip-btn" id="starOnlyBtn" onclick="starOnly=!starOnly;this.classList.toggle('active');applyFilters()">&#9733; Starred</button>
+    </div>
+    <div class="filter-group">
       <input class="filter-input" id="searchInput" type="text" placeholder="search..." style="width:160px">
     </div>
     <div class="view-toggle">
@@ -226,6 +235,11 @@ let activeSources = new Set();
 let activeModels = new Set();
 let activeScreens = new Set();
 let hiddenListings = new Set(JSON.parse(localStorage.getItem('hiddenListings') || '[]'));
+let starOnly = false;
+function getStarred() { try { return JSON.parse(localStorage.getItem('starred') || '[]'); } catch { return []; } }
+function saveStarred(keys) { localStorage.setItem('starred', JSON.stringify(keys)); }
+function isStarred(key) { return getStarred().includes(key); }
+function toggleStar(key) { const s = getStarred(); const i = s.indexOf(key); if (i >= 0) s.splice(i,1); else s.push(key); saveStarred(s); applyFilters(); }
 
 function hideListing(url) {
   hiddenListings.add(url);
@@ -497,6 +511,7 @@ function applyFilters() {
       const hay = [c.cpu, c.ram, c.disk, c.screen].join(' ').toLowerCase();
       if (!hay.includes(search)) return false;
     }
+    if (starOnly && !isStarred(c.key)) return false;
     return true;
   });
 
@@ -584,12 +599,21 @@ function render() {
     grid.innerHTML = '<div class="empty-state"><div class="icon">&#128187;</div><p>No configs match your filters</p></div>';
     return;
   }
-  grid.innerHTML = filtered.map((c, ci) => {
+  const starred = getStarred();
+  const sortedFiltered = [...filtered].sort((a, b) => {
+    const as = starred.includes(a.key) ? 0 : 1;
+    const bs = starred.includes(b.key) ? 0 : 1;
+    return as - bs;
+  });
+  let firstUnstarred = true;
+  grid.innerHTML = sortedFiltered.map((c, ci) => {
     const cc = chipClass(c.cpu);
     const label = (c.screen ? c.screen + '" ' : '') + c.cpu;
     const llmVal = c.llm_q4;
-    return `
-    <div class="config-card">
+    const isStar = starred.includes(c.key);
+    const sectionLabel = (!isStar && firstUnstarred && starred.some(k => sortedFiltered.find(x => x.key === k))) ? (firstUnstarred = false, '<div class="starred-label">&#9733; Starred above &nbsp;&nbsp; All configs</div>') : (isStar ? '' : (firstUnstarred = false, ''));
+    return `${sectionLabel}
+    <div class="config-card${isStar ? ' starred' : ''}">
       <div class="config-header">
         <div class="config-title">
           <span class="config-chip ${cc}">${c.cpu}</span>
@@ -600,6 +624,7 @@ function render() {
             ${c.mem_bw_gbs ? `<span class="spec-tag">${c.mem_bw_gbs} GB/s</span>` : ''}
           </div>
         </div>
+        <button class="star-btn${isStar ? ' active' : ''}" onclick="event.stopPropagation();toggleStar('${c.key}')" title="${isStar ? 'Unstar' : 'Star this config'}">\u2605</button>
         <div class="config-price">
           ${c.priceMin ? `<div class="price-range">${fmtNum(c.priceMin)}${c.priceMax && c.priceMax !== c.priceMin ? '<span class="sep"> - </span>' + fmtNum(c.priceMax) : ''} <span style="font-size:11px;font-weight:400;color:var(--fg3)">zl</span></div>` : '<div class="price-range" style="color:var(--fg3)">-</div>'}
           <div class="listing-count">${c.listingCount} listing${c.listingCount !== 1 ? 's' : ''}</div>
