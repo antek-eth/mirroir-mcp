@@ -954,6 +954,7 @@ function renderTable() {
   const wrap = document.getElementById('tableView');
   if (!filtered.length) { wrap.innerHTML = '<div class="empty-state"><div class="icon">&#128187;</div><p>No configs match your filters</p></div>'; return; }
   const headers = [
+    { label: '\u2605', key: null },
     { label: 'Chip', key: null },
     { label: 'Screen', key: null },
     { label: 'RAM', key: null },
@@ -974,9 +975,13 @@ function renderTable() {
     const arrow = isActive ? (currentSort.dir === 'desc' ? ' ▼' : ' ▲') : '';
     return `<th onclick="sortBy('${h.key}')" class="${isActive ? 'active' : ''}" style="cursor:pointer">${h.label}${arrow}</th>`;
   }).join('');
-  wrap.innerHTML = `<table class="config-table"><thead><tr>${headerHTML}</tr></thead><tbody>${filtered.map((c, ci) => {
+  const starred = getStarred();
+  const tableData = [...filtered].sort((a,b) => (starred.includes(a.key)?0:1)-(starred.includes(b.key)?0:1));
+  wrap.innerHTML = `<table class="config-table"><thead><tr>${headerHTML}</tr></thead><tbody>${tableData.map((c, ci) => {
     const cc = chipClass(c.cpu);
-    return `<tr onclick="showDetail(${ci})" style="cursor:pointer">
+    const isStar = starred.includes(c.key);
+    return `<tr onclick="showDetail(${ci})" style="cursor:pointer${isStar ? ';border-left:2px solid #d97706' : ''}">
+      <td onclick="event.stopPropagation();toggleStar('${c.key}')" style="cursor:pointer;text-align:center"><span class="star-btn${isStar?' active':''}" style="font-size:14px">\u2605</span></td>
       <td><span class="chip-cell config-chip ${cc}">${c.cpu}</span></td>
       <td>${c.screen ? (/^\d+$/.test(c.screen) ? c.screen + '"' : c.screen) : '-'}</td>
       <td>${c.ram || '-'}</td><td>${c.disk || '-'}</td>
