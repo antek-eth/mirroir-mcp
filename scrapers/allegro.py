@@ -8,8 +8,8 @@ import json, re, subprocess, sys
 def scrape_page(url):
     js = f"""
 const page=await browser.getPage("allegro-scrape");
-await page.goto({json.dumps(url)},{{waitUntil:'domcontentloaded',timeout:25000}});
-await new Promise(r=>setTimeout(r,3000));
+await page.goto({json.dumps(url)},{{waitUntil:'networkidle',timeout:40000}});
+await new Promise(r=>setTimeout(r,5000));
 const o=await page.evaluate(()=>{{
   const out=[];
   for(const a of document.querySelectorAll('article')){{
@@ -34,7 +34,7 @@ console.log(JSON.stringify(o));
 """
     r = subprocess.run(
         ['dev-browser', '--connect', 'http://127.0.0.1:9222'],
-        input=js, capture_output=True, text=True, timeout=60
+        input=js, capture_output=True, text=True, timeout=90
     )
     for line in r.stdout.splitlines():
         line = line.strip()

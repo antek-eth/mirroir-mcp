@@ -1,0 +1,30 @@
+{
+  "allegro": [
+    {
+      "name": "macbook-laptops-24gb-plus",
+      "url": "https://allegro.pl/kategoria/laptopy-491?order=n&string=macbook&seria-procesora=Apple%20M&seria-procesora=Apple%20M2&seria-procesora=Apple%20M3&seria-procesora=Apple%20M4&wielkosc-pamieci-ram=24%20GB&wielkosc-pamieci-ram=32%20GB&wielkosc-pamieci-ram=36%20GB&wielkosc-pamieci-ram=48%20GB&wielkosc-pamieci-ram=64%20GB&wielkosc-pamieci-ram=96%20GB&wielkosc-pamieci-ram=128%20GB&stan-grupa=jak%20nowe&stan-grupa=odnowione&stan=u%C5%BCywane",
+      "used": true,
+      "pages": 1
+    },
+    {
+      "name": "mac-desktops-apple-m-24gb-plus",
+      "url": "https://allegro.pl/kategoria/komputery-stacjonarne-486?order=n&seria-procesora=Apple%20M&seria-procesora=Apple%20M2&seria-procesora=Apple%20M3&seria-procesora=Apple%20M4&wielkosc-pamieci-ram=24%20GB&wielkosc-pamieci-ram=32%20GB&wielkosc-pamieci-ram=48%20GB&wielkosc-pamieci-ram=64%20GB&wielkosc-pamieci-ram=96%20GB&wielkosc-pamieci-ram=128%20GB&wielkosc-pamieci-ram=36%20GB&stan-grupa=jak%20nowe&stan-grupa=odnowione&stan=u%C5%BCywane&marka=Apple&seria=Apple%20M",
+      "used": true,
+      "pages": 1
+    }
+  ],
+  "olx": [
+    {
+      "name": "macbook-laptops-used-24gb-plus",
+      "url": "https://www.olx.pl/elektronika/komputery/laptopy/q-macbook/?search%5Bfilter_enum_state%5D%5B0%5D=used&search%5Bfilter_enum_ramsize_laptops%5D%5B0%5D=24gb&search%5Bfilter_enum_ramsize_laptops%5D%5B1%5D=32gb&search%5Bfilter_enum_ramsize_laptops%5D%5B2%5D=64gb&search%5Bfilter_enum_ramsize_laptops%5D%5B3%5D=128gb",
+      "used": true,
+      "pages": 1
+    },
+    {
+      "name": "mac-desktops-used-apple-m",
+      "url": "https://www.olx.pl/elektronika/komputery/komputery-stacjonarne/q-mac/?search%5Bfilter_enum_state%5D%5B0%5D=used&search%5Bfilter_enum_processorseries_desktops%5D%5B0%5D=apple-m&search%5Bfilter_enum_ramsize_desktops%5D%5B0%5D=64gb-and-more&search%5Bfilter_enum_ramsize_desktops%5D%5B1%5D=16-48gb",
+      "used": true,
+      "pages": 1
+    }
+  ]
+}
