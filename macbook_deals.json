@@ -5270,7 +5270,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/apple-mac-studio-m1-max-32gb-ram-512gb-ssd-stan-idealny-CID99-ID1a9CWw.html",
     "source": "olx.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "gb6_single": 2400,
     "gb6_multi": 12500,
@@ -5280,7 +5280,8 @@
     "llama2_7b_q4_tg": 60.0,
     "llama2_7b_q4_pp": 530.0,
     "llama2_7b_q8_tg": 39.0,
-    "llama2_7b_f16_tg": 23.0
+    "llama2_7b_f16_tg": 23.0,
+    "expired_at": "2026-04-14"
   },
   {
     "title": "Mac Studio M2 Max 32GB RAM",
@@ -7969,7 +7970,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-air-13-6-m2-24gb-ram-1tb-CID99-ID1a8z89.html",
     "source": "olx.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "gb6_single": 2600,
     "gb6_multi": 9645,
@@ -7979,7 +7980,8 @@
     "llama2_7b_q4_tg": 21.91,
     "llama2_7b_q4_pp": 179.57,
     "llama2_7b_q8_tg": 12.21,
-    "llama2_7b_f16_tg": 6.72
+    "llama2_7b_f16_tg": 6.72,
+    "expired_at": "2026-04-14"
   },
   {
     "title": "Macbook Air 13 2022/ M2/ 24GB DDR5/ 1TB SSD/ 153 cykli/ Grade C do D/ Midnight + zasilacz/ sprawny",
@@ -9509,7 +9511,7 @@
     "temperature": "",
     "url": "https://www.vinted.pl/items/7652990670-macbook-pro-16-m4-max-36gb-ram-1tb-ssd-space-black-sigilat-factura-istyle-garantie",
     "source": "vinted.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "gb6_single": 3868,
     "gb6_multi": 23088,
@@ -9519,7 +9521,8 @@
     "llama2_7b_q4_tg": 83.06,
     "llama2_7b_q4_pp": 885.68,
     "llama2_7b_q8_tg": 54.05,
-    "llama2_7b_f16_tg": 31.64
+    "llama2_7b_f16_tg": 31.64,
+    "expired_at": "2026-04-14"
   },
   {
     "title": "Apple MacBook Pro 16\", M1 Max 10C CPU, 32GB, 1TB, 32C GPU, Mac OS, Space Gray",
@@ -14363,7 +14366,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/apple-macbook-pro-14-2021-m1-pro-32-gb-ram-500-gb-ssd-space-gray-CID99-ID1a9W6E.html",
     "source": "olx.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 2386,
@@ -14374,7 +14377,8 @@
     "llama2_7b_q4_tg": 36.41,
     "llama2_7b_q4_pp": 266.25,
     "llama2_7b_q8_tg": 22.34,
-    "llama2_7b_f16_tg": 12.75
+    "llama2_7b_f16_tg": 12.75,
+    "expired_at": "2026-04-14"
   },
   {
     "title": "Macbook m1 pro 32gb/512gb 16’ 92% baterii",
@@ -14816,7 +14820,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-m4-rok-2024-grudzien-24-gb-ram-1-tb-dysk-ssd-gwarancja-CID99-ID19UUN1.html",
     "source": "olx.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3793,
@@ -14827,7 +14831,8 @@
     "llama2_7b_q4_tg": 24.11,
     "llama2_7b_q4_pp": 221.29,
     "llama2_7b_q8_tg": 13.54,
-    "llama2_7b_f16_tg": 7.43
+    "llama2_7b_f16_tg": 7.43,
+    "expired_at": "2026-04-14"
   },
   {
     "title": "MacBook Pro M2, A2779 32 GB",
@@ -17189,7 +17194,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/mac-mini-m4-16gb-ram-256gb-ssd-CID99-ID1a6MEs.html",
     "source": "olx.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3793,
@@ -17200,7 +17205,8 @@
     "llama2_7b_q4_tg": 24.11,
     "llama2_7b_q4_pp": 221.29,
     "llama2_7b_q8_tg": 13.54,
-    "llama2_7b_f16_tg": 7.43
+    "llama2_7b_f16_tg": 7.43,
+    "expired_at": "2026-04-14"
   },
   {
     "title": "Mac Mini M4 16GB 512GB Gwarancja Apple",
@@ -17339,7 +17345,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/apple-mac-mini-m4-16gb-256gb-styczen-2026-gwarancja-apple-rezerwacja-do-piatku-CID99-ID1abLXY.html",
     "source": "olx.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3793,
@@ -17350,7 +17356,8 @@
     "llama2_7b_q4_tg": 24.11,
     "llama2_7b_q4_pp": 221.29,
     "llama2_7b_q8_tg": 13.54,
-    "llama2_7b_f16_tg": 7.43
+    "llama2_7b_f16_tg": 7.43,
+    "expired_at": "2026-04-14"
   },
   {
     "title": "Mac Mini M4 16GB 256GB Gwarancja Apple",
