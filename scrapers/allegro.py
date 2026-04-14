@@ -1,15 +1,70 @@
 #!/usr/bin/env python3
 # Scrape Allegro.pl listings into JSON for pipeline.py
 # Usage: ./scrapers/allegro.py "<search-url>" [--used] [--pages N]
-# Requires Brave/Chrome running with --remote-debugging-port=9222
+# Requires Chrome running (non-headless) with --remote-debugging-port=9222
+# Requires .datadome-cookie file at repo root: paste the `datadome` cookie
+# value from a real Brave/Chrome session on allegro.pl. Refresh when it expires.
 
-import json, re, subprocess, sys
+import json, os, pathlib, re, subprocess, sys
 
-def scrape_page(url):
+REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
+COOKIE_FILE = REPO_ROOT / ".datadome-cookie"
+
+
+def load_datadome_cookie():
+    if not COOKIE_FILE.exists():
+        print(f"[allegro] WARNING: {COOKIE_FILE} not found — expect DataDome blocks", file=sys.stderr)
+        return ""
+    v = COOKIE_FILE.read_text().strip()
+    if not v:
+        print(f"[allegro] WARNING: {COOKIE_FILE} is empty", file=sys.stderr)
+    return v
+
+
+def scrape_page(url, datadome):
     js = f"""
 const page=await browser.getPage("allegro-scrape");
-await page.goto({json.dumps(url)},{{waitUntil:'networkidle',timeout:40000}});
-await new Promise(r=>setTimeout(r,5000));
+
+// Inject a valid datadome session cookie (obtained from a real Brave/Chrome browse).
+// Without this, Allegro's DataDome shield hard-blocks fresh scraper profiles.
+const DD={json.dumps(datadome)};
+if(DD) await page.context().addCookies([{{
+  name:'datadome',value:DD,domain:'.allegro.pl',path:'/',
+  httpOnly:true,secure:true,sameSite:'Lax'
+}}]);
+
+// Polish locale header — required for Accept-Language consistency with allegro.pl
+await page.setExtraHTTPHeaders({{
+  'Accept-Language':'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7',
+  'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+}});
+
+await page.goto({json.dumps(url)},{{waitUntil:'domcontentloaded',timeout:40000}});
+
+// Wait for actual content, not a fixed time
+await page.waitForSelector('article',{{timeout:15000}}).catch(()=>{{}});
+
+// Random read delay (800–2300 ms) — fixed delays are a strong bot signal
+await new Promise(r=>setTimeout(r,Math.floor(Math.random()*1500)+800));
+
+// Gradual scroll simulating a human reading the listing grid
+await page.evaluate(()=>{{
+  return new Promise((resolve)=>{{
+    const maxScroll=document.body.scrollHeight*0.75;
+    let pos=0;
+    const step=()=>{{
+      pos+=Math.floor(Math.random()*250)+100;
+      window.scrollTo(0,pos);
+      if(pos<maxScroll) setTimeout(step,Math.floor(Math.random()*200)+80);
+      else resolve();
+    }};
+    step();
+  }});
+}});
+
+// Short pause after scroll
+await new Promise(r=>setTimeout(r,Math.floor(Math.random()*600)+300));
+
 const o=await page.evaluate(()=>{{
   const out=[];
   for(const a of document.querySelectorAll('article')){{
@@ -75,13 +130,15 @@ def main():
     base = re.sub(r'[?&]p=\d+', '', raw_url)
     sep = '&' if '?' in base else '?'
 
+    datadome = load_datadome_cookie()
+
     seen_urls = set()
     results = []
 
     for page_num in range(1, max_pages + 1):
         url = base if page_num == 1 else f"{base}{sep}p={page_num}"
         print(f"[allegro] page {page_num}", file=sys.stderr)
-        items = scrape_page(url)
+        items = scrape_page(url, datadome)
         new = 0
         for title, u, price in items:
             if u in seen_urls:

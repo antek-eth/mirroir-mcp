@@ -23,3 +23,8 @@ node_modules/
 *.swp
 *.swo
 logs/
+
+# Secrets / session state
+.datadome-cookie
+.chrome-scraper-profile/
+.claude/
