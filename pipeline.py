@@ -649,8 +649,16 @@ function saveStarred(keys) { localStorage.setItem('starred', JSON.stringify(keys
 function isStarred(key) { return getStarred().includes(key); }
 function toggleStar(key) { const s = getStarred(); const i = s.indexOf(key); if (i >= 0) s.splice(i,1); else s.push(key); saveStarred(s); applyFilters(); }
 
-function hideListing(url) {
-  hiddenListings.add(url);
+function listingFp(cpu, ram, disk, screen, title) {
+  const norm = s => (s || '').toString().toLowerCase().trim().replace(/\s+/g, ' ');
+  return 'fp:' + [norm(cpu), norm(ram), norm(disk), norm(screen), norm(title)].join('|');
+}
+function htmlAttr(s) {
+  return (s || '').toString().replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+}
+function hideListing(url, fp) {
+  if (url) hiddenListings.add(url);
+  if (fp) hiddenListings.add(fp);
   localStorage.setItem('hiddenListings', JSON.stringify([...hiddenListings]));
   applyFilters();
   closeDetail();
@@ -745,6 +753,7 @@ function buildConfigs() {
       priceStr: d.price || '',
       oldPriceStr: d.oldPrice || '',
       url: d.url || '',
+      fp: listingFp(cpu, ram, disk, screen, d.title || d.model || ''),
       source: d.source || '',
       date: d.date || d.datePosted || '',
       datePosted: d.datePosted || '',
@@ -891,7 +900,7 @@ function applyFilters() {
 
   filtered = configs.map(c => {
     {
-      const visible = c.listings.filter(l => !hiddenListings.has(l.url) && !l.broken);
+      const visible = c.listings.filter(l => !hiddenListings.has(l.url) && !hiddenListings.has(l.fp) && !l.broken);
       if (visible.length === 0) return null;
       if (visible.length < c.listings.length) {
         c = Object.assign({}, c, {
@@ -1132,7 +1141,7 @@ function showDetail(ci) {
         </div>
         <div style="font-family:var(--font-mono);font-weight:600;font-size:12px;white-space:nowrap">${l.price ? fmtNum(l.price) + ' zl' : '-'}</div>
         ${l.url ? '<a href="' + l.url + '" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-family:var(--font-mono);font-size:11px;flex-shrink:0" onclick="event.stopPropagation()">link &rarr;</a>' : ''}
-        ${l.url ? '<button onclick="event.stopPropagation();hideListing(\'' + l.url.replace(/'/g, "\\'") + '\')" style="background:none;border:1px solid rgba(255,255,255,.1);color:var(--fg3);cursor:pointer;font-size:10px;padding:2px 6px;border-radius:3px;flex-shrink:0" title="Hide this listing">hide</button>' : ''}
+        <button data-url="${htmlAttr(l.url)}" data-fp="${htmlAttr(l.fp)}" onclick="event.stopPropagation();hideListing(this.dataset.url, this.dataset.fp)" style="background:none;border:1px solid rgba(255,255,255,.1);color:var(--fg3);cursor:pointer;font-size:10px;padding:2px 6px;border-radius:3px;flex-shrink:0" title="Hide this listing">hide</button>
       </div>`).join('')}
     </div>
   `;
