@@ -51,3 +51,29 @@ python3 pipeline.py clean
 - Scraper: `scrapers/allegro.py`, `scrapers/olx.py`
 - Pipeline: `pipeline.py` (parse, dedupe, generate HTML)
 - Frontend: Single-file `index.html` with embedded JS
+
+---
+
+## Design Context
+
+### Users
+Solo personal tool — built by and for one person hunting MacBook deals on Polish marketplaces (Allegro, OLX, Pepper.pl). The user is technically fluent, comfortable with dense data, and values efficiency over hand-holding. There is no onboarding concern; the tool should trust the user completely.
+
+### Brand Personality
+**Terminal. Precise. Uncompromising.**
+
+Personal instrument, not a product. Should feel like a well-crafted CLI rendered as a webpage — authoritative, data-forward, with zero decoration that doesn't carry information. Emotional goal: quiet confidence — *the data is here, it's trustworthy, and it helps me find the best deal fast.*
+
+### Aesthetic Direction
+- **Dark mode only** — near-black backgrounds (`#0a0a0c` family), never light
+- **Green accent** (`#4ade80`) as the single hero color; all other colors are semantic (chip gen badges, deal heat indicators)
+- **Monospace-first** — JetBrains Mono for all data, labels, prices, metadata; DM Sans only for prose-length strings
+- **Dense, not claustrophobic** — information-rich layouts are correct; breathing room from deliberate spacing, not large empty zones
+- **Anti-reference**: No e-commerce styling — no product photography, no "Add to cart" UI, no Allegro/OLX visual bleed-through
+
+### Design Principles
+1. **Data is the UI.** Every pixel serves information. Decoration exists only when it encodes meaning.
+2. **Surface everything without clicking.** Benchmarks, specs, price ranges, and source quality visible at a glance by default.
+3. **Trust the user.** No explanatory tooltips, no confirmation dialogs, no progressive disclosure that hides useful data.
+4. **Terminal aesthetics, not terminal limitations.** Visual language from CLI tools — compact, monospace, low-contrast — but remains navigable and responsive.
+5. **Anomalies deserve visual weight.** Broken listings, outlier prices, expired entries should be clearly flagged — not hidden, not alarming.

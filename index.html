@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +10,19 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#0a0a0c;--bg2:#111114;--bg3:#18181c;--bg4:#222228;
-  --fg:#e8e8ec;--fg2:#a0a0aa;--fg3:#68687a;
+  --fg:#e8e8ec;--fg2:#a0a0aa;--fg3:#7a7a8c;
   --accent:#4ade80;--accent2:#22c55e;--accent-dim:rgba(74,222,128,.08);
   --hot:#ef4444;--warm:#f97316;--cold:#3b82f6;--frozen:#6366f1;
+  --star:#f59e0b;--star-border:#d97706;--star-dim:rgba(217,119,6,.3);
+  --bench-cpu:#60a5fa;--bench-metal:#fbbf24;--bench-llm:#f472b6;--bench-bw:#a78bfa;
   --border:#2a2a32;--border2:#3a3a44;
+  --border-subtle:rgba(255,255,255,.10);--border-faint:rgba(255,255,255,.04);
   --font-mono:'JetBrains Mono',monospace;--font-sans:'DM Sans',sans-serif;
   --radius:6px;
 }
 html{font-size:13px;background:var(--bg);color:var(--fg);font-family:var(--font-sans)}
 body{min-height:100vh;background:var(--bg);overflow-x:hidden}
-body::before{content:'';position:fixed;top:0;left:0;right:0;height:300px;background:linear-gradient(180deg,rgba(74,222,128,.03) 0%,transparent 100%);pointer-events:none;z-index:0}
-.container{max-width:1600px;margin:0 auto;padding:24px 20px;position:relative;z-index:1}
+.container{max-width:1600px;margin:0 auto;padding:24px 20px}
 header{display:flex;align-items:flex-end;justify-content:space-between;padding:20px 0 32px;border-bottom:1px solid var(--border);margin-bottom:24px}
 .logo{display:flex;align-items:center;gap:12px}
 .logo-mark{width:32px;height:32px;background:var(--accent);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-weight:700;font-size:14px;color:var(--bg)}
@@ -52,14 +54,14 @@ input.filter-input::placeholder{color:var(--fg3)}
 .sort-btn .arrow{margin-left:3px;font-size:9px}
 
 .configs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(420px,1fr));gap:14px}
-.config-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .2s}
-.config-card:hover{border-color:var(--border2);box-shadow:0 8px 24px rgba(0,0,0,.3)}
-.config-card.starred{border-color:#d97706;box-shadow:0 0 0 1px rgba(217,119,6,.3),0 8px 24px rgba(0,0,0,.3)}
-.star-btn{background:none;border:none;cursor:pointer;font-size:16px;color:var(--fg3);padding:2px 4px;line-height:1;border-radius:4px;transition:all .15s;flex-shrink:0}
-.star-btn:hover{color:#d97706}
-.star-btn.active{color:#f59e0b}
-.starred-label{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#d97706;padding:4px 0 8px;grid-column:1/-1;display:flex;align-items:center;gap:8px}
-.starred-label::after{content:'';flex:1;height:1px;background:rgba(217,119,6,.3)}
+.config-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color .15s}
+.config-card:hover{border-color:var(--border2)}
+.config-card.starred{border-color:var(--star-border);box-shadow:inset 0 0 0 1px var(--star-dim)}
+.star-btn{background:none;border:none;cursor:pointer;font-size:16px;color:var(--fg3);padding:2px 4px;line-height:1;border-radius:4px;transition:color .15s;flex-shrink:0}
+.star-btn:hover{color:var(--star-border)}
+.star-btn.active{color:var(--star)}
+.starred-label{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--star-border);padding:4px 0 8px;grid-column:1/-1;display:flex;align-items:center;gap:8px}
+.starred-label::after{content:'';flex:1;height:1px;background:var(--star-dim)}
 
 .config-header{padding:16px 16px 12px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
 .config-title{flex:1}
@@ -83,10 +85,10 @@ input.filter-input::placeholder{color:var(--fg3)}
 .bench-label{font-family:var(--font-mono);font-size:10px;color:var(--fg3);width:50px;text-align:right;flex-shrink:0}
 .bench-bar-bg{flex:1;height:6px;background:var(--bg4);border-radius:3px;overflow:hidden}
 .bench-bar{height:100%;border-radius:3px;transition:width .3s}
-.bench-bar.cpu{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
-.bench-bar.metal{background:linear-gradient(90deg,#d97706,#fbbf24)}
-.bench-bar.llm{background:linear-gradient(90deg,#db2777,#f472b6)}
-.bench-bar.bw{background:linear-gradient(90deg,#7c3aed,#a78bfa)}
+.bench-bar.cpu{background:var(--bench-cpu)}
+.bench-bar.metal{background:var(--bench-metal)}
+.bench-bar.llm{background:var(--bench-llm)}
+.bench-bar.bw{background:var(--bench-bw)}
 .bench-value{font-family:var(--font-mono);font-size:10px;color:var(--fg2);width:55px;text-align:right;flex-shrink:0}
 
 .listings-toggle{width:100%;padding:8px 16px;background:var(--bg3);border:none;border-top:1px solid var(--border);color:var(--fg3);font-family:var(--font-mono);font-size:10px;cursor:pointer;text-align:left;transition:all .15s;display:flex;justify-content:space-between;align-items:center}
@@ -109,7 +111,7 @@ input.filter-input::placeholder{color:var(--fg3)}
 .listing-link{color:var(--accent);text-decoration:none;font-family:var(--font-mono);font-size:11px;flex-shrink:0;margin-left:8px}
 .listing-link:hover{text-decoration:underline}
 
-.detail-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:100;display:none;justify-content:flex-end;backdrop-filter:blur(4px)}
+.detail-overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:100;display:none;justify-content:flex-end}
 .detail-overlay.open{display:flex}
 .detail-panel{width:480px;max-width:90vw;background:var(--bg2);border-left:1px solid var(--border);padding:32px 24px;overflow-y:auto}
 .detail-close{position:absolute;top:12px;right:12px;background:none;border:none;color:var(--fg3);font-size:24px;cursor:pointer;padding:4px 8px;border-radius:4px}
@@ -146,13 +148,55 @@ input.filter-input::placeholder{color:var(--fg3)}
 .bar-cell .bar-val{position:relative;z-index:1}
 
 .empty-state{text-align:center;padding:60px 20px;color:var(--fg3)}
-.empty-state .icon{font-size:48px;margin-bottom:16px;opacity:.3}
+.empty-state .icon{font-family:var(--font-mono);font-size:13px;letter-spacing:1px;margin-bottom:12px;color:var(--fg3);opacity:.5}
 
 @media(max-width:600px){
   .configs-grid{grid-template-columns:1fr}
   .config-header{flex-direction:column}
   .config-price{text-align:left}
   .detail-panel{width:100vw}
+}
+
+/* ── Bloomberg Table Mode ─────────────────────────────── */
+.bt-row{cursor:pointer}
+.bt-row.kb-selected{background:rgba(74,222,128,.07) !important}
+.bt-row.kb-selected td{color:var(--fg)}
+.bt-row.kb-selected > td:first-child{box-shadow:inset 2px 0 0 var(--accent)}
+.inline-detail-row > td{padding:0 !important;border-bottom:2px solid var(--border2) !important}
+@keyframes idb-enter{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+.inline-detail-body{padding:16px;background:var(--bg3);display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;animation:idb-enter .14s ease-out}
+.idb-bench{background:var(--bg4);padding:10px 12px;border-radius:4px}
+.idb-label{font-family:var(--font-mono);font-size:9px;color:var(--fg3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+.idb-val{font-family:var(--font-mono);font-size:15px;font-weight:600;line-height:1}
+.idb-val small{font-size:10px;font-weight:400;color:var(--fg3);margin-left:2px}
+.idb-listings-header{font-family:var(--font-mono);font-size:9px;color:var(--fg3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.idb-listing{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--border-faint)}
+.idb-listing:last-child{border-bottom:none}
+.idb-expired{opacity:.45}
+.idb-listing-title{flex:1;font-family:var(--font-sans);color:var(--fg2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.idb-listing-meta{font-family:var(--font-mono);font-size:9px;color:var(--fg3);white-space:nowrap}
+.idb-listing-price{font-family:var(--font-mono);font-weight:600;font-size:12px;color:var(--fg);white-space:nowrap}
+.idb-listing-link{font-family:var(--font-mono);font-size:11px;color:var(--accent);text-decoration:none;flex-shrink:0}
+.idb-listing-link:hover{text-decoration:underline}
+.idb-listing-hide{background:none;border:1px solid var(--border-subtle);color:var(--fg3);cursor:pointer;font-size:9px;padding:1px 6px;border-radius:3px;font-family:var(--font-mono);flex-shrink:0;transition:border-color .1s,color .1s}
+.idb-listing-hide:hover{border-color:var(--fg3);color:var(--fg2)}
+.status-bar{font-family:var(--font-mono);font-size:10px;color:var(--fg3);padding:5px 10px;background:var(--bg2);border:1px solid var(--border);border-top:none;border-radius:0 0 var(--radius) var(--radius);display:none;gap:14px;align-items:center;flex-wrap:wrap;line-height:1.4}
+.sb-key{color:var(--fg2);padding:1px 5px;border:1px solid var(--border2);border-radius:3px;margin-right:2px;font-size:9px}
+.sb-val{color:var(--accent)}
+.sb-spacer{flex:1}
+@media(prefers-reduced-motion:reduce){.inline-detail-body{animation:none}}
+
+/* ── A11y primitives ───────────────────────────────── */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+:focus{outline:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+.config-table th:focus-visible,.chip-btn:focus-visible,.view-btn:focus-visible,.star-btn:focus-visible,.detail-close:focus-visible,.idb-listing-link:focus-visible,.idb-listing-hide:focus-visible,.listing-link:focus-visible{outline-offset:1px}
+input.filter-input:focus-visible,select.filter-select:focus-visible{outline:none;border-color:var(--accent);box-shadow:0 0 0 2px var(--accent-dim)}
+
+@media(max-width:820px){
+  .chip-btn,.view-btn{min-height:32px;padding:6px 12px;font-size:11px}
+  .star-btn,.detail-close{min-width:32px;min-height:32px}
+  input.filter-input,select.filter-select{min-height:32px;font-size:12px}
 }
 </style>
 </head>
@@ -168,60 +212,64 @@ input.filter-input::placeholder{color:var(--fg3)}
     <div class="header-meta" id="dataInfo"></div>
   </header>
 
-  <div class="filters">
-    <div class="filter-group">
-      <span class="filter-label">Chip</span>
-      <div class="chip-filters" id="chipFilters"></div>
+  <nav class="filters" aria-label="Filters">
+    <div class="filter-group" role="group" aria-label="Chip generation">
+      <span class="filter-label" id="label-chip">Chip</span>
+      <div class="chip-filters" id="chipFilters" role="group" aria-labelledby="label-chip"></div>
     </div>
-    <div class="divider"></div>
-    <div class="filter-group">
-      <span class="filter-label">Tier</span>
-      <div class="chip-filters" id="tierFilters"></div>
+    <div class="divider" aria-hidden="true"></div>
+    <div class="filter-group" role="group" aria-label="Chip tier">
+      <span class="filter-label" id="label-tier">Tier</span>
+      <div class="chip-filters" id="tierFilters" role="group" aria-labelledby="label-tier"></div>
     </div>
-    <div class="divider"></div>
-    <div class="filter-group">
-      <span class="filter-label">RAM</span>
-      <div class="chip-filters" id="ramFilters"></div>
+    <div class="divider" aria-hidden="true"></div>
+    <div class="filter-group" role="group" aria-label="RAM">
+      <span class="filter-label" id="label-ram">RAM</span>
+      <div class="chip-filters" id="ramFilters" role="group" aria-labelledby="label-ram"></div>
+    </div>
+    <div class="filter-group" role="group" aria-label="Source">
+      <span class="filter-label" id="label-source">Source</span>
+      <div class="chip-filters" id="sourceFilters" role="group" aria-labelledby="label-source"></div>
+    </div>
+    <div class="filter-group" role="group" aria-label="Model">
+      <span class="filter-label" id="label-model">Model</span>
+      <div class="chip-filters" id="modelFilters" role="group" aria-labelledby="label-model"></div>
+    </div>
+    <div class="filter-group" role="group" aria-label="Screen">
+      <span class="filter-label" id="label-screen">Screen</span>
+      <div class="chip-filters" id="screenFilters" role="group" aria-labelledby="label-screen"></div>
     </div>
     <div class="filter-group">
-      <span class="filter-label">Source</span>
-      <div class="chip-filters" id="sourceFilters"></div>
-    </div>
-    <div class="filter-group">
-      <span class="filter-label">Model</span>
-      <div class="chip-filters" id="modelFilters"></div>
-    </div>
-    <div class="filter-group">
-      <span class="filter-label">Screen</span>
-      <div class="chip-filters" id="screenFilters"></div>
-    </div>
-    <div class="filter-group">
-      <span class="filter-label">Disk</span>
+      <label class="filter-label" for="diskFilter">Disk</label>
       <select class="filter-select" id="diskFilter"><option value="">All</option></select>
     </div>
     <div class="filter-group">
-      <span class="filter-label">Max</span>
-      <input class="filter-input" id="priceMax" type="text" placeholder="max price">
+      <label class="filter-label" for="priceMax">Max</label>
+      <input class="filter-input" id="priceMax" type="text" inputmode="numeric" placeholder="max price" aria-label="Maximum price in PLN">
     </div>
     <div class="filter-group">
-      <button class="chip-btn" id="starOnlyBtn" onclick="starOnly=!starOnly;this.classList.toggle('active');applyFilters()">&#9733; Starred</button>
+      <button class="chip-btn" id="starOnlyBtn" type="button" aria-pressed="false" onclick="toggleStarOnly(this)">&#9733; Starred</button>
     </div>
     <div class="filter-group">
-      <input class="filter-input" id="searchInput" type="text" placeholder="search..." style="width:160px">
+      <label class="sr-only" for="searchInput">Search configurations</label>
+      <input class="filter-input" id="searchInput" type="search" placeholder="search..." style="width:160px">
     </div>
-    <div class="view-toggle">
-      <button class="view-btn" data-view="cards" onclick="setView('cards')">Cards</button>
-      <button class="view-btn active" data-view="table" onclick="setView('table')">Table</button>
+    <div class="view-toggle" role="group" aria-label="View mode">
+      <button class="view-btn" type="button" data-view="cards" aria-pressed="false" onclick="setView('cards')">Cards</button>
+      <button class="view-btn active" type="button" data-view="table" aria-pressed="true" onclick="setView('table')">Table</button>
     </div>
-    <span class="results-count" id="resultsCount"></span>
-  </div>
+    <span class="results-count" id="resultsCount" aria-live="polite" aria-atomic="true"></span>
+  </nav>
 
 
-  <div class="configs-grid" id="configsGrid" style="display:none"></div>
-  <div id="tableView" style="overflow-x:auto"></div>
+  <main id="results">
+    <div class="configs-grid" id="configsGrid" style="display:none"></div>
+    <div id="tableView" style="overflow-x:auto"></div>
+    <div id="tableStatusBar" class="status-bar" role="status" aria-live="polite"></div>
+  </main>
 
-  <div class="detail-overlay" id="detailOverlay">
-    <div class="detail-panel" id="detailPanel"></div>
+  <div class="detail-overlay" id="detailOverlay" role="dialog" aria-modal="true" aria-labelledby="detailPanelTitle" aria-hidden="true">
+    <div class="detail-panel" id="detailPanel" tabindex="-1"></div>
   </div>
 </div>
 
@@ -264,6 +312,9 @@ let currentSort = { key: 'priceMin', dir: 'asc' };
 let currentView = 'table';
 let configs = [];
 let filtered = [];
+let kbSelectedKey = null;
+let kbExpandedKey = null;
+let tableData = [];
 
 const SORT_OPTIONS = [
   { key: 'priceMin', label: 'Min Price' },
@@ -383,57 +434,36 @@ function initFilters() {
     return va - vb;
   });
 
+  const makeChip = (label, val, set, dim) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'chip-btn';
+    btn.textContent = label;
+    btn.setAttribute('aria-pressed', 'false');
+    if (dim) btn.dataset[dim] = val;
+    btn.onclick = () => {
+      const isOn = set.has(val);
+      if (isOn) set.delete(val); else set.add(val);
+      btn.classList.toggle('active', !isOn);
+      btn.setAttribute('aria-pressed', String(!isOn));
+      applyFilters();
+    };
+    return btn;
+  };
   const chipEl = document.getElementById('chipFilters');
-  chips.forEach(c => {
-    const btn = document.createElement('button');
-    btn.className = 'chip-btn';
-    btn.textContent = c;
-    btn.onclick = () => { btn.classList.toggle('active'); activeChips.has(c) ? activeChips.delete(c) : activeChips.add(c); applyFilters(); };
-    chipEl.appendChild(btn);
-  });
+  chips.forEach(c => chipEl.appendChild(makeChip(c, c, activeChips)));
   const tierEl = document.getElementById('tierFilters');
-  tiers.forEach(t => {
-    const btn = document.createElement('button');
-    btn.className = 'chip-btn';
-    btn.textContent = t;
-    btn.onclick = () => { btn.classList.toggle('active'); activeTiers.has(t) ? activeTiers.delete(t) : activeTiers.add(t); applyFilters(); };
-    tierEl.appendChild(btn);
-  });
+  tiers.forEach(t => tierEl.appendChild(makeChip(t, t, activeTiers)));
   const ramEl = document.getElementById('ramFilters');
-  rams.forEach(r => {
-    const btn = document.createElement('button');
-    btn.className = 'chip-btn';
-    btn.textContent = r;
-    btn.onclick = () => { btn.classList.toggle('active'); activeRams.has(r) ? activeRams.delete(r) : activeRams.add(r); applyFilters(); };
-    ramEl.appendChild(btn);
-  });
+  rams.forEach(r => ramEl.appendChild(makeChip(r, r, activeRams)));
   const sources = [...new Set(configs.flatMap(c => c.listings.map(l => l.source)).filter(Boolean))].sort();
   const sourceEl = document.getElementById('sourceFilters');
-  sources.forEach(s => {
-    const btn = document.createElement('button');
-    btn.className = 'chip-btn';
-    btn.textContent = s;
-    btn.onclick = () => { btn.classList.toggle('active'); activeSources.has(s) ? activeSources.delete(s) : activeSources.add(s); applyFilters(); };
-    sourceEl.appendChild(btn);
-  });
+  sources.forEach(s => sourceEl.appendChild(makeChip(s, s, activeSources)));
   const models = [...new Set(configs.map(c => c.model).filter(Boolean))].sort();
   const modelEl = document.getElementById('modelFilters');
-  models.forEach(m => {
-    const btn = document.createElement('button');
-    btn.className = 'chip-btn';
-    btn.textContent = m;
-    btn.onclick = () => { btn.classList.toggle('active'); activeModels.has(m) ? activeModels.delete(m) : activeModels.add(m); applyFilters(); };
-    modelEl.appendChild(btn);
-  });
+  models.forEach(m => modelEl.appendChild(makeChip(m, m, activeModels)));
   const screenEl = document.getElementById('screenFilters');
-  screens.forEach(s => {
-    const btn = document.createElement('button');
-    btn.className = 'chip-btn';
-    btn.textContent = /^\d+$/.test(s) ? s + '"' : s;
-    btn.dataset.val = s;
-    btn.onclick = () => { btn.classList.toggle('active'); activeScreens.has(s) ? activeScreens.delete(s) : activeScreens.add(s); applyFilters(); };
-    screenEl.appendChild(btn);
-  });
+  screens.forEach(s => screenEl.appendChild(makeChip(/^\d+$/.test(s) ? s + '"' : s, s, activeScreens, 'val')));
   const diskSel = document.getElementById('diskFilter');
   disks.forEach(d => { const o = document.createElement('option'); o.value = d; o.textContent = d; diskSel.appendChild(o); });
 
@@ -476,13 +506,22 @@ function loadURL() {
   if (p.has('sort')) { const [k,d] = p.get('sort').split('.'); currentSort = {key:k, dir:d||'asc'}; }
   if (p.has('view')) currentView = p.get('view');
   // Sync button states
-  document.querySelectorAll('#chipFilters .chip-btn').forEach(b => { if (activeChips.has(b.textContent)) b.classList.add('active'); });
-  document.querySelectorAll('#tierFilters .chip-btn').forEach(b => { if (activeTiers.has(b.textContent)) b.classList.add('active'); });
-  document.querySelectorAll('#ramFilters .chip-btn').forEach(b => { if (activeRams.has(b.textContent)) b.classList.add('active'); });
-  document.querySelectorAll('#screenFilters .chip-btn').forEach(b => { if (activeScreens.has(b.dataset.val)) b.classList.add('active'); });
-  document.querySelectorAll('#sourceFilters .chip-btn').forEach(b => { if (activeSources.has(b.textContent)) b.classList.add('active'); });
-  document.querySelectorAll('#modelFilters .chip-btn').forEach(b => { if (activeModels.has(b.textContent)) b.classList.add('active'); });
-  document.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b.dataset.view === currentView));
+  const syncChip = (el, on) => { el.classList.toggle('active', on); el.setAttribute('aria-pressed', String(on)); };
+  document.querySelectorAll('#chipFilters .chip-btn').forEach(b => syncChip(b, activeChips.has(b.textContent)));
+  document.querySelectorAll('#tierFilters .chip-btn').forEach(b => syncChip(b, activeTiers.has(b.textContent)));
+  document.querySelectorAll('#ramFilters .chip-btn').forEach(b => syncChip(b, activeRams.has(b.textContent)));
+  document.querySelectorAll('#screenFilters .chip-btn').forEach(b => syncChip(b, activeScreens.has(b.dataset.val)));
+  document.querySelectorAll('#sourceFilters .chip-btn').forEach(b => syncChip(b, activeSources.has(b.textContent)));
+  document.querySelectorAll('#modelFilters .chip-btn').forEach(b => syncChip(b, activeModels.has(b.textContent)));
+  document.querySelectorAll('.view-btn').forEach(b => syncChip(b, b.dataset.view === currentView));
+  syncChip(document.getElementById('starOnlyBtn'), starOnly);
+}
+
+function toggleStarOnly(btn) {
+  starOnly = !starOnly;
+  btn.classList.toggle('active', starOnly);
+  btn.setAttribute('aria-pressed', String(starOnly));
+  applyFilters();
 }
 
 function applyFilters() {
@@ -539,21 +578,29 @@ function applyFilters() {
 
   const totalListings = filtered.reduce((s, c) => s + c.listingCount, 0);
   const hiddenCount = hiddenListings.size;
-  document.getElementById('resultsCount').innerHTML = '<strong>' + filtered.length + '</strong> configs &middot; ' + totalListings + ' listings' + (hiddenCount ? ' &middot; <span style="color:var(--fg3)">' + hiddenCount + ' hidden</span> <button onclick="unhideAll()" style="background:none;border:1px solid rgba(255,255,255,.15);color:var(--accent);cursor:pointer;font-size:10px;padding:1px 6px;border-radius:3px;margin-left:4px">unhide all</button>' : '');
+  document.getElementById('resultsCount').innerHTML = '<strong>' + filtered.length + '</strong> configs &middot; ' + totalListings + ' listings' + (hiddenCount ? ' &middot; <span style="color:var(--fg3)">' + hiddenCount + ' hidden</span> <button type="button" aria-label="Restore all hidden listings" onclick="unhideAll()" style="background:none;border:1px solid var(--border-subtle);color:var(--accent);cursor:pointer;font-size:10px;padding:1px 6px;border-radius:3px;margin-left:4px">unhide all</button>' : '');
   pushURL();
   render();
 }
 
 function setView(v) {
   currentView = v;
-  document.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b.dataset.view === v));
+  kbSelectedKey = null;
+  kbExpandedKey = null;
+  document.querySelectorAll('.view-btn').forEach(b => {
+    const on = b.dataset.view === v;
+    b.classList.toggle('active', on);
+    b.setAttribute('aria-pressed', String(on));
+  });
+  const bar = document.getElementById('tableStatusBar');
+  if (bar) bar.style.display = v === 'table' ? 'flex' : 'none';
   pushURL();
   render();
 }
 
 function renderTable() {
   const wrap = document.getElementById('tableView');
-  if (!filtered.length) { wrap.innerHTML = '<div class="empty-state"><div class="icon">&#128187;</div><p>No configs match your filters</p></div>'; return; }
+  if (!filtered.length) { wrap.innerHTML = '<div class="empty-state" role="status"><div class="icon" aria-hidden="true">[ no match ]</div><p>No configs match your filters</p></div>'; return; }
   const headers = [
     { label: '\u2605', key: null },
     { label: 'Chip', key: null },
@@ -577,12 +624,15 @@ function renderTable() {
     return `<th onclick="sortBy('${h.key}')" class="${isActive ? 'active' : ''}" style="cursor:pointer">${h.label}${arrow}</th>`;
   }).join('');
   const starred = getStarred();
-  const tableData = [...filtered].sort((a,b) => (starred.includes(a.key)?0:1)-(starred.includes(b.key)?0:1));
+  tableData = [...filtered].sort((a,b) => (starred.includes(a.key)?0:1)-(starred.includes(b.key)?0:1));
+  const maxToks = Math.max(...tableData.map(x => x.toksPerKPLN || 0));
   wrap.innerHTML = `<table class="config-table"><thead><tr>${headerHTML}</tr></thead><tbody>${tableData.map((c, ci) => {
     const cc = chipClass(c.cpu);
     const isStar = starred.includes(c.key);
-    return `<tr onclick="showDetail(${ci})" style="cursor:pointer${isStar ? ';border-left:2px solid #d97706' : ''}">
-      <td onclick="event.stopPropagation();toggleStar('${c.key}')" style="cursor:pointer;text-align:center"><span class="star-btn${isStar?' active':''}" style="font-size:14px">\u2605</span></td>
+    const isSel = c.key === kbSelectedKey;
+    const isExp = c.key === kbExpandedKey;
+    let row = `<tr class="bt-row${isSel?' kb-selected':''}" id="bt-row-${ci}" onclick="kbSelectRow(${ci})">
+      <td style="text-align:center"><button type="button" class="star-btn${isStar?' active':''}" style="font-size:14px" aria-label="${isStar?'Unstar this config':'Star this config'}" aria-pressed="${isStar}" onclick="event.stopPropagation();toggleStar('${c.key}')">\u2605</button></td>
       <td><span class="chip-cell config-chip ${cc}">${c.cpu}</span></td>
       <td>${c.screen ? (/^\d+$/.test(c.screen) ? c.screen + '"' : c.screen) : '-'}</td>
       <td>${c.ram || '-'}</td><td>${c.disk || '-'}</td>
@@ -592,9 +642,63 @@ function renderTable() {
       <td>${fmtNum(c.gb6_single)}</td><td>${fmtNum(c.gb6_multi)}</td><td>${fmtNum(c.gb6_metal)}</td>
       <td>${c.mem_bw_gbs || '-'} GB/s</td>
       <td class="bar-cell"><div class="bar-bg" style="width:${pct(c.llm_q4, MAX_LLM)}%;background:linear-gradient(90deg,#db2777,#f472b6)"></div><span class="bar-val">${c.llm_q4 || '-'}</span></td>
-      <td class="bar-cell"><div class="bar-bg" style="width:${c.toksPerKPLN ? pct(c.toksPerKPLN, Math.max(...filtered.map(x=>x.toksPerKPLN||0))) : 0}%;background:linear-gradient(90deg,#059669,#4ade80)"></div><span class="bar-val" style="color:var(--accent)">${c.toksPerKPLN || '-'}</span></td>
+      <td class="bar-cell"><div class="bar-bg" style="width:${maxToks?pct(c.toksPerKPLN,maxToks):0}%;background:linear-gradient(90deg,#059669,#4ade80)"></div><span class="bar-val" style="color:var(--accent)">${c.toksPerKPLN||'-'}</span></td>
     </tr>`;
+    if (isExp) {
+      row += `<tr class="inline-detail-row"><td colspan="14"><div class="inline-detail-body">
+        <div style="grid-column:1/-1;font-family:var(--font-mono);font-size:11px;color:var(--fg2);margin-bottom:4px">MacBook ${c.model||'Pro'} ${c.screen?c.screen+'"':''} ${c.cpu}${c.ram?' · '+c.ram:''}${c.disk?' · '+c.disk:''}</div>
+        <div class="idb-bench"><div class="idb-label">GB6 Single</div><div class="idb-val" style="color:#60a5fa">${fmtNum(c.gb6_single)}</div></div>
+        <div class="idb-bench"><div class="idb-label">GB6 Multi</div><div class="idb-val" style="color:#60a5fa">${fmtNum(c.gb6_multi)}</div></div>
+        <div class="idb-bench"><div class="idb-label">Metal GPU</div><div class="idb-val" style="color:#fbbf24">${fmtNum(c.gb6_metal)}</div></div>
+        <div class="idb-bench"><div class="idb-label">Mem BW</div><div class="idb-val" style="color:#a78bfa">${c.mem_bw_gbs||'-'}<small> GB/s</small></div></div>
+        <div class="idb-bench"><div class="idb-label">Q4 t/s</div><div class="idb-val" style="color:#f472b6">${c.llm_q4||'-'}</div></div>
+        <div class="idb-bench"><div class="idb-label">toks/kPLN</div><div class="idb-val" style="color:var(--accent)">${c.toksPerKPLN||'-'}</div></div>
+        <div style="grid-column:1/-1;padding-top:12px;border-top:1px solid var(--border)">
+          <div class="idb-listings-header">${c.listingCount} listing${c.listingCount!==1?'s':''}</div>
+          ${c.listings.map(l=>`<div class="idb-listing${l.expired?' idb-expired':''}">
+            <div style="min-width:0;flex:1"><div class="idb-listing-title">${l.title||'MacBook '+c.cpu}</div>
+            <div class="idb-listing-meta">${l.date||''}${l.source?' · '+l.source:''}${l.used?' [used]':''}${l.broken?' [broken]':''}</div></div>
+            <span class="idb-listing-price">${l.price?fmtNum(l.price)+' zł':'-'}</span>
+            ${l.url?'<a class="idb-listing-link" href="'+htmlAttr(l.url)+'" target="_blank" rel="noopener noreferrer" aria-label="Open listing in new tab" onclick="event.stopPropagation()"><span aria-hidden="true">↗</span></a>':''}
+            <button type="button" class="idb-listing-hide" aria-label="Hide this listing" data-url="${htmlAttr(l.url)}" data-fp="${htmlAttr(l.fp)}" onclick="event.stopPropagation();hideListing(this.dataset.url,this.dataset.fp)">hide</button>
+          </div>`).join('')}
+        </div>
+      </div></td></tr>`;
+    }
+    return row;
   }).join('')}</tbody></table>`;
+  updateStatusBar();
+  if (kbSelectedKey) {
+    const selIdx = tableData.findIndex(c => c.key === kbSelectedKey);
+    if (selIdx >= 0) { const el = document.getElementById('bt-row-'+selIdx); if (el) el.scrollIntoView({block:'nearest',behavior:'smooth'}); }
+  }
+}
+
+function kbSelectRow(ci) {
+  const c = tableData[ci];
+  if (!c) return;
+  if (kbSelectedKey === c.key) { kbExpandedKey = kbExpandedKey === c.key ? null : c.key; }
+  else { kbSelectedKey = c.key; kbExpandedKey = null; }
+  renderTable();
+}
+
+function updateStatusBar() {
+  const bar = document.getElementById('tableStatusBar');
+  if (!bar) return;
+  bar.style.display = 'flex';
+  const sel = kbSelectedKey ? tableData.find(c => c.key === kbSelectedKey) : null;
+  const selInfo = sel
+    ? `<span class="sb-val">${sel.cpu}${sel.ram?' · '+sel.ram:''}${sel.screen?' · '+sel.screen+'"':''}</span>`
+    : '<span style="opacity:.35">—</span>';
+  bar.innerHTML = `<span><span class="sb-val">${filtered.length}</span> configs</span>`
+    + `<span>sort: <span class="sb-val">${currentSort.key}</span> ${currentSort.dir==='desc'?'↓':'↑'}</span>`
+    + `<span>sel: ${selInfo}</span>`
+    + `<span class="sb-spacer"></span>`
+    + `<span><span class="sb-key">↑↓</span> nav</span>`
+    + `<span><span class="sb-key">Enter</span> expand</span>`
+    + `<span><span class="sb-key">/</span> search</span>`
+    + `<span><span class="sb-key">*</span> star</span>`
+    + `<span><span class="sb-key">Esc</span> deselect</span>`;
 }
 
 function sortBy(key) {
@@ -610,7 +714,7 @@ function render() {
   table.style.display = currentView === 'table' ? 'block' : 'none';
   if (currentView === 'table') { renderTable(); return; }
   if (!filtered.length) {
-    grid.innerHTML = '<div class="empty-state"><div class="icon">&#128187;</div><p>No configs match your filters</p></div>';
+    grid.innerHTML = '<div class="empty-state" role="status"><div class="icon" aria-hidden="true">[ no match ]</div><p>No configs match your filters</p></div>';
     return;
   }
   const starred = getStarred();
@@ -638,7 +742,7 @@ function render() {
             ${c.mem_bw_gbs ? `<span class="spec-tag">${c.mem_bw_gbs} GB/s</span>` : ''}
           </div>
         </div>
-        <button class="star-btn${isStar ? ' active' : ''}" onclick="event.stopPropagation();toggleStar('${c.key}')" title="${isStar ? 'Unstar' : 'Star this config'}">\u2605</button>
+        <button type="button" class="star-btn${isStar ? ' active' : ''}" aria-label="${isStar ? 'Unstar this config' : 'Star this config'}" aria-pressed="${isStar}" onclick="event.stopPropagation();toggleStar('${c.key}')">\u2605</button>
         <div class="config-price">
           ${c.priceMin ? `<div class="price-range">${fmtNum(c.priceMin)}${c.priceMax && c.priceMax !== c.priceMin ? '<span class="sep"> - </span>' + fmtNum(c.priceMax) : ''} <span style="font-size:11px;font-weight:400;color:var(--fg3)">zl</span></div>` : '<div class="price-range" style="color:var(--fg3)">-</div>'}
           <div class="listing-count">${c.listingCount} listing${c.listingCount !== 1 ? 's' : ''}</div>
@@ -683,7 +787,7 @@ function render() {
               <div class="listing-meta">${l.date || l.datePosted || ''} ${l.source ? '<span class="source">' + l.source + '</span>' : ''}${l.used ? '<span class="tag-used">used</span>' : ''}</div>
             </div>
             ${l.price ? `<span class="listing-price">${fmtNum(l.price)} zl</span>` : (l.oldPrice ? `<span class="listing-price old">${fmtNum(l.oldPrice)} zl</span>` : '')}
-            ${l.url ? `<a class="listing-link" href="${l.url}" target="_blank">&#8599;</a>` : ''}
+            ${l.url ? `<a class="listing-link" href="${htmlAttr(l.url)}" target="_blank" rel="noopener noreferrer" aria-label="Open listing in new tab"><span aria-hidden="true">&#8599;</span></a>` : ''}
           </div>
         `).join('')}
       </div>
@@ -703,9 +807,9 @@ function showDetail(ci) {
   const cc = chipClass(c.cpu);
   const panel = document.getElementById('detailPanel');
   panel.innerHTML = `
-    <button class="detail-close" onclick="closeDetail()">&times;</button>
+    <button type="button" class="detail-close" aria-label="Close" onclick="closeDetail()"><span aria-hidden="true">&times;</span></button>
     <span class="detail-chip-badge config-chip ${cc}">${c.cpu}</span>
-    <div class="detail-title">MacBook Pro ${c.screen ? c.screen + '"' : ''} ${c.cpu} ${c.ram ? '/ ' + c.ram : ''} ${c.disk ? '/ ' + c.disk : ''}</div>
+    <div class="detail-title" id="detailPanelTitle">MacBook Pro ${c.screen ? c.screen + '"' : ''} ${c.cpu} ${c.ram ? '/ ' + c.ram : ''} ${c.disk ? '/ ' + c.disk : ''}</div>
     <div class="detail-subtitle">${c.listingCount} listings &middot; ${c.priceMin ? fmtPrice(c.priceMin) + (c.priceMax !== c.priceMin ? ' - ' + fmtPrice(c.priceMax) : '') : 'no price data'}</div>
     <div class="detail-section-title">Geekbench 6</div>
     <div class="detail-bench-grid">
@@ -732,17 +836,51 @@ function showDetail(ci) {
           <div style="font-family:var(--font-mono);font-size:10px;color:var(--fg3);margin-top:2px">${l.date || ''}${l.source ? ' &middot; <span style="color:var(--accent);opacity:.7">' + l.source + '</span>' : ''}${l.used ? ' <span style="font-size:9px;padding:1px 5px;border-radius:3px;background:rgba(251,191,36,.15);color:#fbbf24">used</span>' : ''}${l.broken ? ' <span style="font-size:9px;padding:1px 5px;border-radius:3px;background:rgba(239,68,68,.15);color:#ef4444">broken</span>' : ''}</div>
         </div>
         <div style="font-family:var(--font-mono);font-weight:600;font-size:12px;white-space:nowrap">${l.price ? fmtNum(l.price) + ' zl' : '-'}</div>
-        ${l.url ? '<a href="' + l.url + '" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-family:var(--font-mono);font-size:11px;flex-shrink:0" onclick="event.stopPropagation()">link &rarr;</a>' : ''}
-        <button data-url="${htmlAttr(l.url)}" data-fp="${htmlAttr(l.fp)}" onclick="event.stopPropagation();hideListing(this.dataset.url, this.dataset.fp)" style="background:none;border:1px solid rgba(255,255,255,.1);color:var(--fg3);cursor:pointer;font-size:10px;padding:2px 6px;border-radius:3px;flex-shrink:0" title="Hide this listing">hide</button>
+        ${l.url ? '<a href="' + htmlAttr(l.url) + '" target="_blank" rel="noopener noreferrer" aria-label="Open listing in new tab" style="color:var(--accent);text-decoration:none;font-family:var(--font-mono);font-size:11px;flex-shrink:0" onclick="event.stopPropagation()">link &rarr;</a>' : ''}
+        <button type="button" aria-label="Hide this listing" data-url="${htmlAttr(l.url)}" data-fp="${htmlAttr(l.fp)}" onclick="event.stopPropagation();hideListing(this.dataset.url, this.dataset.fp)" style="background:none;border:1px solid var(--border-subtle);color:var(--fg3);cursor:pointer;font-size:10px;padding:2px 6px;border-radius:3px;flex-shrink:0">hide</button>
       </div>`).join('')}
     </div>
   `;
-  document.getElementById('detailOverlay').classList.add('open');
+  const overlay = document.getElementById('detailOverlay');
+  lastFocusedBeforeDetail = document.activeElement;
+  overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden', 'false');
+  document.getElementById('detailPanel').focus();
 }
 
-function closeDetail() { document.getElementById('detailOverlay').classList.remove('open'); }
+let lastFocusedBeforeDetail = null;
+function closeDetail() {
+  const overlay = document.getElementById('detailOverlay');
+  overlay.classList.remove('open');
+  overlay.setAttribute('aria-hidden', 'true');
+  if (lastFocusedBeforeDetail && lastFocusedBeforeDetail.focus) lastFocusedBeforeDetail.focus();
+  lastFocusedBeforeDetail = null;
+}
 document.getElementById('detailOverlay').onclick = e => { if (e.target === e.currentTarget) closeDetail(); };
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    if (kbExpandedKey) { kbExpandedKey = null; if (currentView === 'table') renderTable(); return; }
+    if (kbSelectedKey) { kbSelectedKey = null; if (currentView === 'table') renderTable(); return; }
+    closeDetail();
+    return;
+  }
+  if (currentView !== 'table') return;
+  const tag = document.activeElement && document.activeElement.tagName;
+  const inInput = tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA';
+  if (e.key === '/' && !inInput) { e.preventDefault(); document.getElementById('searchInput').focus(); return; }
+  if (inInput) return;
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+    e.preventDefault();
+    const curIdx = kbSelectedKey ? tableData.findIndex(c => c.key === kbSelectedKey) : -1;
+    const nextIdx = e.key === 'ArrowDown' ? Math.min(curIdx+1, tableData.length-1) : Math.max(curIdx-1, 0);
+    if (tableData[nextIdx]) { kbSelectedKey = tableData[nextIdx].key; kbExpandedKey = null; }
+    renderTable();
+  } else if (e.key === 'Enter') {
+    if (kbSelectedKey) { kbExpandedKey = kbExpandedKey === kbSelectedKey ? null : kbSelectedKey; renderTable(); }
+  } else if (e.key === '*') {
+    if (kbSelectedKey) toggleStar(kbSelectedKey);
+  }
+});
 
 function init() {
   const sources = [...new Set(DATA.map(d => d.source).filter(Boolean))];
