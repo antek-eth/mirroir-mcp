@@ -17,6 +17,9 @@ from pathlib import Path
 import urllib.request
 import urllib.error
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import summary  # noqa: E402 — share summary writer across pipeline steps
+
 DB_FILE = Path(__file__).parent.parent / "macbook_deals.json"
 TIMEOUT = 10
 WORKERS = 20
@@ -45,6 +48,7 @@ def main() -> int:
     errors = 0
     inconclusive = 0
     today = date.today().isoformat()
+    expired_samples = []
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as pool:
         futures = {pool.submit(head_status, d["url"]): (i, d) for i, d in to_check}
@@ -57,6 +61,8 @@ def main() -> int:
                 deals[i]["expired"] = True
                 deals[i]["expired_at"] = today
                 newly_expired += 1
+                if len(expired_samples) < 10:
+                    expired_samples.append(d.get("url", ""))
             elif status >= 400:
                 inconclusive += 1
 
@@ -65,16 +71,15 @@ def main() -> int:
             json.dumps(deals, ensure_ascii=False, indent=2), encoding="utf-8"
         )
 
-    print(
-        json.dumps(
-            {
-                "checked": len(to_check),
-                "newly_expired": newly_expired,
-                "errors": errors,
-                "inconclusive": inconclusive,
-            }
-        )
-    )
+    result = {
+        "checked": len(to_check),
+        "newly_expired": newly_expired,
+        "errors": errors,
+        "inconclusive": inconclusive,
+        "expired_samples": expired_samples,
+    }
+    summary.write_section("alive", result)
+    print(json.dumps({k: v for k, v in result.items() if k != "expired_samples"}))
     return 0
 
 

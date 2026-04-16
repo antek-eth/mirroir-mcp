@@ -14,6 +14,7 @@ import argparse
 import json
 import os
 import subprocess
+import sys
 import threading
 from datetime import datetime, timezone
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -21,8 +22,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent.resolve()
 STATUS_FILE = ROOT / ".daily-status"
+SUMMARY_FILE = ROOT / ".scrape-summary.json"
 PID_FILE = ROOT / ".server-job.pid"
 LOGS = ROOT / "logs"
+
+sys.path.insert(0, str(ROOT))
+import pipeline  # noqa: E402 — local module, reused for hide helpers + HTML rebuild
+
+_hide_lock = threading.Lock()
 
 _lock = threading.Lock()
 _job = None  # {"proc": Popen, "kind": str, "started": iso, "log_path": Path}
@@ -117,6 +124,15 @@ def _last_status():
         return None
 
 
+def _last_summary():
+    if not SUMMARY_FILE.exists():
+        return None
+    try:
+        return json.loads(SUMMARY_FILE.read_text())
+    except ValueError:
+        return None
+
+
 def _tail(path, lines: int = 60) -> str | None:
     try:
         with open(path) as f:
@@ -155,9 +171,19 @@ class Handler(SimpleHTTPRequestHandler):
             return self._json(200, {
                 "running": running,
                 "last": _last_status(),
+                "summary": _last_summary(),
                 "log_tail": tail,
             })
         return super().do_GET()
+
+    def _read_json_body(self):
+        length = int(self.headers.get("Content-Length") or 0)
+        if not length:
+            return {}
+        try:
+            return json.loads(self.rfile.read(length).decode("utf-8"))
+        except (ValueError, UnicodeDecodeError):
+            return {}
 
     def do_POST(self):
         if self.path == "/api/scrape":
@@ -173,6 +199,43 @@ class Handler(SimpleHTTPRequestHandler):
             if err:
                 return self._json(409, {"error": err})
             return self._json(202, {"started": True, "kind": "check-alive"})
+        if self.path == "/api/hide":
+            body = self._read_json_body()
+            url = (body.get("url") or "").strip()
+            fp = (body.get("fp") or "").strip()
+            reason = (body.get("reason") or "").strip()
+            if not url and not fp:
+                return self._json(400, {"error": "url or fp required"})
+            with _hide_lock:
+                db = pipeline.load_db()
+                today = datetime.now().strftime("%Y-%m-%d")
+                marked = 0
+                for deal in db:
+                    matches_url = url and deal.get("url") == url
+                    matches_fp = fp and pipeline.make_listing_fp(deal) == fp
+                    if matches_url or matches_fp:
+                        if not deal.get("hidden"):
+                            deal["hidden"] = True
+                            deal["hidden_at"] = today
+                            if reason:
+                                deal["hidden_reason"] = reason
+                            marked += 1
+                if marked:
+                    pipeline.save_db(db)
+                pipeline.add_hidden_fp(url, fp, reason=reason)
+                try:
+                    pipeline.generate_html(db)
+                except Exception as exc:  # noqa: BLE001
+                    return self._json(200, {"ok": True, "hidden": marked, "rebuild_error": str(exc)})
+            return self._json(200, {"ok": True, "hidden": marked})
+        if self.path == "/api/unhide-all":
+            with _hide_lock:
+                cleared = pipeline.remove_all_hidden()
+                try:
+                    pipeline.generate_html(pipeline.load_db())
+                except Exception as exc:  # noqa: BLE001
+                    return self._json(200, {"ok": True, "cleared": cleared, "rebuild_error": str(exc)})
+            return self._json(200, {"ok": True, "cleared": cleared})
         return self._json(404, {"error": "not found"})
 
     def log_message(self, fmt, *args):  # quiet

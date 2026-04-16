@@ -23,10 +23,20 @@ write_status() {  # $1=state $2=message
     > "$STATUS_FILE"
 }
 
+db_size() {
+  python3 -c 'import json,sys,pathlib; print(len(json.loads(pathlib.Path("macbook_deals.json").read_text())))' 2>/dev/null || echo 0
+}
+
+# Initialize fresh summary for this run
+python3 scripts/summary.py reset daily "$LOG"
+python3 scripts/summary.py count-before "$(db_size)"
+
 # 1) Camoufox profile + fingerprint must exist (CONFIRM-solved at least once)
 if [ ! -d "$REPO/.camoufox-profile" ]; then
   echo "[setup] .camoufox-profile missing — run: python3 scripts/probe_camoufox_persistent.py"
   write_status setup_needed "camoufox profile missing — run scripts/probe_camoufox_persistent.py"
+  python3 scripts/summary.py action "camoufox profile missing — run scripts/probe_camoufox_persistent.py"
+  python3 scripts/summary.py finalize setup_needed
   exit 1
 fi
 python3 scripts/ensure_fingerprint.py
@@ -63,18 +73,29 @@ fi
 if grep -q "BLOCKED — DataDome session lost" "$LOG" 2>/dev/null; then
   echo "[scrape] DataDome session lost"
   write_status camoufox_session_expired "Allegro DataDome session lapsed — run ./scripts/probe_camoufox_persistent.py"
+  python3 scripts/summary.py action "Allegro DataDome session lapsed — run scripts/probe_camoufox_persistent.py"
+  python3 scripts/summary.py count-after "$(db_size)"
+  python3 scripts/summary.py finalize camoufox_session_expired
   exit 1
 fi
 
-# 6) Rebuild HTML if DB changed
+# 6) Auto-outlier scan (flags broken/incomplete listings before they skew the view).
+# Best-effort: a failure here must not block the daily run.
+echo "[outliers] checking..."
+python3 scripts/check_outliers.py || true
+
+# 7) Rebuild HTML if DB changed
 if ! git diff --quiet macbook_deals.json 2>/dev/null; then
   echo "[rebuild] HTML..."
   python3 pipeline.py rebuild
 fi
 
-# 7) Commit + push if anything changed
-if ! git diff --quiet macbook_deals.json index.html 2>/dev/null; then
-  git add macbook_deals.json index.html
+# 8) Commit + push if anything changed (include .hidden-fps.json so auto-hides persist)
+python3 scripts/summary.py count-after "$(db_size)"
+
+if ! git diff --quiet macbook_deals.json index.html .hidden-fps.json 2>/dev/null || \
+   git ls-files --others --exclude-standard --error-unmatch .hidden-fps.json >/dev/null 2>&1; then
+  git add macbook_deals.json index.html .hidden-fps.json 2>/dev/null || true
   git commit -m "daily: $(date +%Y-%m-%d) auto-update listings"
   git push
   echo "[git] pushed."
@@ -84,4 +105,5 @@ else
   write_status ok "daily run completed, no new deals"
 fi
 
+python3 scripts/summary.py finalize ok
 echo "=== done ==="

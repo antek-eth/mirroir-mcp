@@ -16,6 +16,7 @@ from pathlib import Path
 
 DB_FILE = Path(__file__).parent / "macbook_deals.json"
 HTML_FILE = Path(__file__).parent / "index.html"
+HIDDEN_FP_FILE = Path(__file__).parent / ".hidden-fps.json"
 
 # --- Benchmark Lookup Tables ---
 # Geekbench 6 scores by chip (default/most common core config)
@@ -383,13 +384,106 @@ def process_raw_listings(raw_listings, source=""):
     return processed
 
 
+def make_listing_fp(deal):
+    """Compute listing fingerprint matching the JS listingFp() function."""
+    def norm(s):
+        return re.sub(r"\s+", " ", str(s or "")).strip().lower()
+    cpu = norm(deal.get("cpu"))
+    ram = norm(deal.get("ram"))
+    disk = norm(deal.get("disk"))
+    screen = norm(deal.get("screen"))
+    title = norm(deal.get("title") or deal.get("model"))
+    return f"fp:{cpu}|{ram}|{disk}|{screen}|{title}"
+
+
+def _load_hidden_raw():
+    if not HIDDEN_FP_FILE.exists():
+        return []
+    try:
+        data = json.loads(HIDDEN_FP_FILE.read_text(encoding="utf-8"))
+        return data if isinstance(data, list) else []
+    except ValueError:
+        return []
+
+
+def _save_hidden_raw(entries):
+    # Prune to last 500 entries (newest kept), drop anything older than 180 days.
+    today = datetime.now().date()
+    cutoff = today - timedelta(days=180)
+    kept = []
+    for e in entries:
+        when = e.get("hidden_at")
+        if when:
+            try:
+                if datetime.strptime(when, "%Y-%m-%d").date() < cutoff:
+                    continue
+            except ValueError:
+                pass
+        kept.append(e)
+    kept = kept[-500:]
+    HIDDEN_FP_FILE.write_text(json.dumps(kept, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def load_hidden_fps():
+    """Return ({fp strings}, {urls}) currently on the hide list."""
+    entries = _load_hidden_raw()
+    fps = {e["fp"] for e in entries if e.get("fp")}
+    urls = {e["url"] for e in entries if e.get("url")}
+    return fps, urls
+
+
+def add_hidden_fp(url, fp, reason=""):
+    """Append (url, fp) to the hidden list, deduplicated."""
+    entries = _load_hidden_raw()
+    existing_fps = {e.get("fp") for e in entries}
+    existing_urls = {e.get("url") for e in entries}
+    if (fp and fp in existing_fps) or (url and url in existing_urls):
+        return False
+    entry = {
+        "fp": fp or "",
+        "url": url or "",
+        "hidden_at": datetime.now().strftime("%Y-%m-%d"),
+    }
+    if reason:
+        entry["reason"] = reason
+    entries.append(entry)
+    _save_hidden_raw(entries)
+    return True
+
+
+def remove_all_hidden():
+    """Truncate hidden list and clear hidden flag on all deals."""
+    HIDDEN_FP_FILE.write_text("[]", encoding="utf-8")
+    db = load_db()
+    cleared = 0
+    for d in db:
+        if d.get("hidden"):
+            d["hidden"] = False
+            d.pop("hidden_at", None)
+            d.pop("hidden_reason", None)
+            cleared += 1
+    save_db(db)
+    return cleared
+
+
 def merge_deals(existing, new_deals):
-    """Merge new deals into existing, deduplicating by URL."""
+    """Merge new deals into existing, deduplicating by URL.
+
+    New deals whose URL or fingerprint matches the hide list are inserted with
+    hidden=true so they don't reappear after URL reshape or DB resets.
+    """
+    hidden_fps, hidden_urls = load_hidden_fps()
     seen = {make_dedup_key(d) for d in existing}
+    today = datetime.now().strftime("%Y-%m-%d")
     added = 0
     for deal in new_deals:
         key = make_dedup_key(deal)
         if key not in seen:
+            fp = make_listing_fp(deal)
+            if (deal.get("url") and deal["url"] in hidden_urls) or (fp in hidden_fps):
+                deal["hidden"] = True
+                deal["hidden_at"] = today
+                deal["hidden_reason"] = "auto: matched hidden fingerprint"
             existing.append(deal)
             seen.add(key)
             added += 1
@@ -454,6 +548,27 @@ h1 span{color:var(--accent);font-weight:300}
 .status-pill.error .dot,.status-pill.cookie_expired .dot{background:var(--hot)}
 .status-pill.error,.status-pill.cookie_expired{color:var(--hot)}
 @keyframes tb-pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.summary-chip{display:none;align-items:center;gap:6px;padding:4px 9px;border-radius:100px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--border);color:var(--fg2);background:var(--bg2);cursor:pointer;white-space:nowrap}
+.summary-chip.live{display:inline-flex}
+.summary-chip:hover{border-color:var(--accent-dim);color:var(--accent)}
+.summary-chip.has-issues{border-color:var(--hot);color:var(--hot)}
+.summary-chip .summary-caret{transition:transform .15s;opacity:.6}
+.summary-chip[aria-expanded="true"] .summary-caret{transform:rotate(180deg)}
+.summary-badge{display:inline-flex;align-items:center;justify-content:center;min-width:14px;height:14px;padding:0 4px;border-radius:7px;background:var(--hot);color:#0a0a0c;font-size:9px;font-weight:600}
+.summary-panel{margin-top:10px;padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg2);font-family:var(--font-mono);font-size:11px;color:var(--fg2);line-height:1.65;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px 18px}
+.summary-panel h4{margin:0 0 4px;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg3);font-weight:600}
+.summary-panel .kv{display:flex;justify-content:space-between;gap:8px;font-size:11px}
+.summary-panel .kv strong{color:var(--fg);font-weight:500}
+.summary-panel .kv .pos{color:var(--accent)}
+.summary-panel .kv .neg{color:var(--hot)}
+.summary-panel .issues{grid-column:1/-1;padding-top:8px;border-top:1px dashed var(--border);display:flex;flex-direction:column;gap:4px}
+.summary-panel .issues .issue{color:var(--hot);font-size:10px}
+.summary-panel .issues .action{color:#fbbf24;font-size:10px}
+.summary-panel .hides{grid-column:1/-1;font-size:10px;color:var(--fg3)}
+.summary-panel .hides ul{margin:4px 0 0;padding-left:14px}
+.summary-panel .hides li{word-break:break-all;padding:2px 0}
+.summary-panel a{color:var(--accent);text-decoration:none}
+.summary-panel a:hover{text-decoration:underline}
 
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;align-items:center}
 .filter-group{display:flex;align-items:center;gap:6px}
@@ -600,9 +715,15 @@ input.filter-input::placeholder{color:var(--fg3)}
           <span class="icon" aria-hidden="true">&#x2713;</span><span>Check alive</span>
         </button>
         <span class="status-pill" id="statusPill"><span class="dot"></span><span id="statusText">idle</span></span>
+        <button class="summary-chip" id="summaryChip" type="button" aria-expanded="false" hidden>
+          <span id="summaryText"></span>
+          <span class="summary-badge" id="summaryBadge" hidden></span>
+          <span class="summary-caret" aria-hidden="true">&#9662;</span>
+        </button>
       </div>
       <div class="header-meta" id="dataInfo"></div>
     </div>
+    <div class="summary-panel" id="summaryPanel" hidden></div>
   </header>
 
   <div class="filters">
@@ -689,12 +810,27 @@ function hideListing(url, fp) {
   if (url) hiddenListings.add(url);
   if (fp) hiddenListings.add(fp);
   localStorage.setItem('hiddenListings', JSON.stringify([...hiddenListings]));
+  // Mirror to server so the hide persists across scrapes (fire-and-forget).
+  // Also mark matching DATA entries as hidden locally so serverHidden count
+  // reflects the change before a rebuild.
+  DATA.forEach(d => {
+    if ((url && d.url === url) || (fp && d.cpu && listingFp(d.cpu, d.ram, d.disk, d.screen, d.title || d.model || '') === fp)) {
+      d.hidden = true;
+    }
+  });
+  fetch('/api/hide', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({url: url || '', fp: fp || ''}),
+  }).catch(() => {});
   applyFilters();
   closeDetail();
 }
 function unhideAll() {
   hiddenListings.clear();
   localStorage.setItem('hiddenListings', '[]');
+  DATA.forEach(d => { if (d.hidden) d.hidden = false; });
+  fetch('/api/unhide-all', {method: 'POST'}).catch(() => {});
   applyFilters();
 }
 let currentSort = { key: 'priceMin', dir: 'asc' };
@@ -789,6 +925,8 @@ function buildConfigs() {
       expired: d.expired || /wygasł/i.test(d.datePosted || ''),
       used: d.used || false,
       broken: d.broken || false,
+      hidden: d.hidden || false,
+      hiddenReason: d.hidden_reason || '',
     });
     if (price) map[key].prices.push(price);
     if (!price && oldPrice) map[key].prices.push(oldPrice);
@@ -929,7 +1067,7 @@ function applyFilters() {
 
   filtered = configs.map(c => {
     {
-      const visible = c.listings.filter(l => !hiddenListings.has(l.url) && !hiddenListings.has(l.fp) && !l.broken);
+      const visible = c.listings.filter(l => !l.hidden && !hiddenListings.has(l.url) && !hiddenListings.has(l.fp) && !l.broken);
       if (visible.length === 0) return null;
       if (visible.length < c.listings.length) {
         c = Object.assign({}, c, {
@@ -975,7 +1113,8 @@ function applyFilters() {
   });
 
   const totalListings = filtered.reduce((s, c) => s + c.listingCount, 0);
-  const hiddenCount = hiddenListings.size;
+  const serverHidden = DATA.filter(d => d.hidden).length;
+  const hiddenCount = hiddenListings.size + serverHidden;
   document.getElementById('resultsCount').innerHTML = '<strong>' + filtered.length + '</strong> configs &middot; ' + totalListings + ' listings' + (hiddenCount ? ' &middot; <span style="color:var(--fg3)">' + hiddenCount + ' hidden</span> <button onclick="unhideAll()" style="background:none;border:1px solid rgba(255,255,255,.15);color:var(--accent);cursor:pointer;font-size:10px;padding:1px 6px;border-radius:3px;margin-left:4px">unhide all</button>' : '');
   pushURL();
   render();
@@ -1193,6 +1332,10 @@ init();
 
 // ---- Live control panel (only active when served via server.py) ----
 (function(){
+  var summaryChip = document.getElementById('summaryChip');
+  var summaryText = document.getElementById('summaryText');
+  var summaryBadge = document.getElementById('summaryBadge');
+  var summaryPanel = document.getElementById('summaryPanel');
   var btnScrape = document.getElementById('btnScrape');
   var btnAlive = document.getElementById('btnCheckAlive');
   var toolbar = document.getElementById('toolbar');
@@ -1238,6 +1381,124 @@ init();
       pillText.textContent = 'idle';
       setBusy(false);
     }
+    renderSummary(status.summary || null);
+  }
+
+  function esc(s){
+    return String(s == null ? '' : s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  }
+  function dur(sec){
+    if (!sec && sec !== 0) return '?';
+    if (sec < 60) return sec + 's';
+    if (sec < 3600) return Math.floor(sec/60) + 'm ' + (sec%60) + 's';
+    return Math.floor(sec/3600) + 'h ' + Math.floor((sec%3600)/60) + 'm';
+  }
+  function summaryIsOpen(){ return summaryChip.getAttribute('aria-expanded') === 'true'; }
+  function setSummaryOpen(open){
+    summaryChip.setAttribute('aria-expanded', open ? 'true' : 'false');
+    summaryPanel.hidden = !open;
+  }
+
+  function renderSummary(s){
+    if (!s || !s.started_at){
+      summaryChip.hidden = true;
+      summaryChip.classList.remove('live');
+      summaryPanel.hidden = true;
+      return;
+    }
+    summaryChip.hidden = false;
+    summaryChip.classList.add('live');
+
+    var alive = s.alive || {};
+    var scrape = s.scrape || {};
+    var outliers = s.outliers || {};
+    var errors = s.errors || [];
+    var actions = s.actions_required || [];
+    var issueCount = errors.length + actions.length + (scrape.errors ? scrape.errors.length : 0);
+
+    var bits = [];
+    if (s.state === 'running') bits.push('running');
+    else bits.push(fmtAgo(s.finished_at || s.started_at));
+    bits.push('+' + (scrape.new_deals || 0));
+    bits.push((alive.newly_expired || 0) + ' exp');
+    bits.push((outliers.auto_hidden || 0) + ' hid');
+    summaryText.textContent = bits.join(' · ');
+
+    summaryChip.classList.toggle('has-issues', issueCount > 0);
+    if (issueCount > 0){
+      summaryBadge.hidden = false;
+      summaryBadge.textContent = '!' + issueCount;
+    } else {
+      summaryBadge.hidden = true;
+    }
+
+    var parts = [];
+    parts.push('<div><h4>run</h4>' +
+      kv('started', fmtAgo(s.started_at)) +
+      kv('duration', dur(s.duration_sec)) +
+      kv('state', esc(s.state || '?')) +
+      kv('db', (s.db_before != null ? s.db_before : '?') + ' &rarr; ' + (s.db_after != null ? s.db_after : '?')) +
+      '</div>');
+    parts.push('<div><h4>alive</h4>' +
+      kv('checked', alive.checked || 0) +
+      kv('expired', alive.newly_expired || 0, (alive.newly_expired ? 'neg' : '')) +
+      kv('errors', alive.errors || 0, (alive.errors ? 'neg' : '')) +
+      '</div>');
+    var srcRows = '';
+    if (scrape.per_source){
+      Object.keys(scrape.per_source).forEach(function(src){
+        var ps = scrape.per_source[src];
+        srcRows += kv(src, '+' + (ps.new_deals || 0) + ' / ' + (ps.runs || 0) + ' runs', (ps.new_deals ? 'pos' : ''));
+      });
+    }
+    parts.push('<div><h4>scrape</h4>' +
+      kv('new deals', scrape.new_deals || 0, (scrape.new_deals ? 'pos' : '')) +
+      kv('runs', scrape.runs || 0) +
+      srcRows +
+      '</div>');
+    parts.push('<div><h4>outliers</h4>' +
+      kv('candidates', outliers.candidates || 0) +
+      kv('visited', outliers.visited || 0) +
+      kv('auto-hidden', outliers.auto_hidden || 0, (outliers.auto_hidden ? 'pos' : '')) +
+      (outliers.blocked ? kv('blocked', 'yes', 'neg') : '') +
+      (outliers.skipped ? kv('skipped', esc(outliers.skipped), 'neg') : '') +
+      '</div>');
+
+    var hides = outliers.hides || [];
+    if (hides.length){
+      var items = hides.map(function(h){
+        return '<li>[' + esc(h.group) + ' ratio=' + esc(h.ratio) + '] <em>' + esc(h.keyword) + '</em> &mdash; ' +
+          '<a href="' + esc(h.url) + '" target="_blank" rel="noopener">' + esc(h.title || h.url) + '</a></li>';
+      }).join('');
+      parts.push('<div class="hides"><h4>auto-hidden listings</h4><ul>' + items + '</ul></div>');
+    }
+
+    var issues = '';
+    (scrape.errors || []).forEach(function(e){
+      issues += '<div class="issue">scrape/' + esc(e.source) + ': ' + esc(e.name) + ' &mdash; ' + esc(e.message) + '</div>';
+    });
+    errors.forEach(function(e){
+      issues += '<div class="issue">' + esc(e) + '</div>';
+    });
+    actions.forEach(function(a){
+      issues += '<div class="action">action required: ' + esc(a) + '</div>';
+    });
+    if (issues) parts.push('<div class="issues">' + issues + '</div>');
+
+    summaryPanel.innerHTML = parts.join('');
+
+    function kv(k, v, cls){
+      var c = cls ? (' class="' + cls + '"') : '';
+      return '<div class="kv"><span>' + esc(k) + '</span><strong' + c + '>' + v + '</strong></div>';
+    }
+  }
+
+  if (summaryChip){
+    summaryChip.addEventListener('click', function(){
+      setSummaryOpen(!summaryIsOpen());
+    });
   }
 
   function refresh(){

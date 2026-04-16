@@ -30,6 +30,7 @@ logs/
 .camoufox-profile/
 .camoufox-fingerprint.pkl
 .daily-status
+.scrape-summary.json
 .server-job.pid
 .claude/
 .impeccable.md
