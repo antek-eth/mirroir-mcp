@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "fp": "fp:nope|nope|nope|nope|nope",
+    "url": "",
+    "hidden_at": "2026-04-16"
+  },
+  {
+    "fp": "fp:m1 pro|32gb|512gb|14|laptop apple macbook pro 14 a2442 14\" apple m1 pro 32 gb / 512 gb 120hz",
+    "url": "https://allegro.pl/oferta/apple-macbook-2018-13-3-retina-8-128-gb-zloty-18188743357",
+    "hidden_at": "2026-04-16",
+    "reason": "auto-outlier: uszkodzon"
+  },
+  {
+    "fp": "fp:m1 pro|32gb|512gb|16|macbook pro 16\" 2021 | m1 pro | 32gb ram | 512gb ssd | zbita matryca",
+    "url": "https://www.olx.pl/d/oferta/macbook-pro-16-2021-m1-pro-32gb-ram-512gb-ssd-zbita-matryca-CID99-ID19Xysk.html",
+    "hidden_at": "2026-04-16",
+    "reason": "auto-outlier: wymiany"
+  }
+]
