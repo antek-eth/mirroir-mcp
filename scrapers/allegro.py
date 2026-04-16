@@ -1,109 +1,86 @@
 #!/usr/bin/env python3
 # Scrape Allegro.pl listings into JSON for pipeline.py
-# Usage: ./scrapers/allegro.py "<search-url>" [--used] [--pages N]
-# Requires Chrome running (non-headless) with --remote-debugging-port=9222
-# Requires .datadome-cookie file at repo root: paste the `datadome` cookie
-# value from a real Brave/Chrome session on allegro.pl. Refresh when it expires.
-
-import json, os, pathlib, re, subprocess, sys
+# Usage: ./scrapers/allegro.py "<search-url>" [--used] [--pages N] [--headful]
+#
+# Uses camoufox with a persistent Firefox profile at .camoufox-profile.
+# First-time setup (interactive, to solve DataDome CONFIRM once):
+#     python3 scripts/probe_camoufox_persistent.py
+# After that the profile keeps the DataDome session for daily headless runs.
+import json, pathlib, random, re, sys, time
+from camoufox.sync_api import Camoufox
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
-COOKIE_FILE = REPO_ROOT / ".datadome-cookie"
+PROFILE = REPO_ROOT / ".camoufox-profile"
+sys.path.insert(0, str(REPO_ROOT / "scripts"))
+from ensure_fingerprint import load_or_create as _load_fingerprint
 
 
-def load_datadome_cookie():
-    if not COOKIE_FILE.exists():
-        print(f"[allegro] WARNING: {COOKIE_FILE} not found — expect DataDome blocks", file=sys.stderr)
-        return ""
-    v = COOKIE_FILE.read_text().strip()
-    if not v:
-        print(f"[allegro] WARNING: {COOKIE_FILE} is empty", file=sys.stderr)
-    return v
+def _human_scroll(page):
+    page.evaluate("""
+        () => new Promise((resolve) => {
+            const maxScroll = document.body.scrollHeight * 0.75;
+            let pos = 0;
+            const step = () => {
+                pos += Math.floor(Math.random() * 250) + 100;
+                window.scrollTo(0, pos);
+                if (pos < maxScroll) setTimeout(step, Math.floor(Math.random() * 200) + 80);
+                else resolve();
+            };
+            step();
+        })
+    """)
 
 
-def scrape_page(url, datadome):
-    js = f"""
-const page=await browser.getPage("allegro-scrape");
+def _extract_items(page):
+    return page.evaluate("""
+        () => {
+            const resolveHref = (raw) => {
+                let href = raw || '';
+                if (href.includes('/events/clicks') && href.includes('redirect=')) {
+                    try {
+                        const r = new URL(href).searchParams.get('redirect');
+                        if (r) href = decodeURIComponent(r);
+                    } catch (e) {}
+                }
+                return href;
+            };
+            const isOfferHref = (h) => (
+                h.includes('/oferta/') || h.includes('/produkt/')
+            );
+            const out = [];
+            for (const a of document.querySelectorAll('article')) {
+                let t = '', u = '';
+                for (const l of a.querySelectorAll('a[href]')) {
+                    const href = resolveHref(l.href);
+                    const text = l.textContent.trim();
+                    if (text.length > 10 && isOfferHref(href)) {
+                        t = text; u = href; break;
+                    }
+                }
+                if (!t || !u) continue;
+                u = u.split('#')[0];
+                u = u.includes('?offerId=')
+                    ? u.split('&')[0]   // keep ?offerId=... for /produkt/ pages
+                    : u.split('?')[0];  // strip all query for /oferta/ pages
+                let p = '';
+                for (const s of a.querySelectorAll('span')) {
+                    const x = s.textContent.trim();
+                    if (x.includes('zł') && /\\d/.test(x) && x.length < 30 && !x.includes('/')) {
+                        p = x; break;
+                    }
+                }
+                out.push([t, u, p]);
+            }
+            return out;
+        }
+    """)
 
-// Inject a valid datadome session cookie (obtained from a real Brave/Chrome browse).
-// Without this, Allegro's DataDome shield hard-blocks fresh scraper profiles.
-const DD={json.dumps(datadome)};
-if(DD) await page.context().addCookies([{{
-  name:'datadome',value:DD,domain:'.allegro.pl',path:'/',
-  httpOnly:true,secure:true,sameSite:'Lax'
-}}]);
-
-// Polish locale header — required for Accept-Language consistency with allegro.pl
-await page.setExtraHTTPHeaders({{
-  'Accept-Language':'pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7',
-  'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
-}});
-
-await page.goto({json.dumps(url)},{{waitUntil:'domcontentloaded',timeout:40000}});
-
-// Wait for actual content, not a fixed time
-await page.waitForSelector('article',{{timeout:15000}}).catch(()=>{{}});
-
-// Random read delay (800–2300 ms) — fixed delays are a strong bot signal
-await new Promise(r=>setTimeout(r,Math.floor(Math.random()*1500)+800));
-
-// Gradual scroll simulating a human reading the listing grid
-await page.evaluate(()=>{{
-  return new Promise((resolve)=>{{
-    const maxScroll=document.body.scrollHeight*0.75;
-    let pos=0;
-    const step=()=>{{
-      pos+=Math.floor(Math.random()*250)+100;
-      window.scrollTo(0,pos);
-      if(pos<maxScroll) setTimeout(step,Math.floor(Math.random()*200)+80);
-      else resolve();
-    }};
-    step();
-  }});
-}});
-
-// Short pause after scroll
-await new Promise(r=>setTimeout(r,Math.floor(Math.random()*600)+300));
-
-const o=await page.evaluate(()=>{{
-  const out=[];
-  for(const a of document.querySelectorAll('article')){{
-    let t='',u='';
-    for(const l of a.querySelectorAll('a[href*="/oferta/"]')){{
-      const x=l.textContent.trim();
-      if(x.length>10){{t=x;u=l.href;break;}}
-    }}
-    if(!t||!u) continue;
-    if(u.includes('redirect=')) try{{u=decodeURIComponent(new URL(u).searchParams.get('redirect'));}}catch{{}}
-    u=u.split('?')[0];
-    let p='';
-    for(const s of a.querySelectorAll('span')){{
-      const x=s.textContent.trim();
-      if(x.includes('zł')&&/\\d/.test(x)&&x.length<30&&!x.includes('/')){{p=x;break;}}
-    }}
-    out.push([t,u,p]);
-  }}
-  return out;
-}});
-console.log(JSON.stringify(o));
-"""
-    r = subprocess.run(
-        ['dev-browser', '--connect', 'http://127.0.0.1:9222'],
-        input=js, capture_output=True, text=True, timeout=90
-    )
-    for line in r.stdout.splitlines():
-        line = line.strip()
-        if line.startswith('['):
-            try:
-                return json.loads(line)
-            except json.JSONDecodeError:
-                pass
-    return []
 
 def clean_price(p):
     p = re.sub(r'do negocjacji', '', p, flags=re.I).strip()
     p = re.sub(r'\s+', ' ', p).strip()
     return p
+
 
 def extract_cpu(url):
     m = re.search(r'm(\d)[-_]?(pro|max|ultra)', url.lower())
@@ -114,53 +91,88 @@ def extract_cpu(url):
         return f"M{m.group(1)}"
     return None
 
+
 def main():
     args = sys.argv[1:]
     if not args or args[0].startswith('-'):
-        print("Usage: allegro.py <search-url> [--used] [--pages N]", file=sys.stderr)
+        print("Usage: allegro.py <search-url> [--used] [--pages N] [--headful]", file=sys.stderr)
         sys.exit(1)
 
     raw_url = args[0]
     is_used = '--used' in args
+    headful = '--headful' in args
     max_pages = 5
     if '--pages' in args:
         idx = args.index('--pages')
         max_pages = int(args[idx + 1])
 
+    if not PROFILE.exists():
+        print(f"[allegro] missing camoufox profile at {PROFILE}", file=sys.stderr)
+        print("[allegro] run: python3 scripts/probe_camoufox_persistent.py  (solve CONFIRM once)", file=sys.stderr)
+        sys.exit(2)
+
     base = re.sub(r'[?&]p=\d+', '', raw_url)
     sep = '&' if '?' in base else '?'
-
-    datadome = load_datadome_cookie()
 
     seen_urls = set()
     results = []
 
-    for page_num in range(1, max_pages + 1):
-        url = base if page_num == 1 else f"{base}{sep}p={page_num}"
-        print(f"[allegro] page {page_num}", file=sys.stderr)
-        items = scrape_page(url, datadome)
-        new = 0
-        for title, u, price in items:
-            if u in seen_urls:
-                continue
-            seen_urls.add(u)
-            new += 1
-            entry = {
-                'title': title,
-                'url': u,
-                'price': clean_price(price),
-                'source': 'allegro.pl',
-                'used': is_used,
-            }
-            cpu = extract_cpu(u)
-            if cpu:
-                entry['cpu'] = cpu
-            results.append(entry)
-        print(f"[allegro] {len(items)} found, {new} new, total {len(results)}", file=sys.stderr)
-        if new == 0:
-            break
+    with Camoufox(
+        headless=not headful,
+        locale="pl-PL",
+        persistent_context=True,
+        user_data_dir=str(PROFILE),
+        fingerprint=_load_fingerprint(),
+        i_know_what_im_doing=True,
+    ) as ctx:
+        page = ctx.pages[0] if ctx.pages else ctx.new_page()
+        page.set_extra_http_headers({
+            "Accept-Language": "pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+        })
+
+        for page_num in range(1, max_pages + 1):
+            url = base if page_num == 1 else f"{base}{sep}p={page_num}"
+            print(f"[allegro] page {page_num}", file=sys.stderr)
+            try:
+                page.goto(url, wait_until="domcontentloaded", timeout=45000)
+                page.wait_for_selector('article', timeout=15000)
+            except Exception as e:
+                blocked = page.evaluate("() => document.documentElement.outerHTML.includes('captcha-delivery')")
+                if blocked:
+                    print("[allegro] BLOCKED — DataDome session lost. Run: python3 scripts/probe_camoufox_persistent.py", file=sys.stderr)
+                    sys.exit(3)
+                print(f"[allegro] navigation error: {e}", file=sys.stderr)
+                break
+
+            time.sleep(random.uniform(0.8, 2.3))
+            _human_scroll(page)
+            time.sleep(random.uniform(0.3, 0.9))
+
+            items = _extract_items(page)
+            new = 0
+            for title, u, price in items:
+                if u in seen_urls:
+                    continue
+                seen_urls.add(u)
+                new += 1
+                entry = {
+                    'title': title,
+                    'url': u,
+                    'price': clean_price(price),
+                    'source': 'allegro.pl',
+                    'used': is_used,
+                }
+                cpu = extract_cpu(u)
+                if cpu:
+                    entry['cpu'] = cpu
+                results.append(entry)
+            print(f"[allegro] {len(items)} found, {new} new, total {len(results)}", file=sys.stderr)
+            if new == 0:
+                break
 
     print(json.dumps(results, ensure_ascii=False, separators=(',', ':')))
+
 
 if __name__ == '__main__':
     main()

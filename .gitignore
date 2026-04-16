@@ -27,4 +27,9 @@ logs/
 # Secrets / session state
 .datadome-cookie
 .chrome-scraper-profile/
+.camoufox-profile/
+.camoufox-fingerprint.pkl
+.daily-status
+.server-job.pid
 .claude/
+.impeccable.md

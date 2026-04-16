@@ -1,17 +1,13 @@
 #!/bin/bash
-# Daily orchestrator: browser freshness + cookie health + scrape + rebuild + commit+push.
-# Launches Chrome (NON-headless) with --remote-debugging-port=9222 using a dedicated
-# profile. Brave is never touched — we scope all kills to our scraper profile dir.
-# Bypass for Allegro's DataDome shield uses a persisted `datadome` cookie at
-# .datadome-cookie. When it expires, the cookie-health probe fails loudly and
-# the scraper is not run (preventing silent 0-deal runs).
+# Daily orchestrator: check alive → scrape → rebuild → commit → push.
+# Scrapers use camoufox with a persistent profile at .camoufox-profile,
+# pinned to a saved fingerprint at .camoufox-fingerprint.pkl.
+# If Allegro's DataDome session lapses, scrapers/allegro.py exits 3 and we
+# surface the state so the user can re-run scripts/probe_camoufox_persistent.py.
 set -euo pipefail
-export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+export PATH="/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 REPO="/Users/antekxxx/Coding/mirroir-mcp"
-CHROME_APP="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-CHROME_PROFILE="/Users/antekxxx/.chrome-scraper-profile"
-DEBUG_PORT=9222
 STATUS_FILE="$REPO/.daily-status"
 
 cd "$REPO"
@@ -27,60 +23,56 @@ write_status() {  # $1=state $2=message
     > "$STATUS_FILE"
 }
 
-# 1) Force-fresh Chrome scraper (kill ONLY our scraper profile, never Brave or user's Chrome)
-echo "[chrome] recycling scraper instance..."
-pkill -9 -f "user-data-dir=$CHROME_PROFILE" 2>/dev/null || true
-sleep 1
-
-# 2) Launch Chrome — NO --headless flag. Headless is detected & hard-blocked by DataDome.
-echo "[chrome] launching on port ${DEBUG_PORT}..."
-mkdir -p "$CHROME_PROFILE"
-"$CHROME_APP" \
-  --remote-debugging-port="${DEBUG_PORT}" \
-  --user-data-dir="$CHROME_PROFILE" \
-  --no-first-run --no-default-browser-check \
-  --disable-blink-features=AutomationControlled \
-  about:blank >/dev/null 2>&1 &
-disown
-
-# Wait up to 10s for CDP to accept connections
-for _ in 1 2 3 4 5 6 7 8 9 10; do
-  if curl -sf "http://127.0.0.1:${DEBUG_PORT}/json/version" >/dev/null 2>&1; then break; fi
-  sleep 1
-done
-if ! curl -sf "http://127.0.0.1:${DEBUG_PORT}/json/version" >/dev/null 2>&1; then
-  echo "[chrome] FAILED to open debug port"
-  write_status error "chrome failed to open CDP debug port"
+# 1) Camoufox profile + fingerprint must exist (CONFIRM-solved at least once)
+if [ ! -d "$REPO/.camoufox-profile" ]; then
+  echo "[setup] .camoufox-profile missing — run: python3 scripts/probe_camoufox_persistent.py"
+  write_status setup_needed "camoufox profile missing — run scripts/probe_camoufox_persistent.py"
   exit 1
 fi
+python3 scripts/ensure_fingerprint.py
 
-# 3) Pull latest
+# 2) Pull latest (stash first so a dirty tree doesn't block us)
+if ! git diff --quiet 2>/dev/null; then
+  git stash push --include-untracked --quiet -m "daily-autostash" || true
+  STASHED=1
+else
+  STASHED=0
+fi
 git pull --rebase --quiet || true
-
-# 4) DataDome cookie health check. If blocked, halt before running scrapers
-# so we don't ship a silent 0-deal day.
-echo "[datadome] checking cookie..."
-if ! python3 scripts/check_datadome.py; then
-  echo "[datadome] COOKIE EXPIRED — refresh with: ./scripts/refresh_datadome.sh"
-  write_status cookie_expired "DataDome cookie expired — run ./scripts/refresh_datadome.sh"
-  exit 1
+if [ "$STASHED" = "1" ]; then
+  git stash pop --quiet || true
 fi
 
-# 5) Liveness check (existing listings 404/removed detection)
+# 3) Liveness check (existing listings 404/removed detection)
 echo "[alive] starting..."
 python3 scripts/check_alive.py
 
-# 6) Scrape all saved searches
+# 4) Scrape all saved searches
 echo "[scrape] starting..."
+set +e
 python3 scripts/scrape_all.py
+RC=$?
+set -e
+if [ "$RC" -ne 0 ]; then
+  # scrape_all.py always returns 0; RC != 0 means a sub-scraper crashed out.
+  echo "[scrape] exited with rc=$RC"
+fi
 
-# 5) Rebuild HTML if DB changed
+# 5) Detect camoufox session loss by scanning the day's log for the scraper's
+# self-report line. Allegro scraper exits 3 on BLOCKED.
+if grep -q "BLOCKED — DataDome session lost" "$LOG" 2>/dev/null; then
+  echo "[scrape] DataDome session lost"
+  write_status camoufox_session_expired "Allegro DataDome session lapsed — run ./scripts/probe_camoufox_persistent.py"
+  exit 1
+fi
+
+# 6) Rebuild HTML if DB changed
 if ! git diff --quiet macbook_deals.json 2>/dev/null; then
   echo "[rebuild] HTML..."
   python3 pipeline.py rebuild
 fi
 
-# 8) Commit + push if anything changed
+# 7) Commit + push if anything changed
 if ! git diff --quiet macbook_deals.json index.html 2>/dev/null; then
   git add macbook_deals.json index.html
   git commit -m "daily: $(date +%Y-%m-%d) auto-update listings"
