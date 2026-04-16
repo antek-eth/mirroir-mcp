@@ -436,6 +436,24 @@ h1{font-family:var(--font-mono);font-size:22px;font-weight:600;letter-spacing:-.
 h1 span{color:var(--accent);font-weight:300}
 .header-meta{font-family:var(--font-mono);font-size:11px;color:var(--fg3);text-align:right;line-height:1.6}
 .header-meta strong{color:var(--fg2)}
+.header-right{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.toolbar{display:none;align-items:center;gap:8px;font-family:var(--font-mono);font-size:11px}
+.toolbar.live{display:inline-flex}
+.toolbar-btn{font-family:var(--font-mono);font-size:11px;padding:5px 10px;border:1px solid var(--border2);background:var(--bg2);color:var(--fg2);border-radius:var(--radius);cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.toolbar-btn:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.toolbar-btn:disabled{opacity:.5;cursor:wait}
+.toolbar-btn .icon{font-size:11px;display:inline-block}
+.toolbar-btn .icon.spin{animation:tb-spin 1.2s linear infinite}
+@keyframes tb-spin{to{transform:rotate(360deg)}}
+.status-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 9px;border-radius:100px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--border);color:var(--fg3);background:var(--bg2)}
+.status-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--fg3);flex-shrink:0}
+.status-pill.ok .dot{background:var(--accent)}
+.status-pill.ok{color:var(--accent);border-color:var(--accent-dim)}
+.status-pill.running .dot{background:#fbbf24;animation:tb-pulse 1.4s ease-in-out infinite}
+.status-pill.running{color:#fbbf24}
+.status-pill.error .dot,.status-pill.cookie_expired .dot{background:var(--hot)}
+.status-pill.error,.status-pill.cookie_expired{color:var(--hot)}
+@keyframes tb-pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;align-items:center}
 .filter-group{display:flex;align-items:center;gap:6px}
@@ -573,7 +591,18 @@ input.filter-input::placeholder{color:var(--fg3)}
         <h1>MacBook Pro <span>//</span> Deal Explorer</h1>
       </div>
     </div>
-    <div class="header-meta" id="dataInfo"></div>
+    <div class="header-right">
+      <div class="toolbar" id="toolbar" aria-label="Scraper controls">
+        <button class="toolbar-btn" id="btnScrape" title="Run full scrape (Allegro + OLX + rebuild + commit)" type="button">
+          <span class="icon" aria-hidden="true">&#x21bb;</span><span>Scrape</span>
+        </button>
+        <button class="toolbar-btn" id="btnCheckAlive" title="Re-check availability of all current listings" type="button">
+          <span class="icon" aria-hidden="true">&#x2713;</span><span>Check alive</span>
+        </button>
+        <span class="status-pill" id="statusPill"><span class="dot"></span><span id="statusText">idle</span></span>
+      </div>
+      <div class="header-meta" id="dataInfo"></div>
+    </div>
   </header>
 
   <div class="filters">
@@ -1161,6 +1190,101 @@ function init() {
   applyFilters();
 }
 init();
+
+// ---- Live control panel (only active when served via server.py) ----
+(function(){
+  var btnScrape = document.getElementById('btnScrape');
+  var btnAlive = document.getElementById('btnCheckAlive');
+  var toolbar = document.getElementById('toolbar');
+  var pill = document.getElementById('statusPill');
+  var pillText = document.getElementById('statusText');
+  if (!btnScrape || !toolbar) return;
+
+  var pollTimer = null;
+  var wasRunning = false;
+  var reloadAfter = false;
+
+  function setBusy(isBusy){
+    [btnScrape, btnAlive].forEach(function(b){ b.disabled = isBusy; });
+    toolbar.querySelectorAll('.toolbar-btn .icon').forEach(function(i){
+      i.classList.toggle('spin', isBusy);
+    });
+  }
+
+  function fmtAgo(iso){
+    if (!iso) return '';
+    var d = new Date(iso);
+    var secs = Math.floor((Date.now() - d.getTime())/1000);
+    if (secs < 5) return 'just now';
+    if (secs < 60) return secs + 's ago';
+    if (secs < 3600) return Math.floor(secs/60) + 'm ago';
+    if (secs < 86400) return Math.floor(secs/3600) + 'h ago';
+    return Math.floor(secs/86400) + 'd ago';
+  }
+
+  function render(status){
+    pill.className = 'status-pill';
+    pill.title = '';
+    if (status.running){
+      pill.classList.add('running');
+      pillText.textContent = status.running.kind + ' · ' + fmtAgo(status.running.started);
+      setBusy(true);
+    } else if (status.last){
+      pill.classList.add(status.last.state);
+      pillText.textContent = status.last.state + ' · ' + fmtAgo(status.last.at);
+      pill.title = status.last.msg || '';
+      setBusy(false);
+    } else {
+      pillText.textContent = 'idle';
+      setBusy(false);
+    }
+  }
+
+  function refresh(){
+    fetch('/api/status', {cache: 'no-store'}).then(function(r){
+      if (!r.ok) throw new Error('status ' + r.status);
+      return r.json();
+    }).then(function(s){
+      toolbar.classList.add('live');
+      render(s);
+      var running = !!s.running;
+      if (wasRunning && !running) {
+        reloadAfter = true;
+      }
+      wasRunning = running;
+      clearTimeout(pollTimer);
+      if (reloadAfter && !running){
+        setTimeout(function(){ location.reload(); }, 400);
+        return;
+      }
+      pollTimer = setTimeout(refresh, running ? 2000 : 20000);
+    }).catch(function(){
+      // Not served by server.py — keep toolbar hidden.
+      toolbar.classList.remove('live');
+      clearTimeout(pollTimer);
+      pollTimer = setTimeout(refresh, 60000);
+    });
+  }
+
+  function trigger(path){
+    fetch(path, {method: 'POST'}).then(function(r){
+      if (r.status === 409){
+        pill.className = 'status-pill';
+        pillText.textContent = 'already running';
+        return;
+      }
+      if (!r.ok) throw new Error('http ' + r.status);
+      refresh();
+    }).catch(function(e){
+      pill.className = 'status-pill error';
+      pillText.textContent = 'error: ' + e.message;
+    });
+  }
+
+  btnScrape.addEventListener('click', function(){ trigger('/api/scrape'); });
+  btnAlive.addEventListener('click', function(){ trigger('/api/check-alive'); });
+  refresh();
+})();
 </script>
 </body>
 </html>'''
