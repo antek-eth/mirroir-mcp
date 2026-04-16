@@ -133,7 +133,7 @@ def _last_summary():
         return None
 
 
-def _tail(path, lines: int = 60) -> str | None:
+def _tail(path, lines: int = 60):
     try:
         with open(path) as f:
             return "".join(f.readlines()[-lines:])
