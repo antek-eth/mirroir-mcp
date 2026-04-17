@@ -29,6 +29,7 @@ logs/
 .chrome-scraper-profile/
 .camoufox-profile/
 .camoufox-fingerprint.pkl
+.scrappey-key
 .daily-status
 .scrape-summary.json
 .server-job.pid

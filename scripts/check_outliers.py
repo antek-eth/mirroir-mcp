@@ -2,8 +2,9 @@
 """
 Auto-outlier detection: listings with anomalously high toksPerKPLN are usually
 broken (bez matrycy, na części, iCloud locked). Visits each flagged listing
-with camoufox, scans page text for Polish/English red-flag keywords, and
-auto-hides matches so they stop skewing the price-to-performance view.
+via the Scrappey pipeline (same path as the scrapers), scans page text for
+Polish/English red-flag keywords, and auto-hides matches so they stop skewing
+the price-to-performance view.
 
 Runs between scrape and rebuild in scripts/daily.sh.
 """
@@ -15,15 +16,22 @@ import sys
 import time
 from datetime import datetime
 
+from bs4 import BeautifulSoup
+
 REPO = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(REPO / "scripts"))
+sys.path.insert(0, str(REPO / "scrapers"))
 
 import pipeline  # noqa: E402
 import summary  # noqa: E402
-from ensure_fingerprint import load_or_create as _load_fingerprint  # noqa: E402
+from scrappey_client import (  # noqa: E402
+    ScrappeyError,
+    fetch,
+    get_call_count,
+    reset_call_count,
+)
 
-PROFILE = REPO / ".camoufox-profile"
 MAX_VISITS = 5
 SIGMA_THRESHOLD = 2.0
 MIN_GROUP_SIZE = 3
@@ -110,44 +118,48 @@ def scan_page_text(page_text):
     return None
 
 
-def visit_and_scan(ctx, url, timeout_ms=45000):
-    """Open URL, wait for body, grab title+body text. Returns (text, blocked)."""
-    page = ctx.new_page()
-    try:
-        page.set_extra_http_headers({"Accept-Language": "pl-PL,pl;q=0.9,en;q=0.8"})
-        page.goto(url, wait_until="domcontentloaded", timeout=timeout_ms)
-        try:
-            page.wait_for_selector("body", timeout=5000)
-        except Exception:  # noqa: BLE001
-            pass
-        info = page.evaluate("""
-            () => ({
-                title: document.title || '',
-                text: (document.body && document.body.innerText) || '',
-                blocked: document.documentElement.outerHTML.includes('captcha-delivery')
-                      || /Potwierd.+cz.owiekiem/i.test(document.body && document.body.innerText || ''),
-            })
-        """)
-        combined = f"{info.get('title','')}\n{info.get('text','')}"
-        return combined, bool(info.get("blocked"))
-    finally:
-        try:
-            page.close()
-        except Exception:  # noqa: BLE001
-            pass
+def fetch_html_text(url, timeout=180):
+    """Fetch rendered HTML via Scrappey, return (title+visible_text, blocked)."""
+    html = fetch(url, timeout=timeout)
+    soup = BeautifulSoup(html, "lxml")
+    for tag in soup(["script", "style", "noscript"]):
+        tag.decompose()
+    text = soup.get_text(" ", strip=True)
+    title = ""
+    if soup.title and soup.title.string:
+        title = soup.title.string.strip()
+    combined = f"{title}\n{text}"
+    blocked = (
+        "captcha-delivery" in html.lower()
+        or bool(re.search(r"Potwierd.+cz.owiekiem", combined, re.I))
+    )
+    return combined, blocked
 
 
-def _section(candidates_count=0, visited=0, auto_hidden=0, hides=None, blocked=False, skipped=None):
-    return {
+def _section(
+    candidates_count=0,
+    visited=0,
+    auto_hidden=0,
+    hides=None,
+    blocked=False,
+    skipped=None,
+    scrappey_calls=0,
+    scrappey_error=None,
+):
+    section = {
         "candidates": candidates_count,
         "visited": visited,
         "auto_hidden": auto_hidden,
         "hides": hides or [],
         "blocked": blocked,
         "skipped": skipped or "",
+        "scrappey_calls": scrappey_calls,
         "sigma_threshold": SIGMA_THRESHOLD,
         "max_visits": MAX_VISITS,
     }
+    if scrappey_error:
+        section["scrappey_error"] = scrappey_error
+    return section
 
 
 def main():
@@ -172,72 +184,57 @@ def main():
             )
         return 0
 
-    if not PROFILE.exists():
-        log("[outliers] .camoufox-profile missing — skipping")
-        summary.write_section("outliers", _section(
-            candidates_count=len(candidates),
-            skipped="camoufox profile missing",
-        ))
-        summary.append_action_required(
-            "camoufox profile missing — run scripts/probe_camoufox_persistent.py"
-        )
-        return 0
+    log(f"[outliers] {len(candidates)} candidate(s) above {SIGMA_THRESHOLD}σ; visiting up to {MAX_VISITS} via Scrappey")
 
-    log(f"[outliers] {len(candidates)} candidate(s) above {SIGMA_THRESHOLD}σ; visiting up to {MAX_VISITS}")
-
-    # Camoufox is optional: only imported when we actually have something to visit.
-    from camoufox.sync_api import Camoufox
-
+    reset_call_count()
     hides = []
     visited = 0
     blocked_flag = False
+    scrappey_err: str | None = None
     today = datetime.now().strftime("%Y-%m-%d")
 
-    with Camoufox(
-        headless=True,
-        locale="pl-PL",
-        persistent_context=True,
-        user_data_dir=str(PROFILE),
-        fingerprint=_load_fingerprint(),
-        i_know_what_im_doing=True,
-    ) as ctx:
-        for i, cand in enumerate(candidates[:MAX_VISITS]):
-            deal = cand["deal"]
-            url = deal["url"]
-            log(
-                f"[outliers] {i+1}/{min(len(candidates), MAX_VISITS)} "
-                f"group={cand['group']} ratio={cand['ratio']:.1f} "
-                f"(mean={cand['group_mean']:.1f} σ={cand['group_sigma']:.1f}) url={url}"
-            )
-            try:
-                text, blocked = visit_and_scan(ctx, url)
-            except Exception as exc:  # noqa: BLE001
-                log(f"[outliers] visit failed: {exc}")
-                continue
-            if blocked:
-                log("[outliers] DataDome block encountered — aborting remaining visits")
-                blocked_flag = True
-                break
-            visited += 1
-            kw = scan_page_text(text)
-            if kw:
-                reason = f"auto-outlier: {kw}"
-                deal["hidden"] = True
-                deal["hidden_at"] = today
-                deal["hidden_reason"] = reason
-                pipeline.add_hidden_fp(url, pipeline.make_listing_fp(deal), reason=reason)
-                hides.append({
-                    "url": url,
-                    "keyword": kw,
-                    "group": cand["group"],
-                    "ratio": round(cand["ratio"], 1),
-                    "title": (deal.get("title") or "")[:120],
-                })
-                log(f"[outliers] HIDE: matched '{kw}' — {deal.get('title','')[:80]}")
-            else:
-                log(f"[outliers] clean: no red-flag keywords matched — {deal.get('title','')[:80]}")
-            if i + 1 < min(len(candidates), MAX_VISITS):
-                time.sleep(random.uniform(3.0, 7.0))
+    for i, cand in enumerate(candidates[:MAX_VISITS]):
+        deal = cand["deal"]
+        url = deal["url"]
+        log(
+            f"[outliers] {i+1}/{min(len(candidates), MAX_VISITS)} "
+            f"group={cand['group']} ratio={cand['ratio']:.1f} "
+            f"(mean={cand['group_mean']:.1f} σ={cand['group_sigma']:.1f}) url={url}"
+        )
+        try:
+            text, blocked = fetch_html_text(url)
+        except ScrappeyError as exc:
+            log(f"[outliers] Scrappey failed: {exc}")
+            scrappey_err = str(exc)
+            blocked_flag = True
+            break
+        except Exception as exc:  # noqa: BLE001
+            log(f"[outliers] visit failed: {exc}")
+            continue
+        if blocked:
+            log("[outliers] upstream block persisted through Scrappey — aborting")
+            blocked_flag = True
+            break
+        visited += 1
+        kw = scan_page_text(text)
+        if kw:
+            reason = f"auto-outlier: {kw}"
+            deal["hidden"] = True
+            deal["hidden_at"] = today
+            deal["hidden_reason"] = reason
+            pipeline.add_hidden_fp(url, pipeline.make_listing_fp(deal), reason=reason)
+            hides.append({
+                "url": url,
+                "keyword": kw,
+                "group": cand["group"],
+                "ratio": round(cand["ratio"], 1),
+                "title": (deal.get("title") or "")[:120],
+            })
+            log(f"[outliers] HIDE: matched '{kw}' — {deal.get('title','')[:80]}")
+        else:
+            log(f"[outliers] clean: no red-flag keywords matched — {deal.get('title','')[:80]}")
+        if i + 1 < min(len(candidates), MAX_VISITS):
+            time.sleep(random.uniform(0.5, 1.5))
 
     if hides:
         pipeline.save_db(db)
@@ -251,10 +248,12 @@ def main():
         auto_hidden=len(hides),
         hides=hides,
         blocked=blocked_flag,
+        scrappey_calls=get_call_count(),
+        scrappey_error=scrappey_err,
     ))
     if blocked_flag:
         summary.append_action_required(
-            "outlier visits blocked by DataDome — run scripts/probe_camoufox_persistent.py"
+            "outlier visits failed via Scrappey — check .scrappey-key balance + service status"
         )
     return 0
 

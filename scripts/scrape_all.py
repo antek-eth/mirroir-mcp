@@ -47,7 +47,7 @@ def run_scraper(source: str, entry: dict):
         print(f"[{source}] TIMEOUT", file=sys.stderr)
         return {"added": 0, "items": 0, "error": "timeout", "blocked": False}
 
-    blocked = "BLOCKED — DataDome session lost" in (r.stderr or "")
+    blocked = "BLOCKED — Scrappey failed" in (r.stderr or "")
     if r.returncode != 0:
         stderr_tail = (r.stderr or "").strip()[-300:]
         print(f"[{source}] scraper exit {r.returncode}: {stderr_tail[:200]}", file=sys.stderr)
@@ -144,7 +144,7 @@ def main() -> int:
     summary.write_section("scrape", section)
     if blocked_sources:
         summary.append_action_required(
-            f"DataDome blocked {', '.join(sorted(blocked_sources))} — run scripts/probe_camoufox_persistent.py"
+            f"Scrappey failed for {', '.join(sorted(blocked_sources))} — check .scrappey-key balance + service status"
         )
     print(json.dumps({"runs": total_runs, "new_deals": total_new}))
     return 0

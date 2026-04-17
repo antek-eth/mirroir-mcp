@@ -1,9 +1,12 @@
 #!/bin/bash
-# Daily orchestrator: check alive → scrape → rebuild → commit → push.
-# Scrapers use camoufox with a persistent profile at .camoufox-profile,
-# pinned to a saved fingerprint at .camoufox-fingerprint.pkl.
-# If Allegro's DataDome session lapses, scrapers/allegro.py exits 3 and we
-# surface the state so the user can re-run scripts/probe_camoufox_persistent.py.
+# Daily orchestrator: check alive → scrape → outliers → rebuild → commit → push.
+# Anti-bot-sensitive steps use scrapers/scrappey_client.py as the canonical path:
+#   - scrapers/allegro.py: Scrappey only (no local browser).
+#   - scrapers/olx.py: camoufox primary when .camoufox-profile exists, Scrappey fallback.
+#   - scripts/check_alive.py: HEAD first, escalate to Scrappey GET only for Allegro
+#     hosts that return 403 on HEAD (capped by CHECK_ALIVE_MAX_ESCALATIONS).
+#   - scripts/check_outliers.py: Scrappey only — no local camoufox dependency.
+# A missing / exhausted Scrappey key fails the run with an action-required summary.
 set -euo pipefail
 export PATH="/Library/Frameworks/Python.framework/Versions/3.12/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
@@ -31,15 +34,22 @@ db_size() {
 python3 scripts/summary.py reset daily "$LOG"
 python3 scripts/summary.py count-before "$(db_size)"
 
-# 1) Camoufox profile + fingerprint must exist (CONFIRM-solved at least once)
-if [ ! -d "$REPO/.camoufox-profile" ]; then
-  echo "[setup] .camoufox-profile missing — run: python3 scripts/probe_camoufox_persistent.py"
-  write_status setup_needed "camoufox profile missing — run scripts/probe_camoufox_persistent.py"
-  python3 scripts/summary.py action "camoufox profile missing — run scripts/probe_camoufox_persistent.py"
+# 1) Allegro uses Scrappey (API) — no browser profile needed.
+#    OLX still uses camoufox when a profile exists and falls back to Scrappey.
+if [ -d "$REPO/.camoufox-profile" ]; then
+  python3 scripts/ensure_fingerprint.py
+else
+  echo "[setup] .camoufox-profile missing — OLX will use Scrappey fallback"
+fi
+
+# Scrappey key must be present for Allegro + OLX fallback.
+if [ ! -s "$REPO/.scrappey-key" ] && [ -z "${SCRAPPEY_KEY:-}" ]; then
+  echo "[setup] missing Scrappey key — put it in .scrappey-key or \$SCRAPPEY_KEY"
+  write_status setup_needed "Scrappey key missing — create .scrappey-key"
+  python3 scripts/summary.py action "Scrappey key missing — create .scrappey-key"
   python3 scripts/summary.py finalize setup_needed
   exit 1
 fi
-python3 scripts/ensure_fingerprint.py
 
 # 2) Pull latest (stash first so a dirty tree doesn't block us)
 if ! git diff --quiet 2>/dev/null; then
@@ -68,14 +78,14 @@ if [ "$RC" -ne 0 ]; then
   echo "[scrape] exited with rc=$RC"
 fi
 
-# 5) Detect camoufox session loss by scanning the day's log for the scraper's
-# self-report line. Allegro scraper exits 3 on BLOCKED.
-if grep -q "BLOCKED — DataDome session lost" "$LOG" 2>/dev/null; then
-  echo "[scrape] DataDome session lost"
-  write_status camoufox_session_expired "Allegro DataDome session lapsed — run ./scripts/probe_camoufox_persistent.py"
-  python3 scripts/summary.py action "Allegro DataDome session lapsed — run scripts/probe_camoufox_persistent.py"
+# 5) Detect a scraper hard-block (Scrappey couldn't solve the upstream challenge).
+# Allegro and OLX both exit 3 on BLOCKED; they log "BLOCKED — Scrappey failed".
+if grep -q "BLOCKED — Scrappey failed" "$LOG" 2>/dev/null; then
+  echo "[scrape] Scrappey failed — check .scrappey-key balance + service status"
+  write_status scrappey_failed "Scrappey failed — check .scrappey-key balance / service status"
+  python3 scripts/summary.py action "Scrappey failed — check .scrappey-key balance + service status"
   python3 scripts/summary.py count-after "$(db_size)"
-  python3 scripts/summary.py finalize camoufox_session_expired
+  python3 scripts/summary.py finalize scrappey_failed
   exit 1
 fi
 

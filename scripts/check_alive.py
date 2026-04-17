@@ -1,29 +1,44 @@
 #!/usr/bin/env python3
 """
-Check liveness of all non-expired listings via HTTP HEAD.
+Check liveness of all non-expired listings.
+
+Stage A (cheap):  plain urllib HEAD, 20-way concurrent.
+Stage B (Scrappey): for hosts in SCRAPPEY_ESCALATE_HOSTS that returned 403 or
+a transport error in Stage A (Allegro DataDome-blocks bot HEADs), re-check via
+Scrappey's full-browser GET. Bounded by CHECK_ALIVE_MAX_ESCALATIONS
+(default 50) to cap spend.
 
 Marks listings as expired: true + expired_at: YYYY-MM-DD when
 status is 404, 410, or 451 (gone / removed / unavailable for legal reasons).
-
-Logs summary only — no per-URL noise. Takes ~30s for 600 URLs.
-Non-2xx/3xx that aren't clearly "gone" (e.g. Allegro's 403 bot-block) are
-counted as inconclusive and the listing is left unchanged.
 """
 import json
+import os
 import sys
 import concurrent.futures
 from datetime import date
 from pathlib import Path
+from urllib.parse import urlparse
 import urllib.request
 import urllib.error
 
-sys.path.insert(0, str(Path(__file__).resolve().parent))
+REPO = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO / "scripts"))
+sys.path.insert(0, str(REPO / "scrapers"))
 import summary  # noqa: E402 — share summary writer across pipeline steps
+from scrappey_client import (  # noqa: E402
+    ScrappeyError,
+    fetch_status,
+    get_call_count,
+    reset_call_count,
+)
 
-DB_FILE = Path(__file__).parent.parent / "macbook_deals.json"
+DB_FILE = REPO / "macbook_deals.json"
 TIMEOUT = 10
 WORKERS = 20
 EXPIRED_STATUSES = {404, 410, 451}
+
+SCRAPPEY_ESCALATE_HOSTS = {"allegro.pl", "allegrolokalnie.pl"}
+MAX_ESCALATIONS = int(os.environ.get("CHECK_ALIVE_MAX_ESCALATIONS", "50"))
 
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 
@@ -40,6 +55,27 @@ def head_status(url: str) -> int | None:
         return None
 
 
+def _host_matches(url: str, hosts: set[str]) -> bool:
+    try:
+        h = (urlparse(url).hostname or "").lower()
+    except ValueError:
+        return False
+    return any(h == domain or h.endswith("." + domain) for domain in hosts)
+
+
+def _classify(status: int | None) -> str:
+    """Return one of: expired, alive, needs_escalation, inconclusive."""
+    if status is None:
+        return "needs_escalation"
+    if status in EXPIRED_STATUSES:
+        return "expired"
+    if 200 <= status < 400:
+        return "alive"
+    if status == 403:
+        return "needs_escalation"
+    return "inconclusive"
+
+
 def main() -> int:
     deals = json.loads(DB_FILE.read_text(encoding="utf-8"))
     to_check = [(i, d) for i, d in enumerate(deals) if d.get("url") and not d.get("expired")]
@@ -47,24 +83,64 @@ def main() -> int:
     newly_expired = 0
     errors = 0
     inconclusive = 0
+    escalated = 0
+    escalated_expired = 0
+    escalated_inconclusive = 0
     today = date.today().isoformat()
-    expired_samples = []
+    expired_samples: list[str] = []
+    escalate_queue: list[tuple[int, dict]] = []
 
+    # ---- Stage A: plain HEAD ----
     with concurrent.futures.ThreadPoolExecutor(max_workers=WORKERS) as pool:
         futures = {pool.submit(head_status, d["url"]): (i, d) for i, d in to_check}
         for fut in concurrent.futures.as_completed(futures):
             i, d = futures[fut]
             status = fut.result()
-            if status is None:
-                errors += 1
-            elif status in EXPIRED_STATUSES:
+            verdict = _classify(status)
+            if verdict == "expired":
                 deals[i]["expired"] = True
                 deals[i]["expired_at"] = today
                 newly_expired += 1
                 if len(expired_samples) < 10:
                     expired_samples.append(d.get("url", ""))
-            elif status >= 400:
+            elif verdict == "alive":
+                continue
+            elif verdict == "needs_escalation":
+                if _host_matches(d["url"], SCRAPPEY_ESCALATE_HOSTS):
+                    escalate_queue.append((i, d))
+                else:
+                    if status is None:
+                        errors += 1
+                    else:
+                        inconclusive += 1
+            else:  # inconclusive
                 inconclusive += 1
+
+    # ---- Stage B: Scrappey GET for hosts worth the spend ----
+    reset_call_count()
+    scrappey_err: str | None = None
+    for i, d in escalate_queue[:MAX_ESCALATIONS]:
+        try:
+            status = fetch_status(d["url"])
+        except ScrappeyError as exc:
+            scrappey_err = str(exc)
+            # Remaining escalations will likely fail too — stop to save spend.
+            break
+        escalated += 1
+        verdict = _classify(status)
+        if verdict == "expired":
+            deals[i]["expired"] = True
+            deals[i]["expired_at"] = today
+            newly_expired += 1
+            escalated_expired += 1
+            if len(expired_samples) < 10:
+                expired_samples.append(d.get("url", ""))
+        elif verdict == "alive":
+            continue
+        else:
+            escalated_inconclusive += 1
+
+    skipped_escalations = max(0, len(escalate_queue) - MAX_ESCALATIONS)
 
     if newly_expired:
         DB_FILE.write_text(
@@ -76,8 +152,19 @@ def main() -> int:
         "newly_expired": newly_expired,
         "errors": errors,
         "inconclusive": inconclusive,
+        "escalated": escalated,
+        "escalated_expired": escalated_expired,
+        "escalated_inconclusive": escalated_inconclusive,
+        "escalations_queued": len(escalate_queue),
+        "escalations_skipped": skipped_escalations,
+        "scrappey_calls": get_call_count(),
         "expired_samples": expired_samples,
     }
+    if scrappey_err:
+        result["scrappey_error"] = scrappey_err
+        summary.append_action_required(
+            "check_alive: Scrappey failed — check .scrappey-key balance + service status"
+        )
     summary.write_section("alive", result)
     print(json.dumps({k: v for k, v in result.items() if k != "expired_samples"}))
     return 0
