@@ -15,5 +15,16 @@
     "url": "https://www.olx.pl/d/oferta/macbook-pro-16-2021-m1-pro-32gb-ram-512gb-ssd-zbita-matryca-CID99-ID19Xysk.html",
     "hidden_at": "2026-04-16",
     "reason": "auto-outlier: wymiany"
+  },
+  {
+    "fp": "fp:m2 max|32gb|512gb|studio|mac studio m2 max 32gb 512gb gwarancja do 11.2028",
+    "url": "https://www.olx.pl/d/oferta/mac-studio-m2-max-32gb-512gb-gwarancja-do-11-2028-CID99-ID1aay0R.html",
+    "hidden_at": "2026-04-16"
+  },
+  {
+    "fp": "fp:m4 max|||14|macbook pro 14 a3185 m4 max 2024. bez matrycy/stan nieznany.",
+    "url": "https://allegrolokalnie.pl/oferta/macbook-pro-a3185-m4-max-2024-bez-matrycystan-nieznany",
+    "hidden_at": "2026-04-17",
+    "reason": "auto-outlier: uszkodzon"
   }
 ]
