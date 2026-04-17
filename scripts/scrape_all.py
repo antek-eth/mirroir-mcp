@@ -109,6 +109,7 @@ def run_scraper(source: str, entry: dict):
 
 
 def main() -> int:
+    summary.clear_section_actions("scrape")
     data = json.loads(SEARCHES.read_text(encoding="utf-8"))
     total_new = 0
     total_runs = 0
@@ -144,7 +145,8 @@ def main() -> int:
     summary.write_section("scrape", section)
     if blocked_sources:
         summary.append_action_required(
-            f"Scrappey failed for {', '.join(sorted(blocked_sources))} — check .scrappey-key balance + service status"
+            f"Scrappey failed for {', '.join(sorted(blocked_sources))} — check .scrappey-key balance + service status",
+            section="scrape",
         )
     print(json.dumps({"runs": total_runs, "new_deals": total_new}))
     return 0

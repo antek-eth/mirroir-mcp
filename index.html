@@ -1008,7 +1008,8 @@ function loadVersionPill() {
       issues += '<div class="issue">' + esc(e) + '</div>';
     });
     actions.forEach(function(a){
-      issues += '<div class="action">action required: ' + esc(a) + '</div>';
+      var msg = (a && typeof a === 'object') ? a.msg : a;
+      issues += '<div class="action">action required: ' + esc(msg) + '</div>';
     });
     if (issues) parts.push('<div class="issues">' + issues + '</div>');
 

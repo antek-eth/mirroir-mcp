@@ -77,6 +77,7 @@ def _classify(status: int | None) -> str:
 
 
 def main() -> int:
+    summary.clear_section_actions("alive")
     deals = json.loads(DB_FILE.read_text(encoding="utf-8"))
     to_check = [(i, d) for i, d in enumerate(deals) if d.get("url") and not d.get("expired")]
 
@@ -119,13 +120,20 @@ def main() -> int:
     # ---- Stage B: Scrappey GET for hosts worth the spend ----
     reset_call_count()
     scrappey_err: str | None = None
+    consecutive_fails = 0
+    CONSECUTIVE_FAIL_LIMIT = 3
     for i, d in escalate_queue[:MAX_ESCALATIONS]:
         try:
             status = fetch_status(d["url"])
+            consecutive_fails = 0
         except ScrappeyError as exc:
             scrappey_err = str(exc)
-            # Remaining escalations will likely fail too — stop to save spend.
-            break
+            consecutive_fails += 1
+            escalated_inconclusive += 1
+            if consecutive_fails >= CONSECUTIVE_FAIL_LIMIT:
+                # Key dead or Scrappey down — stop burning requests.
+                break
+            continue
         escalated += 1
         verdict = _classify(status)
         if verdict == "expired":
@@ -162,8 +170,12 @@ def main() -> int:
     }
     if scrappey_err:
         result["scrappey_error"] = scrappey_err
+    # Only raise an action if Scrappey gave up on consecutive attempts;
+    # a single transient timeout in a long queue isn't worth the alert.
+    if scrappey_err and consecutive_fails >= CONSECUTIVE_FAIL_LIMIT:
         summary.append_action_required(
-            "check_alive: Scrappey failed — check .scrappey-key balance + service status"
+            "check_alive: Scrappey failed repeatedly — check .scrappey-key balance + service status",
+            section="alive",
         )
     summary.write_section("alive", result)
     print(json.dumps({k: v for k, v in result.items() if k != "expired_samples"}))

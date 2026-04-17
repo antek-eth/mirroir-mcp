@@ -165,6 +165,9 @@ def _section(
 def main():
     dry_run = "--dry-run" in sys.argv[1:]
 
+    if not dry_run:
+        summary.clear_section_actions("outliers")
+
     db = pipeline.load_db()
     candidates = find_outliers(db)
     if not candidates:
@@ -253,7 +256,8 @@ def main():
     ))
     if blocked_flag:
         summary.append_action_required(
-            "outlier visits failed via Scrappey — check .scrappey-key balance + service status"
+            "outlier visits failed via Scrappey — check .scrappey-key balance + service status",
+            section="outliers",
         )
     return 0
 

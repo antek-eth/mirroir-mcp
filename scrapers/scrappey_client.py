@@ -87,7 +87,7 @@ def fetch(url: str, timeout: int = 180, datadome: bool = True) -> str:
     return html
 
 
-def fetch_status(url: str, timeout: int = 120, datadome: bool = True) -> int | None:
+def fetch_status(url: str, timeout: int = 180, datadome: bool = True) -> int | None:
     """POST to Scrappey, return upstream status code (or None if no solution).
 
     Unlike fetch(), this does NOT raise on 4xx/5xx or on verified=False — the

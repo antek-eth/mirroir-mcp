@@ -83,12 +83,41 @@ def append_error(msg):
     _write(data)
 
 
-def append_action_required(msg):
+def append_action_required(msg, section=None):
+    """Append a required-action message, optionally tagged with its section.
+
+    When `section` is given, the item is stored as a dict so it can be
+    cleared later by `clear_section_actions(section)`. Un-tagged legacy
+    string entries are preserved as-is.
+    """
     data = _read() or reset()
     actions = data.setdefault("actions_required", [])
-    if msg not in actions:
-        actions.append(str(msg))
+    msg = str(msg)
+    item = {"msg": msg, "section": section} if section else msg
+
+    def _same(existing):
+        if isinstance(existing, dict):
+            return existing.get("msg") == msg
+        return existing == msg
+
+    if not any(_same(a) for a in actions):
+        actions.append(item)
     _write(data)
+
+
+def clear_section_actions(section):
+    """Drop any action items attributed to `section` (no-op for legacy strings)."""
+    data = _read()
+    if not data:
+        return
+    actions = data.get("actions_required") or []
+    kept = [
+        a for a in actions
+        if not (isinstance(a, dict) and a.get("section") == section)
+    ]
+    if len(kept) != len(actions):
+        data["actions_required"] = kept
+        _write(data)
 
 
 def set_counts(before=None, after=None):
