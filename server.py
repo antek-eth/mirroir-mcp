@@ -32,6 +32,15 @@ import pipeline  # noqa: E402 — local module, reused for hide helpers + HTML r
 import summary as _summary  # noqa: E402 — shared summary reader, strips stale actions
 
 _hide_lock = threading.Lock()
+_edit_lock = threading.Lock()
+
+# Fields the /api/edit endpoint is allowed to mutate. Anything else the
+# client sends in `updates` is silently ignored — protects against drive-by
+# overwrites of enrichment output or IDs.
+EDITABLE_FIELDS = {
+    "title", "price", "oldPrice", "cpu", "ram", "disk", "screen",
+    "cpuCores", "gpuCores", "model", "broken", "used", "expired",
+}
 
 _lock = threading.Lock()
 _job = None  # {"proc": Popen, "kind": str, "started": iso, "log_path": Path}
@@ -228,6 +237,41 @@ class Handler(SimpleHTTPRequestHandler):
                 except Exception as exc:  # noqa: BLE001
                     return self._json(200, {"ok": True, "hidden": marked, "rebuild_error": str(exc)})
             return self._json(200, {"ok": True, "hidden": marked})
+        if self.path == "/api/edit":
+            body = self._read_json_body()
+            url = (body.get("url") or "").strip()
+            updates = body.get("updates") or {}
+            if not url:
+                return self._json(400, {"error": "url required"})
+            if not isinstance(updates, dict) or not updates:
+                return self._json(400, {"error": "updates dict required"})
+            safe_updates = {k: v for k, v in updates.items() if k in EDITABLE_FIELDS}
+            if not safe_updates:
+                return self._json(400, {"error": "no editable fields in updates"})
+            with _edit_lock:
+                db = pipeline.load_db()
+                deal = next((d for d in db if d.get("url") == url), None)
+                if not deal:
+                    return self._json(404, {"error": "no deal with that url"})
+                for k, v in safe_updates.items():
+                    deal[k] = v
+                # Re-parse price if the text-form price was edited.
+                if "price" in safe_updates:
+                    deal["priceNum"] = pipeline.parse_price(safe_updates["price"]) or 0
+                # Re-enrich benchmarks if cpu or ram changed.
+                if "cpu" in safe_updates or "ram" in safe_updates:
+                    bench = pipeline.assign_benchmarks(
+                        deal.get("cpu") or "",
+                        pipeline._parse_ram_gb(deal.get("ram")),
+                    )
+                    deal.update(bench)
+                deal["edited_at"] = datetime.now().strftime("%Y-%m-%d")
+                pipeline.save_db(db)
+                try:
+                    pipeline.generate_html(db)
+                except Exception as exc:  # noqa: BLE001
+                    return self._json(200, {"ok": True, "rebuild_error": str(exc)})
+            return self._json(200, {"ok": True, "updated": list(safe_updates.keys())})
         if self.path == "/api/unhide-all":
             with _hide_lock:
                 cleared = pipeline.remove_all_hidden()

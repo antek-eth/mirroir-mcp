@@ -17,9 +17,10 @@ SEARCHES = ROOT / "searches.json"
 PIPELINE = ROOT / "pipeline.py"
 
 SCRAPERS = {
-    "allegro": ROOT / "scrapers" / "allegro.py",
-    "olx":     ROOT / "scrapers" / "olx.py",
-    "lantre":  ROOT / "scrapers" / "lantre.py",
+    "allegro":         ROOT / "scrapers" / "allegro.py",
+    "allegrolokalnie": ROOT / "scrapers" / "allegrolokalnie.py",
+    "olx":             ROOT / "scrapers" / "olx.py",
+    "lantre":          ROOT / "scrapers" / "lantre.py",
 }
 
 

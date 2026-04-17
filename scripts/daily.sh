@@ -1,10 +1,18 @@
 #!/bin/bash
-# Daily orchestrator: check alive → scrape → outliers → rebuild → commit → push.
+# Daily orchestrator: scrape → alive → mark_stale → outliers → rebuild → commit → push.
+#
+# ORDERING INVARIANT: mark_stale.py --apply MUST run AFTER scrape_all.py in the
+# same day. Otherwise the backfill values of `last_seen_in_search` (stale by
+# definition) will trigger false-positive staleness expiry. Never invoke
+# mark_stale.py --apply manually before today's scrape has completed.
+#
 # Anti-bot-sensitive steps use scrapers/scrappey_client.py as the canonical path:
-#   - scrapers/allegro.py: Scrappey only (no local browser).
+#   - scrapers/allegro.py, scrapers/allegrolokalnie.py: Scrappey only (DataDome).
 #   - scrapers/olx.py: camoufox primary when .camoufox-profile exists, Scrappey fallback.
-#   - scripts/check_alive.py: HEAD first, escalate to Scrappey GET only for Allegro
-#     hosts that return 403 on HEAD (capped by CHECK_ALIVE_MAX_ESCALATIONS).
+#   - scripts/check_alive.py: HEAD only, no Scrappey — 404/410/451 early-expire.
+#     Ambiguous statuses fall through to scripts/mark_stale.py.
+#   - scripts/mark_stale.py: zero-network; uses today's scrape coverage as the
+#     liveness signal. Listings absent from scrape >GRACE_DAYS get expired.
 #   - scripts/check_outliers.py: Scrappey only — no local camoufox dependency.
 # A missing / exhausted Scrappey key fails the run with an action-required summary.
 set -euo pipefail
@@ -66,11 +74,9 @@ if [ "$STASHED" = "1" ]; then
   git stash pop --quiet || true
 fi
 
-# 3) Liveness check (existing listings 404/removed detection)
-echo "[alive] starting..."
-python3 scripts/check_alive.py
-
-# 4) Scrape all saved searches
+# 3) Scrape all saved searches FIRST — this bumps last_seen_in_search on every
+#    URL that's still listed, feeding the search-based liveness signal for
+#    step 5 (mark_stale.py).
 echo "[scrape] starting..."
 set +e
 python3 scripts/scrape_all.py
@@ -81,7 +87,7 @@ if [ "$RC" -ne 0 ]; then
   echo "[scrape] exited with rc=$RC"
 fi
 
-# 5) Detect a scraper hard-block (Scrappey couldn't solve the upstream challenge).
+# 3a) Detect a scraper hard-block (Scrappey couldn't solve the upstream challenge).
 # Allegro and OLX both exit 3 on BLOCKED; they log "BLOCKED — Scrappey failed".
 if grep -q "BLOCKED — Scrappey failed" "$LOG" 2>/dev/null; then
   echo "[scrape] Scrappey failed — check .scrappey-key balance + service status"
@@ -91,6 +97,20 @@ if grep -q "BLOCKED — Scrappey failed" "$LOG" 2>/dev/null; then
   python3 scripts/summary.py finalize scrappey_failed
   exit 1
 fi
+
+# 4) Liveness check — HEAD early-confirm for hosts where HEAD gives a clear
+#    status (404/410/451 → expired immediately, everything else is a no-op
+#    because the search-based path in step 5 handles ambiguity).
+echo "[alive] starting..."
+python3 scripts/check_alive.py
+
+# 5) Search-based staleness sweep — mark listings expired if they haven't
+#    appeared in any scrape's results for the grace window. Un-expire any
+#    previously staleness-expired listing that showed up again today. Respects
+#    a safety gate: if any host's scrape returned 0 items, its deals are
+#    skipped entirely so a broken scrape can't nuke the DB.
+echo "[mark_stale] starting..."
+python3 scripts/mark_stale.py --apply
 
 # 6) Auto-outlier scan (flags broken/incomplete listings before they skew the view).
 # Best-effort: a failure here must not block the daily run.

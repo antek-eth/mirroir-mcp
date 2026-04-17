@@ -41,27 +41,9 @@ GB6 = {
     "M3 ULTRA": {"gb6_single": 3100, "gb6_multi": 28000, "gb6_metal": 240000},
 }
 
-# LLM Inference benchmarks by chip (Llama 2 7B)
-LLM = {
-    "M1":       {"mem_bw_gbs": 68,  "llm_gpu_cores": 8,  "llama2_7b_q4_tg": 14.15, "llama2_7b_q4_pp": 117.96, "llama2_7b_q8_tg": 7.91,  "llama2_7b_f16_tg": None},
-    "M1 PRO":   {"mem_bw_gbs": 200, "llm_gpu_cores": 16, "llama2_7b_q4_tg": 36.41, "llama2_7b_q4_pp": 266.25, "llama2_7b_q8_tg": 22.34, "llama2_7b_f16_tg": 12.75},
-    "M1 MAX":   {"mem_bw_gbs": 400, "llm_gpu_cores": 32, "llama2_7b_q4_tg": 60.0,  "llama2_7b_q4_pp": 530.0,  "llama2_7b_q8_tg": 39.0,  "llama2_7b_f16_tg": 23.0},
-    "M2":       {"mem_bw_gbs": 100, "llm_gpu_cores": 10, "llama2_7b_q4_tg": 21.91, "llama2_7b_q4_pp": 179.57, "llama2_7b_q8_tg": 12.21, "llama2_7b_f16_tg": 6.72},
-    "M2 PRO":   {"mem_bw_gbs": 200, "llm_gpu_cores": 19, "llama2_7b_q4_tg": 38.86, "llama2_7b_q4_pp": 341.19, "llama2_7b_q8_tg": 23.01, "llama2_7b_f16_tg": 13.06},
-    "M2 MAX":   {"mem_bw_gbs": 400, "llm_gpu_cores": 38, "llama2_7b_q4_tg": 65.95, "llama2_7b_q4_pp": 671.31, "llama2_7b_q8_tg": 41.83, "llama2_7b_f16_tg": 24.65},
-    "M3":       {"mem_bw_gbs": 100, "llm_gpu_cores": 10, "llama2_7b_q4_tg": 21.34, "llama2_7b_q4_pp": 186.75, "llama2_7b_q8_tg": 12.27, "llama2_7b_f16_tg": None},
-    "M3 PRO":   {"mem_bw_gbs": 150, "llm_gpu_cores": 18, "llama2_7b_q4_tg": 30.74, "llama2_7b_q4_pp": 341.67, "llama2_7b_q8_tg": 17.53, "llama2_7b_f16_tg": 9.89},
-    "M3 MAX":   {"mem_bw_gbs": 400, "llm_gpu_cores": 40, "llama2_7b_q4_tg": 66.31, "llama2_7b_q4_pp": 759.70, "llama2_7b_q8_tg": 42.75, "llama2_7b_f16_tg": 25.09},
-    "M4":       {"mem_bw_gbs": 120, "llm_gpu_cores": 10, "llama2_7b_q4_tg": 24.11, "llama2_7b_q4_pp": 221.29, "llama2_7b_q8_tg": 13.54, "llama2_7b_f16_tg": 7.43},
-    "M4 PRO":   {"mem_bw_gbs": 273, "llm_gpu_cores": 20, "llama2_7b_q4_tg": 50.74, "llama2_7b_q4_pp": 439.78, "llama2_7b_q8_tg": 30.69, "llama2_7b_f16_tg": 17.18},
-    "M4 MAX":   {"mem_bw_gbs": 546, "llm_gpu_cores": 40, "llama2_7b_q4_tg": 83.06, "llama2_7b_q4_pp": 885.68, "llama2_7b_q8_tg": 54.05, "llama2_7b_f16_tg": 31.64},
-    "M5":       {"mem_bw_gbs": 154, "llm_gpu_cores": 10, "llama2_7b_q4_tg": 29.6,  "llama2_7b_q4_pp": None,   "llama2_7b_q8_tg": None,  "llama2_7b_f16_tg": None},
-    "M5 PRO":   {"mem_bw_gbs": 307, "llm_gpu_cores": 20, "llama2_7b_q4_tg": 57.0,  "llama2_7b_q4_pp": None,   "llama2_7b_q8_tg": None,  "llama2_7b_f16_tg": None},
-    "M5 MAX":   {"mem_bw_gbs": 546, "llm_gpu_cores": 40, "llama2_7b_q4_tg": 85.0,  "llama2_7b_q4_pp": None,   "llama2_7b_q8_tg": None,  "llama2_7b_f16_tg": None},
-    "M1 ULTRA": {"mem_bw_gbs": 800, "llm_gpu_cores": 48, "llama2_7b_q4_tg": 110.0, "llama2_7b_q4_pp": None,   "llama2_7b_q8_tg": None,  "llama2_7b_f16_tg": None},
-    "M2 ULTRA": {"mem_bw_gbs": 800, "llm_gpu_cores": 60, "llama2_7b_q4_tg": 130.0, "llama2_7b_q4_pp": None,   "llama2_7b_q8_tg": None,  "llama2_7b_f16_tg": None},
-    "M3 ULTRA": {"mem_bw_gbs": 800, "llm_gpu_cores": 60, "llama2_7b_q4_tg": 145.0, "llama2_7b_q4_pp": None,   "llama2_7b_q8_tg": None,  "llama2_7b_f16_tg": None},
-}
+# LLM Inference benchmarks by chip (Qwen 3 8B + Qwen 3.5 27B, GGUF Q4_K_M).
+# See benchmarks/llm_table.py for values and benchmarks/qwen3_measured.csv + thoughts/shared/benchmark_sources.md for provenance.
+from benchmarks import LLM, SOURCES  # noqa: E402
 
 # Polish month names for date parsing
 PL_MONTHS = {
@@ -83,6 +65,26 @@ def parse_cpu(text):
         gen = m.group(1)
         tier = m.group(2) or ""
         return f"M{gen} {tier}".strip()
+    return ""
+
+
+def parse_cpu_from_url(url):
+    """Extract chip from a marketplace URL slug (e.g. '.../m1-pro-32-gb-...').
+
+    URL slugs are generated at listing creation from the seller's original
+    title, so they are a more stable signal than the current title text —
+    sellers sometimes edit titles to inflate perceived value but the URL
+    path stays. Returns '' when no chip pattern is found.
+    """
+    if not url:
+        return ""
+    u = url.lower()
+    m = re.search(r'[^a-z0-9]m([1-5])[-_](pro|max|ultra)(?![a-z0-9])', u)
+    if m:
+        return f"M{m.group(1)} {m.group(2).upper()}"
+    m = re.search(r'[^a-z0-9]m([1-5])\b', u)
+    if m:
+        return f"M{m.group(1)}"
     return ""
 
 
@@ -188,10 +190,20 @@ def parse_price(text):
         return None
 
 
-def parse_specs(title, description=""):
-    """Parse all specs from title + description text."""
+def parse_specs(title, description="", url=""):
+    """Parse all specs from title + description text, cross-checked against URL slug."""
     text = f"{title} {description}".strip()
-    cpu = parse_cpu(text)
+    cpu_text = parse_cpu(text)
+    cpu_url = parse_cpu_from_url(url)
+    # Prefer URL slug when it names a tier (PRO/MAX/ULTRA) that disagrees with the
+    # title. Sellers sometimes edit titles to inflate perceived chip tier; URL
+    # slugs are generated at listing creation and are harder to change.
+    # Only override when URL is specific enough (has a tier) — bare "M2" in URL
+    # shouldn't override "M2 PRO" in a well-formed title.
+    if cpu_url and ' ' in cpu_url and cpu_url != cpu_text:
+        cpu = cpu_url
+    else:
+        cpu = cpu_text or cpu_url
     ram = parse_ram(text)
     disk = parse_disk(text)
     screen = parse_screen(text)
@@ -221,7 +233,7 @@ def parse_specs(title, description=""):
         is_air = 'air' in tl
         model = 'Air' if is_air else 'Pro'
 
-    return {
+    result = {
         "model": model,
         "cpu": cpu,
         "ram": ram,
@@ -230,19 +242,63 @@ def parse_specs(title, description=""):
         "cpuCores": cpu_cores,
         "gpuCores": gpu_cores,
     }
+    if cpu_url and cpu_text and cpu_url != cpu_text:
+        result["cpu_disagreement"] = f"title={cpu_text}, url={cpu_url}"
+    return result
 
 
 # --- Benchmark Assignment ---
 
-def assign_benchmarks(cpu):
-    """Return benchmark dict for a given chip name."""
+def assign_benchmarks(cpu, ram_gb=None):
+    """Return benchmark dict for a given chip name.
+
+    Adds `qwen3_8b_q4_{tg,pp}` and (when ram >= 32GB) `qwen3_27b_q4_{tg,pp}`,
+    each paired with a `*_source` field whose value is `measured` or
+    `extrapolated_from_*` so the UI can render measured values differently
+    from estimates.
+    """
     benchmarks = {}
     gb6 = GB6.get(cpu, {})
     llm = LLM.get(cpu, {})
+    chip_sources = SOURCES.get(cpu, {})
     benchmarks.update(gb6)
-    for k, v in llm.items():
+
+    # Core chip-level fields (always emitted)
+    for k in ("mem_bw_gbs", "llm_gpu_cores"):
+        if k in llm:
+            benchmarks[k] = llm[k]
+
+    # Qwen 3 8B — fits on every Mac with >=8GB unified memory
+    for k in ("qwen3_8b_q4_tg", "qwen3_8b_q4_pp"):
+        v = llm.get(k)
         benchmarks[k] = v if v is not None else ""
+        src = chip_sources.get(k)
+        if src:
+            benchmarks[f"{k}_source"] = src
+
+    # Qwen 3.5 27B — needs >=32GB actual RAM to run with headroom for KV cache
+    can_run_27b = (ram_gb is not None and ram_gb >= 32)
+    for k in ("qwen3_27b_q4_tg", "qwen3_27b_q4_pp"):
+        if can_run_27b:
+            v = llm.get(k)
+            benchmarks[k] = v if v is not None else ""
+            src = chip_sources.get(k)
+            if src:
+                benchmarks[f"{k}_source"] = src
+        else:
+            # Explicitly null so the UI shows `—` instead of stale data.
+            benchmarks[k] = ""
+            benchmarks[f"{k}_source"] = ""
+
     return benchmarks
+
+
+def _parse_ram_gb(ram):
+    """'32GB' -> 32; '' or malformed -> None."""
+    if not ram:
+        return None
+    m = re.search(r'(\d+)', str(ram))
+    return int(m.group(1)) if m else None
 
 
 # --- Date Normalization ---
@@ -330,9 +386,10 @@ def process_raw_listings(raw_listings, source=""):
     for raw in raw_listings:
         title = raw.get("title", "")
         description = raw.get("description", "")
+        url = raw.get("url", "")
 
-        # Parse specs
-        specs = parse_specs(title, description)
+        # Parse specs — URL slug is cross-checked against title for chip
+        specs = parse_specs(title, description, url)
 
         # If raw already has parsed fields, prefer those
         cpu = raw.get("cpu") or specs["cpu"]
@@ -348,7 +405,7 @@ def process_raw_listings(raw_listings, source=""):
             continue
 
         # Assign benchmarks
-        benchmarks = assign_benchmarks(cpu)
+        benchmarks = assign_benchmarks(cpu, _parse_ram_gb(ram))
 
         # Normalize date (default to today for store listings)
         date_raw = raw.get("datePosted", "")
@@ -471,22 +528,34 @@ def merge_deals(existing, new_deals):
 
     New deals whose URL or fingerprint matches the hide list are inserted with
     hidden=true so they don't reappear after URL reshape or DB resets.
+
+    Stamps every newly inserted deal with `firstSeen` (ISO date of first time
+    the URL showed up in this DB). Existing records' `firstSeen` is preserved.
+
+    Every URL that matches an existing deal (re-seen in a fresh scrape) gets
+    `last_seen_in_search` bumped to today — this is the signal `mark_stale.py`
+    uses to decide which listings have gone stale.
     """
     hidden_fps, hidden_urls = load_hidden_fps()
-    seen = {make_dedup_key(d) for d in existing}
+    by_key = {make_dedup_key(d): d for d in existing}
     today = datetime.now().strftime("%Y-%m-%d")
     added = 0
     for deal in new_deals:
         key = make_dedup_key(deal)
-        if key not in seen:
-            fp = make_listing_fp(deal)
-            if (deal.get("url") and deal["url"] in hidden_urls) or (fp in hidden_fps):
-                deal["hidden"] = True
-                deal["hidden_at"] = today
-                deal["hidden_reason"] = "auto: matched hidden fingerprint"
-            existing.append(deal)
-            seen.add(key)
-            added += 1
+        if key in by_key:
+            # Existing deal re-seen in scrape — bump last_seen_in_search.
+            by_key[key]["last_seen_in_search"] = today
+            continue
+        fp = make_listing_fp(deal)
+        if (deal.get("url") and deal["url"] in hidden_urls) or (fp in hidden_fps):
+            deal["hidden"] = True
+            deal["hidden_at"] = today
+            deal["hidden_reason"] = "auto: matched hidden fingerprint"
+        deal["firstSeen"] = today
+        deal["last_seen_in_search"] = today
+        existing.append(deal)
+        by_key[key] = deal
+        added += 1
     return added
 
 
@@ -689,6 +758,30 @@ input.filter-input::placeholder{color:var(--fg3)}
 .bar-cell{position:relative;min-width:80px}
 .bar-cell .bar-bg{position:absolute;left:0;top:0;bottom:0;border-radius:3px;opacity:.18;z-index:0}
 .bar-cell .bar-val{position:relative;z-index:1}
+/* Subtle column-group separators — creates rhythm without heavy borders */
+.config-table td.zone-start,.config-table th.zone-start{border-left:1px solid var(--border);padding-left:14px}
+.config-table td.recent-cell{color:var(--fg3);font-size:11px}
+.config-table td.recent-cell:is([title^="2026"]),.config-table td.recent-cell{color:var(--fg3)}
+.config-table td.zone-start:last-child,.config-table th.zone-start:last-child{background:linear-gradient(90deg,transparent,rgba(74,222,128,.04))}
+.bench-row.ai-value-row{margin-top:6px;padding-top:6px;border-top:1px dashed var(--border)}
+/* Row-action buttons (edit/hide) in detail-panel listings */
+.row-action-btn{background:none;border:1px solid rgba(255,255,255,.1);color:var(--fg3);cursor:pointer;font-size:10px;padding:2px 6px;border-radius:3px;flex-shrink:0;font-family:var(--font-mono)}
+.row-action-btn:hover{color:var(--fg2);border-color:var(--border2)}
+/* Inline edit form — hidden by default, `.open` class toggles display */
+.edit-form{display:none;background:var(--bg2);padding:10px 12px;margin-top:4px;border:1px solid var(--border);border-radius:4px;font-family:var(--font-mono)}
+.edit-form.open{display:block}
+.edit-form-grid{display:grid;grid-template-columns:70px 1fr 70px 1fr;gap:6px 10px;align-items:center}
+.edit-form-grid label{font-size:10px;color:var(--fg3);text-transform:uppercase;letter-spacing:.4px}
+.edit-form input[type=text],.edit-form select{font-family:var(--font-mono);font-size:11px;background:var(--bg3);color:var(--fg);border:1px solid var(--border);padding:4px 6px;border-radius:3px;width:100%}
+.edit-form input[type=text]:focus,.edit-form select:focus{outline:none;border-color:var(--accent-dim);box-shadow:0 0 0 2px var(--accent-dim)}
+.edit-form-flags{margin-top:8px;display:flex;gap:14px;font-size:11px;color:var(--fg2)}
+.edit-form-flags label{display:inline-flex;align-items:center;gap:4px;cursor:pointer}
+.edit-form-actions{margin-top:10px;display:flex;gap:6px;justify-content:flex-end}
+.edit-form-actions button{font-family:var(--font-mono);font-size:11px;padding:4px 12px;border-radius:3px;border:1px solid var(--border);background:var(--bg3);color:var(--fg2);cursor:pointer}
+.edit-form-actions button:hover:not(:disabled){color:var(--fg);border-color:var(--border2)}
+.edit-form-actions button.save{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:600}
+.edit-form-actions button.save:hover:not(:disabled){background:var(--accent2);border-color:var(--accent2)}
+.edit-form-actions button:disabled{opacity:.5;cursor:default}
 
 .empty-state{text-align:center;padding:60px 20px;color:var(--fg3)}
 .empty-state .icon{font-size:48px;margin-bottom:16px;opacity:.3}
@@ -838,7 +931,7 @@ function unhideAll() {
   fetch('/api/unhide-all', {method: 'POST'}).catch(() => {});
   applyFilters();
 }
-let currentSort = { key: 'priceMin', dir: 'asc' };
+let currentSort = { key: 'aiValue', dir: 'desc' };
 let currentView = 'table';
 let configs = [];
 let filtered = [];
@@ -846,19 +939,18 @@ let filtered = [];
 const SORT_OPTIONS = [
   { key: 'priceMin', label: 'Min Price' },
   { key: 'listingCount', label: 'Listings' },
-  { key: 'gb6_single', label: 'GB6 SC' },
-  { key: 'gb6_multi', label: 'GB6 MC' },
-  { key: 'gb6_metal', label: 'Metal' },
+  { key: 'recentSeenTs', label: 'Recent' },
+  { key: 'gb6_multi', label: 'CPU' },
   { key: 'mem_bw_gbs', label: 'Mem BW' },
-  { key: 'llm_q4', label: 'LLM Q4' },
-  { key: 'toksPerKPLN', label: 'toks/1kPLN' },
+  { key: 'llm_q4', label: 'Qwen3 8B' },
+  { key: 'llm_q4_27b', label: 'Qwen3 27B' },
+  { key: 'aiValue', label: 'AI Value' },
 ];
 
-const MAX_GB6_SINGLE = 4300;
 const MAX_GB6_MULTI = 30000;
-const MAX_METAL = 230000;
 const MAX_LLM = 95;
 const MAX_BW = 620;
+const MAX_AI_VALUE = 40;
 
 function parsePrice(p) {
   if (!p) return null;
@@ -869,6 +961,16 @@ function parseLLM(v) {
   if (!v && v !== 0) return 0;
   const n = parseFloat(String(v));
   return isNaN(n) ? 0 : n;
+}
+// Extrapolated benchmark values get a '*' suffix + muted color so measured vs
+// estimated is obvious at a glance. See benchmarks/llm_table.py for source tags.
+function fmtBench(val, src) {
+  if (!val && val !== 0) return '-';
+  if (val === 0 || val === '-') return '-';
+  const isEst = src && src.startsWith('extrapolated');
+  return isEst
+    ? `<span style="color:var(--fg2);opacity:.75" title="estimated from ${src}">${val}*</span>`
+    : String(val);
 }
 function chipGen(cpu) { return cpu.match(/M(\d)/)?.[1] || '0'; }
 function chipTier(cpu) {
@@ -887,6 +989,83 @@ function fmtPrice(n) {
   return n.toLocaleString('pl-PL') + ' zl';
 }
 function pct(val, max) { return Math.min(100, Math.max(1, (val / max) * 100)); }
+// Canonical option lists for the manual-edit form. Keep in sync with
+// benchmarks/llm_table.py (chip names) and pipeline.py parse_* helpers.
+const EDIT_CPU_OPTIONS = ['M1','M1 PRO','M1 MAX','M1 ULTRA','M2','M2 PRO','M2 MAX','M2 ULTRA','M3','M3 PRO','M3 MAX','M3 ULTRA','M4','M4 PRO','M4 MAX','M5','M5 PRO','M5 MAX'];
+const EDIT_RAM_OPTIONS = ['8GB','16GB','18GB','24GB','32GB','36GB','48GB','64GB','96GB','128GB','192GB'];
+const EDIT_DISK_OPTIONS = ['256GB','512GB','1TB','2TB','4TB','8TB'];
+const EDIT_SCREEN_OPTIONS = ['13','14','16','Studio','Mini'];
+const EDIT_MODEL_OPTIONS = ['Pro','Air','Studio','Mini'];
+function _opt(val, options, blankLabel) {
+  const blank = blankLabel ? `<option value="">${blankLabel}</option>` : '';
+  const opts = options.map(o => `<option value="${o}"${o === val ? ' selected' : ''}>${o}</option>`).join('');
+  return blank + opts;
+}
+function renderEditForm(l, li, cc) {
+  const priceStr = l.price ? String(l.price) : (l.priceStr || '');
+  return `<div class="edit-form" id="edit-form-${li}">
+    <div class="edit-form-grid">
+      <label>price zł</label><input type="text" name="price" value="${htmlAttr(priceStr)}" placeholder="e.g. 5999">
+      <label>CPU</label><select name="cpu">${_opt(cc.cpu, EDIT_CPU_OPTIONS, '—')}</select>
+      <label>RAM</label><select name="ram">${_opt(cc.ram, EDIT_RAM_OPTIONS, '—')}</select>
+      <label>disk</label><select name="disk">${_opt(cc.disk, EDIT_DISK_OPTIONS, '—')}</select>
+      <label>size</label><select name="screen">${_opt(cc.screen, EDIT_SCREEN_OPTIONS, '—')}</select>
+      <label>type</label><select name="model">${_opt(cc.model, EDIT_MODEL_OPTIONS, '—')}</select>
+    </div>
+    <div class="edit-form-flags">
+      <label><input type="checkbox" name="used" ${l.used ? 'checked' : ''}> used</label>
+      <label><input type="checkbox" name="broken" ${l.broken ? 'checked' : ''}> broken</label>
+      <label><input type="checkbox" name="expired" ${l.expired ? 'checked' : ''}> expired</label>
+    </div>
+    <div class="edit-form-actions">
+      <button type="button" onclick="cancelEdit(${li})">cancel</button>
+      <button type="button" class="save" data-url="${htmlAttr(l.url)}" onclick="saveEdit(${li}, this.dataset.url)">save</button>
+    </div>
+  </div>`;
+}
+function editListing(li) {
+  document.querySelectorAll('.edit-form.open').forEach(f => f.classList.remove('open'));
+  const f = document.getElementById('edit-form-' + li);
+  if (f) f.classList.add('open');
+}
+function cancelEdit(li) {
+  const f = document.getElementById('edit-form-' + li);
+  if (f) f.classList.remove('open');
+}
+async function saveEdit(li, url) {
+  const form = document.getElementById('edit-form-' + li);
+  if (!form) return;
+  const updates = {};
+  form.querySelectorAll('input, select').forEach(el => {
+    if (el.type === 'checkbox') updates[el.name] = el.checked;
+    else if (el.value !== '') updates[el.name] = el.value;
+  });
+  const btn = form.querySelector('button.save');
+  btn.disabled = true; btn.textContent = 'saving…';
+  try {
+    const r = await fetch('/api/edit', {method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({url, updates})});
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    btn.textContent = 'saved — reloading…';
+    setTimeout(() => location.reload(), 400);
+  } catch (e) {
+    btn.disabled = false; btn.textContent = 'save';
+    alert('edit failed: ' + e.message);
+  }
+}
+function fmtRelDate(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (isNaN(d.getTime())) return iso;
+  const days = Math.floor((Date.now() - d.getTime()) / 86400000);
+  if (days <= 0) return 'today';
+  if (days === 1) return '1d';
+  if (days < 30) return days + 'd';
+  const months = Math.floor(days / 30);
+  if (months < 12) return months + 'mo';
+  const years = Math.floor(days / 365);
+  return years + 'y';
+}
 
 function buildConfigs() {
   const map = {};
@@ -901,14 +1080,14 @@ function buildConfigs() {
       map[key] = {
         key, cpu, ram, disk, screen,
         model: d.model || '',
-        gb6_single: d.gb6_single || 0,
         gb6_multi: d.gb6_multi || 0,
-        gb6_metal: d.gb6_metal || 0,
         mem_bw_gbs: d.mem_bw_gbs || 0,
-        llm_q4: parseLLM(d.llama2_7b_q4_tg),
-        llm_q4_pp: parseLLM(d.llama2_7b_q4_pp),
-        llm_q8: parseLLM(d.llama2_7b_q8_tg),
-        llm_f16: parseLLM(d.llama2_7b_f16_tg),
+        llm_q4: parseLLM(d.qwen3_8b_q4_tg),
+        llm_q4_pp: parseLLM(d.qwen3_8b_q4_pp),
+        llm_q4_src: d.qwen3_8b_q4_tg_source || '',
+        llm_q4_27b: parseLLM(d.qwen3_27b_q4_tg),
+        llm_q4_27b_pp: parseLLM(d.qwen3_27b_q4_pp),
+        llm_q4_27b_src: d.qwen3_27b_q4_tg_source || '',
         llm_gpu_cores: d.llm_gpu_cores || 0,
         listings: [],
         prices: [],
@@ -927,6 +1106,7 @@ function buildConfigs() {
       source: d.source || '',
       date: d.date || d.datePosted || '',
       datePosted: d.datePosted || '',
+      firstSeen: d.firstSeen || '',
       expired: d.expired || /wygasł/i.test(d.datePosted || ''),
       used: d.used || false,
       broken: d.broken || false,
@@ -943,7 +1123,14 @@ function buildConfigs() {
     c.priceMin = c.prices[0] || null;
     c.priceMax = c.prices[c.prices.length - 1] || null;
     c.listingCount = c.listings.length;
-    c.toksPerKPLN = (c.llm_q4 && c.priceMin) ? Math.round((c.llm_q4 / c.priceMin) * 1000 * 100) / 100 : 0;
+    // AI Value: weighted tok/s per 1000 PLN. 27B gets ×3 because a 27B-dense
+    // model produces ~3× better output per token than 8B for reasoning/code.
+    // 8B-only machines (e.g. 16GB ones) just miss out on the 27B term.
+    const aiWeighted = (c.llm_q4 || 0) + (c.llm_q4_27b || 0) * 3;
+    c.aiValue = (aiWeighted && c.priceMin) ? Math.round((aiWeighted / c.priceMin) * 1000 * 100) / 100 : 0;
+    // Recent-seen rollup: newest firstSeen across all listings in this config.
+    c.recentSeen = c.listings.reduce((m, l) => (l.firstSeen && l.firstSeen > m) ? l.firstSeen : m, '');
+    c.recentSeenTs = c.recentSeen ? Date.parse(c.recentSeen) || 0 : 0;
     return c;
   });
 }
@@ -1082,7 +1269,13 @@ function applyFilters() {
         });
         c.priceMin = c.prices[0] || null;
         c.priceMax = c.prices[c.prices.length - 1] || null;
-        c.toksPerKPLN = (c.llm_q4 && c.priceMin) ? Math.round((c.llm_q4 / c.priceMin) * 1000 * 100) / 100 : 0;
+        c.recentSeen = visible.reduce((m, l) => (l.firstSeen && l.firstSeen > m) ? l.firstSeen : m, '');
+        c.recentSeenTs = c.recentSeen ? Date.parse(c.recentSeen) || 0 : 0;
+        // AI Value: weighted tok/s per 1000 PLN. 27B gets ×3 because a 27B-dense
+    // model produces ~3× better output per token than 8B for reasoning/code.
+    // 8B-only machines (e.g. 16GB ones) just miss out on the 27B term.
+    const aiWeighted = (c.llm_q4 || 0) + (c.llm_q4_27b || 0) * 3;
+    c.aiValue = (aiWeighted && c.priceMin) ? Math.round((aiWeighted / c.priceMin) * 1000 * 100) / 100 : 0;
       }
     }
     return c;
@@ -1144,18 +1337,20 @@ function renderTable() {
     { label: 'Min Price', key: 'priceMin' },
     { label: 'Max Price', key: 'priceMax' },
     { label: 'Listings', key: 'listingCount' },
-    { label: 'GB6 SC', key: 'gb6_single' },
-    { label: 'GB6 MC', key: 'gb6_multi' },
-    { label: 'Metal', key: 'gb6_metal' },
+    { label: 'Recent', key: 'recentSeenTs' },
+    { label: 'CPU', key: 'gb6_multi' },
     { label: 'Mem BW', key: 'mem_bw_gbs' },
-    { label: 'Q4 t/s', key: 'llm_q4' },
-    { label: 'toks/1kPLN', key: 'toksPerKPLN' },
+    { label: 'Qwen3 8B', key: 'llm_q4' },
+    { label: 'Qwen3 27B', key: 'llm_q4_27b' },
+    { label: 'AI Value', key: 'aiValue' },
   ];
+  const ZONE_STARTS = new Set(['gb6_multi', 'aiValue']);
   const headerHTML = headers.map(h => {
-    if (!h.key) return `<th>${h.label}</th>`;
+    const zone = ZONE_STARTS.has(h.key) ? ' zone-start' : '';
+    if (!h.key) return `<th class="${zone.trim()}">${h.label}</th>`;
     const isActive = currentSort.key === h.key;
     const arrow = isActive ? (currentSort.dir === 'desc' ? ' ▼' : ' ▲') : '';
-    return `<th onclick="sortBy('${h.key}')" class="${isActive ? 'active' : ''}" style="cursor:pointer">${h.label}${arrow}</th>`;
+    return `<th onclick="sortBy('${h.key}')" class="${isActive ? 'active' : ''}${zone}" style="cursor:pointer">${h.label}${arrow}</th>`;
   }).join('');
   const starred = getStarred();
   const tableData = [...filtered].sort((a,b) => (starred.includes(a.key)?0:1)-(starred.includes(b.key)?0:1));
@@ -1170,10 +1365,12 @@ function renderTable() {
       <td class="price-cell">${c.priceMin ? fmtNum(c.priceMin) : '-'}</td>
       <td class="price-cell" style="color:var(--fg2)">${c.priceMax && c.priceMax !== c.priceMin ? fmtNum(c.priceMax) : '-'}</td>
       <td>${c.listingCount}</td>
-      <td>${fmtNum(c.gb6_single)}</td><td>${fmtNum(c.gb6_multi)}</td><td>${fmtNum(c.gb6_metal)}</td>
+      <td class="recent-cell" title="${c.recentSeen || ''}">${fmtRelDate(c.recentSeen)}</td>
+      <td class="zone-start">${fmtNum(c.gb6_multi)}</td>
       <td>${c.mem_bw_gbs || '-'} GB/s</td>
-      <td class="bar-cell"><div class="bar-bg" style="width:${pct(c.llm_q4, MAX_LLM)}%;background:linear-gradient(90deg,#db2777,#f472b6)"></div><span class="bar-val">${c.llm_q4 || '-'}</span></td>
-      <td class="bar-cell"><div class="bar-bg" style="width:${c.toksPerKPLN ? pct(c.toksPerKPLN, Math.max(...filtered.map(x=>x.toksPerKPLN||0))) : 0}%;background:linear-gradient(90deg,#059669,#4ade80)"></div><span class="bar-val" style="color:var(--accent)">${c.toksPerKPLN || '-'}</span></td>
+      <td class="bar-cell"><div class="bar-bg" style="width:${pct(c.llm_q4, MAX_LLM)}%;background:linear-gradient(90deg,#db2777,#f472b6)"></div><span class="bar-val">${fmtBench(c.llm_q4 || '-', c.llm_q4_src)}</span></td>
+      <td class="bar-cell">${c.llm_q4_27b ? `<div class="bar-bg" style="width:${pct(c.llm_q4_27b, 25)}%;background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div>` : ''}<span class="bar-val">${c.llm_q4_27b ? fmtBench(c.llm_q4_27b, c.llm_q4_27b_src) : '&mdash;'}</span></td>
+      <td class="bar-cell zone-start"><div class="bar-bg" style="width:${c.aiValue ? pct(c.aiValue, MAX_AI_VALUE) : 0}%;background:linear-gradient(90deg,#059669,#4ade80)"></div><span class="bar-val" style="color:var(--accent);font-weight:600">${c.aiValue || '-'}</span></td>
     </tr>`;
   }).join('')}</tbody></table>`;
 }
@@ -1227,29 +1424,29 @@ function render() {
       </div>
       <div class="bench-section">
         <div class="bench-row">
-          <span class="bench-label">GB6 SC</span>
-          <div class="bench-bar-bg"><div class="bench-bar cpu" style="width:${pct(c.gb6_single,MAX_GB6_SINGLE)}%"></div></div>
-          <span class="bench-value">${fmtNum(c.gb6_single)}</span>
-        </div>
-        <div class="bench-row">
-          <span class="bench-label">GB6 MC</span>
+          <span class="bench-label">CPU</span>
           <div class="bench-bar-bg"><div class="bench-bar cpu" style="width:${pct(c.gb6_multi,MAX_GB6_MULTI)}%"></div></div>
           <span class="bench-value">${fmtNum(c.gb6_multi)}</span>
         </div>
         <div class="bench-row">
-          <span class="bench-label">Metal</span>
-          <div class="bench-bar-bg"><div class="bench-bar metal" style="width:${pct(c.gb6_metal,MAX_METAL)}%"></div></div>
-          <span class="bench-value">${fmtNum(c.gb6_metal)}</span>
-        </div>
-        <div class="bench-row">
-          <span class="bench-label">Q4 t/s</span>
-          <div class="bench-bar-bg"><div class="bench-bar llm" style="width:${pct(llmVal,MAX_LLM)}%"></div></div>
-          <span class="bench-value">${llmVal || '-'}</span>
-        </div>
-        <div class="bench-row">
-          <span class="bench-label">BW</span>
+          <span class="bench-label">Mem BW</span>
           <div class="bench-bar-bg"><div class="bench-bar bw" style="width:${pct(c.mem_bw_gbs,MAX_BW)}%"></div></div>
           <span class="bench-value">${c.mem_bw_gbs || '-'} GB/s</span>
+        </div>
+        <div class="bench-row">
+          <span class="bench-label">Qwen3 8B</span>
+          <div class="bench-bar-bg"><div class="bench-bar llm" style="width:${pct(llmVal,MAX_LLM)}%"></div></div>
+          <span class="bench-value">${fmtBench(llmVal || '-', c.llm_q4_src)}</span>
+        </div>
+        ${c.llm_q4_27b ? `<div class="bench-row">
+          <span class="bench-label">Qwen3 27B</span>
+          <div class="bench-bar-bg"><div class="bench-bar llm" style="width:${pct(c.llm_q4_27b,25)}%;background:linear-gradient(90deg,#7c3aed,#a78bfa)"></div></div>
+          <span class="bench-value">${fmtBench(c.llm_q4_27b, c.llm_q4_27b_src)}</span>
+        </div>` : ''}
+        <div class="bench-row ai-value-row">
+          <span class="bench-label">AI Value</span>
+          <div class="bench-bar-bg"><div class="bench-bar" style="width:${c.aiValue ? pct(c.aiValue, MAX_AI_VALUE) : 0}%;background:linear-gradient(90deg,#059669,#4ade80)"></div></div>
+          <span class="bench-value" style="color:var(--accent);font-weight:600">${c.aiValue || '-'}</span>
         </div>
       </div>
       <button class="listings-toggle" onclick="toggleListings(this, ${ci})">
@@ -1261,7 +1458,7 @@ function render() {
           <div class="listing-row${l.expired ? ' expired' : ''}">
             <div class="listing-info">
               <div class="listing-title">${l.title || 'MacBook Pro ' + c.cpu}</div>
-              <div class="listing-meta">${l.date || l.datePosted || ''} ${l.source ? '<span class="source">' + l.source + '</span>' : ''}${l.used ? '<span class="tag-used">used</span>' : ''}</div>
+              <div class="listing-meta">${l.date || l.datePosted || ''} ${l.source ? '<span class="source">' + l.source + '</span>' : ''}${l.used ? '<span class="tag-used">used</span>' : ''}${l.firstSeen ? ' <span style="color:var(--fg3)" title="added ' + l.firstSeen + '">&middot; seen ' + fmtRelDate(l.firstSeen) + ' ago</span>' : ''}</div>
             </div>
             ${l.price ? `<span class="listing-price">${fmtNum(l.price)} zl</span>` : (l.oldPrice ? `<span class="listing-price old">${fmtNum(l.oldPrice)} zl</span>` : '')}
             ${l.url ? `<a class="listing-link" href="${l.url}" target="_blank">&#8599;</a>` : ''}
@@ -1288,33 +1485,37 @@ function showDetail(ci) {
     <span class="detail-chip-badge config-chip ${cc}">${c.cpu}</span>
     <div class="detail-title">MacBook Pro ${c.screen ? c.screen + '"' : ''} ${c.cpu} ${c.ram ? '/ ' + c.ram : ''} ${c.disk ? '/ ' + c.disk : ''}</div>
     <div class="detail-subtitle">${c.listingCount} listings &middot; ${c.priceMin ? fmtPrice(c.priceMin) + (c.priceMax !== c.priceMin ? ' - ' + fmtPrice(c.priceMax) : '') : 'no price data'}</div>
-    <div class="detail-section-title">Geekbench 6</div>
-    <div class="detail-bench-grid">
-      <div class="detail-bench"><div class="detail-bench-label">Single-Core</div><div class="detail-bench-val" style="color:#60a5fa">${fmtNum(c.gb6_single)}</div></div>
-      <div class="detail-bench"><div class="detail-bench-label">Multi-Core</div><div class="detail-bench-val" style="color:#60a5fa">${fmtNum(c.gb6_multi)}</div></div>
-      <div class="detail-bench"><div class="detail-bench-label">Metal GPU</div><div class="detail-bench-val" style="color:#fbbf24">${fmtNum(c.gb6_metal)}</div></div>
+    <div class="detail-section-title">CPU</div>
+    <div class="detail-bench-grid" style="grid-template-columns:1fr 1fr">
+      <div class="detail-bench"><div class="detail-bench-label">Geekbench 6 Multi-Core</div><div class="detail-bench-val" style="color:#60a5fa">${fmtNum(c.gb6_multi)}</div></div>
+      <div class="detail-bench" style="background:var(--accent-dim);border-color:rgba(74,222,128,.3)"><div class="detail-bench-label">AI Value <span style="font-size:9px;color:var(--fg3);font-weight:400">(tok/s per 1k PLN)</span></div><div class="detail-bench-val" style="color:var(--accent)">${c.aiValue || '-'}</div></div>
     </div>
-    <div class="detail-section-title">LLM Inference (Llama 2 7B)</div>
+    <div class="detail-section-title">LLM Inference (llama.cpp Q4_K_M)</div>
     <div class="detail-grid">
       <div class="detail-stat"><div class="detail-stat-label">Mem Bandwidth</div><div class="detail-stat-value">${c.mem_bw_gbs || '-'}<small>GB/s</small></div></div>
       <div class="detail-stat"><div class="detail-stat-label">GPU Cores</div><div class="detail-stat-value">${c.llm_gpu_cores || '-'}</div></div>
     </div>
     <div class="detail-bench-grid" style="grid-template-columns:1fr 1fr">
-      <div class="detail-bench"><div class="detail-bench-label">Q4 Token Gen</div><div class="detail-bench-val" style="color:#f472b6">${c.llm_q4 || '-'}<small> t/s</small></div></div>
-      <div class="detail-bench"><div class="detail-bench-label">Q4 Prompt</div><div class="detail-bench-val" style="color:#f472b6">${c.llm_q4_pp || '-'}<small> t/s</small></div></div>
-      <div class="detail-bench"><div class="detail-bench-label">Q8 Token Gen</div><div class="detail-bench-val" style="color:#f472b6">${c.llm_q8 || '-'}<small> t/s</small></div></div>
-      <div class="detail-bench"><div class="detail-bench-label">F16 Token Gen</div><div class="detail-bench-val" style="color:#f472b6">${c.llm_f16 || '-'}<small> t/s</small></div></div>
+      <div class="detail-bench"><div class="detail-bench-label">Qwen3 8B decode</div><div class="detail-bench-val" style="color:#f472b6">${fmtBench(c.llm_q4 || '-', c.llm_q4_src)}<small> t/s</small></div></div>
+      <div class="detail-bench"><div class="detail-bench-label">Qwen3 8B prefill</div><div class="detail-bench-val" style="color:#f472b6">${fmtBench(c.llm_q4_pp || '-', c.llm_q4_src)}<small> t/s</small></div></div>
+      <div class="detail-bench"><div class="detail-bench-label">Qwen3 27B decode</div><div class="detail-bench-val" style="color:#a78bfa">${c.llm_q4_27b ? fmtBench(c.llm_q4_27b, c.llm_q4_27b_src) : '&mdash;'}<small> t/s</small></div></div>
+      <div class="detail-bench"><div class="detail-bench-label">Qwen3 27B prefill</div><div class="detail-bench-val" style="color:#a78bfa">${c.llm_q4_27b_pp ? fmtBench(c.llm_q4_27b_pp, c.llm_q4_27b_src) : '&mdash;'}<small> t/s</small></div></div>
     </div>
+    <div style="font-size:10px;color:var(--fg3);margin-top:4px;font-family:var(--font-mono)">* = extrapolated estimate. See thoughts/shared/benchmark_sources.md.</div>
     <div class="detail-section-title">Listings (${c.listingCount})</div>
-    <div style="display:flex;flex-direction:column;gap:2px">
-      ${c.listings.map(l => `<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:var(--bg3);border-radius:4px;gap:8px${l.expired ? ';opacity:.5' : ''}">
-        <div style="flex:1;min-width:0">
-          <div style="font-family:var(--font-sans);font-size:12px;color:var(--fg2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${l.title}</div>
-          <div style="font-family:var(--font-mono);font-size:10px;color:var(--fg3);margin-top:2px">${l.date || ''}${l.source ? ' &middot; <span style="color:var(--accent);opacity:.7">' + l.source + '</span>' : ''}${l.used ? ' <span style="font-size:9px;padding:1px 5px;border-radius:3px;background:rgba(251,191,36,.15);color:#fbbf24">used</span>' : ''}${l.broken ? ' <span style="font-size:9px;padding:1px 5px;border-radius:3px;background:rgba(239,68,68,.15);color:#ef4444">broken</span>' : ''}</div>
+    <div style="display:flex;flex-direction:column;gap:4px">
+      ${c.listings.map((l, li) => `<div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:var(--bg3);border-radius:4px;gap:8px${l.expired ? ';opacity:.5' : ''}">
+          <div style="flex:1;min-width:0">
+            <div style="font-family:var(--font-sans);font-size:12px;color:var(--fg2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${l.title}</div>
+            <div style="font-family:var(--font-mono);font-size:10px;color:var(--fg3);margin-top:2px">${l.date || ''}${l.source ? ' &middot; <span style="color:var(--accent);opacity:.7">' + l.source + '</span>' : ''}${l.firstSeen ? ' &middot; <span title="added ' + l.firstSeen + '">seen ' + fmtRelDate(l.firstSeen) + ' ago</span>' : ''}${l.used ? ' <span style="font-size:9px;padding:1px 5px;border-radius:3px;background:rgba(251,191,36,.15);color:#fbbf24">used</span>' : ''}${l.broken ? ' <span style="font-size:9px;padding:1px 5px;border-radius:3px;background:rgba(239,68,68,.15);color:#ef4444">broken</span>' : ''}</div>
+          </div>
+          <div style="font-family:var(--font-mono);font-weight:600;font-size:12px;white-space:nowrap">${l.price ? fmtNum(l.price) + ' zl' : '-'}</div>
+          ${l.url ? '<a href="' + l.url + '" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-family:var(--font-mono);font-size:11px;flex-shrink:0" onclick="event.stopPropagation()">link &rarr;</a>' : ''}
+          <button onclick="event.stopPropagation();editListing(${li})" class="row-action-btn" title="Edit listing">edit</button>
+          <button data-url="${htmlAttr(l.url)}" data-fp="${htmlAttr(l.fp)}" onclick="event.stopPropagation();hideListing(this.dataset.url, this.dataset.fp)" class="row-action-btn" title="Hide this listing">hide</button>
         </div>
-        <div style="font-family:var(--font-mono);font-weight:600;font-size:12px;white-space:nowrap">${l.price ? fmtNum(l.price) + ' zl' : '-'}</div>
-        ${l.url ? '<a href="' + l.url + '" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;font-family:var(--font-mono);font-size:11px;flex-shrink:0" onclick="event.stopPropagation()">link &rarr;</a>' : ''}
-        <button data-url="${htmlAttr(l.url)}" data-fp="${htmlAttr(l.fp)}" onclick="event.stopPropagation();hideListing(this.dataset.url, this.dataset.fp)" style="background:none;border:1px solid rgba(255,255,255,.1);color:var(--fg3);cursor:pointer;font-size:10px;padding:2px 6px;border-radius:3px;flex-shrink:0" title="Hide this listing">hide</button>
+        ${l.url ? renderEditForm(l, li, c) : ''}
       </div>`).join('')}
     </div>
   `;
@@ -1623,11 +1824,35 @@ def cmd_clean():
     ref_date = datetime(2026, 4, 7)
     ai_fields = ["ai_cpu_sp", "ai_cpu_hp", "ai_cpu_q", "ai_gpu_sp", "ai_gpu_hp",
                   "ai_gpu_q", "ai_npu_sp", "ai_npu_hp", "ai_npu_q"]
+    legacy_llm_fields = ["llama2_7b_q4_tg", "llama2_7b_q4_pp",
+                         "llama2_7b_q8_tg", "llama2_7b_f16_tg"]
 
     for d in db:
         # Remove AI fields
         for f in ai_fields:
             d.pop(f, None)
+
+        # Strip legacy Llama-2-7B benchmark keys — replaced by Qwen3 tier
+        for f in legacy_llm_fields:
+            d.pop(f, None)
+
+        # Backfill firstSeen: prefer the listing's posted date, else today.
+        # Records added before this field existed get a best-effort timestamp;
+        # new additions via merge_deals() get the real first-seen date.
+        if not d.get("firstSeen"):
+            d["firstSeen"] = d.get("date") or datetime.now().strftime("%Y-%m-%d")
+
+        # Backfill last_seen_in_search — best-effort initial value is firstSeen.
+        # merge_deals bumps this to today on every future scrape match, so the
+        # field converges to an accurate last-sighting date over time.
+        if not d.get("last_seen_in_search"):
+            d["last_seen_in_search"] = d.get("firstSeen") or datetime.now().strftime("%Y-%m-%d")
+
+        # Backfill expired_by provenance. Existing expired records predate this
+        # field; tag them 'unknown' so future expires can be distinguished by
+        # mechanism ('http-404', 'search-staleness').
+        if "expired_by" not in d:
+            d["expired_by"] = "unknown" if d.get("expired") else None
 
         # Normalize dates
         if d.get("datePosted") and not d.get("date"):
@@ -1646,10 +1871,21 @@ def cmd_clean():
         if "expired" not in d:
             d["expired"] = bool(re.search(r'wygasł', d.get("datePosted", ""), re.I))
 
+        # Re-derive CPU from URL slug and override if seller mislabeled the
+        # title. Preserves manual edits (edited_at set). Records the old value
+        # in `cpu_mislabeled_title` for auditability.
+        url = d.get("url", "")
+        if url and not d.get("edited_at"):
+            cpu_url = parse_cpu_from_url(url)
+            cpu_current = d.get("cpu", "")
+            if cpu_url and ' ' in cpu_url and cpu_url != cpu_current:
+                d["cpu_mislabeled_title"] = cpu_current
+                d["cpu"] = cpu_url
+
         # Re-assign benchmarks (GB6 + LLM only)
         cpu = d.get("cpu", "")
         if cpu:
-            benchmarks = assign_benchmarks(cpu)
+            benchmarks = assign_benchmarks(cpu, _parse_ram_gb(d.get("ram")))
             d.update(benchmarks)
 
         # Parse screen if missing

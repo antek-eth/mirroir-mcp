@@ -1,0 +1,8 @@
+chip,cpu_cores,gpu_cores,ram_gb,runtime,quant,model,tg128,pp512,source_url,date_pulled
+M1,8,7,16,GGUF,Q4_K_M,Qwen 3 8B,11.0,94.1,https://github.com/enescingoz/mac-llm-bench/blob/main/results/m1/base/README.md,2026-04-17
+M2 MAX,12,30,32,GGUF,Q4_K_M,Qwen 3 8B,37.2,437.5,https://github.com/enescingoz/mac-llm-bench/blob/main/results/m2/max/README.md,2026-04-17
+M5,10,10,32,GGUF,Q4_K_M,Qwen 3 8B,9.1,153.8,https://github.com/enescingoz/mac-llm-bench/blob/main/results/m5/base/README.md,2026-04-17
+M2 MAX,12,30,32,GGUF,Q4_K_M,Qwen 3.5 27B,9.4,115.0,https://github.com/enescingoz/mac-llm-bench/blob/main/results/m2/max/README.md,2026-04-17
+M5,10,10,32,GGUF,Q4_K_M,Qwen 3.5 27B,4.4,70.8,https://github.com/enescingoz/mac-llm-bench/blob/main/results/m5/base/README.md,2026-04-17
+M3 MAX,14,40,128,UNKNOWN,Q4,Qwen 3 8B,53.3,,https://www.willitrunai.com/can-run/qwen-3-8b-on-m3-max-128gb,2026-04-17
+M5 MAX,,,128,MLX_OR_GGUF,Q4,Qwen 3.5 27B,31.6,222.0,https://siliconscore.com/bench/,2026-04-17
