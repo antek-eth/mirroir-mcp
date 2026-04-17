@@ -20,6 +20,9 @@ exec >> "$LOG" 2>&1
 echo ""
 echo "=== $(date) ==="
 
+# Reconcile hookpath so the pre-commit version bump never silently skips.
+bash scripts/install-hooks.sh || echo "[hooks] install failed — continuing" >&2
+
 write_status() {  # $1=state $2=message
   printf '{"state":"%s","at":"%s","msg":%s}\n' \
     "$1" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$(python3 -c 'import json,sys; print(json.dumps(sys.argv[1]))' "$2")" \

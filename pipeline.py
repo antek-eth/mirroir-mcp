@@ -548,6 +548,10 @@ h1 span{color:var(--accent);font-weight:300}
 .status-pill.error .dot,.status-pill.cookie_expired .dot{background:var(--hot)}
 .status-pill.error,.status-pill.cookie_expired{color:var(--hot)}
 @keyframes tb-pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.version-pill{font-family:var(--font-mono);font-size:10px;color:var(--fg3);padding:3px 9px;border:1px solid var(--border);border-radius:100px;background:var(--bg2);cursor:pointer;transition:color .15s,border-color .15s;white-space:nowrap;user-select:none}
+.version-pill:hover{color:var(--fg2);border-color:var(--border2)}
+.version-pill.copied{color:var(--accent);border-color:var(--accent-dim)}
+.version-pill:empty{display:none}
 .summary-chip{display:none;align-items:center;gap:6px;padding:4px 9px;border-radius:100px;font-family:var(--font-mono);font-size:10px;border:1px solid var(--border);color:var(--fg2);background:var(--bg2);cursor:pointer;white-space:nowrap}
 .summary-chip.live{display:inline-flex}
 .summary-chip:hover{border-color:var(--accent-dim);color:var(--accent)}
@@ -722,6 +726,7 @@ input.filter-input::placeholder{color:var(--fg3)}
         </button>
       </div>
       <div class="header-meta" id="dataInfo"></div>
+      <span class="version-pill" id="versionPill" title="click to copy parent SHA" aria-label="build version"></span>
     </div>
     <div class="summary-panel" id="summaryPanel" hidden></div>
   </header>
@@ -1327,8 +1332,30 @@ function init() {
   initFilters();
   loadURL();
   applyFilters();
+  loadVersionPill();
 }
 init();
+
+function loadVersionPill() {
+  const pill = document.getElementById('versionPill');
+  if (!pill) return;
+  fetch('version.json', {cache: 'no-store'})
+    .then(r => r.ok ? r.json() : null)
+    .then(v => {
+      if (!v || !v.version) return;
+      pill.textContent = v.version;
+      pill.dataset.sha = v.parent_sha || '';
+      pill.addEventListener('click', () => {
+        const sha = pill.dataset.sha;
+        if (!sha) return;
+        navigator.clipboard.writeText(sha).then(() => {
+          pill.classList.add('copied');
+          setTimeout(() => pill.classList.remove('copied'), 1200);
+        }).catch(() => {});
+      });
+    })
+    .catch(() => {});
+}
 
 // ---- Live control panel (only active when served via server.py) ----
 (function(){

@@ -1,0 +1,13 @@
+#!/bin/bash
+# Auto-bump version.json before every commit so the frontend build pill
+# stays in sync with git state. Never blocks the commit — if the bump
+# fails, writes a visible fallback and carries on.
+set -e
+REPO_ROOT=$(git rev-parse --show-toplevel)
+cd "$REPO_ROOT"
+
+if ! python3 scripts/bump_version.py >/dev/null 2>&1; then
+  echo "[pre-commit] bump_version.py failed — writing fallback" >&2
+  printf '%s\n' '{"version": "v?.?.?.?? (fallback)", "build": 0, "parent_sha": "0000000", "date": "", "time": ""}' > version.json
+fi
+git add version.json
