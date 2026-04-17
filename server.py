@@ -27,7 +27,9 @@ PID_FILE = ROOT / ".server-job.pid"
 LOGS = ROOT / "logs"
 
 sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / "scripts"))
 import pipeline  # noqa: E402 — local module, reused for hide helpers + HTML rebuild
+import summary as _summary  # noqa: E402 — shared summary reader, strips stale actions
 
 _hide_lock = threading.Lock()
 
@@ -125,12 +127,10 @@ def _last_status():
 
 
 def _last_summary():
-    if not SUMMARY_FILE.exists():
-        return None
-    try:
-        return json.loads(SUMMARY_FILE.read_text())
-    except ValueError:
-        return None
+    # Route through summary.read() so stale legacy action strings get
+    # stripped automatically on every API response.
+    data = _summary.read()
+    return data or None
 
 
 def _tail(path, lines: int = 60):

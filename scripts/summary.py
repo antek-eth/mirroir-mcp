@@ -21,11 +21,29 @@ def _now():
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
+# Messages referencing tooling that has been removed from the repo.
+# Strip on every read so stale entries can't linger through partial reruns.
+_STALE_ACTION_FRAGMENTS = ("probe_camoufox_persistent",)
+
+
+def _strip_stale_actions(data):
+    actions = data.get("actions_required") or []
+
+    def _is_stale(a):
+        msg = a.get("msg", "") if isinstance(a, dict) else str(a)
+        return any(frag in msg for frag in _STALE_ACTION_FRAGMENTS)
+
+    kept = [a for a in actions if not _is_stale(a)]
+    if len(kept) != len(actions):
+        data["actions_required"] = kept
+    return data
+
+
 def _read():
     if not SUMMARY_FILE.exists():
         return {}
     try:
-        return json.loads(SUMMARY_FILE.read_text(encoding="utf-8"))
+        return _strip_stale_actions(json.loads(SUMMARY_FILE.read_text(encoding="utf-8")))
     except ValueError:
         return {}
 
