@@ -119,7 +119,7 @@ def _post(body: dict, timeout: int) -> dict:
     raise last_err
 
 
-def fetch(url: str, timeout: int = 90, datadome: bool = True, session_id: str | None = None) -> str:
+def fetch(url: str, timeout: int = 180, datadome: bool = True, session_id: str | None = None) -> str:
     """POST to Scrappey, return rendered HTML string.
 
     Raises ScrappeyError on transport failure, non-200 response, or unverified
@@ -131,7 +131,11 @@ def fetch(url: str, timeout: int = 90, datadome: bool = True, session_id: str | 
     """
     body = {"cmd": "request.get", "url": url}
     if datadome:
-        body["datadome"] = True
+        # Scrappey's `datadomeBypass` + Polish proxy is the only config that
+        # actually evades allegro.pl's DataDome (confirmed with support, 2026-04-19).
+        # The legacy `datadome` flag returns CODE-0010 pool-wide.
+        body["datadomeBypass"] = True
+        body["proxyCountry"] = "Poland"
     if session_id:
         body["session"] = session_id
     payload = _post(body, timeout)
@@ -148,7 +152,7 @@ def fetch(url: str, timeout: int = 90, datadome: bool = True, session_id: str | 
     return html
 
 
-def fetch_status(url: str, timeout: int = 90, datadome: bool = True, session_id: str | None = None) -> int | None:
+def fetch_status(url: str, timeout: int = 180, datadome: bool = True, session_id: str | None = None) -> int | None:
     """POST to Scrappey, return upstream status code (or None if no solution).
 
     Unlike fetch(), this does NOT raise on 4xx/5xx or on verified=False — the
@@ -157,7 +161,8 @@ def fetch_status(url: str, timeout: int = 90, datadome: bool = True, session_id:
     """
     body = {"cmd": "request.get", "url": url}
     if datadome:
-        body["datadome"] = True
+        body["datadomeBypass"] = True
+        body["proxyCountry"] = "Poland"
     if session_id:
         body["session"] = session_id
     payload = _post(body, timeout)
