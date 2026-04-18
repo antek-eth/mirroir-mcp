@@ -31,13 +31,15 @@ ENDPOINT = "https://publisher.scrappey.com/api/v1"
 _call_count = 0
 _call_count_lock = threading.Lock()
 
-_RETRY_WAITS = (2, 8)  # seconds between attempts; 3 attempts total including first
+_RETRY_WAITS = (2, 8, 20)  # seconds between attempts; 4 attempts total including first
 _PERMANENT_ERROR_MARKERS = ("HTTP 401", "HTTP 402")  # auth/quota — never retry these
 # Scrappey signals "my proxy got banned by DataDome, try again" via CODE-0010.
-# Retrying rotates the proxy; when Scrappey's whole pool is flagged this still
-# fails, but 3 attempts cap the wall time at ~2 min and the safety gate then
-# records the host as "incomplete" so mark_stale skips its listings.
+# `unverified` means the datadomeBypass attempt failed mid-flight (fingerprint
+# rejected, JS challenge stuck, redirect not followed) — both are transient
+# and benefit from rotating the session so Scrappey draws a fresh proxy +
+# browser context.
 _SCRAPPEY_PROXY_BAN_MARKER = "CODE-0010"
+_SCRAPPEY_RETRY_MARKERS = ("CODE-0010", "unverified", "upstream HTTP 3", "upstream HTTP 5")
 
 
 class ScrappeyError(RuntimeError):
@@ -89,12 +91,15 @@ def _post_once(body: dict, timeout: int) -> dict:
     return payload
 
 
-def _post(body: dict, timeout: int) -> dict:
+def _post(body: dict, timeout: int, validate=None) -> dict:
     """POST with retry on transient errors. Counts once per user-initiated call.
 
-    When Scrappey returns CODE-0010 (proxy banned by DataDome), we rotate the
-    `session` on the next attempt so Scrappey draws a fresh proxy from its
-    pool — otherwise retries would keep hitting the same banned IP.
+    `validate(payload)` runs inside the retry loop and may raise ScrappeyError
+    to mark the response as transient (e.g. unverified bypass, redirect stub).
+    Without a validator, only HTTP-level / Scrappey-level errors trigger retry.
+
+    Session is rotated on retryable failures (CODE-0010, unverified, 3xx/5xx)
+    so the next attempt draws a fresh proxy + browser context.
     """
     global _call_count
     with _call_count_lock:
@@ -106,17 +111,39 @@ def _post(body: dict, timeout: int) -> dict:
         if wait:
             time.sleep(wait)
         try:
-            return _post_once(current, timeout)
+            payload = _post_once(current, timeout)
+            if validate is not None:
+                validate(payload)
+            return payload
         except ScrappeyError as e:
             err = str(e)
             if any(marker in err for marker in _PERMANENT_ERROR_MARKERS):
                 raise  # auth/quota — don't retry
             last_err = e
-            # Rotate session on proxy-ban so the retry draws a new proxy.
-            if _SCRAPPEY_PROXY_BAN_MARKER in err and "session" in current:
+            if any(m in err for m in _SCRAPPEY_RETRY_MARKERS) and "session" in current:
                 current["session"] = str(uuid.uuid4())
     assert last_err is not None
     raise last_err
+
+
+def _validate_html(payload: dict) -> None:
+    """Raise ScrappeyError on unverified bypass, empty body, or non-renderable
+    upstream status. Accepts 2xx/304 always; accepts 3xx only when the body
+    is large enough to be the rendered destination (Scrappey followed the
+    redirect end-to-end). Sub-50KB 3xx bodies are redirect stubs — retry.
+    """
+    sol = payload.get("solution") or {}
+    if not sol.get("verified"):
+        raise ScrappeyError(f"unverified solution (status={sol.get('statusCode')})")
+    html = sol.get("response")
+    if not isinstance(html, str) or not html:
+        raise ScrappeyError("empty response body")
+    status = sol.get("statusCode")
+    if status in (200, 201, 304):
+        return
+    if isinstance(status, int) and 300 <= status < 400 and len(html) >= 50_000:
+        return  # rendered destination, accept
+    raise ScrappeyError(f"upstream HTTP {status}")
 
 
 def fetch(url: str, timeout: int = 180, datadome: bool = True, session_id: str | None = None) -> str:
@@ -138,18 +165,8 @@ def fetch(url: str, timeout: int = 180, datadome: bool = True, session_id: str |
         body["proxyCountry"] = "Poland"
     if session_id:
         body["session"] = session_id
-    payload = _post(body, timeout)
-
-    sol = payload.get("solution") or {}
-    if not sol.get("verified"):
-        raise ScrappeyError(f"unverified solution (status={sol.get('statusCode')})")
-    if sol.get("statusCode") not in (200, 201, 304):
-        raise ScrappeyError(f"upstream HTTP {sol.get('statusCode')}")
-
-    html = sol.get("response")
-    if not isinstance(html, str) or not html:
-        raise ScrappeyError("empty response body")
-    return html
+    payload = _post(body, timeout, validate=_validate_html)
+    return payload["solution"]["response"]
 
 
 def fetch_status(url: str, timeout: int = 180, datadome: bool = True, session_id: str | None = None) -> int | None:
