@@ -9,6 +9,7 @@ import json
 import pathlib
 import re
 import sys
+import uuid
 from urllib.parse import parse_qs, unquote, urlparse
 
 from bs4 import BeautifulSoup
@@ -16,6 +17,11 @@ from bs4 import BeautifulSoup
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO_ROOT / "scrapers"))
 from scrappey_client import ScrappeyError, fetch  # noqa: E402
+
+# A page with this many items is "full" — if we hit max_pages AND the last
+# page was still full, results may have been truncated and coverage is
+# incomplete. Allegro pages are ~48 items.
+FULL_PAGE_THRESHOLD = 40
 
 
 def _resolve_href(raw: str) -> str:
@@ -90,20 +96,25 @@ def main():
 
     base = re.sub(r"[?&]p=\d+", "", raw_url)
     sep = "&" if "?" in base else "?"
+    session_id = str(uuid.uuid4())  # reuse Scrappey browser across pages
 
     seen_urls = set()
     results = []
+    last_page_items = 0
+    terminated_empty = False
+    page_num = 0
 
     for page_num in range(1, max_pages + 1):
         url = base if page_num == 1 else f"{base}{sep}p={page_num}"
         print(f"[allegro] page {page_num}", file=sys.stderr)
         try:
-            html = fetch(url)
+            html = fetch(url, session_id=session_id)
         except ScrappeyError as e:
             print(f"[allegro] BLOCKED — Scrappey failed: {e}", file=sys.stderr)
             sys.exit(3)
 
         items = _extract_items(html)
+        last_page_items = len(items)
         new = 0
         for title, u, price in items:
             if u in seen_urls:
@@ -123,9 +134,17 @@ def main():
             results.append(entry)
         print(f"[allegro] {len(items)} found, {new} new, total {len(results)}", file=sys.stderr)
         if new == 0:
+            terminated_empty = True
             break
 
     print(json.dumps(results, ensure_ascii=False, separators=(",", ":")))
+
+    # Exit 4 = incomplete coverage. We hit the page ceiling AND the last page
+    # was still full, so there are probably more results beyond — downstream
+    # liveness must treat this as "do not expire listings for this host".
+    if not terminated_empty and page_num == max_pages and last_page_items >= FULL_PAGE_THRESHOLD:
+        print(f"[allegro] INCOMPLETE: ceiling reached with full final page ({last_page_items} items)", file=sys.stderr)
+        sys.exit(4)
 
 
 if __name__ == "__main__":

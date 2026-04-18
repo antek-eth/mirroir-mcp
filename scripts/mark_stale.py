@@ -46,7 +46,7 @@ KEY_TO_HOST = {
     "pepper": "www.pepper.pl",
 }
 
-DEFAULT_GRACE_DAYS = 7
+DEFAULT_GRACE_DAYS = 0
 
 
 def _parse_ram_gb(val) -> int | None:
@@ -79,7 +79,10 @@ def _extract_chip_family(qs: dict[str, list[str]]) -> set[str]:
     """M1/M2/... values from seria-procesora or processorseries params."""
     chips: set[str] = set()
     for k, vs in qs.items():
-        if "procesora" not in k.lower() and "processorseries" not in k.lower():
+        kl = k.lower()
+        # Accepts allegro's `seria-procesora`, allegro desktops' bare `seria`,
+        # and olx's `filter_enum_processorseries_*`. Anything else: skip.
+        if "procesora" not in kl and "processorseries" not in kl and kl != "seria":
             continue
         for v in vs:
             m = re.search(r"Apple\s*M(\d+)", v, re.I)
@@ -180,7 +183,8 @@ def _last_summary_scrape_zeros() -> set[str]:
             continue
         # scrape_all.py writes items_seen; older writers may use "count".
         items = info.get("items_seen", info.get("count", -1))
-        if items == 0:
+        incomplete = bool(info.get("incomplete"))
+        if items == 0 or incomplete:
             resolved = KEY_TO_HOST.get(host_key)
             if resolved is None:
                 # Unknown source key → safety gate would silently fail open
