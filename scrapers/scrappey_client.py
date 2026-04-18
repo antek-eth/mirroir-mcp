@@ -22,6 +22,7 @@ import threading
 import time
 import urllib.error
 import urllib.request
+import uuid
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent
 KEY_FILE = REPO_ROOT / ".scrappey-key"
@@ -30,8 +31,13 @@ ENDPOINT = "https://publisher.scrappey.com/api/v1"
 _call_count = 0
 _call_count_lock = threading.Lock()
 
-_RETRY_WAITS = (2, 8, 32)  # seconds between attempts; 4 attempts total including first
-_PERMANENT_ERROR_MARKERS = ("HTTP 401", "HTTP 402", "HTTP 403")  # auth/quota/api-forbidden
+_RETRY_WAITS = (2, 8)  # seconds between attempts; 3 attempts total including first
+_PERMANENT_ERROR_MARKERS = ("HTTP 401", "HTTP 402")  # auth/quota — never retry these
+# Scrappey signals "my proxy got banned by DataDome, try again" via CODE-0010.
+# Retrying rotates the proxy; when Scrappey's whole pool is flagged this still
+# fails, but 3 attempts cap the wall time at ~2 min and the safety gate then
+# records the host as "incomplete" so mark_stale skips its listings.
+_SCRAPPEY_PROXY_BAN_MARKER = "CODE-0010"
 
 
 class ScrappeyError(RuntimeError):
@@ -68,34 +74,52 @@ def _post_once(body: dict, timeout: int) -> dict:
     )
     try:
         with urllib.request.urlopen(req, timeout=timeout) as r:
-            return json.loads(r.read().decode("utf-8", errors="replace"))
+            payload = json.loads(r.read().decode("utf-8", errors="replace"))
     except urllib.error.HTTPError as e:
         raise ScrappeyError(f"HTTP {e.code}: {e.read()[:300].decode('utf-8','replace')}") from e
     except (urllib.error.URLError, OSError, TimeoutError) as e:
         raise ScrappeyError(f"transport error: {e}") from e
 
+    # Scrappey returns 200 at the HTTP layer even when its internal flow
+    # failed. Surface the diagnostic `error` field so retries and logs can
+    # distinguish "proxy got banned, try again" from transport issues.
+    err = payload.get("error")
+    if err:
+        raise ScrappeyError(f"scrappey: {err}")
+    return payload
+
 
 def _post(body: dict, timeout: int) -> dict:
-    """POST with retry on transient errors. Counts once per user-initiated call."""
+    """POST with retry on transient errors. Counts once per user-initiated call.
+
+    When Scrappey returns CODE-0010 (proxy banned by DataDome), we rotate the
+    `session` on the next attempt so Scrappey draws a fresh proxy from its
+    pool — otherwise retries would keep hitting the same banned IP.
+    """
     global _call_count
     with _call_count_lock:
         _call_count += 1
 
+    current = dict(body)  # copy so we can mutate session without affecting caller
     last_err: ScrappeyError | None = None
     for attempt, wait in enumerate((0,) + _RETRY_WAITS):
         if wait:
             time.sleep(wait)
         try:
-            return _post_once(body, timeout)
+            return _post_once(current, timeout)
         except ScrappeyError as e:
-            if any(marker in str(e) for marker in _PERMANENT_ERROR_MARKERS):
+            err = str(e)
+            if any(marker in err for marker in _PERMANENT_ERROR_MARKERS):
                 raise  # auth/quota — don't retry
             last_err = e
+            # Rotate session on proxy-ban so the retry draws a new proxy.
+            if _SCRAPPEY_PROXY_BAN_MARKER in err and "session" in current:
+                current["session"] = str(uuid.uuid4())
     assert last_err is not None
     raise last_err
 
 
-def fetch(url: str, timeout: int = 180, datadome: bool = True, session_id: str | None = None) -> str:
+def fetch(url: str, timeout: int = 90, datadome: bool = True, session_id: str | None = None) -> str:
     """POST to Scrappey, return rendered HTML string.
 
     Raises ScrappeyError on transport failure, non-200 response, or unverified
@@ -119,12 +143,12 @@ def fetch(url: str, timeout: int = 180, datadome: bool = True, session_id: str |
         raise ScrappeyError(f"upstream HTTP {sol.get('statusCode')}")
 
     html = sol.get("response")
-    if not isinstance(html, str) or len(html) < 1000:
-        raise ScrappeyError("empty or truncated response body")
+    if not isinstance(html, str) or not html:
+        raise ScrappeyError("empty response body")
     return html
 
 
-def fetch_status(url: str, timeout: int = 180, datadome: bool = True, session_id: str | None = None) -> int | None:
+def fetch_status(url: str, timeout: int = 90, datadome: bool = True, session_id: str | None = None) -> int | None:
     """POST to Scrappey, return upstream status code (or None if no solution).
 
     Unlike fetch(), this does NOT raise on 4xx/5xx or on verified=False — the
