@@ -27,10 +27,11 @@
       "pages": 5
     }
   ],
-  "allegrolokalnie": [
+  "_allegrolokalnie_disabled": [
     {
+      "_comment": "Allegrolokalnie search URL discovery is incomplete. /oferty/komputery/laptopy-491 lists all laptops (majority non-Apple), filters appear to be JS-only with no URL-encoded brand/text filter. Existing 48 allegrolokalnie listings in DB will not get liveness-checked (stay as-is) until a working MacBook-filtered search URL is found. Re-enable by renaming this key back to 'allegrolokalnie'.",
       "name": "macbook-pro-used",
-      "url": "https://allegrolokalnie.pl/o/elektronika/laptopy?text=macbook+pro",
+      "url": "https://allegrolokalnie.pl/oferty/komputery/laptopy-491",
       "used": true,
       "pages": 5
     }
