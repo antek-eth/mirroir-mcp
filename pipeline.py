@@ -372,10 +372,33 @@ def save_db(deals):
     DB_FILE.write_text(json.dumps(deals, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
+def _allegro_offer_id(url):
+    """Extract Allegro's numeric offerId from any URL form, or None.
+
+    Allegro presents the same offer under two URL templates:
+      /oferta/<slug>-<offerId>
+      /produkt/<slug>-<uuid>?offerId=<offerId>
+    The numeric offerId is stable; canonicalizing on it avoids dupes.
+    """
+    if not url or "allegro.pl/" not in url:
+        return None
+    m = re.search(r"[?&]offerId=(\d{8,})", url)
+    if m:
+        return m.group(1)
+    m = re.search(r"/oferta/[^?#]*?-(\d{8,})(?:[?#]|$)", url)
+    if m:
+        return m.group(1)
+    return None
+
+
 def make_dedup_key(deal):
     """Create a deduplication key for a deal."""
-    if deal.get("url"):
-        return deal["url"]
+    url = deal.get("url") or ""
+    offer_id = _allegro_offer_id(url)
+    if offer_id:
+        return f"allegro:{offer_id}"
+    if url:
+        return url
     # Fallback: unique combo of model + specs + price + date
     return f"{deal.get('model','')}|{deal.get('cpu','')}|{deal.get('ram','')}|{deal.get('disk','')}|{deal.get('price','')}|{deal.get('oldPrice','')}|{deal.get('datePosted','')}|{deal.get('temperature','')}"
 
