@@ -27,11 +27,10 @@
       "pages": 5
     }
   ],
-  "_allegrolokalnie_disabled": [
+  "allegrolokalnie": [
     {
-      "_comment": "Allegrolokalnie search URL discovery is incomplete. /oferty/komputery/laptopy-491 lists all laptops (majority non-Apple), filters appear to be JS-only with no URL-encoded brand/text filter. Existing 48 allegrolokalnie listings in DB will not get liveness-checked (stay as-is) until a working MacBook-filtered search URL is found. Re-enable by renaming this key back to 'allegrolokalnie'.",
-      "name": "macbook-pro-used",
-      "url": "https://allegrolokalnie.pl/oferty/komputery/laptopy-491",
+      "name": "macbook-pro-apple-18gb-plus",
+      "url": "https://allegrolokalnie.pl/oferty/komputery/laptopy-491/q/macbook%20pro?zrodlo=lokalnie&wielkosc-pamieci-ram=18-gb&wielkosc-pamieci-ram=24-gb&wielkosc-pamieci-ram=32-gb&wielkosc-pamieci-ram=36-gb&wielkosc-pamieci-ram=48-gb&wielkosc-pamieci-ram=64-gb&wielkosc-pamieci-ram=96-gb&wielkosc-pamieci-ram=128-gb&marka=apple",
       "used": true,
       "pages": 5
     }
