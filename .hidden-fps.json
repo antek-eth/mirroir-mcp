@@ -126,5 +126,15 @@
     "fp": "fp:m2|24gb|512gb|13|ultrabook apple macbook air m2 24 gb ram 512 gb ssd srebrny",
     "url": "https://allegro.pl/oferta/macbook-air-13-6-a2681-m2-24gb-512gb-18290000270",
     "hidden_at": "2026-04-19"
+  },
+  {
+    "fp": "fp:m2 ultra|64gb|1tb|studio|mac studio 2023 m2 ultra/64gb/1tb 60c gpu/silver",
+    "url": "https://allegro.pl/oferta/mac-studio-m2-ultra-24-cpu-60-gpu-64gb-ram-1tb-18340354593",
+    "hidden_at": "2026-04-23"
+  },
+  {
+    "fp": "fp:m3 ultra|96gb|1tb|14|komputer mini pc apple m3 ultra 96 gb 1 tb ssd srebrny",
+    "url": "https://allegro.pl/oferta/mac-studio-m3-ultra-28cpu-60gpu-96gb-1tb-silver-17753011256",
+    "hidden_at": "2026-04-23"
   }
 ]
