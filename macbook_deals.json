@@ -26465,7 +26465,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-m1-pro-14-32-gb-1-tb-bateria-88-CID99-ID19IaG6.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2386,
@@ -26482,9 +26482,9 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-18",
-    "last_seen_in_search": "2026-04-24",
-    "expired_at": "2026-04-26",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-04-26",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook Air M1 2020 | 8 GB RAM | 256 GB SSD | czytaj opis",
@@ -28503,7 +28503,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-14-m1-32gb-1tb-CID99-ID1agrCV.html",
     "source": "olx.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 2347,
@@ -28521,8 +28521,8 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-18",
     "last_seen_in_search": "2026-04-26",
-    "expired_at": null,
-    "expired_by": null
+    "expired_at": "2026-04-26",
+    "expired_by": "http-404"
   },
   {
     "title": "Mac Mini Apple M2 Pro",
@@ -34008,7 +34008,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/mac-studio-m4-max-36gb-512-ssd-apple-studio-display-CID99-ID1akO9X.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3868,
@@ -34025,9 +34025,9 @@
     "qwen3_27b_q4_pp": 157.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-25",
-    "last_seen_in_search": "2026-04-25",
-    "expired_at": "2026-04-26",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-04-26",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook Pro 16inch Gwiezdna Czerń M3 Pro/36GB/512GB SSD/ 18 GPU/ 12 CPU/ BATERIA 96%",
