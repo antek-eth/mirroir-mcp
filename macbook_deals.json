@@ -20519,7 +20519,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-16-2021-m1-pro-32gb-ram-512gb-ssd-zbita-matryca-CID99-ID19Xysk.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2386,
@@ -20539,9 +20539,9 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-11",
-    "last_seen_in_search": "2026-04-28",
-    "expired_by": "search-staleness",
-    "expired_at": "2026-04-29"
+    "last_seen_in_search": "2026-04-29",
+    "expired_by": null,
+    "expired_at": null
   },
   {
     "title": "Macbook Pro M4 Pro 100% 20 cykli idealny",
