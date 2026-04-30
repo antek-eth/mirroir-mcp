@@ -19694,7 +19694,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-16-m1-pro-32gb-512gb-109-cykli-stan-bardzo-dobry-CID99-ID19WoDK.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2386,
@@ -19711,9 +19711,9 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-11",
-    "last_seen_in_search": "2026-04-29",
-    "expired_by": "search-staleness",
-    "expired_at": "2026-04-30"
+    "last_seen_in_search": "2026-04-30",
+    "expired_by": null,
+    "expired_at": null
   },
   {
     "title": "MacBook Pro M1 Max 32Gb",
@@ -20299,7 +20299,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/2021-macbook-pro-a2442-14-m1-pro-32gb-512gb-CID99-ID19Z5ok.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2386,
@@ -20316,9 +20316,9 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-11",
-    "last_seen_in_search": "2026-04-29",
-    "expired_by": "search-staleness",
-    "expired_at": "2026-04-30"
+    "last_seen_in_search": "2026-04-30",
+    "expired_by": null,
+    "expired_at": null
   },
   {
     "title": "MacBook Pro 16 cali M1 32GB RAM",
@@ -20527,7 +20527,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-16-2021-m1-pro-32gb-ram-512gb-ssd-zbita-matryca-CID99-ID19Xysk.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2386,
@@ -20547,9 +20547,9 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-11",
-    "last_seen_in_search": "2026-04-29",
-    "expired_by": "search-staleness",
-    "expired_at": "2026-04-30"
+    "last_seen_in_search": "2026-04-30",
+    "expired_by": null,
+    "expired_at": null
   },
   {
     "title": "Macbook Pro M4 Pro 100% 20 cykli idealny",
@@ -27155,7 +27155,7 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-18",
-    "last_seen_in_search": "2026-04-29",
+    "last_seen_in_search": "2026-04-30",
     "expired_at": "2026-04-21",
     "expired_by": "http-404"
   },
@@ -28282,7 +28282,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-16-m1-pro-32gb-512gb-ssd-space-gray-CID99-ID1aguOp.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2386,
@@ -28299,9 +28299,9 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-18",
-    "last_seen_in_search": "2026-04-29",
-    "expired_at": "2026-04-30",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-04-30",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Dell Precision 7520 15.6\"FHD i7-7820HQ 32GB 512GB Quadro M1200 4GB A-",
@@ -35713,7 +35713,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-air-m4-24gb-ram-100-baterii-faktura-vat-23-jak-nowy-CID99-ID1aovQi.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3793,
@@ -35730,9 +35730,9 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-28",
-    "last_seen_in_search": "2026-04-29",
-    "expired_at": "2026-04-30",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-04-30",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Mac Mini / M1 / 16 GB ram / 500 GB SSD",
@@ -35897,7 +35897,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-14-m4-32gb-512gb-20-cykli-jak-nowy-CID99-ID1apZIy.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3793,
@@ -35914,9 +35914,9 @@
     "qwen3_27b_q4_pp": 34.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-28",
-    "last_seen_in_search": "2026-04-29",
-    "expired_at": "2026-04-30",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-04-30",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Apple MacBook Pro 14 M2 MAX 32GB 1TB",
@@ -37525,7 +37525,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/mac-mini-m4-16gb-256gb-1tb-thunderbolt-myszka-i-klawiatura-CID99-ID1ar2xQ.html",
     "source": "olx.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3793,
@@ -37542,7 +37542,9 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-30",
-    "last_seen_in_search": "2026-04-30"
+    "last_seen_in_search": "2026-04-30",
+    "expired_at": "2026-04-30",
+    "expired_by": "http-404"
   },
   {
     "title": "REZERWACJA Mac mini M4 24 RAM/512 GB - Jak nowy",
