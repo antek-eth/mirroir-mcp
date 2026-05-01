@@ -19545,7 +19545,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-14-m2-max-32-gb-ram-1-tb-ssd-CID99-ID17CRNY.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2805,
@@ -19562,9 +19562,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-04-11",
-    "last_seen_in_search": "2026-04-23",
-    "expired_by": "search-staleness",
-    "expired_at": "2026-04-24"
+    "last_seen_in_search": "2026-05-01",
+    "expired_by": null,
+    "expired_at": null
   },
   {
     "title": "Macbook A2485 Pro 16 Apple M1 MAX 64GB/4000GB (160CYKLI) 21R",
@@ -28363,7 +28363,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/apple-macbook-pro-16-m1-max-32gb-1tb-10c-cpu-32c-gpu-CID99-ID1agyvn.html",
     "source": "olx.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 2400,
@@ -28380,7 +28380,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-18",
-    "last_seen_in_search": "2026-05-01"
+    "last_seen_in_search": "2026-05-01",
+    "expired_at": "2026-05-01",
+    "expired_by": "http-404"
   },
   {
     "title": "Macbook Pro 16\" 32GB/512GB M1 Pro 2021",
