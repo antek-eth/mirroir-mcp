@@ -5707,7 +5707,8 @@
     "firstSeen": "2026-04-06",
     "last_seen_in_search": "2026-05-07",
     "expired_by": null,
-    "expired_at": null
+    "expired_at": null,
+    "alive_check_at": "2026-05-07"
   },
   {
     "title": "MacBook Pro 14\" M1 MAX a2442 64 GB 512 GB 62 cykle",
@@ -5894,7 +5895,8 @@
     "firstSeen": "2026-04-02",
     "last_seen_in_search": "2026-05-07",
     "expired_by": null,
-    "expired_at": null
+    "expired_at": null,
+    "alive_check_at": "2026-05-07"
   },
   {
     "title": "Laptop Apple MacBook Pro 16 A2485 M1 Max 64gb 1tb ssd A+ fv23",
@@ -37347,7 +37349,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-30",
     "last_seen_in_search": "2026-05-07",
-    "alive_check_at": "2026-05-06",
+    "alive_check_at": "2026-05-07",
     "expired_at": null,
     "expired_by": null
   },
@@ -41245,5 +41247,42 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-07",
     "last_seen_in_search": "2026-05-07"
+  },
+  {
+    "title": "Apple MacBook Pro 16 M1 Pro 32GB 1TB SSD",
+    "model": "Pro",
+    "cpu": "M1 PRO",
+    "ram": "32GB",
+    "disk": "1TB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "4500",
+    "oldPrice": "",
+    "priceNum": 4500.0,
+    "datePosted": "",
+    "date": "2026-05-07",
+    "temperature": "",
+    "url": "https://www.olx.pl/d/oferta/apple-macbook-pro-16-m1-pro-32gb-1tb-ssd-CID99-ID19QUmT.html",
+    "source": "olx.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 2386,
+    "gb6_multi": 12350,
+    "gb6_metal": 68176,
+    "mem_bw_gbs": 200,
+    "llm_gpu_cores": 16,
+    "qwen3_8b_q4_tg": 25.1,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 215.7,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 4.7,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 57.5,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-05-07",
+    "last_seen_in_search": "2026-05-07",
+    "alive_check_at": "2026-05-07"
   }
 ]
