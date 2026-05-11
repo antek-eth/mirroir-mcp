@@ -19599,7 +19599,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-14-m2-max-32-gb-ram-1-tb-ssd-CID99-ID17CRNY.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2805,
@@ -19616,9 +19616,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-04-11",
-    "last_seen_in_search": "2026-05-10",
-    "expired_by": "search-staleness",
-    "expired_at": "2026-05-11",
+    "last_seen_in_search": "2026-05-11",
+    "expired_by": null,
+    "expired_at": null,
     "alive_check_at": "2026-05-11"
   },
   {
@@ -19772,7 +19772,7 @@
     "last_seen_in_search": "2026-05-11",
     "expired_by": null,
     "expired_at": null,
-    "alive_check_at": "2026-05-10"
+    "alive_check_at": "2026-05-11"
   },
   {
     "title": "MacBook Pro M1 Max 32Gb",
@@ -21235,7 +21235,8 @@
     "firstSeen": "2026-04-12",
     "last_seen_in_search": "2026-05-11",
     "expired_by": null,
-    "expired_at": null
+    "expired_at": null,
+    "alive_check_at": "2026-05-11"
   },
   {
     "title": "Nowy Apple MacBook Pro 14.2” M5 24GB 1TB Space Black + ładowarka 96W",
@@ -32270,7 +32271,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-air-15-2023-apple-m2-24gb-ddr5-256gb-midnight-55-cykli-grade-a-gwarancja-6-msc-CID99-ID1aj44n.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2600,
@@ -32287,10 +32288,10 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-22",
-    "last_seen_in_search": "2026-05-10",
+    "last_seen_in_search": "2026-05-11",
     "alive_check_at": "2026-05-11",
-    "expired_at": "2026-05-11",
-    "expired_by": "search-staleness"
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook Pro 14 M4 Pro / 24 GB RAM / 512 GB SSD / Gwiezdna Czerń",
@@ -37607,7 +37608,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/ultrabook-apple-macbook-pro-16-2-m1-pro-32-gb-1024-gb-szary-2356087d-0291-46c7-8b2b-ccfc9295b48d?offerId=18545284189",
     "source": "allegro.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2386,
@@ -37624,9 +37625,9 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-30",
-    "last_seen_in_search": "2026-04-30",
-    "expired_at": "2026-05-01",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-05-11",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Apple MacBook Pro 16\" M3 Max 40 GPU 48 GB RAM 1 TB SSD Polska klawiatura",
