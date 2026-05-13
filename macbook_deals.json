@@ -8132,7 +8132,7 @@
     "temperature": "",
     "url": "https://allegro.pl/oferta/apple-macbook-pro-16-2021-a2485-m1-max-10c-24c-64gb-1tb-ssd-space-gray-18250828113",
     "source": "allegro.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "gb6_single": 2400,
     "gb6_multi": 12500,
@@ -8148,9 +8148,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-10",
-    "last_seen_in_search": "2026-04-10",
-    "expired_by": "search-staleness",
-    "expired_at": "2026-04-20"
+    "last_seen_in_search": "2026-05-13",
+    "expired_by": null,
+    "expired_at": null
   },
   {
     "title": "Laptop Apple MacBook Pro 16 A2485 M1 Max 32GB 1TB SSD Retina IPS SpaceGray",
@@ -19083,7 +19083,8 @@
     "firstSeen": "2026-04-11",
     "last_seen_in_search": "2026-05-13",
     "expired_by": null,
-    "expired_at": null
+    "expired_at": null,
+    "alive_check_at": "2026-05-13"
   },
   {
     "title": "Apple MacBook Pro M1 14’ 32GB RAM 512GB SSD – super stan",
@@ -20965,7 +20966,8 @@
     "firstSeen": "2026-04-12",
     "last_seen_in_search": "2026-05-13",
     "expired_by": null,
-    "expired_at": null
+    "expired_at": null,
+    "alive_check_at": "2026-05-13"
   },
   {
     "title": "MacBook Pro 14” M4 Pro 24GB / 1TB, 14CPU/20GPU, Gwiezdna czerń, folia, idealny",
@@ -21216,7 +21218,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-14-inch-2021-m1-pro-32-gb-bateria-94-CID99-ID1a8EET.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": false,
     "broken": false,
     "gb6_single": 2386,
@@ -21233,9 +21235,9 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-12",
-    "last_seen_in_search": "2026-05-11",
-    "expired_by": "search-staleness",
-    "expired_at": "2026-05-12",
+    "last_seen_in_search": "2026-05-13",
+    "expired_by": null,
+    "expired_at": null,
     "alive_check_at": "2026-05-12"
   },
   {
@@ -28224,7 +28226,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/apple-mac-mini-m2-24gb-ram-512gb-ssd-CID99-ID1abXGr.html",
     "source": "olx.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 2600,
@@ -28242,7 +28244,9 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-18",
     "last_seen_in_search": "2026-05-13",
-    "alive_check_at": "2026-05-13"
+    "alive_check_at": "2026-05-13",
+    "expired_at": "2026-05-13",
+    "expired_by": "http-404"
   },
   {
     "title": "iMac 24” Apple M3 / 16 GB RAM / 256 GB SSD",
@@ -28469,7 +28473,7 @@
     "last_seen_in_search": "2026-05-13",
     "expired_at": null,
     "expired_by": null,
-    "alive_check_at": "2026-05-10"
+    "alive_check_at": "2026-05-13"
   },
   {
     "title": "Dell Precision 7520 15.6\"FHD i7-7820HQ 32GB 512GB Quadro M1200 4GB A-",
@@ -30747,7 +30751,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-m4-pro-24-gb-512-gb-na-gwarancji-ubezpieczenie-premium-euroagd-CID99-ID19FlA8.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3851,
@@ -30764,9 +30768,9 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-19",
-    "last_seen_in_search": "2026-05-12",
-    "expired_at": "2026-05-13",
-    "expired_by": "search-staleness",
+    "last_seen_in_search": "2026-05-13",
+    "expired_at": null,
+    "expired_by": null,
     "alive_check_at": "2026-05-13"
   },
   {
@@ -32277,7 +32281,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-air-15-2023-apple-m2-24gb-ddr5-256gb-midnight-55-cykli-grade-a-gwarancja-6-msc-CID99-ID1aj44n.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2600,
@@ -32294,10 +32298,10 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-22",
-    "last_seen_in_search": "2026-05-12",
+    "last_seen_in_search": "2026-05-13",
     "alive_check_at": "2026-05-13",
-    "expired_at": "2026-05-13",
-    "expired_by": "search-staleness"
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook Pro 14 M4 Pro / 24 GB RAM / 512 GB SSD / Gwiezdna Czerń",
