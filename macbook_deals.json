@@ -20619,7 +20619,7 @@
     "last_seen_in_search": "2026-05-14",
     "expired_by": null,
     "expired_at": null,
-    "alive_check_at": "2026-05-11"
+    "alive_check_at": "2026-05-14"
   },
   {
     "title": "Macbook Pro M4 Pro 100% 20 cykli idealny",
@@ -21006,7 +21006,7 @@
     "last_seen_in_search": "2026-05-14",
     "expired_by": null,
     "expired_at": null,
-    "alive_check_at": "2026-05-06"
+    "alive_check_at": "2026-05-14"
   },
   {
     "title": "MacBook Pro 16\" M1 Max 32GB RAM / 1TB SSD - Nowa Bateria",
@@ -23675,7 +23675,8 @@
     "firstSeen": "2026-04-14",
     "last_seen_in_search": "2026-05-14",
     "expired_by": null,
-    "expired_at": null
+    "expired_at": null,
+    "alive_check_at": "2026-05-14"
   },
   {
     "title": "Macbook Pro 16 M3 MAX 128 GB RAM LLM AI  1TB SSD Gwarancja Apple Care + do 2027 Space Black",
@@ -24441,7 +24442,7 @@
     "firstSeen": "2026-04-16",
     "last_seen_in_search": "2026-05-14",
     "expired_by": null,
-    "alive_check_at": "2026-05-11",
+    "alive_check_at": "2026-05-14",
     "expired_at": null
   },
   {
@@ -26078,7 +26079,7 @@
     "last_seen_in_search": "2026-05-14",
     "expired_by": null,
     "expired_at": null,
-    "alive_check_at": "2026-05-12"
+    "alive_check_at": "2026-05-14"
   },
   {
     "title": "MacBook Pro M4 14cali 24gb Ram 512Gb 12-16gpu Super Cena",
@@ -26956,7 +26957,8 @@
     "firstSeen": "2026-04-18",
     "last_seen_in_search": "2026-05-14",
     "expired_at": null,
-    "expired_by": null
+    "expired_by": null,
+    "alive_check_at": "2026-05-14"
   },
   {
     "title": "MacBook Pro 16\" M1 Max 32GB 500GB SSD",
@@ -30751,7 +30753,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-m4-pro-24-gb-512-gb-na-gwarancji-ubezpieczenie-premium-euroagd-CID99-ID19FlA8.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3851,
@@ -30768,9 +30770,9 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-19",
-    "last_seen_in_search": "2026-05-13",
-    "expired_at": "2026-05-14",
-    "expired_by": "search-staleness",
+    "last_seen_in_search": "2026-05-14",
+    "expired_at": null,
+    "expired_by": null,
     "alive_check_at": "2026-05-14"
   },
   {
@@ -32262,7 +32264,7 @@
     "last_seen_in_search": "2026-05-14",
     "expired_at": null,
     "expired_by": null,
-    "alive_check_at": "2026-05-06"
+    "alive_check_at": "2026-05-14"
   },
   {
     "title": "Macbook Air 15 2023/ Apple M2/ 24GB DDR5/ 256GB/ Midnight/ 55 cykli/ Grade A-/ Gwarancja 6 MSC",
@@ -44954,5 +44956,42 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-14",
     "last_seen_in_search": "2026-05-14"
+  },
+  {
+    "title": "Apple Mac Mini M1 / 16 GB RAM / 1 TB SSD komputer stacjonarny",
+    "model": "Mini",
+    "cpu": "M1",
+    "ram": "16GB",
+    "disk": "1TB",
+    "screen": "Mini",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "1999",
+    "oldPrice": "",
+    "priceNum": 1999.0,
+    "datePosted": "",
+    "date": "2026-05-14",
+    "temperature": "",
+    "url": "https://www.olx.pl/d/oferta/apple-mac-mini-m1-16-gb-ram-1-tb-ssd-komputer-stacjonarny-CID99-ID1aDk2w.html",
+    "source": "olx.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 2347,
+    "gb6_multi": 8191,
+    "gb6_metal": 20759,
+    "mem_bw_gbs": 68,
+    "llm_gpu_cores": 8,
+    "qwen3_8b_q4_tg": 11.0,
+    "qwen3_8b_q4_tg_source": "measured",
+    "qwen3_8b_q4_pp": 94.1,
+    "qwen3_8b_q4_pp_source": "measured",
+    "qwen3_27b_q4_tg": "",
+    "qwen3_27b_q4_tg_source": "",
+    "qwen3_27b_q4_pp": "",
+    "qwen3_27b_q4_pp_source": "",
+    "firstSeen": "2026-05-14",
+    "last_seen_in_search": "2026-05-14",
+    "alive_check_at": "2026-05-14"
   }
 ]
