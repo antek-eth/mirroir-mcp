@@ -5670,7 +5670,7 @@
     "last_seen_in_search": "2026-05-16",
     "expired_by": null,
     "expired_at": null,
-    "alive_check_at": "2026-05-14"
+    "alive_check_at": "2026-05-16"
   },
   {
     "title": "Macbook Pro M3 Max 128GB 2TB 16\" + gwarancja",
@@ -10918,7 +10918,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/apple-macbook-air-m2-24gb-ram-256gb-ssd-stan-idealny-CID99-ID19ExuY.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "gb6_single": 2600,
     "gb6_multi": 9645,
@@ -10934,9 +10934,9 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-10",
-    "last_seen_in_search": "2026-05-06",
-    "expired_by": "search-staleness",
-    "expired_at": "2026-05-07",
+    "last_seen_in_search": "2026-05-16",
+    "expired_by": null,
+    "expired_at": null,
     "alive_check_at": "2026-05-07"
   },
   {
@@ -19698,7 +19698,7 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-11",
-    "last_seen_in_search": "2026-05-12",
+    "last_seen_in_search": "2026-05-16",
     "expired_by": "http-404",
     "expired_at": "2026-04-26"
   },
@@ -21242,7 +21242,7 @@
     "last_seen_in_search": "2026-05-16",
     "expired_by": null,
     "expired_at": null,
-    "alive_check_at": "2026-05-14"
+    "alive_check_at": "2026-05-16"
   },
   {
     "title": "Nowy Apple MacBook Pro 14.2” M5 24GB 1TB Space Black + ładowarka 96W",
@@ -27155,7 +27155,7 @@
     "last_seen_in_search": "2026-05-16",
     "expired_at": null,
     "expired_by": null,
-    "alive_check_at": "2026-05-11"
+    "alive_check_at": "2026-05-16"
   },
   {
     "title": "MacBook Pro 14\" M1 Pro / 32 GB / 1 TB • Gwarancja • Bateria 86%",
@@ -32197,7 +32197,7 @@
     "last_seen_in_search": "2026-05-16",
     "expired_at": null,
     "expired_by": null,
-    "alive_check_at": "2026-05-07"
+    "alive_check_at": "2026-05-16"
   },
   {
     "title": "MacBook Pro M4 16 11/2024 24GB RAM 2TB SSD - ZAMIANA!",
@@ -34557,7 +34557,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-25",
     "last_seen_in_search": "2026-05-16",
-    "alive_check_at": "2026-05-11",
+    "alive_check_at": "2026-05-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -35803,7 +35803,7 @@
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-04-28",
     "last_seen_in_search": "2026-05-16",
-    "alive_check_at": "2026-05-13",
+    "alive_check_at": "2026-05-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -35842,7 +35842,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-28",
     "last_seen_in_search": "2026-05-16",
-    "alive_check_at": "2026-05-13",
+    "alive_check_at": "2026-05-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -36149,7 +36149,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-28",
     "last_seen_in_search": "2026-05-16",
-    "alive_check_at": "2026-05-14",
+    "alive_check_at": "2026-05-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -36188,7 +36188,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m5_base_measurement",
     "firstSeen": "2026-04-28",
     "last_seen_in_search": "2026-05-16",
-    "alive_check_at": "2026-05-14",
+    "alive_check_at": "2026-05-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -37209,7 +37209,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-29",
     "last_seen_in_search": "2026-05-16",
-    "alive_check_at": "2026-05-14",
+    "alive_check_at": "2026-05-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -40215,7 +40215,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-05",
     "last_seen_in_search": "2026-05-16",
-    "alive_check_at": "2026-05-13",
+    "alive_check_at": "2026-05-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -42544,7 +42544,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-09",
     "last_seen_in_search": "2026-05-16",
-    "alive_check_at": "2026-05-12",
+    "alive_check_at": "2026-05-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -43001,7 +43001,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-10",
     "last_seen_in_search": "2026-05-16",
-    "alive_check_at": "2026-05-11",
+    "alive_check_at": "2026-05-16",
     "edited_at": "2026-05-10",
     "expired_at": null,
     "expired_by": null
@@ -43041,7 +43041,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-05-10",
     "last_seen_in_search": "2026-05-16",
-    "alive_check_at": "2026-05-11",
+    "alive_check_at": "2026-05-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -43978,7 +43978,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-05-12",
     "last_seen_in_search": "2026-05-16",
-    "alive_check_at": "2026-05-13",
+    "alive_check_at": "2026-05-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -44211,7 +44211,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-13",
     "last_seen_in_search": "2026-05-16",
-    "alive_check_at": "2026-05-14",
+    "alive_check_at": "2026-05-16",
     "expired_at": null,
     "expired_by": null
   },
