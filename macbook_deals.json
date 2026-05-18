@@ -5991,7 +5991,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/apple-macbook-16-m1-max-64gb-ram-1t-hd-CID99-ID1a0ZId.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "gb6_single": 2400,
     "gb6_multi": 12500,
@@ -6007,9 +6007,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-03-30",
-    "last_seen_in_search": "2026-05-17",
-    "expired_by": "search-staleness",
-    "expired_at": "2026-05-18",
+    "last_seen_in_search": "2026-05-18",
+    "expired_by": null,
+    "expired_at": null,
     "alive_check_at": "2026-05-18"
   },
   {
@@ -10918,7 +10918,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/apple-macbook-air-m2-24gb-ram-256gb-ssd-stan-idealny-CID99-ID19ExuY.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "gb6_single": 2600,
     "gb6_multi": 9645,
@@ -10934,9 +10934,9 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-10",
-    "last_seen_in_search": "2026-05-17",
-    "expired_by": "search-staleness",
-    "expired_at": "2026-05-18",
+    "last_seen_in_search": "2026-05-18",
+    "expired_by": null,
+    "expired_at": null,
     "alive_check_at": "2026-05-18"
   },
   {
@@ -20699,7 +20699,8 @@
     "firstSeen": "2026-04-11",
     "last_seen_in_search": "2026-05-18",
     "expired_by": null,
-    "expired_at": null
+    "expired_at": null,
+    "alive_check_at": "2026-05-18"
   },
   {
     "title": "MacBook Pro 16\" 2023 M2 Pro • 32 GB/1 TB • 74 cykle baterii",
@@ -25532,7 +25533,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-16-m2-max-32gb-1tb-CID99-ID19A8z3.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2805,
@@ -25549,10 +25550,10 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-04-16",
-    "last_seen_in_search": "2026-05-17",
-    "expired_by": "search-staleness",
+    "last_seen_in_search": "2026-05-18",
+    "expired_by": null,
     "alive_check_at": "2026-05-18",
-    "expired_at": "2026-05-18"
+    "expired_at": null
   },
   {
     "title": "Apple iMac M1 16GB ssd:512 GB Retina 4.5 K 24” FV",
@@ -25934,7 +25935,8 @@
     "firstSeen": "2026-04-16",
     "last_seen_in_search": "2026-05-18",
     "expired_by": null,
-    "expired_at": null
+    "expired_at": null,
+    "alive_check_at": "2026-05-18"
   },
   {
     "title": "MacBook Pro 14 M1 Max 32GB RAM 1TB SSD",
@@ -26320,7 +26322,8 @@
     "firstSeen": "2026-04-18",
     "last_seen_in_search": "2026-05-18",
     "expired_at": null,
-    "expired_by": null
+    "expired_by": null,
+    "alive_check_at": "2026-05-18"
   },
   {
     "title": "MacBook Pro 14 M1 Max 32/512 GB Jasno Szary Jak Nowy Sklep Gwarancja",
@@ -27500,9 +27503,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-18",
     "last_seen_in_search": "2026-05-18",
-    "alive_check_at": "2026-05-18",
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "alive_check_at": "2026-05-18"
   },
   {
     "title": "Mac Mini M2 Pro 16GB 512GB SSD",
@@ -31131,7 +31132,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-20",
     "last_seen_in_search": "2026-05-18",
-    "alive_check_at": "2026-05-06",
+    "alive_check_at": "2026-05-18",
     "expired_at": null,
     "expired_by": null
   },
@@ -34550,7 +34551,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-16inch-gwiezdna-czern-m3-pro-36gb-512gb-ssd-18-gpu-12-cpu-bateria-96-CID99-ID1amSD9.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3100,
@@ -34567,10 +34568,10 @@
     "qwen3_27b_q4_pp": 43.1,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-25",
-    "last_seen_in_search": "2026-05-17",
+    "last_seen_in_search": "2026-05-18",
     "alive_check_at": "2026-05-18",
-    "expired_at": "2026-05-18",
-    "expired_by": "search-staleness"
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook Pro 16\" 128 GB RAM, M4 Max",
@@ -35798,7 +35799,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/apple-macbook-pro-14-inch-m2-max-32-gb-ram-1-tb-ssd-2023-faktura-CID99-ID19Hlq3.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2805,
@@ -35815,10 +35816,10 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-04-28",
-    "last_seen_in_search": "2026-05-17",
+    "last_seen_in_search": "2026-05-18",
     "alive_check_at": "2026-05-18",
-    "expired_at": "2026-05-18",
-    "expired_by": "search-staleness"
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook Pro 2021 M1 | RAM 32GB | 14-inch | storage 500GB",
@@ -35837,7 +35838,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-2021-m1-ram-32gb-14-inch-storage-500gb-CID99-ID1aoRzV.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2347,
@@ -35854,10 +35855,10 @@
     "qwen3_27b_q4_pp": 19.6,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-28",
-    "last_seen_in_search": "2026-05-17",
+    "last_seen_in_search": "2026-05-18",
     "alive_check_at": "2026-05-18",
-    "expired_at": "2026-05-18",
-    "expired_by": "search-staleness"
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Apple MacBook Air M4 (2025) 13,6\" | 24GB RAM | 512GB SSD | Stan Idealny – Gwarancja!",
@@ -36144,7 +36145,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-14-m4-max-64gb-1tb-nano-gwarancja-do-08-05-30-cykli-jak-nowy-CID99-ID1apZC3.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3868,
@@ -36161,10 +36162,10 @@
     "qwen3_27b_q4_pp": 157.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-28",
-    "last_seen_in_search": "2026-05-17",
+    "last_seen_in_search": "2026-05-18",
     "alive_check_at": "2026-05-18",
-    "expired_at": "2026-05-18",
-    "expired_by": "search-staleness"
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "NOWY! Super Cena! Macbook Pro 16” M5 Pro 64GB RAM 1TB SSD",
@@ -38125,7 +38126,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-14-pro-32gb-512gb-m2-pro-bateria-88-CID99-ID1armCH.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2647,
@@ -38142,10 +38143,10 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-01",
-    "last_seen_in_search": "2026-05-17",
+    "last_seen_in_search": "2026-05-18",
     "alive_check_at": "2026-05-18",
-    "expired_at": "2026-05-18",
-    "expired_by": "search-staleness"
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook PRO M1 32GB/1TB",
@@ -38647,7 +38648,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/apple-macbook-pro-16-m4-max-16-core-cpu-40-core-gpu-64gb-1tb-srebrny-CID99-ID18mQqJ.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3868,
@@ -38664,10 +38665,10 @@
     "qwen3_27b_q4_pp": 157.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-02",
-    "last_seen_in_search": "2026-05-17",
+    "last_seen_in_search": "2026-05-18",
     "alive_check_at": "2026-05-18",
-    "expired_at": "2026-05-18",
-    "expired_by": "search-staleness"
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook Pro 16\" 2021 | M1 Max | 32GB | 1TB | Ekran bez odbić klawiatury",
@@ -44164,9 +44165,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-13",
     "last_seen_in_search": "2026-05-18",
-    "alive_check_at": "2026-05-18",
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "alive_check_at": "2026-05-18"
   },
   {
     "title": "MacBook Pro 14\" M1 Pro 32GB/512GB",
@@ -44224,7 +44223,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-16-z-procesorem-apple-m1-max-64gb-ram-2tb-ssd-CID99-ID18Xekx.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2400,
@@ -44241,10 +44240,10 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-13",
-    "last_seen_in_search": "2026-05-17",
+    "last_seen_in_search": "2026-05-18",
     "alive_check_at": "2026-05-18",
-    "expired_at": "2026-05-18",
-    "expired_by": "search-staleness"
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Macbook Pro m4 max",
@@ -45907,7 +45906,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/apple-macbook-pro-14-m5-24gb-ram-1tb-ssd-CID99-ID1aEHpo.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 4225,
@@ -45924,10 +45923,10 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-05-16",
-    "last_seen_in_search": "2026-05-17",
+    "last_seen_in_search": "2026-05-18",
     "alive_check_at": "2026-05-18",
-    "expired_at": "2026-05-18",
-    "expired_by": "search-staleness"
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook Pro M1 14 Zoll, 32 RAM",
@@ -45963,7 +45962,7 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-05-16",
-    "last_seen_in_search": "2026-05-17",
+    "last_seen_in_search": "2026-05-18",
     "alive_check_at": "2026-05-18"
   },
   {
@@ -47366,5 +47365,79 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-18",
     "last_seen_in_search": "2026-05-18"
+  },
+  {
+    "title": "Macbook M4 PRO 14 cali 24gb ram",
+    "model": "Pro",
+    "cpu": "M4 PRO",
+    "ram": "24GB",
+    "disk": "",
+    "screen": "14",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "7400",
+    "oldPrice": "",
+    "priceNum": 7400.0,
+    "datePosted": "",
+    "date": "2026-05-18",
+    "temperature": "",
+    "url": "https://www.olx.pl/d/oferta/macbook-m4-pro-14-cali-24gb-ram-CID99-ID1aHmxO.html",
+    "source": "olx.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3851,
+    "gb6_multi": 22438,
+    "gb6_metal": 112257,
+    "mem_bw_gbs": 273,
+    "llm_gpu_cores": 20,
+    "qwen3_8b_q4_tg": 35.0,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 356.2,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": "",
+    "qwen3_27b_q4_tg_source": "",
+    "qwen3_27b_q4_pp": "",
+    "qwen3_27b_q4_pp_source": "",
+    "firstSeen": "2026-05-18",
+    "last_seen_in_search": "2026-05-18",
+    "alive_check_at": "2026-05-18"
+  },
+  {
+    "title": "Mac mini m4 16gb",
+    "model": "Mini",
+    "cpu": "M4",
+    "ram": "16GB",
+    "disk": "",
+    "screen": "Mini",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "2490",
+    "oldPrice": "",
+    "priceNum": 2490.0,
+    "datePosted": "",
+    "date": "2026-05-18",
+    "temperature": "",
+    "url": "https://www.olx.pl/d/oferta/mac-mini-m4-16gb-CID99-ID1aHbZI.html",
+    "source": "olx.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3793,
+    "gb6_multi": 14921,
+    "gb6_metal": 57398,
+    "mem_bw_gbs": 120,
+    "llm_gpu_cores": 10,
+    "qwen3_8b_q4_tg": 16.6,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 179.2,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": "",
+    "qwen3_27b_q4_tg_source": "",
+    "qwen3_27b_q4_pp": "",
+    "qwen3_27b_q4_pp_source": "",
+    "firstSeen": "2026-05-18",
+    "last_seen_in_search": "2026-05-18",
+    "alive_check_at": "2026-05-18"
   }
 ]
