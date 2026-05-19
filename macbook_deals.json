@@ -19971,7 +19971,7 @@
     "last_seen_in_search": "2026-05-19",
     "expired_by": null,
     "expired_at": null,
-    "alive_check_at": "2026-05-06"
+    "alive_check_at": "2026-05-19"
   },
   {
     "title": "MacBook Pro Apple M4 Pro / 24 GB RAM / bateria 100%",
@@ -27504,9 +27504,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-18",
     "last_seen_in_search": "2026-05-19",
-    "alive_check_at": "2026-05-19",
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "alive_check_at": "2026-05-19"
   },
   {
     "title": "Mac Mini M2 Pro 16GB 512GB SSD",
@@ -30831,9 +30829,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-19",
     "last_seen_in_search": "2026-05-04",
-    "alive_check_at": "2026-05-19",
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "alive_check_at": "2026-05-19"
   },
   {
     "title": "Macbook PRO 16” A2485 M1 Pro 32 GB Ram 512 GB",
@@ -37654,7 +37650,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-30",
     "last_seen_in_search": "2026-05-19",
-    "alive_check_at": "2026-05-18",
+    "alive_check_at": "2026-05-19",
     "expired_at": null,
     "expired_by": null
   },
@@ -47753,6 +47749,42 @@
     "qwen3_27b_q4_tg": 6.4,
     "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
     "qwen3_27b_q4_pp": 78.5,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-05-19",
+    "last_seen_in_search": "2026-05-19"
+  },
+  {
+    "title": "Apple MacBook Pro 16 A3403 M4 48GB 512GB SSD 14CPU 20GPU Czarny 2024",
+    "model": "Pro",
+    "cpu": "M4",
+    "ram": "48GB",
+    "disk": "512GB",
+    "screen": "16",
+    "cpuCores": "14-core",
+    "gpuCores": "",
+    "price": "9499,00zł",
+    "oldPrice": "",
+    "priceNum": 9499.0,
+    "datePosted": "",
+    "date": "2026-05-19",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/apple-macbook-pro-16-a3403-m4-48gb-512gb-ssd-14cpu-20gpu-czarny-2024-e7abe5ea-1bb7-4604-b2f0-7628b0c20a0b?offerId=18596722653",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3793,
+    "gb6_multi": 14921,
+    "gb6_metal": 57398,
+    "mem_bw_gbs": 120,
+    "llm_gpu_cores": 10,
+    "qwen3_8b_q4_tg": 16.6,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 179.2,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 2.8,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 34.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-19",
     "last_seen_in_search": "2026-05-19"
