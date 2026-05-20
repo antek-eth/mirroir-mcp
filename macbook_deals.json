@@ -23662,7 +23662,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-m1-2021-ekran-16-cali-32-gb-ram-512-gb-CID99-ID19nSoR.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2347,
@@ -23679,9 +23679,9 @@
     "qwen3_27b_q4_pp": 19.6,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-14",
-    "last_seen_in_search": "2026-05-19",
-    "expired_by": "search-staleness",
-    "expired_at": "2026-05-20",
+    "last_seen_in_search": "2026-05-20",
+    "expired_by": null,
+    "expired_at": null,
     "alive_check_at": "2026-05-20"
   },
   {
@@ -31174,7 +31174,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-20",
     "last_seen_in_search": "2026-05-20",
-    "alive_check_at": "2026-05-06",
+    "alive_check_at": "2026-05-20",
     "expired_at": null,
     "expired_by": null
   },
@@ -34578,7 +34578,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-25",
     "last_seen_in_search": "2026-05-20",
-    "alive_check_at": "2026-05-19",
+    "alive_check_at": "2026-05-20",
     "expired_at": null,
     "expired_by": null
   },
@@ -47465,7 +47465,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/mac-mini-m4-16gb-CID99-ID1aHbZI.html",
     "source": "olx.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3793,
@@ -47483,7 +47483,9 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-05-18",
     "last_seen_in_search": "2026-05-20",
-    "alive_check_at": "2026-05-20"
+    "alive_check_at": "2026-05-20",
+    "expired_at": "2026-05-20",
+    "expired_by": "http-404"
   },
   {
     "title": "MacBook Pro 14” 2023 M2 Max / 64GB RAM / 1TB SSD / 12-core CPU + 38-core GPU / nowy ekran / gwarancja",
