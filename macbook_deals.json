@@ -20741,7 +20741,7 @@
     "last_seen_in_search": "2026-05-25",
     "expired_by": null,
     "expired_at": null,
-    "alive_check_at": "2026-05-10"
+    "alive_check_at": "2026-05-25"
   },
   {
     "title": "MacBook Pro 14\" M1 Pro/32GB/512GB, Space Grey",
@@ -30588,7 +30588,7 @@
     "temperature": "",
     "url": "https://allegro.pl/oferta/laptop-apple-macbook-pro-14-m4-pro-16gpu-24-512gb-2024-space-black-18509153901",
     "source": "allegro.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3851,
@@ -30605,9 +30605,9 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-19",
-    "last_seen_in_search": "2026-05-20",
-    "expired_at": "2026-05-21",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-05-25",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Laptop Apple MacBook Pro 14 14,2\" Apple M2 Max 32 GB/2TB Mac OS Space Grey",
@@ -32214,7 +32214,7 @@
     "last_seen_in_search": "2026-05-25",
     "expired_at": null,
     "expired_by": null,
-    "alive_check_at": "2026-05-17"
+    "alive_check_at": "2026-05-25"
   },
   {
     "title": "MacBook Pro M4 16 11/2024 24GB RAM 2TB SSD - ZAMIANA!",
@@ -33892,7 +33892,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-24",
     "last_seen_in_search": "2026-05-25",
-    "alive_check_at": "2026-05-10",
+    "alive_check_at": "2026-05-25",
     "expired_at": null,
     "expired_by": null
   },
@@ -35341,7 +35341,7 @@
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-04-27",
     "last_seen_in_search": "2026-05-25",
-    "alive_check_at": "2026-05-18",
+    "alive_check_at": "2026-05-25",
     "expired_at": null,
     "expired_by": null
   },
@@ -41960,7 +41960,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/ultrabook-apple-macbook-pro-16-a2485-m1-pro-32-gb-ram-512-gb-ssd-3456x2234-df49ed53-32bf-4857-8a84-6c9bccfcc356?offerId=18568032702",
     "source": "allegro.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2386,
@@ -41977,9 +41977,9 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-08",
-    "last_seen_in_search": "2026-05-21",
-    "expired_at": "2026-05-22",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-05-25",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Apple MacBook Pro 16,2\" M4 Pro 48 GB / 512 GB srebrny",
