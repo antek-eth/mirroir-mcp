@@ -41976,7 +41976,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/ultrabook-apple-macbook-pro-16-a2485-m1-pro-32-gb-ram-512-gb-ssd-3456x2234-df49ed53-32bf-4857-8a84-6c9bccfcc356?offerId=18568032702",
     "source": "allegro.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2386,
@@ -41993,9 +41993,9 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-08",
-    "last_seen_in_search": "2026-05-30",
-    "expired_at": "2026-05-31",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-05-31",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Apple MacBook Pro 16,2\" M4 Pro 48 GB / 512 GB srebrny",
@@ -49183,7 +49183,9 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-05-22",
     "last_seen_in_search": "2026-05-31",
-    "alive_check_at": "2026-05-31"
+    "alive_check_at": "2026-05-31",
+    "alive_check_inconclusive": true,
+    "alive_check_status": null
   },
   {
     "title": "MacBook Pro 14 M4 (Potężna wersja PRO, nie zwykłe M4) | 24GB RAM | 512GB |Space Black|Bateria 100% (33 cykle!) | Stan Idealny",
@@ -50862,7 +50864,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-apple-macbook-pro-16-m3-pro-16-apple-m-36-gb-512-gb-czarny-92358083-5aaa-488d-aadf-85f5061e7591?offerId=18607811501",
     "source": "allegro.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3100,
@@ -50879,9 +50881,9 @@
     "qwen3_27b_q4_pp": 43.1,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-25",
-    "last_seen_in_search": "2026-05-30",
-    "expired_at": "2026-05-31",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-05-31",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Apple MacBook Pro 16,2\" M4 Pro 48 GB / 512 GB srebrny",
