@@ -18633,7 +18633,9 @@
     "firstSeen": "2026-04-11",
     "last_seen_in_search": "2026-05-17",
     "expired_by": null,
-    "alive_check_at": "2026-06-01"
+    "alive_check_at": "2026-06-01",
+    "alive_check_inconclusive": true,
+    "alive_check_status": null
   },
   {
     "title": "Apple MacBook Pro 14\" M4, 24GB RAM, 1TB SSD – jak nowy, gwarancja 11 miesięcy",
@@ -38762,7 +38764,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-02",
     "last_seen_in_search": "2026-06-01",
-    "alive_check_at": "2026-05-17",
+    "alive_check_at": "2026-06-01",
     "expired_at": null,
     "expired_by": null
   },
@@ -39566,7 +39568,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-04",
     "last_seen_in_search": "2026-06-01",
-    "alive_check_at": "2026-05-30",
+    "alive_check_at": "2026-06-01",
     "expired_at": null,
     "expired_by": null
   },
@@ -49343,7 +49345,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-05-22",
     "last_seen_in_search": "2026-06-01",
-    "alive_check_at": "2026-05-30",
+    "alive_check_at": "2026-06-01",
     "expired_at": null,
     "expired_by": null
   },
@@ -49872,7 +49874,9 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-05-25",
     "last_seen_in_search": "2026-06-01",
-    "alive_check_at": "2026-06-01"
+    "alive_check_at": "2026-06-01",
+    "alive_check_inconclusive": true,
+    "alive_check_status": null
   },
   {
     "title": "Apple MacBook Pro 16 cali M1 PRO A2485 32/512GB b.ładny Bat.86%",
@@ -49909,7 +49913,9 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-05-25",
     "last_seen_in_search": "2026-06-01",
-    "alive_check_at": "2026-06-01"
+    "alive_check_at": "2026-06-01",
+    "alive_check_inconclusive": true,
+    "alive_check_status": null
   },
   {
     "title": "Macbook M1 Max 14” 32GB 1TB 2021 Space Gray",
