@@ -5670,7 +5670,7 @@
     "last_seen_in_search": "2026-06-04",
     "expired_by": null,
     "expired_at": null,
-    "alive_check_at": "2026-05-18"
+    "alive_check_at": "2026-06-04"
   },
   {
     "title": "Macbook Pro M3 Max 128GB 2TB 16\" + gwarancja",
@@ -7226,7 +7226,9 @@
     "firstSeen": "2025-04-09",
     "last_seen_in_search": "2026-06-04",
     "expired_by": null,
-    "alive_check_at": "2026-06-04"
+    "alive_check_at": "2026-06-04",
+    "alive_check_inconclusive": true,
+    "alive_check_status": null
   },
   {
     "title": "NOWY | GWARANCJA | Apple Mac Studio M1 MAX | 32GB | 512GB",
@@ -10938,7 +10940,7 @@
     "last_seen_in_search": "2026-06-04",
     "expired_by": null,
     "expired_at": null,
-    "alive_check_at": "2026-05-21"
+    "alive_check_at": "2026-06-04"
   },
   {
     "title": "Macbook Air 13 M4 24GB RAM 512GB SSD - bateria 100% GWARANCJA!",
@@ -19245,7 +19247,7 @@
     "last_seen_in_search": "2026-06-04",
     "expired_by": null,
     "expired_at": null,
-    "alive_check_at": "2026-05-25"
+    "alive_check_at": "2026-06-04"
   },
   {
     "title": "MacBook Pro M1 16'' 32/512 [bateria 88%]",
@@ -19820,7 +19822,7 @@
     "last_seen_in_search": "2026-06-04",
     "expired_by": null,
     "expired_at": null,
-    "alive_check_at": "2026-05-30"
+    "alive_check_at": "2026-06-04"
   },
   {
     "title": "Macbook PRO 16 A2485 M1 PRO 32GB 512GB SSD Space Grey Fv23%",
