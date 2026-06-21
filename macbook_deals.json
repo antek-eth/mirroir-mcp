@@ -5226,7 +5226,7 @@
     "last_seen_in_search": "2026-06-21",
     "expired_by": null,
     "expired_at": null,
-    "alive_check_at": "2026-06-11"
+    "alive_check_at": "2026-06-21"
   },
   {
     "cpu": "M2 MAX",
@@ -7211,7 +7211,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/apple-mac-studio-m1-max-32gb-512-gb-ssd-CID99-ID14WFNG.html",
     "source": "olx.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "gb6_single": 2400,
     "gb6_multi": 12500,
@@ -7227,10 +7227,10 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2025-04-09",
-    "last_seen_in_search": "2026-06-20",
-    "expired_by": "search-staleness",
+    "last_seen_in_search": "2026-06-21",
+    "expired_by": null,
     "alive_check_at": "2026-06-21",
-    "expired_at": "2026-06-21"
+    "expired_at": null
   },
   {
     "title": "NOWY | GWARANCJA | Apple Mac Studio M1 MAX | 32GB | 512GB",
@@ -42024,7 +42024,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/ultrabook-apple-macbook-pro-16-a2485-m1-pro-32-gb-ram-512-gb-ssd-3456x2234-df49ed53-32bf-4857-8a84-6c9bccfcc356?offerId=18568032702",
     "source": "allegro.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2386,
@@ -42041,9 +42041,9 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-08",
-    "last_seen_in_search": "2026-06-19",
-    "expired_at": "2026-06-21",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-06-21",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Apple MacBook Pro 16,2\" M4 Pro 48 GB / 512 GB srebrny",
@@ -48873,7 +48873,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-05-21",
     "last_seen_in_search": "2026-06-21",
-    "alive_check_at": "2026-06-18",
+    "alive_check_at": "2026-06-21",
     "expired_at": null,
     "expired_by": null
   },
@@ -49297,7 +49297,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-05-22",
     "last_seen_in_search": "2026-06-21",
-    "alive_check_at": "2026-06-20",
+    "alive_check_at": "2026-06-21",
     "expired_at": null,
     "expired_by": null
   },
@@ -58250,7 +58250,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-06-08",
     "last_seen_in_search": "2026-06-21",
-    "alive_check_at": "2026-06-11",
+    "alive_check_at": "2026-06-21",
     "expired_at": null,
     "expired_by": null
   },
@@ -62796,7 +62796,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-06-18",
     "last_seen_in_search": "2026-06-21",
-    "alive_check_at": "2026-06-19",
+    "alive_check_at": "2026-06-21",
     "expired_at": null,
     "expired_by": null
   },
@@ -63212,7 +63212,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-06-18",
     "last_seen_in_search": "2026-06-21",
-    "alive_check_at": "2026-06-20",
+    "alive_check_at": "2026-06-21",
     "expired_at": null,
     "expired_by": null
   },
