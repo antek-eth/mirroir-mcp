@@ -53272,7 +53272,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-16-m4-pro-14core-512gb-48gb-CID99-ID1aN6vt.html",
     "source": "olx.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3851,
@@ -53291,8 +53291,8 @@
     "firstSeen": "2026-05-30",
     "last_seen_in_search": "2026-06-30",
     "alive_check_at": "2026-08-28",
-    "expired_at": null,
-    "expired_by": null
+    "expired_at": "2026-08-28",
+    "expired_by": "http-404"
   },
   {
     "title": "MacBook Pro 16\" M1 Max A2485 | 64 GB RAM | 1 TB SSD | komplet | 1 właściciel | FV 23%",
