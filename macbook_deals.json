@@ -76020,7 +76020,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/apple-macbook-pro-16-2021-a2485-m1-max-64-1tb-ssd-3456x2234-space-f6a72f2c-e34e-4553-ab11-eafea5763d21?offerId=18801796441",
     "source": "allegro.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2400,
@@ -76037,9 +76037,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-29",
-    "last_seen_in_search": "2026-08-30",
-    "expired_at": "2026-08-31",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-08-31",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Laptop Apple MacBook Pro 16 A2991 16\" M3 Pro 36 GB / 512 GB ISO czarny",
