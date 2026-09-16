@@ -33,7 +33,7 @@
     "edited_at": "2026-04-17",
     "last_seen_in_search": "2026-04-04",
     "expired_by": null,
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "cpu": "M5",
@@ -67,7 +67,7 @@
     "firstSeen": "2026-04-04",
     "last_seen_in_search": "2026-04-04",
     "expired_by": null,
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "cpu": "M5 PRO",
@@ -101,7 +101,7 @@
     "firstSeen": "2026-04-03",
     "last_seen_in_search": "2026-04-03",
     "expired_by": null,
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "cpu": "M5",
@@ -135,7 +135,7 @@
     "firstSeen": "2026-04-02",
     "last_seen_in_search": "2026-04-02",
     "expired_by": null,
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "cpu": "M5",
@@ -169,7 +169,7 @@
     "firstSeen": "2026-04-02",
     "last_seen_in_search": "2026-04-02",
     "expired_by": null,
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "cpu": "M5 PRO",
@@ -203,7 +203,7 @@
     "firstSeen": "2026-04-01",
     "last_seen_in_search": "2026-04-01",
     "expired_by": null,
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "cpu": "M5",
@@ -237,7 +237,7 @@
     "firstSeen": "2026-03-31",
     "last_seen_in_search": "2026-03-31",
     "expired_by": null,
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "cpu": "M5",
@@ -304,7 +304,7 @@
     "firstSeen": "2026-03-24",
     "last_seen_in_search": "2026-03-24",
     "expired_by": null,
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "cpu": "M2 PRO",
@@ -371,7 +371,7 @@
     "firstSeen": "2026-03-17",
     "last_seen_in_search": "2026-03-17",
     "expired_by": null,
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "cpu": "M5 PRO",
@@ -438,7 +438,7 @@
     "firstSeen": "2026-03-17",
     "last_seen_in_search": "2026-03-17",
     "expired_by": null,
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "cpu": "M5",
@@ -538,7 +538,7 @@
     "firstSeen": "2026-03-17",
     "last_seen_in_search": "2026-03-17",
     "expired_by": null,
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "cpu": "M2 PRO",
@@ -572,7 +572,7 @@
     "firstSeen": "2026-03-10",
     "last_seen_in_search": "2026-03-10",
     "expired_by": null,
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "cpu": "M3",
@@ -5935,9 +5935,7 @@
     "last_seen_in_search": "2026-06-30",
     "expired_by": null,
     "expired_at": null,
-    "alive_check_at": "2026-09-15",
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Apple MacBook Pro 16 M1 Max 32-core 64GB RAM 1TB SSD A2485 Space Gray GRATISY",
@@ -6554,7 +6552,7 @@
     "temperature": "",
     "url": "https://allegrolokalnie.pl/oferta/macbook-pro-14-m1-max-32gb-ram-10cpu-32gpu-1tb-98-baterii-idealny",
     "source": "allegrolokalnie.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "gb6_single": 2400,
     "gb6_multi": 12500,
@@ -6570,9 +6568,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-10",
-    "last_seen_in_search": "2026-09-12",
-    "expired_by": "search-staleness",
-    "expired_at": "2026-09-13"
+    "last_seen_in_search": "2026-09-16",
+    "expired_by": null,
+    "expired_at": null
   },
   {
     "title": "MacBook Pro 14\" 2021 M1 Max 64GB RAM 1TB SSD – idealny stan, komplet",
@@ -6755,7 +6753,7 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-10",
-    "last_seen_in_search": "2026-09-12",
+    "last_seen_in_search": "2026-09-16",
     "expired_by": null
   },
   {
@@ -9172,7 +9170,7 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-10",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_by": null,
     "expired_at": null
   },
@@ -9800,7 +9798,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-10",
     "cpu_mislabeled_title": "M3",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_by": null,
     "expired_at": null
   },
@@ -10079,7 +10077,7 @@
     "temperature": "",
     "url": "https://allegrolokalnie.pl/oferta/macbook-pro-16-m4-pro-48gb-512gb-gwarancja-jak-nowy",
     "source": "allegro.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "gb6_single": 3851,
     "gb6_multi": 22438,
@@ -10095,9 +10093,9 @@
     "qwen3_27b_q4_pp": 78.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-10",
-    "last_seen_in_search": "2026-09-12",
-    "expired_by": "search-staleness",
-    "expired_at": "2026-09-13"
+    "last_seen_in_search": "2026-09-16",
+    "expired_by": null,
+    "expired_at": null
   },
   {
     "title": "Laptop Apple Mac book Pro A2485 16 \" Apple M 32 GB / 1024 GB srebrny",
@@ -15451,7 +15449,7 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-11",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_by": null,
     "expired_at": null
   },
@@ -16134,7 +16132,7 @@
     "qwen3_27b_q4_pp": 157.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-11",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_by": null,
     "expired_at": null
   },
@@ -16896,7 +16894,7 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-04-11",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_by": null,
     "expired_at": null
   },
@@ -20643,7 +20641,7 @@
     "last_seen_in_search": "2026-06-30",
     "expired_by": null,
     "expired_at": null,
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Macbook Pro M4 Pro 100% 20 cykli idealny",
@@ -22064,9 +22062,7 @@
     "firstSeen": "2026-04-13",
     "last_seen_in_search": "2026-06-29",
     "expired_by": null,
-    "alive_check_at": "2026-09-15",
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "MacBook Pro 14M4 Pro 12-core CPU + 16-core GPU/24GB/512GB SSD/Srebrny",
@@ -23287,9 +23283,7 @@
     "firstSeen": "2026-04-13",
     "last_seen_in_search": "2026-06-28",
     "expired_by": null,
-    "alive_check_at": "2026-09-15",
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Maca mini m2 24/512 gb",
@@ -23628,7 +23622,7 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-14",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_by": null,
     "expired_at": null
   },
@@ -24973,7 +24967,7 @@
     "qwen3_27b_q4_pp": 34.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-16",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_by": null,
     "expired_at": null
   },
@@ -25543,7 +25537,7 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-16",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_by": null,
     "expired_at": null
   },
@@ -26085,9 +26079,7 @@
     "last_seen_in_search": "2026-06-30",
     "expired_by": null,
     "expired_at": null,
-    "alive_check_at": "2026-09-15",
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Mac Book Pro M1 32GB RAM 1TB SSD Użytwany - Stan bardzo dobry FV VAT",
@@ -27855,9 +27847,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-18",
     "last_seen_in_search": "2026-06-30",
-    "alive_check_at": "2026-09-15",
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Apple iMac24\", Ret. 4,5K 10 CORE M4 z 10 CORE GPU, RAM 16 GB, 512 GB",
@@ -28126,9 +28116,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-18",
     "last_seen_in_search": "2026-06-30",
-    "alive_check_at": "2026-09-15",
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Apple Mac Mini M4/16GB/512GB SSD MU9E3ZE/A",
@@ -28358,11 +28346,11 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-18",
     "last_seen_in_search": "2026-06-30",
-    "alive_check_at": "2026-09-15",
+    "alive_check_at": "2026-09-16",
     "expired_at": null,
     "expired_by": null,
     "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "alive_check_status": 403
   },
   {
     "title": "Komputer Mac Mini M1 16 GB / 256 GB SSD",
@@ -28437,9 +28425,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-18",
     "last_seen_in_search": "2026-06-28",
-    "alive_check_at": "2026-09-15",
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Apple Mac Mini M4 16/256 zestaw Gwarancja 03.2027",
@@ -29338,7 +29324,7 @@
     "temperature": "",
     "url": "https://allegrolokalnie.pl/oferta/apple-macbook-pro-m4-pro-32gb-ladny",
     "source": "allegrolokalnie.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3851,
@@ -29355,9 +29341,9 @@
     "qwen3_27b_q4_pp": 78.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-19",
-    "last_seen_in_search": "2026-09-12",
-    "expired_at": "2026-09-13",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Apple MacBook Pro 16 M1 Pro 2021 16,2 \" Apple M 32 GB / 512 GB szary A2485 Obserwuj Marka: Apple Typ: wzmocniony Model: Macbook pro Układ klawiatury: International English (qwerty) -10% 4900 ,00 zł Kup teraz 4 400 zł Kup i zgarnij kupon 20 zł Sprzedający: osoba prywatna Warszawa",
@@ -29678,7 +29664,7 @@
     "temperature": "",
     "url": "https://allegrolokalnie.pl/oferta/macbook-pro-m1-16-32gb-ram-512gb-84-bateria-okazja",
     "source": "allegrolokalnie.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2347,
@@ -29695,9 +29681,9 @@
     "qwen3_27b_q4_pp": 19.6,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-19",
-    "last_seen_in_search": "2026-09-12",
-    "expired_at": "2026-09-13",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook M3 Pro 14\" 36GB 512GB jak nowy Obserwuj Kod producenta: Z1AX000MF Marka: Apple Przekątna ekranu: 14.2 \" Układ klawiatury: PL (qwerty) -12% 7800 ,00 zł Kup teraz 6 799 zł Kup i zgarnij kupon 20 zł Często sprzedaje Sprzedający: osoba prywatna Warszawa, Wawer",
@@ -29792,7 +29778,7 @@
     "temperature": "",
     "url": "https://allegrolokalnie.pl/oferta/apple-macbook-pro-16-m2-pro-12core-cpu-19core-gpu-vat23",
     "source": "allegrolokalnie.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2647,
@@ -29809,9 +29795,9 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-19",
-    "last_seen_in_search": "2026-09-12",
-    "expired_at": "2026-09-13",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Apple MacBook Pro 16 M1 RAM 64GB, Dysk 1TB Obserwuj Marka: Apple Model: MacBook Pro 16 Typ: wzmocniony Układ klawiatury: PL (qwerty) -35% 10000 ,00 zł do negocjacji Kup teraz 6 500 zł Kup i zgarnij kupon 20 zł Sprzedający: osoba prywatna Kraków",
@@ -29885,7 +29871,7 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-19",
-    "last_seen_in_search": "2026-09-12"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "MacBook Pro 16'' M3 Pro 36 GB Obserwuj Materiał: metal Chipset karty graficznej: Apple M3 Pro Liczba rdzeni procesora: 12 Wielkość pamięci RAM: 36 GB -14% 9999 ,00 zł Ogłoszenie 8 500 zł Sprzedający: osoba prywatna Kielce",
@@ -29942,7 +29928,7 @@
     "temperature": "",
     "url": "https://allegrolokalnie.pl/oferta/macbook-pro-m1-pro-space-grey-16-ssd-1-tb-ram-32-gb",
     "source": "allegrolokalnie.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2386,
@@ -29959,9 +29945,9 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-19",
-    "last_seen_in_search": "2026-09-12",
-    "expired_at": "2026-09-13",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook Pro 14' M1 Pro (2022) – 32GB RAM, 512GB ssd, Space Gray Obserwuj Kolor: srebrny Pojemność dysku: 512 GB Typ dysku twardego: SSD Przekątna ekranu: 14 \" Kup teraz 5 900 zł Kup i zgarnij kupon 20 zł Sprzedający: osoba prywatna Wilkszyn",
@@ -29980,7 +29966,7 @@
     "temperature": "",
     "url": "https://allegrolokalnie.pl/oferta/macbook-pro-14-m1-pro-2022-32gb-ram-512gb-ssd-space-gray",
     "source": "allegrolokalnie.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2386,
@@ -29997,9 +29983,9 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-19",
-    "last_seen_in_search": "2026-09-12",
-    "expired_at": "2026-09-13",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook Pro 16\" M3 Pro 36GB/512GB, jak nowy, gwarancja, 11 cykli Obserwuj Marka: Apple Typ: standardowy Rozdzielczość (px): 3456 x 2234 Wielkość pamięci RAM: 36 GB Kup teraz 10 600 zł Kup i zgarnij kupon 20 zł Sprzedający: osoba prywatna Łódź, Widzew",
@@ -30018,7 +30004,7 @@
     "temperature": "",
     "url": "https://allegrolokalnie.pl/oferta/macbook-pro-16-m3-pro-36gb512gb-jak-nowy-gwarancja-11-cykli",
     "source": "allegrolokalnie.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3100,
@@ -30035,9 +30021,9 @@
     "qwen3_27b_q4_pp": 43.1,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-19",
-    "last_seen_in_search": "2026-09-12",
-    "expired_at": "2026-09-13",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook Pro 16 M3 Max 64 GB 1 TB Space Black 40 GPU",
@@ -30073,7 +30059,7 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-19",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -30111,7 +30097,7 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-19",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -30187,7 +30173,7 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-19",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -31254,11 +31240,9 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-20",
     "last_seen_in_search": "2026-06-30",
-    "alive_check_at": "2026-09-15",
+    "alive_check_at": "2026-09-16",
     "expired_at": null,
-    "expired_by": null,
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "expired_by": null
   },
   {
     "title": "MacBook Pro 13” M2 24GB RAM 256GB SSD A2338 idealny stan 77 cykli Retina",
@@ -33839,7 +33823,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-apple-macbook-pro-14-m4-pro-14-2-apple-m-24-gb-512-gb-czarny-f3ecdf15-1088-4c8c-a22b-b1f7cb816127?offerId=17359264287",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3851,
@@ -33857,8 +33841,8 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-04-24",
     "last_seen_in_search": "2026-09-03",
-    "expired_at": null,
-    "expired_by": null
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "MacBook Pro 14” 2023 / M2 Max / 32 GB / 1 TB / 85% baterii",
@@ -34476,11 +34460,9 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-24",
     "last_seen_in_search": "2026-06-30",
-    "alive_check_at": "2026-09-15",
+    "alive_check_at": "2026-09-16",
     "expired_at": null,
-    "expired_by": null,
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "expired_by": null
   },
   {
     "title": "Mac mini M4 16G/256G",
@@ -35433,11 +35415,9 @@
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-04-27",
     "last_seen_in_search": "2026-06-30",
-    "alive_check_at": "2026-09-15",
+    "alive_check_at": "2026-09-16",
     "expired_at": null,
-    "expired_by": null,
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "expired_by": null
   },
   {
     "title": "MacBook Pro 16” 2021 M1 Pro Space Gray | 32 GB RAM | 1 TB SSD | 65 cykli | 98% baterii | 10C CPU | 16C GPU | A2485 | Stan bardzo dobry",
@@ -36741,7 +36721,7 @@
     "qwen3_27b_q4_pp": 157.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-04-28",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -38623,9 +38603,9 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-05-01",
     "last_seen_in_search": "2026-05-03",
-    "alive_check_at": "2026-09-15",
+    "alive_check_at": "2026-09-16",
     "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "alive_check_status": 403
   },
   {
     "title": "Apple Mac Mini M4 16GB 512GB + 1TB SSD + hub USB, stan BDB Mini PC Komplet",
@@ -39396,9 +39376,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-05-04",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15",
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Apple Mac mini M4, 16 GB RAM, 256 GB SSD – stan idealny",
@@ -39856,7 +39834,7 @@
     "qwen3_27b_q4_pp": 34.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-04",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -40202,7 +40180,7 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-05-05",
-    "last_seen_in_search": "2026-09-12"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Apple Mac Studio M4 Max (14 CPU 32 GPU 16 NU) 36GB RAM 1TB SSD Srebrny",
@@ -43590,7 +43568,7 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-10",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -46922,11 +46900,9 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-05-17",
     "last_seen_in_search": "2026-06-30",
-    "alive_check_at": "2026-09-15",
+    "alive_check_at": "2026-09-16",
     "expired_at": null,
-    "expired_by": null,
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "expired_by": null
   },
   {
     "title": "Apple Macbook Pro 16 M3 Pro 18GB ram 512GB SSD Czarny / Space Black",
@@ -48241,11 +48217,11 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-05-20",
     "last_seen_in_search": "2026-06-30",
-    "alive_check_at": "2026-09-15",
+    "alive_check_at": "2026-09-16",
     "expired_at": null,
     "expired_by": null,
     "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "alive_check_status": 403
   },
   {
     "title": "Apple MacBook Pro 16” M2 Max 38rdzeni GPU, 32GB RAM, 1TB SSD, A2780",
@@ -48787,11 +48763,9 @@
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-05-21",
     "last_seen_in_search": "2026-06-30",
-    "alive_check_at": "2026-09-15",
+    "alive_check_at": "2026-09-16",
     "expired_at": null,
-    "expired_by": null,
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "expired_by": null
   },
   {
     "title": "FV 23% | Apple MacBook Pro 16” M1 Pro 2021 | 32GB/512GB| Bateria 100%",
@@ -48945,11 +48919,9 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-05-21",
     "last_seen_in_search": "2026-06-30",
-    "alive_check_at": "2026-09-15",
+    "alive_check_at": "2026-09-16",
     "expired_at": null,
-    "expired_by": null,
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "expired_by": null
   },
   {
     "title": "Mac Mini M4 16/256 GB",
@@ -50614,11 +50586,11 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-05-25",
     "last_seen_in_search": "2026-06-30",
-    "alive_check_at": "2026-09-15",
+    "alive_check_at": "2026-09-16",
     "expired_at": null,
     "expired_by": null,
     "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "alive_check_status": 403
   },
   {
     "title": "Apple Mac Mini M4 16GB / 256 GB / 2024r",
@@ -52328,7 +52300,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-apple-macbook-pro-16-a2991-16-m3-pro-36-gb-512-gb-czarny-994d0cf0-3663-4c93-89da-3fe896322789?offerId=18627147249",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3100,
@@ -52346,8 +52318,8 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-05-30",
     "last_seen_in_search": "2026-09-03",
-    "expired_at": null,
-    "expired_by": null
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop Apple MacBook Pro 14 A2992 14 \" Apple M3 PRO 36 GB / 512 GB czarny",
@@ -56901,7 +56873,7 @@
     "temperature": "",
     "url": "https://allegrolokalnie.pl/oferta/apple-macbook-pro-14-m3-pro18gb1tb-ssd18c-gpumacos-gwiezdna-czern",
     "source": "allegrolokalnie.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3100,
@@ -56918,9 +56890,9 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-06-04",
-    "last_seen_in_search": "2026-09-12",
-    "expired_at": "2026-09-13",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook Pro 13-calowy, M2, 2022, 24 GB, bateria 90% Obserwuj Marka: Apple Układ klawiatury: QWERTY - naklejki Przekątna ekranu: 13 \" Rozdzielczość (px): 2560 x 1600 Kup teraz 4 400 zł Sprzedający: osoba prywatna Warszawa",
@@ -60385,7 +60357,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-apple-macbook-pro-16-a2991-16-m3-pro-36-gb-512-gb-iso-czarny-52b5fec2-e189-4c9a-95e4-8250d61f4e34?offerId=18660562380",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3100,
@@ -60403,8 +60375,8 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-06-12",
     "last_seen_in_search": "2026-09-03",
-    "expired_at": null,
-    "expired_by": null
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Ultrabook Apple MacBook Pro 14 M4 Pro 14,2\" 24 GB RAM 512 GB SSD czarny",
@@ -60478,7 +60450,7 @@
     "qwen3_27b_q4_pp": 43.1,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-06-12",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -60516,7 +60488,7 @@
     "qwen3_27b_q4_pp": 43.1,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-06-12",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -60668,7 +60640,7 @@
     "qwen3_27b_q4_pp": 28.8,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-06-12",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -63063,7 +63035,7 @@
     "temperature": "",
     "url": "https://www.olx.pl/d/oferta/macbook-pro-16-m4-pro-24-gb-ram-512gb-ssd-jak-nowy-CID99-ID1b7cTQ.html",
     "source": "olx.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3851,
@@ -63082,10 +63054,8 @@
     "firstSeen": "2026-06-18",
     "last_seen_in_search": "2026-06-30",
     "alive_check_at": "2026-09-15",
-    "expired_at": null,
-    "expired_by": null,
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "expired_at": "2026-09-16",
+    "expired_by": "http-404"
   },
   {
     "title": "MacBook Pro 16 M1 Pro - 32 GB RAM, 512 GB SSD",
@@ -63647,7 +63617,7 @@
     "temperature": "",
     "url": "https://allegrolokalnie.pl/oferta/apple-macbook-pro-13-m2-24gb-ram-512gb-ssd-space-gray-2022",
     "source": "allegrolokalnie.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2600,
@@ -63664,9 +63634,9 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-06-18",
-    "last_seen_in_search": "2026-09-12",
-    "expired_at": "2026-09-13",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook Pro M4 Pro 14” 24GB/512GB SSD | 100% bateria | jak nowy Obserwuj Marka: Apple Typ: standardowy Model: MacBook Pro 14 M4 Pro Układ klawiatury: US international (qwerty) do negocjacji Ogłoszenie 7 200 zł Sprzedający: osoba prywatna Kraków",
@@ -63761,7 +63731,7 @@
     "temperature": "",
     "url": "https://allegrolokalnie.pl/oferta/apple-macbook-pro-16-2023-m2-pro-32gb-1tb-ssd-a2780",
     "source": "allegrolokalnie.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2647,
@@ -63778,9 +63748,9 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-06-18",
-    "last_seen_in_search": "2026-09-12",
-    "expired_at": "2026-09-13",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook Pro 16” M3 Max 64GB 1TB 2023 Silver 95 cykli Obserwuj Marka: Apple Typ: standardowy Układ klawiatury: US international (qwerty) Rozdzielczość (px): 3456 x 2234 Kup teraz 13 200 zł Sprzedający: osoba prywatna Poznań",
@@ -64808,7 +64778,7 @@
     "qwen3_27b_q4_pp": 28.8,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-06-19",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Apple Macbook Pro 16 M1 Pro A2485 32 GB 512 SSD 8CPU 14GPU Klasa B",
@@ -64827,7 +64797,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/apple-macbook-pro-16-m1-pro-a2485-32-gb-512-ssd-8cpu-14gpu-klasa-b-4c17e20e-5a30-46de-8e3c-1215e8120147?offerId=18673283648",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 2386,
@@ -64845,8 +64815,8 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-06-19",
     "last_seen_in_search": "2026-09-03",
-    "expired_at": null,
-    "expired_by": null
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Macbook Pro 16\" 2023 M2 Pro 32 GB 1024 SSD A2780 12 CPU 19 GPU Klasa B+",
@@ -65110,7 +65080,7 @@
     "qwen3_27b_q4_pp": 43.1,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-06-19",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Laptop 16\" Apple MacBook Pro M5 Pro/48GB/1TB/MacOS Gwiezdna Czerń 20R Nano",
@@ -65848,7 +65818,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-06-21",
     "last_seen_in_search": "2026-06-30",
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Mac Mini M4 16/256 - stan bardzo dobry",
@@ -66925,7 +66895,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-06-23",
     "last_seen_in_search": "2026-06-30",
-    "alive_check_at": "2026-09-15",
+    "alive_check_at": "2026-09-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -67832,7 +67802,7 @@
     "temperature": "",
     "url": "https://allegro.pl/oferta/laptop-1tb-ssd-36gb-ram-apple-macbook-pro-m3-max-16-a2991-2023-czarny-ac-18625649359",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3102,
@@ -67850,8 +67820,8 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-06-24",
     "last_seen_in_search": "2026-09-03",
-    "expired_at": null,
-    "expired_by": null
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop Apple MacBook Pro A2485 16 \" Apple M 64 GB / 2000 GB srebrny",
@@ -68543,7 +68513,7 @@
     "qwen3_27b_q4_pp": 141.2,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m5_base_measurement",
     "firstSeen": "2026-06-25",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -68932,7 +68902,7 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-06-26",
     "last_seen_in_search": "2026-06-30",
-    "alive_check_at": "2026-09-15",
+    "alive_check_at": "2026-09-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -69126,7 +69096,7 @@
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-06-26",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Mac Mini M4 16GB/256GB – stan idealny, gwarancja Apple, dowód zakupu",
@@ -69354,7 +69324,7 @@
     "qwen3_27b_q4_pp": 282.3,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m5_base_measurement",
     "firstSeen": "2026-06-27",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Laptop Apple MacBook Pro 14 M2 32 GB RAM 512 GB SSD UK QWERTY",
@@ -69969,7 +69939,7 @@
     "qwen3_27b_q4_pp": 34.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-06-28",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Ultrabook Apple MacBook Pro 16 M1 Max 64GB 1TB SSD 3456x2234",
@@ -71835,7 +71805,7 @@
     "temperature": "",
     "url": "https://allegrolokalnie.pl/oferta/macbook-m3-pro-16-18gb1tb",
     "source": "allegrolokalnie.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3100,
@@ -71852,9 +71822,9 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-08-08",
-    "last_seen_in_search": "2026-09-12",
-    "expired_at": "2026-09-13",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Laptop Apple MacBook Pro 14 (M5, 2026) 14,2 \" Apple M 24 GB / 2 GB czarny",
@@ -71890,7 +71860,7 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-08-08",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "MacBook Pro 16\" Apple M3 Max 36 GB / 1 TB SSD 30 GPU",
@@ -71909,7 +71879,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/macbook-pro-16-apple-m3-max-36-gb-1-tb-ssd-30-gpu-dc2eb2cb-b571-4b1d-8cd5-435211bb5922?offerId=18824135433",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3102,
@@ -71926,7 +71896,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-08",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop Apple Macbook Pro 14 M1 Pro 32 GB 512 GB SSD szary",
@@ -71983,7 +71955,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-macbook-pro-16-m3-max-40-gpu-64-gb-1-tb-ssd-mac-os-czarny-525fdf82-c4e1-4f21-885d-bd61b3befe0a?offerId=18824113635",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3102,
@@ -72000,7 +71972,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-08",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Ultrabook Apple MacBook Pro A2485 16,2\" 32 GB / 512 GB Apple M1 Pro",
@@ -72171,7 +72145,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-apple-a2991-16-2-apple-m3-36-gb-4096-gb-czarny-7fabc08e-fe5c-47a8-b05c-df63082174a0?offerId=18818100578",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3077,
@@ -72188,7 +72162,9 @@
     "qwen3_27b_q4_pp": 28.8,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-08",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop Apple MacBook Pro 14 M2 Max 14,2 \" Apple M2 64 GB / 2048 GB szary",
@@ -72300,7 +72276,7 @@
     "qwen3_27b_q4_pp": 34.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-08",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Laptop Apple A2992 14,2 \" Apple M3 64 GB / 2048 GB czarny",
@@ -72319,7 +72295,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-apple-a2992-14-2-apple-m3-64-gb-2048-gb-czarny-4e41a9a7-9b54-4849-96bd-40822df22fa0?offerId=18818027362",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3077,
@@ -72336,7 +72312,9 @@
     "qwen3_27b_q4_pp": 28.8,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-08",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Apple MacBook Pro 14 A2442 M1 Max 10CPU 32GPU 64GB 1TB SSD 2021",
@@ -72486,7 +72464,7 @@
     "qwen3_27b_q4_pp": 70.8,
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-08-08",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Laptop Apple MacBook Pro 16 M5 Pro / 24 GB / 1 TB (MGE44ZE/A)",
@@ -72999,7 +72977,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-apple-macbook-pro-2024-16-2-m4-max-36gb-1tb-macos-srebrny-4df5ca0c-366e-4381-a52d-6335c6f37f43?offerId=18798386894",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3868,
@@ -73016,7 +72994,9 @@
     "qwen3_27b_q4_pp": 157.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-08",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "MBP MacBook Pro 14 M2 32GB 500GB Box 65 Cykli",
@@ -73128,7 +73108,7 @@
     "qwen3_27b_q4_pp": 28.8,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-08",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Laptop Apple A2779 14,2 \" Apple M2 32 GB / 1024 GB szary",
@@ -73337,7 +73317,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/apple-macbook-pro-14-m3-max-16core-cpu-40core-gpu-128gb-8tb-gwiezdna-czern-89cb9558-059e-41f9-9b35-614e52bc687b?offerId=18780101889",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3102,
@@ -73354,7 +73334,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-08",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop 13,6\" Apple MacBook Air M5/32GB/2TB/Mac OS Srebrny 10R GPU",
@@ -73373,7 +73355,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-13-6-apple-macbook-air-m5-32gb-2tb-mac-os-srebrny-10r-gpu-8f323919-23db-4bf8-a562-ad03ceae5758?offerId=18778069510",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 4225,
@@ -73390,7 +73372,9 @@
     "qwen3_27b_q4_pp": 70.8,
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-08-08",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop Apple MacBook Pro 16 M1 Max 16,2'' 32 GB RAM 1000 GB SSD szary",
@@ -73488,7 +73472,7 @@
     "temperature": "",
     "url": "https://allegro.pl/oferta/macbook-pro-a2485-16-szary-m1-max-64-gb-2-tb-retina-mac-os-touchid-ai-18798801725",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 2400,
@@ -73505,7 +73489,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-08",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop Apple MacBook Pro 16 A2485 – macOS Tahoe (2025r) 16,2 \" Apple M 32 GB / 512 GB szary",
@@ -73638,7 +73624,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/ultrabook-apple-macbook-pro-14-a2442-m1-max-64-gb-ram-512-gb-ssd-496532e9-59e9-4021-bcb5-758adfb9aff7?offerId=18761309262",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 2400,
@@ -73655,7 +73641,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-08",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop Apple A2991 16 \" Apple M3 36 GB / 512 GB czarny",
@@ -73712,7 +73700,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-apple-a2991-16-apple-m3-36-gb-512-gb-czarny-9da5c91e-5c01-4a5b-8526-621eeebb8702?offerId=18760055448",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3077,
@@ -73729,7 +73717,9 @@
     "qwen3_27b_q4_pp": 28.8,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-08",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop Apple MacBook Pro A2485 M1 Max 64 GB RAM 1024 GB SSD szary",
@@ -73841,7 +73831,7 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-08-08",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Laptop Apple A2485 16,2\" Apple M1 Pro 32 GB RAM 512 GB SSD srebrny",
@@ -73898,7 +73888,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-apple-macbook-pro-16-m4-pro-16-2-apple-m-24-gb-512-gb-czarny-85956bf9-038f-42ef-acb1-9f744255f8de?offerId=18459743232",
     "source": "allegro.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3851,
@@ -73915,9 +73905,9 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-08-08",
-    "last_seen_in_search": "2026-08-31",
-    "expired_at": "2026-09-01",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Laptop Apple A2485 16,2 \" Apple M 32 GB / 1000 GB szary",
@@ -74272,7 +74262,7 @@
     "temperature": "",
     "url": "https://allegrolokalnie.pl/oferta/macbook-pro-16-m4-pro-48gb-ram-512gb-ssd-silver-25-cykli-gwarancja",
     "source": "allegrolokalnie.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3851,
@@ -74289,9 +74279,9 @@
     "qwen3_27b_q4_pp": 78.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-27",
-    "last_seen_in_search": "2026-09-12",
-    "expired_at": "2026-09-13",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook Pro M3 Max 14 cali 16/40 GPU 64 GB RAM ULTRA SUPER STAN OKAZJA Obserwuj Marka: Apple Seria procesora: Apple M3 Model procesora: Apple M3 Max Liczba rdzeni procesora: 16 Kup teraz 12 900 zł Sprzedający: osoba prywatna Warszawa, Mokotów",
@@ -74348,7 +74338,7 @@
     "temperature": "",
     "url": "https://allegrolokalnie.pl/oferta/apple-macbook-pro-14-m5-32gb-1tb-ssd-srebrny-a3434-nowy-zapieczetowany",
     "source": "allegrolokalnie.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 4225,
@@ -74365,9 +74355,9 @@
     "qwen3_27b_q4_pp": 70.8,
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-08-27",
-    "last_seen_in_search": "2026-09-12",
-    "expired_at": "2026-09-13",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook Pro 14\" M1 Pro 32/1TB | stan 97% idealny | bateria 81% | Space Gray Obserwuj Marka: Apple Typ: ultrabook Model: MacBook Pro M1 Pro Układ klawiatury: PL (qwerty) do negocjacji Kup teraz 5 450 zł Sprzedający: osoba prywatna Warszawa",
@@ -74669,7 +74659,7 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Laptop Apple MacBook Pro A2991 ANSI 16 \" Apple M3 36 GB / 512 GB czarny",
@@ -74688,7 +74678,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-apple-macbook-pro-a2991-ansi-16-apple-m3-36-gb-512-gb-czarny-79f9521e-ec66-4644-a63f-fcc4a8d00ff3?offerId=18874747387",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3077,
@@ -74705,7 +74695,9 @@
     "qwen3_27b_q4_pp": 28.8,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop Apple MacBook Pro A2991 16 \" Apple M3 36 GB / 512 GB czarny",
@@ -74724,7 +74716,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-apple-macbook-pro-a2991-16-apple-m3-36-gb-512-gb-czarny-d5f4ad5b-7017-48b0-b994-1786b3db1256?offerId=18874710510",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3077,
@@ -74741,7 +74733,9 @@
     "qwen3_27b_q4_pp": 28.8,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Apple Macbook Pro 14 2024 A3401 M4 PRO 14/20C 24GB 1TB SSD Silver Bat.100%",
@@ -74798,7 +74792,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/ultrabook-apple-macbook-pro-16-m1-max-32-gb-ram-1024-gb-ssd-szary-586a3e63-6621-4bf2-a7f8-52c6b8bc5bdc?offerId=18872007286",
     "source": "allegro.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2400,
@@ -74815,9 +74809,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-09-01",
-    "expired_at": "2026-09-03",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MBP MacBook Pro 14 M3 36GB 500GB 42 Cykle A2992 - Bardzo dobry",
@@ -74929,7 +74923,7 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Laptop Apple MBPR A2485 M1 Max 16 \" Apple M 64 GB / 1024 GB",
@@ -74986,7 +74980,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/ultrabook-apple-macbook-pro-16-m3-max-48-gb-ram-1-tb-ssd-srebrny-3b4d619d-8adb-4e2b-90f8-4ee331b56036?offerId=18864093364",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3102,
@@ -75003,7 +74997,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop Apple M5 Pro (18/20) 16,2 \" Apple M 24 GB / 1000 GB czarny",
@@ -75098,7 +75094,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-apple-macbook-air-15-3-m5-24-gb-1-tb-ksiezycowa-poswiata-18d28cf0-59c0-43d0-b9c2-3e285b6f752c?offerId=18855012729",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 4225,
@@ -75115,7 +75111,9 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop Apple MacBook Pro 14,2\" M5 32 GB 512 GB czarny",
@@ -75151,7 +75149,7 @@
     "qwen3_27b_q4_pp": 70.8,
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Laptop Apple MacBook Pro 16 M1 Pro 16,2 \" Apple M 32 GB / 1024 GB srebrny",
@@ -75225,7 +75223,7 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Laptop Apple A2991 16 \" Apple M3 36 GB / 512 GB czarny",
@@ -75244,7 +75242,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-apple-a2991-16-apple-m3-36-gb-512-gb-czarny-4e938e0c-afa2-4f95-88ea-554eaef8dfaa?offerId=18842018566",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3077,
@@ -75262,8 +75260,8 @@
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-28",
     "last_seen_in_search": "2026-09-03",
-    "expired_at": null,
-    "expired_by": null
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "MacBook Pro 16’ Retina M1 Max 32/1TB 10/32c!",
@@ -75282,7 +75280,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/macbook-pro-16-retina-m1-max-32-1tb-10-32c-ec57578a-e5d9-4d17-90b3-8e9fac0823a8?offerId=18841963768",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 2400,
@@ -75299,7 +75297,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop Apple A2780 16,2 \" Apple M2 64 GB / 1024 GB szary",
@@ -75356,7 +75356,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-apple-a2779-14-2-apple-m2-32-gb-512-gb-szary-11dadae9-6a77-4bd5-bf6a-fbd9f8971010?offerId=18839141699",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 2600,
@@ -75373,7 +75373,9 @@
     "qwen3_27b_q4_pp": 28.8,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop MacBook Pro 16\" M2 Max 12 CPU / 38 GPU 32 GB RAM 2 TB SSD Space Gray",
@@ -75409,7 +75411,7 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Laptop Apple Macbook Pro 14 M1 Pro 32 GB 512 GB SSD szary",
@@ -75483,7 +75485,7 @@
     "qwen3_27b_q4_pp": 28.8,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Laptop Apple A3186 Space Black 16,2 \" Apple M4 64 GB / 2048 GB czarny",
@@ -75557,7 +75559,7 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Apple Macbook Pro 16 (2021) A2485 M1 MAX 10c/24c 32GB 512 SSD Space Gray",
@@ -75593,7 +75595,7 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-09-03",
+    "last_seen_in_search": "2026-09-16",
     "expired_at": null,
     "expired_by": null
   },
@@ -75652,7 +75654,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/mbp-macbook-pro-14-m3-36gb-500gb-166-cykli-fv-vat-aaa4c2d9-d0a6-4a3f-9294-5440ae7ade04?offerId=18798136495",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3077,
@@ -75669,7 +75671,9 @@
     "qwen3_27b_q4_pp": 28.8,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Apple MacBook Air 13\" M2 24 GB RAM 1 TB SSD Srebrny",
@@ -75688,7 +75692,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/apple-macbook-air-13-m2-24-gb-ram-1-tb-ssd-srebrny-9644e0b3-898e-4894-9f53-330a53301438?offerId=18741715501",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 2600,
@@ -75706,8 +75710,8 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-08-28",
     "last_seen_in_search": "2026-09-03",
-    "expired_at": null,
-    "expired_by": null
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop Apple MacBook Pro 16 M1 Max 16,2'' 32 GB RAM 1000 GB SSD szary",
@@ -75767,7 +75771,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/ultrabook-apple-macbook-pro-16-m1-max-64gb-1tb-ssd-3456x2234-fb7365dd-051d-4d48-b56a-cd7275606c5d?offerId=18705326009",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 2400,
@@ -75784,7 +75788,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop Apple MacBook Pro 16 A2485 M1 Max 32GB 1TB SSD Retina IPS SpaceGray",
@@ -75823,7 +75829,7 @@
     "hidden_at": "2026-08-28",
     "hidden_reason": "auto: matched hidden fingerprint",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Laptop Apple MacBook Pro 16 A2485 | Retina IPS | Apple M1 Pro 32GB 512GB",
@@ -75842,7 +75848,7 @@
     "temperature": "",
     "url": "https://allegro.pl/oferta/17697764582",
     "source": "allegro.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2386,
@@ -75859,9 +75865,9 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-28",
-    "last_seen_in_search": "2026-08-28",
-    "expired_at": "2026-08-29",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Laptop Apple MacBook Pro 16 A2991 16\" M3 Pro 36 GB / 512 GB czarny",
@@ -75994,7 +76000,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-apple-macbook-air-13-13-6-apple-m3-24-gb-512-gb-niebieski-4cbee1c8-71e3-42dd-a763-2a0932b9e8a3?offerId=18881317193",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3077,
@@ -76011,7 +76017,9 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-08-29",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Apple Macbook Pro 16 (2021) A2485 M1 MAX 10c/32c 32GB 1TB SSD Space Gray",
@@ -76030,7 +76038,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/apple-macbook-pro-16-2021-a2485-m1-max-10c-32c-32gb-1tb-ssd-space-gray-7c7071d1-28bf-4dfd-9973-d9ff2c56a84d?offerId=18880914462",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 2400,
@@ -76047,7 +76055,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-29",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop Apple MacBook Pro 16 A2485 | Retina IPS | Apple M1 Pro 32GB 512GB",
@@ -76104,7 +76114,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/apple-macbook-pro-16-2023-a2991-m3-max-36gb-1tb-14c-30c-kla-pl-a-c1d7653b-f9b1-4c3e-a0e4-b7fc5a840954?offerId=18878099891",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3102,
@@ -76121,7 +76131,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-29",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Apple Macbook Pro 16 (2021) A2485 M1 MAX 64 1TB SSD 3456x2234 Space",
@@ -76233,7 +76245,7 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-08-29",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "MacBook Pro 16 M1 Pro 32GB 512GB Silver 2021 Obserwuj Marka: Apple Typ: standardowy Model: MacBook Pro M1 Pro Układ klawiatury: PL (qwerty) Kup teraz 3 690 zł Sprzedający: osoba prywatna Zakopane",
@@ -76345,7 +76357,7 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-09-01",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "MacBook Pro 14 2023 M2 Pro 10 CPU/16 GPU 32GB 512GB SSD Space Grey A2779",
@@ -76364,7 +76376,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/macbook-pro-14-2023-m2-pro-10-cpu-16-gpu-32gb-512gb-ssd-space-grey-a2779-88f9b63b-66fa-40e2-a6ca-7ea9916876c8?offerId=18888075535",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 2647,
@@ -76381,7 +76393,9 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-09-01",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop Apple M2 Pro 32 GB 512 GB 16,2\" szary",
@@ -76476,7 +76490,7 @@
     "temperature": "",
     "url": "https://allegro.pl/oferta/18614451890",
     "source": "allegro.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3100,
@@ -76493,9 +76507,9 @@
     "qwen3_27b_q4_pp": 43.1,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-09-01",
-    "last_seen_in_search": "2026-09-01",
-    "expired_at": "2026-09-03",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Laptop Apple MacBook Pro 16 \" A2485 Apple M1 Pro 32 GB / 512 GB szary",
@@ -76514,7 +76528,7 @@
     "temperature": "",
     "url": "https://allegro.pl/oferta/18566609196",
     "source": "allegro.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2386,
@@ -76531,9 +76545,9 @@
     "qwen3_27b_q4_pp": 57.5,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-09-01",
-    "last_seen_in_search": "2026-09-01",
-    "expired_at": "2026-09-03",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Ultrabook Apple MacBook Pro 16 M1 Max 64GB 1TB SSD 3456x2234",
@@ -76702,7 +76716,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/mbp-macbook-pro-14-m2-32gb-500gb-box-65-cykli-27f349c2-ae4b-47eb-88d6-e12e87f06dfd?offerId=18894190968",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 2600,
@@ -76719,7 +76733,9 @@
     "qwen3_27b_q4_pp": 28.8,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-09-03",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Ultrabook Apple MacBook Pro 16 M1 Max 32 GB RAM 1024 GB SSD szary",
@@ -76738,7 +76754,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/ultrabook-apple-macbook-pro-16-m1-max-32-gb-ram-1024-gb-ssd-szary-586a3e63-6621-4bf2-a7f8-52c6b8bc5bdc?offerId=18893961162",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 2400,
@@ -76755,7 +76771,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-09-03",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop Apple A2485 M1 Max 16,2 \" Apple M 32 GB / 1024 GB szary",
@@ -76791,7 +76809,7 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-09-03",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Apple Macbook Pro 16 (2021) A2485 M1 MAX 64 1TB SSD 3456x2234 Space",
@@ -76810,7 +76828,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/apple-macbook-pro-16-2021-a2485-m1-max-64-1tb-ssd-3456x2234-space-f6a72f2c-e34e-4553-ab11-eafea5763d21?offerId=18891680300",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 2400,
@@ -76827,7 +76845,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-09-03",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Apple Macbook Pro 16 (2021) A2485 M1 MAX 10c/32c 32GB 1TB SSD Space Gray",
@@ -76863,7 +76883,7 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-09-03",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-16"
   },
   {
     "title": "Laptop Apple Macbook Pro 14,2\" M5 24GB / 1TB Gwiezdna czerń",
@@ -76882,7 +76902,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-apple-macbook-pro-14-2-m5-24gb-1tb-gwiezdna-czern-3ba19a12-8137-499e-bf0a-754b68ac7658?offerId=18891472620",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 4225,
@@ -76899,7 +76919,9 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-03",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "MBP MacBook Pro 14 M3 36GB 500GB 42 Cykle A2992 - Bardzo dobry",
@@ -76918,7 +76940,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/mbp-macbook-pro-14-m3-36gb-500gb-42-cykle-a2992-bardzo-dobry-f0bd0c29-713c-419d-84dc-93608a00c541?offerId=18871099875",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3077,
@@ -76935,7 +76957,9 @@
     "qwen3_27b_q4_pp": 28.8,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-09-03",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Laptop Apple MacBook Air 2025 15,3 \" Apple M4 24 GB / 512 GB niebieski",
@@ -76954,7 +76978,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/laptop-apple-macbook-air-2025-15-3-apple-m4-24-gb-512-gb-niebieski-8f3871c4-c67f-4480-95d9-68d39372e24a?offerId=18818906341",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3793,
@@ -76971,7 +76995,9 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-03",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Apple Macbook Pro 16 (2021) A2485 M1 MAX 64 1TB SSD 3456x2234 Space",
@@ -76990,7 +77016,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/apple-macbook-pro-16-2021-a2485-m1-max-64-1tb-ssd-3456x2234-space-f6a72f2c-e34e-4553-ab11-eafea5763d21?offerId=18888397838",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 2400,
@@ -77007,7 +77033,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-09-03",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "Mac Studio M4 Max 16-CORE CPU 40-CORE GPU 64GB 1TB",
@@ -77026,7 +77054,7 @@
     "temperature": "",
     "url": "https://allegro.pl/produkt/mac-studio-m4-max-16-core-cpu-40-core-gpu-64gb-1tb-8f7d7a30-bb97-43d0-8587-5a8d15a02920?offerId=18891236413",
     "source": "allegro.pl",
-    "expired": false,
+    "expired": true,
     "used": true,
     "broken": false,
     "gb6_single": 3868,
@@ -77043,7 +77071,9 @@
     "qwen3_27b_q4_pp": 157.0,
     "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
     "firstSeen": "2026-09-03",
-    "last_seen_in_search": "2026-09-03"
+    "last_seen_in_search": "2026-09-03",
+    "expired_at": "2026-09-16",
+    "expired_by": "search-staleness"
   },
   {
     "title": "MacBook Pro 14 M4 Pro 24GB 512GB bateria 100% Obserwuj Marka: Apple Typ: ultrabook Model: MacBook Pro 14 M4 Pro Układ klawiatury: International English (qwerty) Kup teraz 8 499 zł Sprzedający: osoba prywatna Kraków, Krowodrza",
@@ -77062,7 +77092,7 @@
     "temperature": "",
     "url": "https://allegrolokalnie.pl/oferta/macbook-pro-14-m4-pro-24gb-512gb-bateria-100",
     "source": "allegrolokalnie.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3851,
@@ -77079,9 +77109,9 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-03",
-    "last_seen_in_search": "2026-09-12",
-    "expired_at": "2026-09-13",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "Apple Mac mini M4 Pro 24 GB / 512 GB + NOWA klawiatura Apple – bardzo dobry stan",
@@ -77194,7 +77224,7 @@
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-09-06",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Apple Mac Studio (2025) M3U 256/2TB",
@@ -77421,7 +77451,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-06",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Mac mini m4 - 24gb RAM / 512 SSD",
@@ -77458,7 +77488,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-06",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Mac mini M1 16GB RAM – Apple Silicon – bardzo dobry stan",
@@ -77495,7 +77525,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-06",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Apple iMac M3 24” | 16 GB | 512 GB | Idealny + komplet akcesoriów Apple (trackpad, myszka, klawiatura)",
@@ -77532,7 +77562,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-06",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Mac Mini M4 2024 16/256GB",
@@ -77646,7 +77676,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-06",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15",
+    "alive_check_at": "2026-09-16",
     "alive_check_inconclusive": true,
     "alive_check_status": 403
   },
@@ -77685,7 +77715,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-06",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Mac Mini M1 / 16Gb / 256Gb odbiór lub wysyłka",
@@ -77722,7 +77752,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-06",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15",
+    "alive_check_at": "2026-09-16",
     "alive_check_inconclusive": true,
     "alive_check_status": 403
   },
@@ -77761,7 +77791,7 @@
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-09-06",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Mac mini M4 l 16gb l 256gb sdd",
@@ -77876,7 +77906,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-06",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15",
+    "alive_check_at": "2026-09-16",
     "alive_check_inconclusive": true,
     "alive_check_status": 403
   },
@@ -77915,7 +77945,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-06",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Mac Mini M4 16/256 + Magic Keyboard + mysz Logitech",
@@ -77952,7 +77982,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-06",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Mac Mini M4 16GB RAM - GWARANCJA + GRATISY (idealny stan)",
@@ -77989,7 +78019,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-06",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Na sprzedaż: iMac 24” Apple M3, 16 GB RAM + 4 porty – w idealnym stanie!",
@@ -78026,7 +78056,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-06",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Mac Mini m4 24gb/512gb jak nowy",
@@ -78063,7 +78093,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-06",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Sprzedam Apple Mac mini M2 16GB RAM 256GB SSD",
@@ -78100,7 +78130,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-06",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Mac Mini M4 16/256 + 1TB Gwarancja",
@@ -78214,7 +78244,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-06",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Mac Mini M1 , 16Gb Ram , 256 ssd",
@@ -78251,7 +78281,7 @@
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-06",
     "last_seen_in_search": "2026-09-06",
-    "alive_check_at": "2026-09-15"
+    "alive_check_at": "2026-09-16"
   },
   {
     "title": "Apple MacBook Pro 16\" M2 Max 64GB 500GB A2780 bateria 97% Obserwuj Marka: Apple Typ: ultrabook Model: A2780 Układ klawiatury: PL (qwerty) Kup teraz 9 800 zł Sprzedający: osoba prywatna Zielona Góra",
@@ -78270,7 +78300,7 @@
     "temperature": "",
     "url": "https://allegrolokalnie.pl/oferta/apple-macbook-pro-16-m2-max-64gb-500gb-a2780-bateria-97",
     "source": "allegrolokalnie.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 2805,
@@ -78287,9 +78317,9 @@
     "qwen3_27b_q4_pp": 115.0,
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-09-12",
-    "last_seen_in_search": "2026-09-12",
-    "expired_at": "2026-09-13",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
   },
   {
     "title": "MacBook Pro 14” M4 Pro | 24 GB RAM | 512 GB SSD | 58 cykli | 99% baterii Obserwuj Typ: standardowy System operacyjny: Mac OS Typ dysku twardego: SSD Seria procesora: Apple M4 Ogłoszenie 9 999 zł Sprzedający: osoba prywatna Leżachów-Osada",
@@ -78308,7 +78338,7 @@
     "temperature": "",
     "url": "https://allegrolokalnie.pl/oferta/macbook-pro-14-m4-pro-or-24-gb-ram-or-512-gb-ssd-or-58-cykli-or-99-baterii",
     "source": "allegrolokalnie.pl",
-    "expired": true,
+    "expired": false,
     "used": true,
     "broken": false,
     "gb6_single": 3851,
@@ -78325,8 +78355,1055 @@
     "qwen3_27b_q4_pp": "",
     "qwen3_27b_q4_pp_source": "",
     "firstSeen": "2026-09-12",
-    "last_seen_in_search": "2026-09-12",
-    "expired_at": "2026-09-13",
-    "expired_by": "search-staleness"
+    "last_seen_in_search": "2026-09-16",
+    "expired_at": null,
+    "expired_by": null
+  },
+  {
+    "title": "MacBook Pro 16” M5 Max 48GB RAM 2TB SSD – NOWY, nieotwierany Obserwuj Marka: Apple Układ klawiatury: International English (qwerty) Model procesora: Apple M5 Max Seria procesora: Apple M5 Ogłoszenie 20 200 zł STAN: NOWY Sprzedający: osoba prywatna Ostrów Mazowiecka",
+    "model": "Pro",
+    "cpu": "M5 MAX",
+    "ram": "48GB",
+    "disk": "2TB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "Kup teraz 9 800 zł",
+    "oldPrice": "",
+    "priceNum": null,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegrolokalnie.pl/oferta/macbook-pro-16-m5-max-48gb-ram-2tb-ssd-nowy-nieotwierany",
+    "source": "allegrolokalnie.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 4300,
+    "gb6_multi": 28000,
+    "gb6_metal": 210000,
+    "mem_bw_gbs": 614,
+    "llm_gpu_cores": 40,
+    "qwen3_8b_q4_tg": 36.3,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_m5_base_measurement",
+    "qwen3_8b_q4_pp": 613.2,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_m5_base_measurement",
+    "qwen3_27b_q4_tg": 17.5,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m5_base_measurement",
+    "qwen3_27b_q4_pp": 282.3,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m5_base_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "MacBook Pro 14” M1 Max 32GB RAM 1TB 32GPU 10CPU Obserwuj Układ klawiatury: PL (qwerty) Pojemność dysku: 1000 GB Przekątna ekranu: 14 \" Marka: Apple Kup teraz 5 670 zł Kup i zgarnij kupon 20 zł Sprzedający: osoba prywatna Rzeszów",
+    "model": "Pro",
+    "cpu": "M1 MAX",
+    "ram": "32GB",
+    "disk": "1TB",
+    "screen": "14",
+    "cpuCores": "10-core",
+    "gpuCores": "",
+    "price": "Kup teraz 9 800 zł",
+    "oldPrice": "",
+    "priceNum": null,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegrolokalnie.pl/oferta/macbook-pro-14-m1-max-32gb-ram-1tb",
+    "source": "allegrolokalnie.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 2400,
+    "gb6_multi": 12500,
+    "gb6_metal": 96400,
+    "mem_bw_gbs": 400,
+    "llm_gpu_cores": 32,
+    "qwen3_8b_q4_tg": 42.2,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 429.3,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 9.4,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 115.0,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Laptop Apple MacBook Pro 14 szary M1 Pro 32 GB 512 GB SSD",
+    "model": "Pro",
+    "cpu": "M1 PRO",
+    "ram": "32GB",
+    "disk": "512GB",
+    "screen": "14",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "3899,00zł",
+    "oldPrice": "",
+    "priceNum": 3899.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/oferta/17739243611",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 2386,
+    "gb6_multi": 12350,
+    "gb6_metal": 68176,
+    "mem_bw_gbs": 200,
+    "llm_gpu_cores": 16,
+    "qwen3_8b_q4_tg": 25.1,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 215.7,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 4.7,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 57.5,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Laptop Apple A2681 13,6 \" Apple M2 24 GB / 512 GB szary",
+    "model": "Pro",
+    "cpu": "M2",
+    "ram": "24GB",
+    "disk": "512GB",
+    "screen": "13",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "3649,00zł",
+    "oldPrice": "",
+    "priceNum": 3649.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/laptop-apple-a2681-13-6-apple-m2-24-gb-512-gb-szary-aae70209-47d2-4359-97eb-6bf02940d314?offerId=18929195478",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 2600,
+    "gb6_multi": 9645,
+    "gb6_metal": 46470,
+    "mem_bw_gbs": 100,
+    "llm_gpu_cores": 10,
+    "qwen3_8b_q4_tg": 15.1,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 145.5,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": "",
+    "qwen3_27b_q4_tg_source": "",
+    "qwen3_27b_q4_pp": "",
+    "qwen3_27b_q4_pp_source": "",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "MacBook Pro 16 M5Pro(18+20) 24/1TB/US/140 Srebrny",
+    "model": "Pro",
+    "cpu": "M5 PRO",
+    "ram": "",
+    "disk": "1TB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "12 990,00zł",
+    "oldPrice": "",
+    "priceNum": 12990.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/macbook-pro-16-m5pro-18-20-24-1tb-us-140-srebrny-e13a3773-599d-4125-8b38-7b9dce8d65a7?offerId=18929012940",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 4270,
+    "gb6_multi": 26400,
+    "gb6_metal": 122000,
+    "mem_bw_gbs": 307,
+    "llm_gpu_cores": 20,
+    "qwen3_8b_q4_tg": 18.1,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_m5_base_measurement",
+    "qwen3_8b_q4_pp": 306.6,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_m5_base_measurement",
+    "qwen3_27b_q4_tg": "",
+    "qwen3_27b_q4_tg_source": "",
+    "qwen3_27b_q4_pp": "",
+    "qwen3_27b_q4_pp_source": "",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "MBP MacBook Pro 14 M3 36GB 500GB 42 Cykle A2992 - Bardzo dobry",
+    "model": "Pro",
+    "cpu": "M3",
+    "ram": "36GB",
+    "disk": "500GB",
+    "screen": "14",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "7150,00zł",
+    "oldPrice": "",
+    "priceNum": 7150.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/mbp-macbook-pro-14-m3-36gb-500gb-42-cykle-a2992-bardzo-dobry-f0bd0c29-713c-419d-84dc-93608a00c541?offerId=18928674565",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3077,
+    "gb6_multi": 11535,
+    "gb6_metal": 48204,
+    "mem_bw_gbs": 100,
+    "llm_gpu_cores": 10,
+    "qwen3_8b_q4_tg": 14.7,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 151.3,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 2.4,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 28.8,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Laptop Apple MacBook Pro 14 \" Apple M4 24 GB / 1024 GB czarny",
+    "model": "Pro",
+    "cpu": "M4",
+    "ram": "24GB",
+    "disk": "1024GB",
+    "screen": "14",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "11 499,00zł",
+    "oldPrice": "",
+    "priceNum": 11499.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/laptop-apple-macbook-pro-14-apple-m4-24-gb-1024-gb-czarny-c4248797-ee8d-4000-9696-64ca4f657ee3?offerId=18925503293",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3793,
+    "gb6_multi": 14921,
+    "gb6_metal": 57398,
+    "mem_bw_gbs": 120,
+    "llm_gpu_cores": 10,
+    "qwen3_8b_q4_tg": 16.6,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 179.2,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": "",
+    "qwen3_27b_q4_tg_source": "",
+    "qwen3_27b_q4_pp": "",
+    "qwen3_27b_q4_pp_source": "",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Laptop Apple MacBook Pro 14 \" Apple M4 24 GB / 1024 GB srebrny",
+    "model": "Pro",
+    "cpu": "M4",
+    "ram": "24GB",
+    "disk": "1024GB",
+    "screen": "14",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "11 499,00zł",
+    "oldPrice": "",
+    "priceNum": 11499.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/laptop-apple-macbook-pro-14-apple-m4-24-gb-1024-gb-srebrny-a75cc2f3-da55-49fb-88b1-bcb9e84c29d0?offerId=18925496227",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3793,
+    "gb6_multi": 14921,
+    "gb6_metal": 57398,
+    "mem_bw_gbs": 120,
+    "llm_gpu_cores": 10,
+    "qwen3_8b_q4_tg": 16.6,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 179.2,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": "",
+    "qwen3_27b_q4_tg_source": "",
+    "qwen3_27b_q4_pp": "",
+    "qwen3_27b_q4_pp_source": "",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Ultrabook Apple Macbook Pro 14 M4 Pro 2024 24 GB RAM 512 GB SSD",
+    "model": "Pro",
+    "cpu": "M4 PRO",
+    "ram": "24GB",
+    "disk": "512GB",
+    "screen": "14",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "6999,00zł",
+    "oldPrice": "",
+    "priceNum": 6999.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/ultrabook-apple-macbook-pro-14-m4-pro-2024-24-gb-ram-512-gb-ssd-33702573-e667-4cf8-9752-ba751d286bac?offerId=18919905465",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3851,
+    "gb6_multi": 22438,
+    "gb6_metal": 112257,
+    "mem_bw_gbs": 273,
+    "llm_gpu_cores": 20,
+    "qwen3_8b_q4_tg": 35.0,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 356.2,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": "",
+    "qwen3_27b_q4_tg_source": "",
+    "qwen3_27b_q4_pp": "",
+    "qwen3_27b_q4_pp_source": "",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Laptop Apple MacBook 14 PRO A2779 M2 PRO 32GB 512SSD Retina IPS Space Gray",
+    "model": "Pro",
+    "cpu": "M2 PRO",
+    "ram": "32GB",
+    "disk": "",
+    "screen": "14",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "5199,00zł",
+    "oldPrice": "",
+    "priceNum": 5199.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/laptop-apple-macbook-14-pro-a2779-m2-pro-32gb-512ssd-retina-ips-space-gray-ff1911ad-1ec5-4e75-adcf-af8dc428c152?offerId=18918915868",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 2647,
+    "gb6_multi": 14459,
+    "gb6_metal": 83399,
+    "mem_bw_gbs": 200,
+    "llm_gpu_cores": 19,
+    "qwen3_8b_q4_tg": 26.8,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 276.4,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 4.7,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 57.5,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Laptop Apple A3186 16,2 \" Apple M4 64 GB / 1024 GB czarny",
+    "model": "Pro",
+    "cpu": "M4",
+    "ram": "64GB",
+    "disk": "1024GB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "20 850,00zł",
+    "oldPrice": "",
+    "priceNum": 20850.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/laptop-apple-a3186-16-2-apple-m4-64-gb-1024-gb-czarny-5affd96f-1e4e-433c-8ee3-bad17cc52f94?offerId=18916018078",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3793,
+    "gb6_multi": 14921,
+    "gb6_metal": 57398,
+    "mem_bw_gbs": 120,
+    "llm_gpu_cores": 10,
+    "qwen3_8b_q4_tg": 16.6,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 179.2,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 2.8,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 34.5,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Laptop Apple A2991 Silver 16,2 \" Apple M3 36 GB / 2048 GB czarny",
+    "model": "Pro",
+    "cpu": "M3",
+    "ram": "36GB",
+    "disk": "2048GB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "14 999,00zł",
+    "oldPrice": "",
+    "priceNum": 14999.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/laptop-apple-a2991-silver-16-2-apple-m3-36-gb-2048-gb-czarny-40f147a6-3433-4290-89ae-af4ca20ca65e?offerId=18915999843",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3077,
+    "gb6_multi": 11535,
+    "gb6_metal": 48204,
+    "mem_bw_gbs": 100,
+    "llm_gpu_cores": 10,
+    "qwen3_8b_q4_tg": 14.7,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 151.3,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 2.4,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 28.8,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "MacBook Pro 16\" Apple M4 Max 36 GB / 1 TB SSD 32 GPU",
+    "model": "Pro",
+    "cpu": "M4 MAX",
+    "ram": "36GB",
+    "disk": "1TB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "14 999,00zł",
+    "oldPrice": "",
+    "priceNum": 14999.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/macbook-pro-16-apple-m4-max-36-gb-1-tb-ssd-32-gpu-a53c3e62-6795-4435-9a36-85a45bf956f2?offerId=18916008820",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3868,
+    "gb6_multi": 23088,
+    "gb6_metal": 158678,
+    "mem_bw_gbs": 546,
+    "llm_gpu_cores": 40,
+    "qwen3_8b_q4_tg": 57.3,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 717.4,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 12.8,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 157.0,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "MacBook Pro 16\" Apple M3 Max 36 GB / 1 TB SSD 30 GPU",
+    "model": "Pro",
+    "cpu": "M3 MAX",
+    "ram": "36GB",
+    "disk": "1TB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "12 925,00zł",
+    "oldPrice": "",
+    "priceNum": 12925.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/macbook-pro-16-apple-m3-max-36-gb-1-tb-ssd-30-gpu-dc2eb2cb-b571-4b1d-8cd5-435211bb5922?offerId=18915981248",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3102,
+    "gb6_multi": 20935,
+    "gb6_metal": 156455,
+    "mem_bw_gbs": 400,
+    "llm_gpu_cores": 40,
+    "qwen3_8b_q4_tg": 45.8,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 615.4,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 9.4,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 115.0,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Laptop Apple A3403 16,2 \" Apple M4 24 GB / 512 GB czarny",
+    "model": "Pro",
+    "cpu": "M4",
+    "ram": "24GB",
+    "disk": "512GB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "12 500,00zł",
+    "oldPrice": "",
+    "priceNum": 12500.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/laptop-apple-a3403-16-2-apple-m4-24-gb-512-gb-czarny-67f1560a-d3dc-4c85-9f82-e49de663eb6a?offerId=18915974649",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3793,
+    "gb6_multi": 14921,
+    "gb6_metal": 57398,
+    "mem_bw_gbs": 120,
+    "llm_gpu_cores": 10,
+    "qwen3_8b_q4_tg": 16.6,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 179.2,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": "",
+    "qwen3_27b_q4_tg_source": "",
+    "qwen3_27b_q4_pp": "",
+    "qwen3_27b_q4_pp_source": "",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Laptop Apple A2991 Silver 16,2 \" Apple M3 36 GB / 512 GB srebrny",
+    "model": "Pro",
+    "cpu": "M3",
+    "ram": "36GB",
+    "disk": "512GB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "11 260,00zł",
+    "oldPrice": "",
+    "priceNum": 11260.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/laptop-apple-a2991-silver-16-2-apple-m3-36-gb-512-gb-srebrny-49902d39-0184-46bf-a6cd-2ecc86c83919?offerId=18915963577",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3077,
+    "gb6_multi": 11535,
+    "gb6_metal": 48204,
+    "mem_bw_gbs": 100,
+    "llm_gpu_cores": 10,
+    "qwen3_8b_q4_tg": 14.7,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 151.3,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 2.4,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 28.8,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Laptop Apple A2992 14,2 \" Apple M3 36 GB / 1024 GB czarny",
+    "model": "Pro",
+    "cpu": "M3",
+    "ram": "36GB",
+    "disk": "1024GB",
+    "screen": "14",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "12 095,00zł",
+    "oldPrice": "",
+    "priceNum": 12095.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/laptop-apple-a2992-14-2-apple-m3-36-gb-1024-gb-czarny-4588944a-8ae3-4259-96d2-fb5bc61aa5a0?offerId=18915955516",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3077,
+    "gb6_multi": 11535,
+    "gb6_metal": 48204,
+    "mem_bw_gbs": 100,
+    "llm_gpu_cores": 10,
+    "qwen3_8b_q4_tg": 14.7,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 151.3,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 2.4,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 28.8,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "MBP MacBook Pro 14 M2 32GB 500GB Box 65 Cykli",
+    "model": "Pro",
+    "cpu": "M2",
+    "ram": "32GB",
+    "disk": "500GB",
+    "screen": "14",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "4999,00zł",
+    "oldPrice": "",
+    "priceNum": 4999.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/mbp-macbook-pro-14-m2-32gb-500gb-box-65-cykli-27f349c2-ae4b-47eb-88d6-e12e87f06dfd?offerId=18910515231",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 2600,
+    "gb6_multi": 9645,
+    "gb6_metal": 46470,
+    "mem_bw_gbs": 100,
+    "llm_gpu_cores": 10,
+    "qwen3_8b_q4_tg": 15.1,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 145.5,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 2.4,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 28.8,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Laptop Apple MacBook Pro 16 A2780 16,2 \" Apple M2 32 GB / 1000 GB",
+    "model": "Pro",
+    "cpu": "M2",
+    "ram": "32GB",
+    "disk": "1000GB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "8881,00zł",
+    "oldPrice": "",
+    "priceNum": 8881.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/laptop-apple-macbook-pro-16-a2780-16-2-apple-m2-32-gb-1000-gb-ccf50e47-054a-4f4a-b78e-f2b1f0d1786b?offerId=18910080307",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 2600,
+    "gb6_multi": 9645,
+    "gb6_metal": 46470,
+    "mem_bw_gbs": 100,
+    "llm_gpu_cores": 10,
+    "qwen3_8b_q4_tg": 15.1,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 145.5,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 2.4,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 28.8,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Laptop Apple A2991 Silver 16,2 \" Apple M3 48 GB / 4096 GB srebrny",
+    "model": "Pro",
+    "cpu": "M3",
+    "ram": "48GB",
+    "disk": "4096GB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "19 599,00zł",
+    "oldPrice": "",
+    "priceNum": 19599.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/laptop-apple-a2991-silver-16-2-apple-m3-48-gb-4096-gb-srebrny-24416990-9a34-4e11-bbde-71cd2fd05698?offerId=18910044213",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3077,
+    "gb6_multi": 11535,
+    "gb6_metal": 48204,
+    "mem_bw_gbs": 100,
+    "llm_gpu_cores": 10,
+    "qwen3_8b_q4_tg": 14.7,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 151.3,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 2.4,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 28.8,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Laptop Apple A3403 16,2 \" Apple M4 48 GB / 1024 GB czarny",
+    "model": "Pro",
+    "cpu": "M4",
+    "ram": "48GB",
+    "disk": "1024GB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "14 960,00zł",
+    "oldPrice": "",
+    "priceNum": 14960.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/laptop-apple-a3403-16-2-apple-m4-48-gb-1024-gb-czarny-e8e7e084-0d57-4112-b1be-a86b655247fc?offerId=18909962206",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3793,
+    "gb6_multi": 14921,
+    "gb6_metal": 57398,
+    "mem_bw_gbs": 120,
+    "llm_gpu_cores": 10,
+    "qwen3_8b_q4_tg": 16.6,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 179.2,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 2.8,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 34.5,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Laptop Apple A3403 16,2 \" Apple M4 48 GB / 2048 GB czarny",
+    "model": "Pro",
+    "cpu": "M4",
+    "ram": "48GB",
+    "disk": "2048GB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "16 670,00zł",
+    "oldPrice": "",
+    "priceNum": 16670.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/laptop-apple-a3403-16-2-apple-m4-48-gb-2048-gb-czarny-b3054585-6332-457c-88e7-a05c6ecc30ee?offerId=18910023060",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3793,
+    "gb6_multi": 14921,
+    "gb6_metal": 57398,
+    "mem_bw_gbs": 120,
+    "llm_gpu_cores": 10,
+    "qwen3_8b_q4_tg": 16.6,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 179.2,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 2.8,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 34.5,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Laptop Apple A2991 Silver 16,2 \" Apple M3 36 GB / 1024 GB srebrny",
+    "model": "Pro",
+    "cpu": "M3",
+    "ram": "36GB",
+    "disk": "1024GB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "12 500,00zł",
+    "oldPrice": "",
+    "priceNum": 12500.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/laptop-apple-a2991-silver-16-2-apple-m3-36-gb-1024-gb-srebrny-7100628a-be72-46a6-8962-b2bc39cd6bcb?offerId=18909924205",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3077,
+    "gb6_multi": 11535,
+    "gb6_metal": 48204,
+    "mem_bw_gbs": 100,
+    "llm_gpu_cores": 10,
+    "qwen3_8b_q4_tg": 14.7,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 151.3,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 2.4,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 28.8,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Laptop Apple MacBook Pro 16 2023 A2780 | M2 Max | 32 GB | 1 TB SSD | 16\"",
+    "model": "Pro",
+    "cpu": "M2 MAX",
+    "ram": "32GB",
+    "disk": "1TB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "5999,00zł",
+    "oldPrice": "",
+    "priceNum": 5999.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/laptop-apple-macbook-pro-16-2023-a2780-m2-max-32-gb-1-tb-ssd-16-77f8ccb6-fdeb-408c-9fa8-5b1eb348683c?offerId=18902407102",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 2805,
+    "gb6_multi": 14748,
+    "gb6_metal": 140689,
+    "mem_bw_gbs": 400,
+    "llm_gpu_cores": 38,
+    "qwen3_8b_q4_tg": 37.2,
+    "qwen3_8b_q4_tg_source": "measured",
+    "qwen3_8b_q4_pp": 437.5,
+    "qwen3_8b_q4_pp_source": "measured",
+    "qwen3_27b_q4_tg": 9.4,
+    "qwen3_27b_q4_tg_source": "measured",
+    "qwen3_27b_q4_pp": 115.0,
+    "qwen3_27b_q4_pp_source": "measured",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Laptop MacBook Pro 16\" M3 Max 40 GPU 64 GB / 1 TB SSD Mac OS czarny",
+    "model": "Pro",
+    "cpu": "M3 MAX",
+    "ram": "64GB",
+    "disk": "1TB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "13 999,00zł",
+    "oldPrice": "",
+    "priceNum": 13999.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/laptop-macbook-pro-16-m3-max-40-gpu-64-gb-1-tb-ssd-mac-os-czarny-525fdf82-c4e1-4f21-885d-bd61b3befe0a?offerId=18900323478",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 3102,
+    "gb6_multi": 20935,
+    "gb6_metal": 156455,
+    "mem_bw_gbs": 400,
+    "llm_gpu_cores": 40,
+    "qwen3_8b_q4_tg": 45.8,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 615.4,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 9.4,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 115.0,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Apple Macbook Pro 16 (2021) A2485 M1 MAX 64 1TB SSD 3456x2234 Space",
+    "model": "Pro",
+    "cpu": "M1 MAX",
+    "ram": "64GB",
+    "disk": "1TB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "5999,00zł",
+    "oldPrice": "",
+    "priceNum": 5999.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/apple-macbook-pro-16-2021-a2485-m1-max-64-1tb-ssd-3456x2234-space-f6a72f2c-e34e-4553-ab11-eafea5763d21?offerId=18888373287",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 2400,
+    "gb6_multi": 12500,
+    "gb6_metal": 96400,
+    "mem_bw_gbs": 400,
+    "llm_gpu_cores": 32,
+    "qwen3_8b_q4_tg": 42.2,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 429.3,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 9.4,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 115.0,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Apple MacBook Pro 14 M1 Max 64GB 512GB 24GPU Silver 14,2” Liquid Retina XDR",
+    "model": "Pro",
+    "cpu": "M1 MAX",
+    "ram": "64GB",
+    "disk": "512GB",
+    "screen": "14",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "6799,00zł",
+    "oldPrice": "",
+    "priceNum": 6799.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/produkt/apple-macbook-pro-14-m1-max-64gb-512gb-24gpu-silver-14-2-liquid-retina-xdr-496532e9-59e9-4021-bcb5-758adfb9aff7?offerId=18839755849",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 2400,
+    "gb6_multi": 12500,
+    "gb6_metal": 96400,
+    "mem_bw_gbs": 400,
+    "llm_gpu_cores": 32,
+    "qwen3_8b_q4_tg": 42.2,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 429.3,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 9.4,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 115.0,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Apple Macbook Pro 16 (2021) A2485 M1 MAX 64 1TB SSD 3456x2234 Space",
+    "model": "Pro",
+    "cpu": "M1 MAX",
+    "ram": "64GB",
+    "disk": "1TB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "5999,00zł",
+    "oldPrice": "",
+    "priceNum": 5999.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/oferta/18891677257",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 2400,
+    "gb6_multi": 12500,
+    "gb6_metal": 96400,
+    "mem_bw_gbs": 400,
+    "llm_gpu_cores": 32,
+    "qwen3_8b_q4_tg": 42.2,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 429.3,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 9.4,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 115.0,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
+  },
+  {
+    "title": "Laptop Apple MacBook Pro 16 A2485 M1 Max 32GB 1TB SSD Retina IPS SpaceGray",
+    "model": "Pro",
+    "cpu": "M1 MAX",
+    "ram": "32GB",
+    "disk": "1TB",
+    "screen": "16",
+    "cpuCores": "",
+    "gpuCores": "",
+    "price": "5650,00zł",
+    "oldPrice": "",
+    "priceNum": 5650.0,
+    "datePosted": "",
+    "date": "2026-09-16",
+    "temperature": "",
+    "url": "https://allegro.pl/oferta/18720497519",
+    "source": "allegro.pl",
+    "expired": false,
+    "used": true,
+    "broken": false,
+    "gb6_single": 2400,
+    "gb6_multi": 12500,
+    "gb6_metal": 96400,
+    "mem_bw_gbs": 400,
+    "llm_gpu_cores": 32,
+    "qwen3_8b_q4_tg": 42.2,
+    "qwen3_8b_q4_tg_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_8b_q4_pp": 429.3,
+    "qwen3_8b_q4_pp_source": "extrapolated_from_llama2_7b_discussion_4167",
+    "qwen3_27b_q4_tg": 9.4,
+    "qwen3_27b_q4_tg_source": "extrapolated_from_m2_max_measurement",
+    "qwen3_27b_q4_pp": 115.0,
+    "qwen3_27b_q4_pp_source": "extrapolated_from_m2_max_measurement",
+    "hidden": true,
+    "hidden_at": "2026-09-16",
+    "hidden_reason": "auto: matched hidden fingerprint",
+    "firstSeen": "2026-09-16",
+    "last_seen_in_search": "2026-09-16"
   }
 ]
