@@ -23283,9 +23283,7 @@
     "firstSeen": "2026-04-13",
     "last_seen_in_search": "2026-06-28",
     "expired_by": null,
-    "alive_check_at": "2026-10-05",
-    "alive_check_inconclusive": true,
-    "alive_check_status": null
+    "alive_check_at": "2026-10-05"
   },
   {
     "title": "Maca mini m2 24/512 gb",
@@ -81254,7 +81252,9 @@
     "qwen3_27b_q4_pp_source": "measured",
     "firstSeen": "2026-10-01",
     "last_seen_in_search": "2026-10-01",
-    "alive_check_at": "2026-10-05"
+    "alive_check_at": "2026-10-05",
+    "alive_check_inconclusive": true,
+    "alive_check_status": null
   },
   {
     "title": "Apple Mac Mini M1, 16GB RAM,Dysk 512GB",
